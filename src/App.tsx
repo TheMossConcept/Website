@@ -4,8 +4,8 @@ import Topbar from './components/Topbar';
 
 const App: FC = () => {
   return (
-    <Grid container alignItems="center" style={{ height: '100vh' }}>
-      <Grid item xs={12}>
+    <Grid container alignItems="flex-start" style={{ height: '100vh' }}>
+      <Grid item xs={12} sx={{ mt: 1, mx: 1 }}>
         <Topbar />
       </Grid>
       <Grid item xs={12}>
