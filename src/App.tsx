@@ -9,13 +9,13 @@ const App: FC = () => {
         <Topbar />
       </Grid>
       <Grid item xs={12}>
-        <Typography color="primary.transparent" variant="h1" sx={{ ml: '10.28%' }}>
+        <Typography color="primary.transparent" variant="PoppinsBig-h1" sx={{ ml: '10.28%' }}>
           Software development
         </Typography>
-        <Typography color="primary.transparent" variant="h1" sx={{ ml: '34.86%' }}>
+        <Typography color="primary.transparent" variant="PoppinsBig-h1" sx={{ ml: '34.86%' }}>
           crafted to fit
         </Typography>
-        <Typography color="primary" variant="h2" sx={{ ml: '18.47%' }}>
+        <Typography color="primary" variant="TobiasBig-h1" sx={{ ml: '18.47%' }}>
           your workflow.
         </Typography>
       </Grid>
