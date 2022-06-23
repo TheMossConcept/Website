@@ -15,12 +15,32 @@ const theme = createTheme({
       main: '#383838',
       transparent: 'rgba(56, 56, 56, 0.75)'
     },
-    background: {
-      default: '#F8F6F3',
-      paper: 'rgba(248, 246, 243, 0.75)'
+    text: {
+      primary: 'rgba(248, 246, 243, 0.75)',
+      secondary: '#F8F6F3'
     }
   },
   spacing: 30,
+  components: {
+    MuiTypography: {
+      defaultProps: {
+        variantMapping: {
+          'PoppinsBig-h1': 'h1',
+          'PoppinsBig-body': 'span',
+          'PoppinsBig-button': 'button',
+          'PoppinsBig-subtitle2': 'h2',
+          'PoppinsSmall-h1': 'h1',
+          'PoppinsSmall-body': 'span',
+          'PoppinsSmall-button': 'button',
+          'PoppinsSmall-subtitle2': 'h2',
+          'TobiasBig-h1': 'h2',
+          'TobiasBig-subtitle1': 'h2',
+          'TobiasSmall-h1': 'h1',
+          'TobiasSmall-subtitle1': 'h2'
+        }
+      }
+    }
+  },
   typography: {
     'PoppinsBig-h1': {
       fontFamily: 'Poppins',
