@@ -1,9 +1,9 @@
-import { Grid } from '@mui/material';
+import { Grid, GridProps } from '@mui/material';
 import { FC } from 'react';
 
-const TextContainer: FC = ({ children }) => {
+const TextContainer: FC<GridProps> = ({ children, style, ...gridProps }) => {
   return (
-    <Grid item xs={12} style={{ marginLeft: '148px' }}>
+    <Grid item xs={12} style={{ marginLeft: '148px', ...style }} {...gridProps}>
       <Grid container justifyItems="center">
         <Grid item>{children}</Grid>
       </Grid>

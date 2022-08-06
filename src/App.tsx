@@ -1,52 +1,50 @@
-import { Collapse, Grid, Typography } from '@mui/material';
-import { FC } from 'react';
+import { Grid, Typography } from '@mui/material';
+import { FC, useEffect, useState } from 'react';
 import TextContainer from './components/TextContainer';
 import Topbar from './components/Topbar';
+import Frontpage from './pages/Frontpage';
 
 const App: FC = () => {
+  const [scrollY, setScollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  console.log(scrollY);
+
   return (
     <>
-      <Grid container alignItems="flex-start" justifyContent="center" style={{ height: '100vh' }}>
-        <Grid item xs={12} sx={{ mt: 1, mx: 1 }}>
-          <Topbar />
-        </Grid>
-        <TextContainer>
-          <Typography color="primary.transparent" variant="PoppinsBig-h1" component="h1">
-            Software development
-          </Typography>
-          <Typography
-            color="primary.transparent"
-            variant="PoppinsBig-h1"
-            sx={{ ml: '354px' }}
-            component="h1">
-            crafted to fit
-          </Typography>
-          <Typography color="primary" variant="TobiasBig-h1" component="h2" sx={{ ml: '118px' }}>
-            your workflow.
-          </Typography>
-        </TextContainer>
-      </Grid>
-
+      <Topbar />
+      <Frontpage />
       <Grid
         container
         alignItems="flex-start"
         justifyContent="center"
-        style={{ height: '100vh', backgroundColor: '#383838' }}>
+        style={{ height: '100vh', paddingTop: '25vh', backgroundColor: '#383838' }}>
         <TextContainer>
           <Typography
             color="text.primary"
             variant="PoppinsBig-h1"
             component="span"
+            sx={{ transform: `translate(${scrollY / 10}px)` }}
             textAlign="start">
             A{' '}
           </Typography>
-          <Typography color="text.secondary" variant="TobiasBig-h1" component="span">
+          <Typography
+            color="text.secondary"
+            variant="TobiasBig-h1"
+            component="span"
+            sx={{ transform: `translate(${scrollY / 10}px)` }}>
             disruptive
           </Typography>
           <Typography
             color="text.primary"
             variant="PoppinsBig-h1"
-            sx={{ ml: '354px' }}
+            sx={{ ml: '354px', transform: `translate(-${scrollY / 10}px)` }}
             component="h1">
             concept
           </Typography>
