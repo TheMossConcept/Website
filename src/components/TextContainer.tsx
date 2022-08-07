@@ -1,14 +1,18 @@
 import { Grid, GridProps } from '@mui/material';
-import { FC } from 'react';
+import { FC, forwardRef } from 'react';
 
-const TextContainer: FC<GridProps> = ({ children, style, ...gridProps }) => {
+const TextContainer: FC<GridProps> = forwardRef<HTMLDivElement, GridProps>(function textContainer(
+  /* eslint-disable-next-line react/prop-types */
+  { children, style, ...gridProps },
+  ref
+) {
   return (
-    <Grid item xs={12} style={{ marginLeft: '148px', ...style }} {...gridProps}>
+    <Grid ref={ref} item xs={12} style={{ marginLeft: '148px', ...style }} {...gridProps}>
       <Grid container justifyItems="center">
         <Grid item>{children}</Grid>
       </Grid>
     </Grid>
   );
-};
+});
 
 export default TextContainer;

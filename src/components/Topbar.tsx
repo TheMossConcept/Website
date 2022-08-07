@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material';
+import { Fade, Grid } from '@mui/material';
 import { FC } from 'react';
 import { ReactComponent as DefaultLogo } from '../assets/Images/logo_default.svg';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -9,7 +9,9 @@ const Topbar: FC = () => {
       <Grid item xs={12} sx={{ mt: 1, mx: 1 }}>
         <Grid container justifyContent="space-between">
           <Grid item>
-            <DefaultLogo height={50} width={106.5} />
+            <Fade in timeout={630} style={{ transitionDelay: '920ms' }}>
+              <DefaultLogo height={50} width={106.5} />
+            </Fade>
           </Grid>
           <Grid item>
             <MenuIcon />
