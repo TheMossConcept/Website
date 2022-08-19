@@ -22,6 +22,7 @@ const Frontpage: FC<FrontpageProps> = ({ scrollY }) => {
           right: `${rightPosition}vw`,
           transition: 'right 1380ms ease-out',
           position: 'absolute',
+          // We want this to be below everything else!
           zIndex: -1
         }}
       />

@@ -25,8 +25,8 @@ const LoadingLogo: FC = ({ children }) => {
         sx={{
           textAlign: 'left',
           opacity: textContainerOpacity,
-          transition: 'opacity 300ms ease 1400ms',
-          zIndex: 1
+          transition: 'opacity 300ms ease 2400ms',
+          zIndex: 'modal'
         }}>
         <Typography
           variant="PoppinsBig-h1"
@@ -73,10 +73,13 @@ const LoadingLogo: FC = ({ children }) => {
           position: 'absolute',
           right: `${backgroundContainerRightPosition}vw`,
           backgroundColor: 'white',
-          zIndex: 2,
-          transition: 'right 1100ms ease 1400ms'
+          transition: 'right 1100ms ease 2400ms'
         }}>
-        <Box sx={{ opacity: newPageOpacity, transition: 'opacity 620ms ease 2070ms' }}>
+        <Box
+          sx={{
+            opacity: newPageOpacity,
+            transition: 'opacity 620ms ease 3070ms'
+          }}>
           {children}
         </Box>
       </Box>

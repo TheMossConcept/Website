@@ -1,10 +1,8 @@
 import { FC, useEffect, useState } from 'react';
 import LoadingLogo from './components/LoadingLogo';
 import Topbar from './components/Topbar';
-/*
 import Frontpage from './pages/Frontpage';
 import FrontpageSection from './pages/FrontpageSection';
- */
 
 const App: FC = () => {
   const [scrollY, setScollY] = useState(0);
@@ -21,10 +19,9 @@ const App: FC = () => {
   return (
     <>
       <Topbar />
-      <LoadingLogo />
-      {/*<Frontpage scrollY={scrollY} />
+      {/* <LoadingLogo /> */}
+      <Frontpage scrollY={scrollY} />
       <FrontpageSection scrollY={scrollY} />
-        */}
     </>
   );
 };
