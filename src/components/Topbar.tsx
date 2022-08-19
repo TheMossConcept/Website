@@ -10,7 +10,7 @@ const Topbar: FC = () => {
   }, []);
 
   return (
-    <div style={{ position: 'fixed', width: '100%' }}>
+    <div style={{ position: 'fixed', width: '100%', zIndex: 3 }}>
       <Grid item xs={12} sx={{ mt: 1, mx: 1 }}>
         <Grid container justifyContent="space-between">
           <Grid item>

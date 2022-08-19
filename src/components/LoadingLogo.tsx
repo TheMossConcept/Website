@@ -3,8 +3,13 @@ import { FC, useEffect, useState } from 'react';
 
 const LoadingLogo: FC = ({ children }) => {
   const [backgroundContainerRightPosition, setBackgroundContainerRightPosition] = useState(100);
+  const [textContainerOpacity, setTextContainerOpacity] = useState(1);
+  const [newPageOpacity, setNewPageOpacity] = useState(0);
+
   useEffect(() => {
     setBackgroundContainerRightPosition(0);
+    setTextContainerOpacity(0);
+    setNewPageOpacity(1);
   }, []);
 
   return (
@@ -14,7 +19,15 @@ const LoadingLogo: FC = ({ children }) => {
       alignContent="center"
       justifyContent="center"
       sx={{ height: '100vh' }}>
-      <Grid item xs={5} sx={{ textAlign: 'left', zIndex: 100 }}>
+      <Grid
+        item
+        xs={5}
+        sx={{
+          textAlign: 'left',
+          opacity: textContainerOpacity,
+          transition: 'opacity 300ms ease 1400ms',
+          zIndex: 1
+        }}>
         <Typography
           variant="PoppinsBig-h1"
           color="text.secondary"
@@ -60,10 +73,12 @@ const LoadingLogo: FC = ({ children }) => {
           position: 'absolute',
           right: `${backgroundContainerRightPosition}vw`,
           backgroundColor: 'white',
-          zIndex: 200,
+          zIndex: 2,
           transition: 'right 1100ms ease 1400ms'
         }}>
-        {children}
+        <Box sx={{ opacity: newPageOpacity, transition: 'opacity 620ms ease 2070ms' }}>
+          {children}
+        </Box>
       </Box>
     </Grid>
   );
