@@ -1,20 +1,27 @@
-import { Fade, Grid } from '@mui/material';
-import { FC } from 'react';
+import { Grid } from '@mui/material';
+import { FC, useEffect, useState } from 'react';
 import { ReactComponent as DefaultLogo } from '../assets/Images/logo_default.svg';
-import MenuIcon from '@mui/icons-material/Menu';
+import { ReactComponent as MenuLogo } from '../assets/Images/menu_icon.svg';
 
 const Topbar: FC = () => {
+  const [opacity, setOpacity] = useState(0);
+  useEffect(() => {
+    setOpacity(100);
+  }, []);
+
   return (
     <div style={{ position: 'fixed', width: '100%' }}>
       <Grid item xs={12} sx={{ mt: 1, mx: 1 }}>
         <Grid container justifyContent="space-between">
           <Grid item>
-            <Fade in timeout={630} style={{ transitionDelay: '920ms' }}>
-              <DefaultLogo height={50} width={106.5} />
-            </Fade>
+            <DefaultLogo
+              height={50}
+              width={106.5}
+              style={{ opacity, transition: 'opacity 630ms ease-out 920ms' }}
+            />
           </Grid>
           <Grid item>
-            <MenuIcon />
+            <MenuLogo width={29} height={16} />
           </Grid>
         </Grid>
       </Grid>

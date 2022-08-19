@@ -31,7 +31,7 @@ const theme = createTheme({
           'PoppinsBig-subtitle2': 'h2',
           'PoppinsSmall-h1': 'h1',
           'PoppinsSmall-body': 'span',
-          'PoppinsSmall-button': 'button',
+          'PoppinsSmall-button': 'span',
           'PoppinsSmall-subtitle2': 'h2',
           'TobiasBig-h1': 'h2',
           'TobiasBig-subtitle1': 'h2',
