@@ -19,7 +19,7 @@ const theme = createTheme({
       secondary: '#F8F6F3'
     }
   },
-  spacing: 30,
+  spacing: 8,
   components: {
     MuiTypography: {
       defaultProps: {
