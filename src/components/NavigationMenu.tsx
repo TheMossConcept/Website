@@ -1,15 +1,32 @@
-import { Box, Grid, IconButton, Typography } from '@mui/material';
+import { Box, Divider, Grid, IconButton, Typography } from '@mui/material';
 import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
+import { useNavigate } from 'react-router-dom';
 
 type Props = { isOpenState: [boolean, Dispatch<SetStateAction<boolean>>] };
 
-type NavigationItemProps = { text: string };
+type NavigationItemProps = { text: string; link: string };
 
-const NavigationItem: FC<NavigationItemProps> = ({ text }) => {
+const NavigationItem: FC<NavigationItemProps> = ({ text, link }) => {
+  const [width, setWidth] = useState(0);
+
+  const navigate = useNavigate();
+
   return (
-    <Typography variant="PoppinsSmall-h1" sx={{ color: 'text.primary' }}>
+    <Typography
+      variant="PoppinsSmall-h1"
+      sx={{ color: 'text.primary', width: 'fit-content', cursor: 'pointer' }}
+      onMouseOver={() => {
+        setWidth(100);
+      }}
+      onClick={() => navigate(link)}
+      onMouseOut={() => {
+        setWidth(0);
+      }}>
       {text}
+      <Divider
+        sx={{ borderColor: 'text.primary', width: `${width}%`, transition: 'width 500ms ease' }}
+      />
     </Typography>
   );
 };
@@ -79,22 +96,22 @@ const NavigationMenu: FC<Props> = ({ isOpenState }) => {
           <Grid item xs={12}>
             <Grid container spacing={4} sx={{ mt: '8.26%' }}>
               <Grid item xs={12}>
-                <NavigationItem text="Concept" />
+                <NavigationItem text="Concept" link="/concept" />
               </Grid>
               <Grid item xs={12}>
-                <NavigationItem text="How we work" />
+                <NavigationItem text="How we work" link="/how" />
               </Grid>
               <Grid item xs={12}>
-                <NavigationItem text="Philosophy" />
+                <NavigationItem text="Philosophy" link="/philosophy" />
               </Grid>
               <Grid item xs={12}>
-                <NavigationItem text="Approach" />
+                <NavigationItem text="Approach" link="/approach" />
               </Grid>
               <Grid item xs={12}>
-                <NavigationItem text="Values" />
+                <NavigationItem text="Values" link="/values" />
               </Grid>
               <Grid item xs={12}>
-                <NavigationItem text="Contact" />
+                <NavigationItem text="Contact" link="/contact" />
               </Grid>
             </Grid>
           </Grid>

@@ -1,26 +1,27 @@
-import { FC, useEffect, useState } from 'react';
-import LoadingLogo from './components/LoadingLogo';
+import { FC } from 'react';
 import Topbar from './components/Topbar';
-import Frontpage from './pages/Frontpage';
-import FrontpageSection from './pages/FrontpageSection';
+import Frontpage from './pages/frontpage/Frontpage';
+import ConceptPage from './pages/ConceptPage';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import LoadingLogo from './components/LoadingLogo';
 
 const App: FC = () => {
-  const [scrollY, setScollY] = useState(0);
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Frontpage />
+    },
+    {
+      path: '/concept',
+      element: (
+        <LoadingLogo>
+          <ConceptPage />
+        </LoadingLogo>
+      )
+    }
+  ]);
 
-  useEffect(() => {
-    const handleScroll = () => setScollY(window.scrollY);
-    window.addEventListener('scroll', handleScroll);
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  return (
-    <>
-      <Topbar />
-      <Frontpage scrollY={scrollY} />
-      <FrontpageSection scrollY={scrollY} />
-    </>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;

@@ -1,12 +1,12 @@
 import { Typography } from '@mui/material';
 import { FC, useEffect, useState } from 'react';
-import TextContainer from '../components/TextContainer';
+import TextContainer from '../../components/TextContainer';
 
-type FrontpageProps = Pick<FrontpageContentProps, 'scrollY'>;
+type InitialSectionProps = Pick<ContentProps, 'scrollY'>;
 
 // Put a background image here that's in the slide and make a fade
 // for the text which is a bit delayed compared to the background image
-const Frontpage: FC<FrontpageProps> = ({ scrollY }) => {
+const InitialSection: FC<InitialSectionProps> = ({ scrollY }) => {
   const [rightPosition, setRightPosition] = useState(100);
   useEffect(() => {
     setRightPosition(0);
@@ -26,14 +26,14 @@ const Frontpage: FC<FrontpageProps> = ({ scrollY }) => {
           zIndex: -1
         }}
       />
-      <FrontpageContent scrollY={scrollY} />
+      <Content scrollY={scrollY} />
     </div>
   );
 };
 
-type FrontpageContentProps = Pick<MoveableLineProps, 'scrollY'>;
+type ContentProps = Pick<MoveableLineProps, 'scrollY'>;
 
-const FrontpageContent: FC<FrontpageContentProps> = ({ scrollY }) => {
+const Content: FC<ContentProps> = ({ scrollY }) => {
   const [opacity, setOpacity] = useState(0);
   useEffect(() => {
     setOpacity(1);
@@ -121,4 +121,4 @@ const ThirdLineWithAnimation: FC = () => {
   );
 };
 
-export default Frontpage;
+export default InitialSection;

@@ -1,8 +1,8 @@
 import { Grid, Typography } from '@mui/material';
 import { FC, useRef, useState, useEffect } from 'react';
-import TextContainer from '../components/TextContainer';
-import useAppearingText from '../utilities/useAppearingText';
-import FirstSubSectionImage from '../assets/Images/frontpage_first_section_image.jpg';
+import TextContainer from '../../components/TextContainer';
+import useAppearingText from '../../utilities/useAppearingText';
+import FirstSubSectionImage from './../../assets/Images/frontpage_first_section_image.jpg';
 
 type Props = { scrollY: number };
 
@@ -30,8 +30,6 @@ const FrontpageSection: FC<Props> = ({ scrollY: globalYScroll }) => {
 
   const textTransformValue = localYScroll ? localYScroll / 20 : 0;
   const textTransformValueNegated = textTransformValue * -1;
-
-  console.log(`Local Y scroll: ${localYScroll}`);
 
   return (
     <Grid
