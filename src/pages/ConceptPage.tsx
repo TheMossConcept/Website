@@ -1,8 +1,9 @@
 import { Typography } from '@mui/material';
 import { FC } from 'react';
+import FirstSubpageSection from './subpage/FirstSubpageSection';
 
 const ConceptPage: FC = () => {
-  return <Typography>Hello world!</Typography>;
+  return <FirstSubpageSection />;
 };
 
 export default ConceptPage;

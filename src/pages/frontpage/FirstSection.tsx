@@ -2,7 +2,7 @@ import { Grid, Typography } from '@mui/material';
 import { FC, useRef, useState, useEffect } from 'react';
 import TextContainer from '../../components/TextContainer';
 import useAppearingText from '../../utilities/useAppearingText';
-import FirstSubSectionImage from './../../assets/Images/frontpage_first_section_image.jpg';
+import FirstSubSectionImage from '../../assets/Images/frontpage_first_section_image.jpg';
 
 type Props = { scrollY: number };
 

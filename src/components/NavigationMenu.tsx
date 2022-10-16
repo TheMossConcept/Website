@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 type Props = { isOpenState: [boolean, Dispatch<SetStateAction<boolean>>] };
 
+// TODO: Introduce strong typing on link so it's always connected to the link in App
 type NavigationItemProps = { text: string; link: string };
 
 const NavigationItem: FC<NavigationItemProps> = ({ text, link }) => {
