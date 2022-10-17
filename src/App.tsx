@@ -9,12 +9,18 @@ const App: FC = () => {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <Frontpage />
+      element: (
+        <>
+          <Topbar />
+          <Frontpage />
+        </>
+      )
     },
     {
       path: '/concept',
       element: (
         <LoadingLogo>
+          <Topbar />
           <ConceptPage />
         </LoadingLogo>
       )

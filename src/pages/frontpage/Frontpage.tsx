@@ -1,6 +1,5 @@
 import { FC, useEffect, useState } from 'react';
 
-import Topbar from '../../components/Topbar';
 import InitialSection from './InitialSection';
 import FirstSection from './FirstSection';
 
@@ -16,7 +15,6 @@ const Frontpage: FC = () => {
 
   return (
     <>
-      <Topbar />
       <InitialSection scrollY={scrollY} />
       <FirstSection scrollY={scrollY} />
     </>
