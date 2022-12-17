@@ -39,7 +39,7 @@ const FrontpageSection: FC<Props> = ({ scrollY: globalYScroll }) => {
       justifyContent="flex-start"
       style={{
         height: '1455px',
-        paddingTop: '256px',
+        paddingTop: 8,
         backgroundColor: '#383838'
       }}>
       <TextContainer>
