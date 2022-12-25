@@ -10,7 +10,7 @@ type TextSectionProps = {
 
 const TextSection: FC<TextSectionProps> = ({ textSections, headline, pointList }) => {
   return (
-    <Grid container justifyContent="center" sx={{ mt: 32 }}>
+    <Grid item container xs={12} justifyContent="center" sx={{ mt: 32 }}>
       {headline && (
         <Grid item xs={12} sx={{ mb: 10 }}>
           <Grid container justifyContent="center">

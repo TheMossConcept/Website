@@ -4,6 +4,7 @@ import Frontpage from './pages/frontpage/Frontpage';
 import ConceptPage from './pages/ConceptPage';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import LoadingLogo from './components/LoadingLogo';
+import { Box } from '@mui/material';
 
 const App: FC = () => {
   const router = createBrowserRouter([
@@ -27,7 +28,11 @@ const App: FC = () => {
     }
   ]);
 
-  return <RouterProvider router={router} />;
+  return (
+    <Box sx={{ bgcolor: 'text.secondary' }}>
+      <RouterProvider router={router} />
+    </Box>
+  );
 };
 
 export default App;

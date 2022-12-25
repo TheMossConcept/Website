@@ -3,6 +3,7 @@ import { FC, useRef, useState, useEffect } from 'react';
 import TextContainer from '../../components/TextContainer';
 import useAppearingText from '../../utilities/useAppearingText';
 import FirstSubSectionImage from '../../assets/Images/frontpage_first_section_image.jpg';
+import MediaSection from '../subpage/MediaSection';
 
 type Props = { scrollY: number };
 
@@ -37,9 +38,9 @@ const FrontpageSection: FC<Props> = ({ scrollY: globalYScroll }) => {
       ref={containerRef}
       alignItems="flex-start"
       justifyContent="flex-start"
-      style={{
+      sx={{
         height: '1455px',
-        paddingTop: 8,
+        pt: 32,
         backgroundColor: '#383838'
       }}>
       <TextContainer>
@@ -110,12 +111,7 @@ const FrontpageSection: FC<Props> = ({ scrollY: globalYScroll }) => {
           Read more about our concept
         </Typography>
       </TextContainer>
-      <img
-        src={FirstSubSectionImage}
-        width={1059}
-        height={731}
-        style={{ marginTop: '256px', float: 'left' }}
-      />
+      <MediaSection imageUrl={FirstSubSectionImage} mediaLocation="left" />
     </Grid>
   );
 };
