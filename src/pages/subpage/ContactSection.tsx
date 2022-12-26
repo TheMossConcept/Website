@@ -1,5 +1,4 @@
 import { Button, Grid, TextField, Typography } from '@mui/material';
-import { fontSize } from '@mui/system';
 import { FC } from 'react';
 
 const ContactSection: FC = () => {

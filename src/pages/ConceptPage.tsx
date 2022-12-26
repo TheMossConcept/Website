@@ -1,7 +1,9 @@
 import { FC } from 'react';
+import { Grid, Typography } from '@mui/material';
 import FirstSubpageSection from './subpage/FirstSubpageSection';
 import TextSection from './subpage/TextSection';
 import FirstSubSectionImage from '../assets/Images/frontpage_first_section_image.jpg';
+import TallImage from '../assets/Images/tall-image.jpg';
 import MediaSection from './subpage/MediaSection';
 import HeadlineSection from './subpage/HeadlineSection';
 import ContactSection from './subpage/ContactSection';
@@ -42,6 +44,30 @@ const ConceptPage: FC = () => {
         ]}
       />
       <ContactSection />
+      {/* This will become its own section in time! */}
+      <Grid item container xs={12} spacing={4} alignContent="flex-end" sx={{ mt: 32 }}>
+        <Grid item xs={6}>
+          <img src={TallImage} style={{ width: '100%', height: 'auto' }} />
+        </Grid>
+        <Grid item xs={6} alignSelf="flex-end" sx={{ pb: 4 }}>
+          <Typography
+            sx={{ fontFamily: 'Tobias', fontSize: '72px', lineHeight: 1 }}
+            color="primary">
+            Approach
+          </Typography>
+          <Typography
+            sx={{ fontFamily: 'Poppins', fontSize: '76px', ml: '18%' }}
+            color="primary.transparent">
+            to customers
+          </Typography>
+          <Typography variant="PoppinsBig-subtitle2" color="secondary" sx={{ mb: 4, mr: 18 }}>
+            We aim to create healthy, long lasting relationships with our customers.
+          </Typography>
+          <Typography variant="PoppinsBig-button" color="secondary.transparent">
+            Continue to read
+          </Typography>
+        </Grid>
+      </Grid>
     </>
   );
 };

@@ -26,7 +26,7 @@ const theme = createTheme({
         variantMapping: {
           'PoppinsBig-h1': 'h1',
           'PoppinsBig-body': 'span',
-          'PoppinsBig-button': 'button',
+          'PoppinsBig-button': 'span',
           'PoppinsBig-subtitle2': 'h2',
           'PoppinsSmall-h1': 'h1',
           'PoppinsSmall-body': 'span',
