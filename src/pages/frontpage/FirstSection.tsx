@@ -3,7 +3,7 @@ import { FC, useRef, useState, useEffect } from 'react';
 import TextContainer from '../../components/TextContainer';
 import useAppearingText from '../../utilities/useAppearingText';
 import FirstSubSectionImage from '../../assets/Images/frontpage_first_section_image.jpg';
-import MediaSection from '../subpage/MediaSection';
+import MediaSection from '../../components/sections/MediaSection';
 
 type Props = { scrollY: number };
 

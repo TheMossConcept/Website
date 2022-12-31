@@ -1,12 +1,12 @@
 import { FC } from 'react';
 import { Grid, Typography } from '@mui/material';
 import FirstSubpageSection from './subpage/FirstSubpageSection';
-import TextSection from './subpage/TextSection';
+import TextSection from '../components/sections/TextSection';
 import FirstSubSectionImage from '../assets/Images/frontpage_first_section_image.jpg';
 import TallImage from '../assets/Images/tall-image.jpg';
-import MediaSection from './subpage/MediaSection';
-import HeadlineSection from './subpage/HeadlineSection';
-import ContactSection from './subpage/ContactSection';
+import MediaSection from '../components/sections/MediaSection';
+import HeadlineSection from '../components/sections/HeadlineSection';
+import ContactSection from '../components/sections/ContactSection';
 
 const ConceptPage: FC = () => {
   return (
