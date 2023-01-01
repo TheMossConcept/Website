@@ -5,7 +5,7 @@ import TextSection from '../components/sections/TextSection';
 import FirstSubSectionImage from '../assets/Images/frontpage_first_section_image.jpg';
 import TallImage from '../assets/Images/tall-image.jpg';
 import MediaSection from '../components/sections/MediaSection';
-import HeadlineSection from '../components/sections/HeadlineSection';
+import MainPointSection from '../components/sections/MainPointSection';
 import ContactSection from '../components/sections/ContactSection';
 
 const ConceptPage: FC = () => {
@@ -20,7 +20,7 @@ const ConceptPage: FC = () => {
         ]}
       />
       <MediaSection imageUrl={FirstSubSectionImage} mediaLocation="right" />
-      <HeadlineSection
+      <MainPointSection
         initialText="We never compromise on"
         highlightedText="quality"
         textAfterHighlightedText="which means you get a highly reliable system"
