@@ -4,11 +4,11 @@ import TextContainer from '../../components/TextContainer';
 import useAppearingText from '../../utilities/useAppearingText';
 import FirstSubSectionImage from '../../assets/Images/frontpage_first_section_image.jpg';
 import MediaSection from '../../components/sections/MediaSection';
+import HeadlineSection from '../../components/sections/HeadlineSection';
 
 type Props = { scrollY: number };
 
 const FrontpageSection: FC<Props> = ({ scrollY: globalYScroll }) => {
-  const [localYScroll, setLocalYScroll] = useState<number>();
   const [percentageOfPageVisible, setPercentageOfScreenVisible] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -18,19 +18,8 @@ const FrontpageSection: FC<Props> = ({ scrollY: globalYScroll }) => {
     }
   }, [globalYScroll, containerRef]);
 
-  useEffect(() => {
-    if (containerRef?.current) {
-      setLocalYScroll(globalYScroll - containerRef.current.offsetTop);
-    }
-  }, [globalYScroll, containerRef]);
-
-  // Because there's no opacity for the first 35 % of the page!
-  const headlineOpacity = useAppearingText(35, percentageOfPageVisible);
   const firstSectionOpacity = useAppearingText(50, percentageOfPageVisible);
   const secondSectionOpacity = useAppearingText(55, percentageOfPageVisible);
-
-  const textTransformValue = localYScroll ? localYScroll / 20 : 0;
-  const textTransformValueNegated = textTransformValue * -1;
 
   return (
     <Grid
@@ -44,42 +33,16 @@ const FrontpageSection: FC<Props> = ({ scrollY: globalYScroll }) => {
         backgroundColor: '#383838'
       }}>
       <TextContainer>
-        <span>
-          <Typography
-            color="text.primary"
-            variant="PoppinsBig-h1"
-            component="span"
-            sx={{
-              display: 'inline-block',
-              transform: `translate(${textTransformValue}px)`,
-              opacity: headlineOpacity
-            }}
-            textAlign="start">
-            A&nbsp;
-          </Typography>
-          <Typography
-            color="text.secondary"
-            variant="TobiasBig-h1"
-            component="span"
-            sx={{
-              display: 'inline-block',
-              transform: `translate(${textTransformValue}px)`,
-              opacity: headlineOpacity
-            }}>
-            disruptive
-          </Typography>
-        </span>
-        <Typography
-          color="text.primary"
-          variant="PoppinsBig-h1"
-          sx={{
-            ml: '354px',
-            transform: `translate(${textTransformValueNegated}px)`,
-            opacity: headlineOpacity
-          }}
-          component="h1">
-          concept
-        </Typography>
+        <HeadlineSection
+          containerRef={containerRef}
+          globalYScroll={globalYScroll}
+          marginLeft="354px"
+          firstLineText={[
+            { text: 'A', color: 'text.primary', variant: 'PoppinsBig-h1' },
+            { text: 'disruptive', color: 'text.secondary', variant: 'TobiasBig-h1' }
+          ]}
+          secondLineText={[{ text: 'concept', color: 'text.primary', variant: 'PoppinsBig-h1' }]}
+        />
         <Typography
           variant="PoppinsBig-subtitle2"
           color="text.primary"

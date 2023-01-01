@@ -1,47 +1,79 @@
-import { Grid, Typography } from '@mui/material';
-import { FC } from 'react';
+import { Typography, TypographyProps } from '@mui/material';
+import { FC, RefObject, useEffect, useState } from 'react';
+import useAppearingText from '../../utilities/useAppearingText';
+
+type TextWithMetadata = {
+  text: string;
+} & Pick<TypographyProps, 'color' | 'variant'>;
 
 type Props = {
-  initialText: string;
-  highlightedText?: string;
-  textAfterHighlightedText?: string;
+  globalYScroll: number;
+  containerRef: RefObject<HTMLElement>;
+  firstLineText: TextWithMetadata[];
+  secondLineText: TextWithMetadata[];
+  marginLeft?: string;
 };
 
-const HeadlineSection: FC<Props> = ({ initialText, highlightedText, textAfterHighlightedText }) => {
+const HeadlineSection: FC<Props> = ({
+  globalYScroll,
+  containerRef,
+  firstLineText,
+  secondLineText,
+  marginLeft = '18%'
+}) => {
+  const [localYScroll, setLocalYScroll] = useState<number>();
+  const [percentageOfPageVisible, setPercentageOfScreenVisible] = useState<number>(0);
+
+  useEffect(() => {
+    if (containerRef?.current) {
+      setPercentageOfScreenVisible(globalYScroll / containerRef.current.offsetTop);
+    }
+  }, [globalYScroll, containerRef]);
+
+  useEffect(() => {
+    if (containerRef?.current) {
+      setLocalYScroll(globalYScroll - containerRef.current.offsetTop);
+    }
+  }, [globalYScroll, containerRef]);
+
+  // Because there's no opacity for the first 35 % of the page!
+  const headlineOpacity = useAppearingText(35, percentageOfPageVisible);
+
+  const textTransformValue = localYScroll ? localYScroll / 20 : 0;
+  const textTransformValueNegated = textTransformValue * -1;
   return (
-    <Grid container justifyContent="center" sx={{ mt: 32 }}>
-      <Grid item xs={6}>
+    <>
+      <span>
+        {firstLineText.map((textBit) => (
+          <Typography
+            key={textBit.text}
+            color={textBit.color}
+            variant={textBit.variant}
+            component="span"
+            sx={{
+              opacity: headlineOpacity,
+              display: 'inline-block',
+              transform: `translate(${textTransformValue}px)`
+            }}>
+            {textBit.text}&nbsp;
+          </Typography>
+        ))}
+      </span>
+      {secondLineText.map((textBit) => (
         <Typography
-          color="primary.transparent"
-          variant="PoppinsSmall-h1"
-          component="span"
+          key={textBit.text}
+          color={textBit.color}
+          variant={textBit.variant}
+          component="h1"
           sx={{
-            display: 'inline'
-          }}
-          textAlign="start">
-          {initialText}{' '}
-        </Typography>
-        <Typography
-          color="primary.main"
-          variant="TobiasSmall-h1"
-          component="span"
-          sx={{
-            display: 'inline'
+            ml: marginLeft,
+            transform: `translate(${textTransformValueNegated}px)`,
+            opacity: headlineOpacity
           }}>
-          {highlightedText}{' '}
+          {textBit.text}&nbsp;
         </Typography>
-        <Typography
-          color="primary.transparent"
-          variant="PoppinsSmall-h1"
-          component="span"
-          sx={{
-            display: 'inline'
-          }}
-          textAlign="start">
-          {textAfterHighlightedText}
-        </Typography>
-      </Grid>
-    </Grid>
+      ))}
+    </>
   );
 };
 
