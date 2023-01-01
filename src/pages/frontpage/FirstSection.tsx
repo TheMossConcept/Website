@@ -23,14 +23,17 @@ const FrontpageSection: FC<Props> = ({ scrollY: globalYScroll }) => {
 
   return (
     <Grid
+      item
       container
+      xs={12}
       ref={containerRef}
       alignItems="flex-start"
       justifyContent="flex-start"
       sx={{
         height: '1455px',
         pt: 32,
-        backgroundColor: '#383838'
+        mb: 46,
+        backgroundColor: 'secondary.main'
       }}>
       <TextContainer>
         <HeadlineSection

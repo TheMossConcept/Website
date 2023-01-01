@@ -2,6 +2,8 @@ import { FC, useEffect, useState } from 'react';
 
 import InitialSection from './InitialSection';
 import FirstSection from './FirstSection';
+import SecondSection from './SecondSection';
+import { Grid, Typography } from '@mui/material';
 
 const Frontpage: FC = () => {
   const [scrollY, setScollY] = useState(0);
@@ -14,10 +16,11 @@ const Frontpage: FC = () => {
   }, []);
 
   return (
-    <>
+    <Grid container>
       <InitialSection scrollY={scrollY} />
       <FirstSection scrollY={scrollY} />
-    </>
+      <SecondSection scrollY={scrollY} />
+    </Grid>
   );
 };
 

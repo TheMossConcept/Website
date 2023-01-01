@@ -59,20 +59,22 @@ const HeadlineSection: FC<Props> = ({
           </Typography>
         ))}
       </span>
-      {secondLineText.map((textBit) => (
-        <Typography
-          key={textBit.text}
-          color={textBit.color}
-          variant={textBit.variant}
-          component="h1"
-          sx={{
-            ml: marginLeft,
-            transform: `translate(${textTransformValueNegated}px)`,
-            opacity: headlineOpacity
-          }}>
-          {textBit.text}&nbsp;
-        </Typography>
-      ))}
+      <span style={{ marginLeft }}>
+        {secondLineText.map((textBit) => (
+          <Typography
+            key={textBit.text}
+            color={textBit.color}
+            variant={textBit.variant}
+            component="span"
+            sx={{
+              opacity: headlineOpacity,
+              display: 'inline-block',
+              transform: `translate(${textTransformValueNegated}px)`
+            }}>
+            {textBit.text}&nbsp;
+          </Typography>
+        ))}
+      </span>
     </>
   );
 };
