@@ -1,7 +1,8 @@
-import { Box, Divider, Grid, IconButton, Typography } from '@mui/material';
+import { Box, Grid, IconButton, Typography } from '@mui/material';
 import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import { useNavigate } from 'react-router-dom';
+import InteractiveLink from './InteractiveLink';
 
 type Props = { isOpenState: [boolean, Dispatch<SetStateAction<boolean>>] };
 
@@ -9,26 +10,15 @@ type Props = { isOpenState: [boolean, Dispatch<SetStateAction<boolean>>] };
 type NavigationItemProps = { text: string; link: string };
 
 const NavigationItem: FC<NavigationItemProps> = ({ text, link }) => {
-  const [width, setWidth] = useState(0);
-
   const navigate = useNavigate();
 
   return (
-    <Typography
+    <InteractiveLink
+      text={text}
+      navigate={() => navigate(link)}
       variant="PoppinsSmall-h1"
-      sx={{ color: 'text.primary', width: 'fit-content', cursor: 'pointer' }}
-      onMouseOver={() => {
-        setWidth(100);
-      }}
-      onClick={() => navigate(link)}
-      onMouseOut={() => {
-        setWidth(0);
-      }}>
-      {text}
-      <Divider
-        sx={{ borderColor: 'text.primary', width: `${width}%`, transition: 'width 500ms ease' }}
-      />
-    </Typography>
+      color="text.primary"
+    />
   );
 };
 

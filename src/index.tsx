@@ -26,6 +26,7 @@ const theme = createTheme({
       defaultProps: {
         variantMapping: {
           'PoppinsBig-h1': 'h1',
+          'PoppinsBig-h2': 'h2',
           'PoppinsBig-body': 'span',
           'PoppinsBig-button': 'span',
           'PoppinsBig-subtitle2': 'h2',
@@ -34,6 +35,7 @@ const theme = createTheme({
           'PoppinsSmall-button': 'span',
           'PoppinsSmall-subtitle2': 'h2',
           'TobiasBig-h1': 'h2',
+          'TobiasBig-h2': 'h2',
           'TobiasBig-subtitle1': 'h2',
           'TobiasSmall-h1': 'h1',
           'TobiasSmall-subtitle1': 'h2'
@@ -48,6 +50,12 @@ const theme = createTheme({
       fontSize: 105,
       lineHeight: '110%',
       letterSpacing: 0
+    },
+    'PoppinsBig-h2': {
+      fontFamily: 'Poppins',
+      fontWeight: 500,
+      fontSize: 76,
+      lineHeight: '100%'
     },
     'PoppinsBig-subtitle2': {
       fontFamily: 'Poppins',
@@ -91,13 +99,18 @@ const theme = createTheme({
       fontFamily: 'Poppins',
       fontWeight: 500,
       fontSize: 16,
-      lineHeight: '120%',
-      textDecoration: 'underline'
+      lineHeight: '120%'
     },
     'TobiasBig-h1': {
       fontFamily: 'Tobias',
       fontWeight: 500,
       fontSize: 105,
+      lineHeight: '100%'
+    },
+    'TobiasBig-h2': {
+      fontFamily: 'Tobias',
+      fontWeight: 600,
+      fontSize: 72,
       lineHeight: '100%'
     },
     'TobiasBig-subtitle1': {

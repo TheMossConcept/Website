@@ -1,5 +1,5 @@
 import { Typography, TypographyProps } from '@mui/material';
-import { FC, RefObject, useEffect, useState } from 'react';
+import { FC, RefObject, useLayoutEffect, useState } from 'react';
 import useAppearingText from '../../utilities/useAppearingText';
 
 type TextWithMetadata = {
@@ -24,13 +24,13 @@ const HeadlineSection: FC<Props> = ({
   const [localYScroll, setLocalYScroll] = useState<number>();
   const [percentageOfPageVisible, setPercentageOfScreenVisible] = useState<number>(0);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (containerRef?.current) {
       setPercentageOfScreenVisible(globalYScroll / containerRef.current.offsetTop);
     }
   }, [globalYScroll, containerRef]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (containerRef?.current) {
       setLocalYScroll(globalYScroll - containerRef.current.offsetTop);
     }

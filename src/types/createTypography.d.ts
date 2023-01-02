@@ -10,6 +10,7 @@ declare module '@mui/material/styles' {
   interface TypographyVariantsOptions {
     // PoppinsBig
     'PoppinsBig-h1'?: React.CSSProperties;
+    'PoppinsBig-h2'?: React.CSSProperties;
     'PoppinsBig-subtitle2'?: React.CSSProperties;
     'PoppinsBig-body'?: React.CSSProperties;
     'PoppinsBig-button'?: React.CSSProperties;
@@ -22,6 +23,7 @@ declare module '@mui/material/styles' {
 
     // TobiasBig
     'TobiasBig-h1'?: React.CSSProperties;
+    'TobiasBig-h2'?: React.CSSProperties;
     'TobiasBig-subtitle1'?: React.CSSProperties;
 
     // TobiasSmall
@@ -31,6 +33,7 @@ declare module '@mui/material/styles' {
   interface TypographyOptions {
     // PoppinsBig
     'PoppinsBig-h1'?: React.CSSProperties;
+    'PoppinsBig-h2'?: React.CSSProperties;
     'PoppinsBig-subtitle2'?: React.CSSProperties;
     'PoppinsBig-body'?: React.CSSProperties;
     'PoppinsBig-button'?: React.CSSProperties;
@@ -43,6 +46,7 @@ declare module '@mui/material/styles' {
 
     // TobiasBig
     'TobiasBig-h1'?: React.CSSProperties;
+    'TobiasBig-h2'?: React.CSSProperties;
     'TobiasBig-subtitle1'?: React.CSSProperties;
 
     // TobiasSmall
@@ -56,6 +60,7 @@ declare module '@mui/material/Typography' {
   interface TypographyPropsVariantOverrides {
     // PoppinsBig
     'PoppinsBig-h1': true;
+    'PoppinsBig-h2': true;
     'PoppinsBig-subtitle2': true;
     'PoppinsBig-body': true;
     'PoppinsBig-button': true;
@@ -68,6 +73,7 @@ declare module '@mui/material/Typography' {
 
     // TobiasBig
     'TobiasBig-h1'?: true;
+    'TobiasBig-h2'?: true;
     'TobiasBig-subtitle1'?: true;
 
     // TobiasSmall

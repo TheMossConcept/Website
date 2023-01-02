@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useRef, useState } from 'react';
 import { Grid, Typography } from '@mui/material';
 import FirstSubpageSection from './subpage/FirstSubpageSection';
 import TextSection from '../components/sections/TextSection';
@@ -7,10 +7,18 @@ import TallImage from '../assets/Images/tall-image.jpg';
 import MediaSection from '../components/sections/MediaSection';
 import MainPointSection from '../components/sections/MainPointSection';
 import ContactSection from '../components/sections/ContactSection';
+import InteractiveLink from '../components/InteractiveLink';
+import { useNavigate } from 'react-router';
+import HeadlineSection from '../components/sections/HeadlineSection';
+import useYScroll from '../utilities/useYScroll';
 
 const ConceptPage: FC = () => {
+  const headlineContainerRef = useRef(null);
+  const scrollY = useYScroll();
+  const navigate = useNavigate();
+
   return (
-    <>
+    <Grid container sx={{ bgcolor: 'text.secondary' }}>
       <FirstSubpageSection />
       <TextSection
         textSections={[
@@ -45,30 +53,31 @@ const ConceptPage: FC = () => {
       />
       <ContactSection />
       {/* This will become its own section in time! */}
-      <Grid item container xs={12} spacing={4} alignContent="flex-end" sx={{ mt: 32 }}>
+      <Grid item container xs={12} spacing={5} alignContent="flex-end" sx={{ mt: 32 }}>
         <Grid item xs={6}>
           <img src={TallImage} style={{ width: '100%', height: 'auto' }} />
         </Grid>
-        <Grid item xs={6} alignSelf="flex-end" sx={{ pb: 4 }}>
-          <Typography
-            sx={{ fontFamily: 'Tobias', fontSize: '72px', lineHeight: 1 }}
-            color="primary">
-            Approach
-          </Typography>
-          <Typography
-            sx={{ fontFamily: 'Poppins', fontSize: '76px', ml: '18%' }}
-            color="primary.transparent">
-            to customers
-          </Typography>
+        <Grid item xs={6} alignSelf="flex-end" sx={{ pb: 4 }} ref={headlineContainerRef}>
+          <HeadlineSection
+            globalYScroll={scrollY}
+            containerRef={headlineContainerRef}
+            firstLineText={[{ text: 'Approach', color: 'primary', variant: 'TobiasBig-h2' }]}
+            secondLineText={[
+              { text: 'to customers', color: 'primary.transparent', variant: 'PoppinsBig-h2' }
+            ]}
+          />
           <Typography variant="PoppinsBig-subtitle2" color="secondary" sx={{ mb: 4, mr: 18 }}>
             We aim to create healthy, long lasting relationships with our customers.
           </Typography>
-          <Typography variant="PoppinsBig-button" color="secondary.transparent">
-            Continue to read
-          </Typography>
+          <InteractiveLink
+            text="Continue to read"
+            navigate={() => navigate('/approach')}
+            variant="PoppinsBig-button"
+            color="secondary.transparent"
+          />
         </Grid>
       </Grid>
-    </>
+    </Grid>
   );
 };
 

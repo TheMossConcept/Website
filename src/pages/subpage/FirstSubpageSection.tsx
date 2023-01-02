@@ -7,28 +7,18 @@ type Props = {};
 
 const FirstSubpageSection: FC<Props> = () => {
   return (
-    <Grid container>
+    <Grid container item xs={12}>
       <Grid item xs={6}>
         <Box sx={{ marginTop: '53.55%', ml: '30px' }}>
-          <Typography
-            component="span"
-            sx={{ fontFamily: 'Poppins', fontSize: '72px', fontWeight: 500, lineHeight: 0.7 }}
-            color="#383838">
+          <Typography component="span" variant="PoppinsBig-h2" color="#383838">
             A{' '}
           </Typography>
-          <Typography
-            component="span"
-            sx={{ fontFamily: 'Tobias', fontSize: '76px', fontWeight: 500, lineHeight: 0.7 }}
-            color="#383838">
+          <Typography component="span" variant="TobiasBig-h2" color="#383838">
             disruptive
           </Typography>
           <Typography
+            variant="PoppinsBig-h2"
             sx={{
-              fontFamily: 'Poppins',
-              fontSize: '72px',
-              fontWeight: 500,
-              textAlign: 'right',
-              lineHeight: 0.7,
               mt: '18px',
               mr: '54px'
             }}

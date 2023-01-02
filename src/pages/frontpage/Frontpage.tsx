@@ -1,25 +1,34 @@
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 
 import InitialSection from './InitialSection';
 import FirstSection from './FirstSection';
 import SecondSection from './SecondSection';
-import { Grid, Typography } from '@mui/material';
+import { Grid } from '@mui/material';
+import MediaSection from '../../components/sections/MediaSection';
+import SecondSectionImage from '../../assets/Images/frontpage_second_section_image.jpg';
+import ThirdSectionImage from '../../assets/Images/frontpage_third_section_image.jpg';
+import TallImage from '../../assets/Images/tall-image.jpg';
+import FourthSection from './FourthSection';
+import useYScroll from '../../utilities/useYScroll';
 
 const Frontpage: FC = () => {
-  const [scrollY, setScollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => setScollY(window.scrollY);
-    window.addEventListener('scroll', handleScroll);
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const scrollY = useYScroll();
 
   return (
-    <Grid container>
+    <Grid container sx={{ bgcolor: 'text.secondary' }}>
       <InitialSection scrollY={scrollY} />
       <FirstSection scrollY={scrollY} />
       <SecondSection scrollY={scrollY} />
+      <MediaSection imageUrl={ThirdSectionImage} mediaLocation="full-screen" />
+      <FourthSection scrollY={scrollY} />
+      <Grid container spacing={4} sx={{ mt: 32 }}>
+        <Grid item xs={6} sx={{ mt: 29 }}>
+          <img src={TallImage} style={{ width: '100%', height: 'auto' }} />
+        </Grid>
+        <Grid item xs={6}>
+          <img src={SecondSectionImage} style={{ width: '100%', height: 'auto' }} />
+        </Grid>
+      </Grid>
     </Grid>
   );
 };

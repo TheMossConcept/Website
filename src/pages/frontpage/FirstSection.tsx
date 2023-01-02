@@ -1,10 +1,12 @@
 import { Grid, Typography } from '@mui/material';
-import { FC, useRef, useState, useEffect } from 'react';
+import { FC, useRef, useState, useLayoutEffect } from 'react';
 import TextContainer from '../../components/TextContainer';
 import useAppearingText from '../../utilities/useAppearingText';
 import FirstSubSectionImage from '../../assets/Images/frontpage_first_section_image.jpg';
 import MediaSection from '../../components/sections/MediaSection';
 import HeadlineSection from '../../components/sections/HeadlineSection';
+import InteractiveLink from '../../components/InteractiveLink';
+import { useNavigate } from 'react-router';
 
 type Props = { scrollY: number };
 
@@ -12,7 +14,7 @@ const FrontpageSection: FC<Props> = ({ scrollY: globalYScroll }) => {
   const [percentageOfPageVisible, setPercentageOfScreenVisible] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (containerRef?.current) {
       setPercentageOfScreenVisible(globalYScroll / containerRef.current.offsetTop);
     }
@@ -20,6 +22,8 @@ const FrontpageSection: FC<Props> = ({ scrollY: globalYScroll }) => {
 
   const firstSectionOpacity = useAppearingText(50, percentageOfPageVisible);
   const secondSectionOpacity = useAppearingText(55, percentageOfPageVisible);
+
+  const navigate = useNavigate();
 
   return (
     <Grid
@@ -70,12 +74,13 @@ const FrontpageSection: FC<Props> = ({ scrollY: globalYScroll }) => {
           Perfectly tailored software that generates as much value as possible for your
           organisation.
         </Typography>
-        <Typography
-          color="text.primary"
+        <InteractiveLink
+          text="Read more about our concept"
+          navigate={() => navigate('/concept')}
           variant="PoppinsSmall-button"
-          sx={{ marginTop: '80px', display: 'block' }}>
-          Read more about our concept
-        </Typography>
+          color="text.primary"
+          marginTop={10}
+        />
       </TextContainer>
       <MediaSection imageUrl={FirstSubSectionImage} mediaLocation="left" />
     </Grid>

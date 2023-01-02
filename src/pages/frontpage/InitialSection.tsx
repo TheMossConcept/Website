@@ -1,5 +1,5 @@
 import { Typography } from '@mui/material';
-import { FC, useEffect, useState } from 'react';
+import { FC, useLayoutEffect, useState } from 'react';
 import TextContainer from '../../components/TextContainer';
 
 type InitialSectionProps = Pick<ContentProps, 'scrollY'>;
@@ -8,7 +8,7 @@ type InitialSectionProps = Pick<ContentProps, 'scrollY'>;
 // for the text which is a bit delayed compared to the background image
 const InitialSection: FC<InitialSectionProps> = ({ scrollY }) => {
   const [rightPosition, setRightPosition] = useState(100);
-  useEffect(() => {
+  useLayoutEffect(() => {
     setRightPosition(0);
   }, []);
 
@@ -35,7 +35,7 @@ type ContentProps = Pick<MoveableLineProps, 'scrollY'>;
 
 const Content: FC<ContentProps> = ({ scrollY }) => {
   const [opacity, setOpacity] = useState(0);
-  useEffect(() => {
+  useLayoutEffect(() => {
     setOpacity(1);
   }, []);
 
@@ -58,7 +58,7 @@ type MoveableLineProps = { scrollY: number };
 
 const FirstLineWithAnimation: FC<MoveableLineProps> = ({ scrollY }) => {
   const [marginLeft, setMarginLeft] = useState(-54.02);
-  useEffect(() => {
+  useLayoutEffect(() => {
     setMarginLeft(0);
   }, []);
 
@@ -82,7 +82,7 @@ const FirstLineWithAnimation: FC<MoveableLineProps> = ({ scrollY }) => {
 
 const SecondLineWithAnimation: FC<MoveableLineProps> = ({ scrollY }) => {
   const [marginLeft, setMarginLeft] = useState(418.52);
-  useEffect(() => {
+  useLayoutEffect(() => {
     setMarginLeft(354);
   }, []);
 
@@ -106,7 +106,7 @@ const SecondLineWithAnimation: FC<MoveableLineProps> = ({ scrollY }) => {
 
 const ThirdLineWithAnimation: FC = () => {
   const [marginLeft, setMarginLeft] = useState(58.56);
-  useEffect(() => {
+  useLayoutEffect(() => {
     setMarginLeft(118);
   }, []);
 

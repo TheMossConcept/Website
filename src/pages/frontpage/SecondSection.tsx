@@ -4,11 +4,18 @@ import HeadlineSection from '../../components/sections/HeadlineSection';
 import TextContainer from '../../components/TextContainer';
 import FirstSubSectionImage from '../../assets/Images/frontpage_first_section_image.jpg';
 import SecondSubSectionImage from '../../assets/Images/frontpage_second_section_image.jpg';
+import InteractiveLink from '../../components/InteractiveLink';
+import { useNavigate } from 'react-router';
+import useAppearingText from '../../utilities/useAppearingText';
 
 type Props = { scrollY: number };
 
 const SecondSection: FC<Props> = ({ scrollY: globalYScroll }) => {
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const navigate = useNavigate();
+
+  // const firstTextOpacity = useAppearingText();
 
   return (
     <Grid
@@ -19,11 +26,9 @@ const SecondSection: FC<Props> = ({ scrollY: globalYScroll }) => {
       alignItems="flex-start"
       justifyContent="flex-start"
       sx={{
-        height: '1455px',
-        pt: 32,
-        backgroundColor: 'text.secondary'
+        pt: 32
       }}>
-      <Grid item sx={{ ml: 48, mb: 10 }} xs={12}>
+      <Grid item sx={{ ml: 40, mb: 10 }} xs={12}>
         <HeadlineSection
           containerRef={containerRef}
           globalYScroll={globalYScroll}
@@ -53,13 +58,20 @@ const SecondSection: FC<Props> = ({ scrollY: globalYScroll }) => {
           <img src={SecondSubSectionImage} style={{ width: '100%', height: 'auto' }} />
         </Grid>
         <Grid item xs={6} alignSelf="center">
-          <TextContainer>
+          <TextContainer textPosition="right">
             <Typography color="primary.main" variant="PoppinsBig-subtitle2">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Justo ut habitant sit cras.
               Aliquam condimentum id nulla lobortis placerat sapien sagittis. Morbi lacus, orci
               tristique pellentesque quisque risus cum.
             </Typography>
           </TextContainer>
+          <InteractiveLink
+            text="Read more about our values, vision and mission"
+            color="primary.transparent"
+            variant="PoppinsSmall-button"
+            navigate={() => navigate('/values')}
+            marginTop={10}
+          />
         </Grid>
       </Grid>
     </Grid>
