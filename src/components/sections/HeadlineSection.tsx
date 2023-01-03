@@ -22,13 +22,6 @@ const HeadlineSection: FC<Props> = ({
   marginLeft = '18%'
 }) => {
   const [localYScroll, setLocalYScroll] = useState<number>();
-  const [percentageOfPageVisible, setPercentageOfScreenVisible] = useState<number>(0);
-
-  useLayoutEffect(() => {
-    if (containerRef?.current) {
-      setPercentageOfScreenVisible(globalYScroll / containerRef.current.offsetTop);
-    }
-  }, [globalYScroll, containerRef]);
 
   useLayoutEffect(() => {
     if (containerRef?.current) {
@@ -37,7 +30,7 @@ const HeadlineSection: FC<Props> = ({
   }, [globalYScroll, containerRef]);
 
   // Because there's no opacity for the first 35 % of the page!
-  const headlineOpacity = useAppearingText(35, percentageOfPageVisible);
+  const headlineOpacity = useAppearingText(35, globalYScroll, containerRef);
 
   const textTransformValue = localYScroll ? localYScroll / 20 : 0;
   const textTransformValueNegated = textTransformValue * -1;

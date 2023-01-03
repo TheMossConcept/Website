@@ -1,4 +1,4 @@
-import { FC, useRef, useState } from 'react';
+import { FC, useRef } from 'react';
 import { Grid, Typography } from '@mui/material';
 import FirstSubpageSection from './subpage/FirstSubpageSection';
 import TextSection from '../components/sections/TextSection';

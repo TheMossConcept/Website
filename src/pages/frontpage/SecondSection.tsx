@@ -15,7 +15,14 @@ const SecondSection: FC<Props> = ({ scrollY: globalYScroll }) => {
 
   const navigate = useNavigate();
 
-  // const firstTextOpacity = useAppearingText();
+  const firstTextOpacity = useAppearingText(10, globalYScroll, containerRef);
+  const secondTextOpacity = useAppearingText(30, globalYScroll, containerRef);
+
+  console.log(
+    containerRef?.current
+      ? `Container ref offsetTop: ${containerRef.current.offsetTop}. globalYScroll: ${globalYScroll}`
+      : ''
+  );
 
   return (
     <Grid
@@ -44,22 +51,34 @@ const SecondSection: FC<Props> = ({ scrollY: globalYScroll }) => {
       <Grid container spacing={19} sx={{ mb: 10 }}>
         <Grid item xs={6} alignSelf="center">
           <TextContainer>
-            <Typography color="primary.main" variant="PoppinsBig-subtitle2">
+            <Typography
+              color="primary.main"
+              variant="PoppinsBig-subtitle2"
+              sx={{ opacity: firstTextOpacity }}>
               We offer a fixed price which is unique in the bespoke software development industry.
             </Typography>
           </TextContainer>
         </Grid>
         <Grid item xs={6}>
-          <img src={FirstSubSectionImage} style={{ width: '100%', height: 'auto' }} />
+          <img
+            src={FirstSubSectionImage}
+            style={{ width: '100%', height: 'auto', opacity: firstTextOpacity }}
+          />
         </Grid>
       </Grid>
       <Grid container spacing={19}>
         <Grid item xs={6}>
-          <img src={SecondSubSectionImage} style={{ width: '100%', height: 'auto' }} />
+          <img
+            src={SecondSubSectionImage}
+            style={{ width: '100%', height: 'auto', opacity: secondTextOpacity }}
+          />
         </Grid>
         <Grid item xs={6} alignSelf="center">
           <TextContainer textPosition="right">
-            <Typography color="primary.main" variant="PoppinsBig-subtitle2">
+            <Typography
+              color="primary.main"
+              variant="PoppinsBig-subtitle2"
+              sx={{ opacity: secondTextOpacity }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Justo ut habitant sit cras.
               Aliquam condimentum id nulla lobortis placerat sapien sagittis. Morbi lacus, orci
               tristique pellentesque quisque risus cum.

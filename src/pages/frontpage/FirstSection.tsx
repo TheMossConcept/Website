@@ -1,5 +1,5 @@
 import { Grid, Typography } from '@mui/material';
-import { FC, useRef, useState, useLayoutEffect } from 'react';
+import { FC, useRef } from 'react';
 import TextContainer from '../../components/TextContainer';
 import useAppearingText from '../../utilities/useAppearingText';
 import FirstSubSectionImage from '../../assets/Images/frontpage_first_section_image.jpg';
@@ -11,17 +11,10 @@ import { useNavigate } from 'react-router';
 type Props = { scrollY: number };
 
 const FrontpageSection: FC<Props> = ({ scrollY: globalYScroll }) => {
-  const [percentageOfPageVisible, setPercentageOfScreenVisible] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  useLayoutEffect(() => {
-    if (containerRef?.current) {
-      setPercentageOfScreenVisible(globalYScroll / containerRef.current.offsetTop);
-    }
-  }, [globalYScroll, containerRef]);
-
-  const firstSectionOpacity = useAppearingText(50, percentageOfPageVisible);
-  const secondSectionOpacity = useAppearingText(55, percentageOfPageVisible);
+  const firstSectionOpacity = useAppearingText(40, globalYScroll, containerRef);
+  const secondSectionOpacity = useAppearingText(45, globalYScroll, containerRef);
 
   const navigate = useNavigate();
 
