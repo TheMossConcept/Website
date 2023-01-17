@@ -13,7 +13,7 @@ const FourthSection: FC<Props> = ({ scrollY: globalYScroll }) => {
   const navigate = useNavigate();
 
   return (
-    <Grid item xs={12} sx={{ mt: 32 }} ref={containerRef}>
+    <Grid item xs={12} sx={{ pt: 32 }} ref={containerRef}>
       <TextContainer>
         <HeadlineSection
           globalYScroll={globalYScroll}
@@ -36,7 +36,7 @@ const FourthSection: FC<Props> = ({ scrollY: globalYScroll }) => {
           navigate={() => navigate('/approach')}
           variant="PoppinsSmall-button"
           color="secondary.transparent"
-          marginTop={10}
+          sx={{ marginTop: 10 }}
         />
       </TextContainer>
     </Grid>

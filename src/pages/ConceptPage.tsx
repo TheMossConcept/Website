@@ -13,12 +13,12 @@ import HeadlineSection from '../components/sections/HeadlineSection';
 import useYScroll from '../utilities/useYScroll';
 
 const ConceptPage: FC = () => {
-  const headlineContainerRef = useRef(null);
+  const containerRef = useRef(null);
   const scrollY = useYScroll();
   const navigate = useNavigate();
 
   return (
-    <Grid container sx={{ bgcolor: 'text.secondary' }}>
+    <Grid container sx={{ bgcolor: 'text.secondary' }} ref={containerRef}>
       <FirstSubpageSection />
       <TextSection
         textSections={[
@@ -57,10 +57,10 @@ const ConceptPage: FC = () => {
         <Grid item xs={6}>
           <img src={TallImage} style={{ width: '100%', height: 'auto' }} />
         </Grid>
-        <Grid item xs={6} alignSelf="flex-end" sx={{ pb: 4 }} ref={headlineContainerRef}>
+        <Grid item xs={6} alignSelf="flex-end" sx={{ pb: 4 }}>
           <HeadlineSection
             globalYScroll={scrollY}
-            containerRef={headlineContainerRef}
+            containerRef={containerRef}
             firstLineText={[{ text: 'Approach', color: 'primary', variant: 'TobiasBig-h2' }]}
             secondLineText={[
               { text: 'to customers', color: 'primary.transparent', variant: 'PoppinsBig-h2' }

@@ -29,11 +29,11 @@ const HeadlineSection: FC<Props> = ({
     }
   }, [globalYScroll, containerRef]);
 
-  // Because there's no opacity for the first 35 % of the page!
-  const headlineOpacity = useAppearingText(35, globalYScroll, containerRef);
+  const headlineOpacity = useAppearingText(containerRef, 20, 1.2);
 
-  const textTransformValue = localYScroll ? localYScroll / 20 : 0;
+  const textTransformValue = localYScroll ? localYScroll / 25 : 0;
   const textTransformValueNegated = textTransformValue * -1;
+
   return (
     <>
       <span>

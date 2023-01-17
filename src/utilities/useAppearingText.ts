@@ -1,21 +1,29 @@
 import { RefObject, useLayoutEffect, useState } from 'react';
+import useYScroll from './useYScroll';
 
 const useAppearingText = (
+  containerRef: RefObject<HTMLElement>,
   textVisibilityPercentage: number,
-  globalYScroll: number,
-  containerRef: RefObject<HTMLElement>
+  opacityIncreaseFactor = 1.5
 ) => {
-  const [percentageOfPageVisible, setPercentageOfScreenVisible] = useState<number>(0);
+  // This is just to be able to trigger the layout effect every time we scroll
+  const scrollY = useYScroll();
+  const [percentageOfPageVisible, setPercentageOfPageVisible] = useState<number>(0);
 
   useLayoutEffect(() => {
     if (containerRef?.current) {
-      setPercentageOfScreenVisible(globalYScroll / containerRef.current.offsetTop);
+      const containerBoundingRect = containerRef.current.getBoundingClientRect();
+      setPercentageOfPageVisible(
+        (containerBoundingRect.height / containerBoundingRect.bottom) * 100
+      );
     }
-  }, [globalYScroll, containerRef]);
+  }, [containerRef, scrollY]);
 
-  const opacityIncreaseFactor = 100 / (100 - textVisibilityPercentage);
-
-  return (percentageOfPageVisible - textVisibilityPercentage / 100) * opacityIncreaseFactor;
+  // Don't start show anything until we hit the specified percentage of the page visible. When we do,
+  // the opacity is whatever percentage of the page that is visible above that divided by 100
+  // (70 - 30) / 100 = 0.4 for a page that is 70 % visible with a textVisibilityPercentage of 30.
+  // times the opacity increase factor
+  return ((percentageOfPageVisible - textVisibilityPercentage) / 100) * opacityIncreaseFactor;
 };
 
 export default useAppearingText;

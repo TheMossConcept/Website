@@ -15,14 +15,9 @@ const SecondSection: FC<Props> = ({ scrollY: globalYScroll }) => {
 
   const navigate = useNavigate();
 
-  const firstTextOpacity = useAppearingText(10, globalYScroll, containerRef);
-  const secondTextOpacity = useAppearingText(30, globalYScroll, containerRef);
-
-  console.log(
-    containerRef?.current
-      ? `Container ref offsetTop: ${containerRef.current.offsetTop}. globalYScroll: ${globalYScroll}`
-      : ''
-  );
+  const firstTextOpacity = useAppearingText(containerRef, 90, 4);
+  const secondTextOpacity = useAppearingText(containerRef, 130, 4);
+  const linkOpacity = useAppearingText(containerRef, 160, 4);
 
   return (
     <Grid
@@ -60,18 +55,12 @@ const SecondSection: FC<Props> = ({ scrollY: globalYScroll }) => {
           </TextContainer>
         </Grid>
         <Grid item xs={6}>
-          <img
-            src={FirstSubSectionImage}
-            style={{ width: '100%', height: 'auto', opacity: firstTextOpacity }}
-          />
+          <img src={FirstSubSectionImage} style={{ width: '100%', height: 'auto' }} />
         </Grid>
       </Grid>
       <Grid container spacing={19}>
         <Grid item xs={6}>
-          <img
-            src={SecondSubSectionImage}
-            style={{ width: '100%', height: 'auto', opacity: secondTextOpacity }}
-          />
+          <img src={SecondSubSectionImage} style={{ width: '100%', height: 'auto' }} />
         </Grid>
         <Grid item xs={6} alignSelf="center">
           <TextContainer textPosition="right">
@@ -89,7 +78,7 @@ const SecondSection: FC<Props> = ({ scrollY: globalYScroll }) => {
             color="primary.transparent"
             variant="PoppinsSmall-button"
             navigate={() => navigate('/values')}
-            marginTop={10}
+            sx={{ marginTop: 10, opacity: linkOpacity }}
           />
         </Grid>
       </Grid>

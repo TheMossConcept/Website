@@ -13,8 +13,9 @@ type Props = { scrollY: number };
 const FrontpageSection: FC<Props> = ({ scrollY: globalYScroll }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const firstSectionOpacity = useAppearingText(40, globalYScroll, containerRef);
-  const secondSectionOpacity = useAppearingText(45, globalYScroll, containerRef);
+  const firstTextSectionOpacity = useAppearingText(containerRef, 82.5, 4);
+  const secondTextSectionOpacity = useAppearingText(containerRef, 87.5, 4);
+  const linkOpacity = useAppearingText(containerRef, 92.5, 4);
 
   const navigate = useNavigate();
 
@@ -50,7 +51,7 @@ const FrontpageSection: FC<Props> = ({ scrollY: globalYScroll }) => {
             marginTop: '80px',
             display: 'block',
             width: '569px',
-            opacity: firstSectionOpacity
+            opacity: firstTextSectionOpacity
           }}>
           We are on a mission to disrupt the software development industry through reuse of generic
           functionality.
@@ -62,7 +63,7 @@ const FrontpageSection: FC<Props> = ({ scrollY: globalYScroll }) => {
             marginTop: '34px',
             display: 'block',
             width: '569px',
-            opacity: secondSectionOpacity
+            opacity: secondTextSectionOpacity
           }}>
           Perfectly tailored software that generates as much value as possible for your
           organisation.
@@ -72,7 +73,7 @@ const FrontpageSection: FC<Props> = ({ scrollY: globalYScroll }) => {
           navigate={() => navigate('/concept')}
           variant="PoppinsSmall-button"
           color="text.primary"
-          marginTop={10}
+          sx={{ marginTop: 10, opacity: linkOpacity }}
         />
       </TextContainer>
       <MediaSection imageUrl={FirstSubSectionImage} mediaLocation="left" />
