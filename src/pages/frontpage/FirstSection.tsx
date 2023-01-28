@@ -53,8 +53,8 @@ const FrontpageSection: FC<Props> = ({ scrollY: globalYScroll }) => {
             width: '569px',
             opacity: firstTextSectionOpacity
           }}>
-          We are on a mission to disrupt the software development industry through reuse of generic
-          functionality.
+          We are on a mission to disrupt the software development industry by cutting to the chase
+          of what is important.
         </Typography>
         <Typography
           variant="PoppinsBig-subtitle2"
@@ -65,8 +65,8 @@ const FrontpageSection: FC<Props> = ({ scrollY: globalYScroll }) => {
             width: '569px',
             opacity: secondTextSectionOpacity
           }}>
-          Perfectly tailored software that generates as much value as possible for your
-          organisation.
+          We create fully custom, stable, and flexible systems that can be changed and extended
+          seamlessly as the world, and the needs of your business, change and evolve.
         </Typography>
         <InteractiveLink
           text="Read more about our concept"

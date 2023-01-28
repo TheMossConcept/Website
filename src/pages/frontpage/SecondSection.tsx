@@ -30,16 +30,14 @@ const SecondSection: FC<Props> = ({ scrollY: globalYScroll }) => {
       sx={{
         pt: 32
       }}>
-      <Grid item sx={{ ml: 40, mb: 10 }} xs={12}>
+      <Grid item sx={{ ml: 40, mb: 10 }} xs={6}>
         <HeadlineSection
           containerRef={containerRef}
           globalYScroll={globalYScroll}
-          firstLineText={[
-            { text: 'Values, vision', color: 'primary.main', variant: 'TobiasBig-h1' }
-          ]}
+          firstLineText={[{ text: 'A committed', color: 'primary.main', variant: 'TobiasBig-h1' }]}
           secondLineText={[
-            { text: 'and', color: 'primary.transparent', variant: 'PoppinsBig-h1' },
-            { text: 'mission', color: 'primary.main', variant: 'TobiasBig-h1' }
+            { text: 'partnership', color: 'primary.transparent', variant: 'PoppinsBig-h1' },
+            { text: 'with you', color: 'primary.main', variant: 'TobiasBig-h1' }
           ]}
         />
       </Grid>
@@ -50,7 +48,8 @@ const SecondSection: FC<Props> = ({ scrollY: globalYScroll }) => {
               color="primary.main"
               variant="PoppinsBig-subtitle2"
               sx={{ opacity: firstTextOpacity }}>
-              We offer a fixed price which is unique in the bespoke software development industry.
+              We build close and long lasting partnerships characterized by trust and respect. Our
+              work is iterative and we change and adapt based on your needs and feedback.
             </Typography>
           </TextContainer>
         </Grid>
@@ -68,13 +67,13 @@ const SecondSection: FC<Props> = ({ scrollY: globalYScroll }) => {
               color="primary.main"
               variant="PoppinsBig-subtitle2"
               sx={{ opacity: secondTextOpacity }}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Justo ut habitant sit cras.
-              Aliquam condimentum id nulla lobortis placerat sapien sagittis. Morbi lacus, orci
-              tristique pellentesque quisque risus cum.
+              We always strive to provide more than just highly stable and flexible software. We are
+              experts in translating business processes and workflows into software that supports
+              your work in the best possible way.
             </Typography>
           </TextContainer>
           <InteractiveLink
-            text="Read more about our values, vision and mission"
+            text="Read more about what it is like to work with us"
             color="primary.transparent"
             variant="PoppinsSmall-button"
             navigate={() => navigate('/values')}
