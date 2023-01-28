@@ -30,7 +30,7 @@ const SecondSection: FC<Props> = ({ scrollY: globalYScroll }) => {
       sx={{
         pt: 32
       }}>
-      <Grid item sx={{ ml: 40, mb: 10 }} xs={6}>
+      <Grid item sx={{ ml: 30, mb: 10 }} xs={12}>
         <HeadlineSection
           containerRef={containerRef}
           globalYScroll={globalYScroll}
@@ -76,7 +76,7 @@ const SecondSection: FC<Props> = ({ scrollY: globalYScroll }) => {
             text="Read more about what it is like to work with us"
             color="primary.transparent"
             variant="PoppinsSmall-button"
-            navigate={() => navigate('/values')}
+            navigate={() => navigate('/partnership')}
             sx={{ marginTop: 10, opacity: linkOpacity }}
           />
         </Grid>

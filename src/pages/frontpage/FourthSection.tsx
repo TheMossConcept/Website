@@ -13,27 +13,27 @@ const FourthSection: FC<Props> = ({ scrollY: globalYScroll }) => {
   const navigate = useNavigate();
 
   return (
-    <Grid item xs={12} sx={{ pt: 32 }} ref={containerRef}>
+    <Grid item xs={10} sx={{ pt: 32 }} ref={containerRef}>
       <TextContainer>
         <HeadlineSection
           globalYScroll={globalYScroll}
           containerRef={containerRef}
-          firstLineText={[{ text: 'Approach', color: 'secondary.main', variant: 'TobiasBig-h1' }]}
+          firstLineText={[{ text: 'Our deeper', color: 'secondary.main', variant: 'TobiasBig-h1' }]}
           secondLineText={[
-            { text: 'to customers', color: 'secondary.transparent', variant: 'PoppinsBig-h1' }
+            { text: 'purpose', color: 'secondary.transparent', variant: 'PoppinsBig-h1' }
           ]}
         />
         <Typography
           sx={{ mt: 10, width: '38%' }}
           variant="PoppinsBig-subtitle2"
           color="secondary.main">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Justo ut habitant sit cras.
-          Aliquam condimentum id nulla lobortis placerat sapien sagittis. Morbi lacus, orci
-          tristique pellentesque quisque risus cum.
+          We strongly believe that doing anything that is not rooted in meaning and a purpose from
+          deep within can only be done half-heartedly. That is why The Moss Concept is rooted in a
+          deep purpose.
         </Typography>
         <InteractiveLink
-          text="Explore our approach to our customers"
-          navigate={() => navigate('/approach')}
+          text="Learn more about our underlying purpose"
+          navigate={() => navigate('/purpose')}
           variant="PoppinsSmall-button"
           color="secondary.transparent"
           sx={{ marginTop: 10 }}

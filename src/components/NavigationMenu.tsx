@@ -90,16 +90,10 @@ const NavigationMenu: FC<Props> = ({ isOpenState }) => {
                 <NavigationItem text="Concept" link="/concept" />
               </Grid>
               <Grid item xs={12}>
-                <NavigationItem text="How we work" link="/how" />
+                <NavigationItem text="Our partnership" link="/partnership" />
               </Grid>
               <Grid item xs={12}>
-                <NavigationItem text="Philosophy" link="/philosophy" />
-              </Grid>
-              <Grid item xs={12}>
-                <NavigationItem text="Approach" link="/approach" />
-              </Grid>
-              <Grid item xs={12}>
-                <NavigationItem text="Values" link="/values" />
+                <NavigationItem text="Purpose" link="/purpose" />
               </Grid>
               <Grid item xs={12}>
                 <NavigationItem text="Contact" link="/contact" />

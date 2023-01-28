@@ -1,10 +1,11 @@
 import { FC } from 'react';
 import Topbar from './components/Topbar';
 import Frontpage from './pages/frontpage/Frontpage';
-import ConceptPage from './pages/ConceptPage';
+import ConceptPage from './pages/subpages/ConceptPage';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import LoadingLogo from './components/LoadingLogo';
 import { Box } from '@mui/material';
+import PartnershipPage from './pages/subpages/PartnershipPage';
 
 const App: FC = () => {
   const router = createBrowserRouter([
@@ -23,6 +24,15 @@ const App: FC = () => {
         <LoadingLogo>
           <Topbar />
           <ConceptPage />
+        </LoadingLogo>
+      )
+    },
+    {
+      path: '/partnership',
+      element: (
+        <LoadingLogo>
+          <Topbar />
+          <PartnershipPage />
         </LoadingLogo>
       )
     }

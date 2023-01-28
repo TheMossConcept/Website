@@ -2,14 +2,26 @@ import { Box, Grid, keyframes, Typography } from '@mui/material';
 import { FC, useEffect, useState } from 'react';
 
 const LoadingLogo: FC = ({ children }) => {
-  const [backgroundContainerRightPosition, setBackgroundContainerRightPosition] = useState(100);
-  const [textContainerOpacity, setTextContainerOpacity] = useState(1);
-  const [newPageOpacity, setNewPageOpacity] = useState(0);
+  const initialBackgroundContainerRightPosition = 100;
+  const initialTextContainerOpacity = 1;
+  const initialNewPageOpacity = 0;
+
+  const [backgroundContainerRightPosition, setBackgroundContainerRightPosition] = useState(
+    initialBackgroundContainerRightPosition
+  );
+  const [textContainerOpacity, setTextContainerOpacity] = useState(initialTextContainerOpacity);
+  const [newPageOpacity, setNewPageOpacity] = useState(initialNewPageOpacity);
 
   useEffect(() => {
     setBackgroundContainerRightPosition(0);
     setTextContainerOpacity(0);
     setNewPageOpacity(1);
+
+    return () => {
+      setBackgroundContainerRightPosition(initialBackgroundContainerRightPosition);
+      setTextContainerOpacity(initialTextContainerOpacity);
+      setNewPageOpacity(initialNewPageOpacity);
+    };
   }, []);
 
   return (

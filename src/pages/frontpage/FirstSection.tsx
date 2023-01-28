@@ -65,11 +65,11 @@ const FrontpageSection: FC<Props> = ({ scrollY: globalYScroll }) => {
             width: '569px',
             opacity: secondTextSectionOpacity
           }}>
-          We create fully custom, stable, and flexible systems that can be changed and extended
+          We create fully custom, stable, and flexible software that can be changed and extended
           seamlessly as the world, and the needs of your business, change and evolve.
         </Typography>
         <InteractiveLink
-          text="Read more about our concept"
+          text="Read more about what makes our concept unique"
           navigate={() => navigate('/concept')}
           variant="PoppinsSmall-button"
           color="text.primary"
