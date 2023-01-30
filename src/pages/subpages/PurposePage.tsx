@@ -26,7 +26,7 @@ const PurposePage: FC = () => {
           }
         ]}
         image={FirstSubSectionImage}
-        text="Our purpose is to free up time and energy for what truly matters. In the context of your business, that means better support for your essential workflows, less time wasted on repetitive tasks that do not utilize the skills of your employees fully. In turn, this leads to more productive and happier employees."
+        text="Our purpose is to free up time and energy for what truly matters. In the context of your business, that means better support for your essential workflows and less time wasted on repetitive tasks that do not utilize the skills of your employees fully. In turn, this leads to more productive and happier employees."
       />
       <MainPointSection
         initialText="We envision a world where people are free to do what is most "
@@ -41,8 +41,8 @@ const PurposePage: FC = () => {
       />
       <TextSection
         textSections={[
-          'Quality is a core value because it ensures that the software we produce is stable and reliable enough to free your employees from repetitive tasks and help lighten their workload by appropriately supporting them in their work while simultaneously being flexible enough to stay relevant over time.',
-          'Value generation is a core value because we want the software we develop to help free up time and energy from people. It does not matter how well-made a software system is if it does not fit with the workflows it is meant to support. If it does not fit with the people it is supposed to help, it does not generate value and thereby it becomes irrelevant.'
+          'Quality is a core value because it ensures that the software we produce is stable and reliable enough to be relied upon even for business critical tasks while simultaniously being flexible enough to stay relevant over time.',
+          'Value generation is a core value because we want the software we develop to help free up time and energy. It does not matter how well-made a software system is if it does not fit with the workflows it is meant to support. If it does not fit with the people it is supposed to help, it does not generate value and thereby it becomes irrelevant.'
         ]}
       />
       <MediaSection imageUrl={FirstSubSectionImage} mediaLocation="full-screen" />
