@@ -2,9 +2,12 @@ import { FC } from 'react';
 import FirstSubpageSection from '../../components/sections/FirstSubpageSection';
 import FirstSubSectionImage from '../../assets/Images/frontpage_first_section_image.jpg';
 import MediaSection from '../../components/sections/MediaSection';
+import TallImage from '../../assets/Images/tall-image.jpg';
 import { Grid } from '@mui/material';
 import MainPointSection from '../../components/sections/MainPointSection';
 import TextSection from '../../components/sections/TextSection';
+import ContactSection from '../../components/sections/ContactSection';
+import NextPageSection from '../../components/sections/NextPageSection';
 
 const PartnershipPage: FC = () => {
   return (
@@ -57,6 +60,16 @@ const PartnershipPage: FC = () => {
         initialText="We are a "
         highlightedText="purpose-driven "
         textAfterHighlightedText="company that is here to serve your business and the world"
+      />
+      <ContactSection />
+      <NextPageSection
+        text="Our work is rooted in a deeper purpose."
+        link="/purpose"
+        imageUrl={TallImage}
+        firstLineText={[{ text: 'Our', color: 'primary', variant: 'TobiasBig-h2' }]}
+        secondLineText={[
+          { text: 'purpose', color: 'primary.transparent', variant: 'PoppinsBig-h2' }
+        ]}
       />
     </Grid>
   );

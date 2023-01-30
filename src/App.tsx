@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import LoadingLogo from './components/LoadingLogo';
 import { Box } from '@mui/material';
 import PartnershipPage from './pages/subpages/PartnershipPage';
+import PurposePage from './pages/subpages/PurposePage';
 
 const App: FC = () => {
   const router = createBrowserRouter([
@@ -33,6 +34,15 @@ const App: FC = () => {
         <LoadingLogo>
           <Topbar />
           <PartnershipPage />
+        </LoadingLogo>
+      )
+    },
+    {
+      path: '/purpose',
+      element: (
+        <LoadingLogo>
+          <Topbar />
+          <PurposePage />
         </LoadingLogo>
       )
     }

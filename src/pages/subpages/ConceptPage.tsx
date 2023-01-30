@@ -70,7 +70,7 @@ const ConceptPage: FC = () => {
       />
       <ContactSection />
       <NextPageSection
-        text="We aim to create healthy, long lasting relationships with our customers."
+        text="We work to create partnerships based on trust and respect."
         link="/partnership"
         imageUrl={TallImage}
         firstLineText={[{ text: 'Approach', color: 'primary', variant: 'TobiasBig-h2' }]}
