@@ -6,7 +6,7 @@ type TextWithMetadata = {
   text: string;
 } & Pick<TypographyProps, 'color' | 'variant'>;
 
-type Props = {
+export type HeadlineSectionProps = {
   globalYScroll: number;
   containerRef: RefObject<HTMLElement>;
   firstLineText: TextWithMetadata[];
@@ -14,7 +14,7 @@ type Props = {
   marginLeft?: string;
 };
 
-const HeadlineSection: FC<Props> = ({
+const HeadlineSection: FC<HeadlineSectionProps> = ({
   globalYScroll,
   containerRef,
   firstLineText,
