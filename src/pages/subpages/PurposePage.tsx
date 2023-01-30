@@ -26,7 +26,7 @@ const PurposePage: FC = () => {
           }
         ]}
         image={FirstSubSectionImage}
-        text="Our purpose is to free up time and energy for what truly matters. In the context of your business, that means better support for your essential workflows and less time wasted on repetitive tasks that do not utilize the skills of your employees fully. In turn, this leads to more productive and happier employees."
+        text="Our purpose is to free up time and energy for what truly matters. In the context of your business, that means better support for your essential workflows and less time wasted on repetitive tasks that do not utilize the skills of your employees fully. In turn, this leads to employees who are more productive and fulfilled."
       />
       <MainPointSection
         initialText="We envision a world where people are free to do what is most "
