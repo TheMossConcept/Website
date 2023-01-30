@@ -46,7 +46,7 @@ const PartnershipPage: FC = () => {
       <MediaSection imageUrl={FirstSubSectionImage} mediaLocation="left" />
       <MainPointSection
         initialText="We work to make IT "
-        highlightedText="understandable and relatable "
+        highlightedText="understandable and accessible "
         textAfterHighlightedText="to your business"
       />
       <TextSection
