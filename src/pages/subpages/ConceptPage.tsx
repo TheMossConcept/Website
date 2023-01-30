@@ -65,7 +65,7 @@ const ConceptPage: FC = () => {
       <TextSection
         textSections={[
           'Less time redoing the same functionality over and over with slight variations leads to more time collaborating with you.',
-          'One of our most important tasks is to help you achieve the software solutions that generate most value in your unique business.'
+          'One of our most important tasks is to help you achieve the software solutions that generate most value in your business.'
         ]}
       />
       <ContactSection />
