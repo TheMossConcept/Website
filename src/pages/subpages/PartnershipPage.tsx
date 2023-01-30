@@ -52,7 +52,7 @@ const PartnershipPage: FC = () => {
       <TextSection
         textSections={[
           'We want to demystify the complex and vast world of IT. We want to be your trusted collaborator and help you navigate the complexities and possibilities of IT.',
-          'We will always provide our recommendations and challenge your perceptions when we deem it appropriate, however, in the end, you are the one making informed decisions. That is why it is important to us to be as transparent and clear as possible and work to make IT as understandable and accessible as possible.'
+          'We will always provide our recommendations and challenge your perceptions when we deem it appropriate, however, in the end, you are the one making informed decisions. That is why it is important to us to be transparent and clear and work to make IT understandable and accessible to you.'
         ]}
       />
       <MediaSection imageUrl={FirstSubSectionImage} mediaLocation="full-screen" />
