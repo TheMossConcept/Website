@@ -2,7 +2,8 @@ import { FC } from 'react';
 import { Grid } from '@mui/material';
 import FirstSubpageSection from '../../components/sections/FirstSubpageSection';
 import TextSection from '../../components/sections/TextSection';
-import FirstSubSectionImage from '../../assets/Images/frontpage_first_section_image.jpg';
+import GenericImage from '../../assets/Images/frontpage_first_section_image.jpg';
+import FirstSubSectionImage from '../../assets/Images/stock-photo-coffee-cup-with-leaves-flat-lay-nature-concept-417791386.jpg';
 import TallImage from '../../assets/Images/tall-image.jpg';
 import MediaSection from '../../components/sections/MediaSection';
 import MainPointSection from '../../components/sections/MainPointSection';
@@ -48,7 +49,7 @@ const ConceptPage: FC = () => {
         highlightedText="high quality"
         textAfterHighlightedText="building blocks across systems"
       />
-      <MediaSection imageUrl={FirstSubSectionImage} mediaLocation="full-screen" />
+      <MediaSection imageUrl={GenericImage} mediaLocation="full-screen" />
       <TextSection
         textSections={[
           'Our building blocks constantly improve and evolve so you will have easy access to more advanced features in the future.',
@@ -56,12 +57,12 @@ const ConceptPage: FC = () => {
           'We will build as many custom building blocks as is necessary to build your system exactly as it needs to be. Since we are experts in building small blocks that can easily be composed and reconfigured, your system will be highly flexible.'
         ]}
       />
-      <MediaSection imageUrl={FirstSubSectionImage} mediaLocation="right" />
+      <MediaSection imageUrl={GenericImage} mediaLocation="right" />
       <MainPointSection
         initialText="Small, well-shaped building blocks lead to unprecedented"
         highlightedText="flexibility."
       />
-      <MediaSection imageUrl={FirstSubSectionImage} mediaLocation="full-screen" />
+      <MediaSection imageUrl={GenericImage} mediaLocation="full-screen" />
       <TextSection
         textSections={[
           'Less time redoing the same functionality over and over with slight variations leads to more time collaborating with you.',

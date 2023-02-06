@@ -1,6 +1,8 @@
 import { Typography } from '@mui/material';
 import { FC, useLayoutEffect, useState } from 'react';
 import TextContainer from '../../components/TextContainer';
+/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
+import video from '../../assets/Videos/frontpage_2.mp4';
 
 type InitialSectionProps = Pick<ContentProps, 'scrollY'>;
 
@@ -14,18 +16,32 @@ const InitialSection: FC<InitialSectionProps> = ({ scrollY }) => {
 
   return (
     <div style={{ height: '100vh' }}>
-      <img
-        src="https://cdn.pixabay.com/photo/2021/09/07/11/09/ocean-6603623_1280.jpg"
+      <video
+        autoPlay
+        loop
+        muted
+        style={{
+          right: `${rightPosition}vw`,
+          transition: 'right 1380ms ease-out',
+          position: 'absolute',
+          objectFit: 'fill',
+          maxHeight: '100vh'
+          // We want this to be below everything else!
+        }}>
+        <source src={video} type="video/mp4" />
+      </video>
+      {/*<img
+        src="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
         style={{
           height: '100vh',
           width: `100vw`,
           right: `${rightPosition}vw`,
           transition: 'right 1380ms ease-out',
-          position: 'absolute',
+          position: 'absolute'
           // We want this to be below everything else!
-          zIndex: -1
+          // zIndex: -1
         }}
-      />
+      />*/}
       <Content scrollY={scrollY} />
     </div>
   );
@@ -114,8 +130,8 @@ const ThirdLineWithAnimation: FC = () => {
     <Typography
       color="primary"
       variant="TobiasBig-h1"
-      component="h2"
-      style={{ marginLeft: `${marginLeft}px`, ...lineEnterAnimation }}>
+      component="h1"
+      style={{ marginLeft: `${marginLeft}px`, position: 'relative', ...lineEnterAnimation }}>
       your workflow.
     </Typography>
   );

@@ -2,6 +2,7 @@ import { Box, Grid } from '@mui/material';
 import { FC, useEffect, useState } from 'react';
 import { ReactComponent as DefaultLogo } from '../assets/Images/logo_default.svg';
 import { ReactComponent as MenuLogo } from '../assets/Images/menu_icon.svg';
+import InteractiveMenuIcon from './interactive-icons/InteractiveMenuIcon';
 import NavigationMenu from './NavigationMenu';
 
 const Topbar: FC = () => {
@@ -24,7 +25,7 @@ const Topbar: FC = () => {
               />
             </Grid>
             <Grid item>
-              <MenuLogo
+              <InteractiveMenuIcon
                 width={29}
                 height={16}
                 onClick={() => setNavigationMenuIsOpen((previousValue) => !previousValue)}

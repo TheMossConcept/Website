@@ -10,6 +10,7 @@ import ThirdSectionImage from '../../assets/Images/frontpage_third_section_image
 import TallImage from '../../assets/Images/tall-image.jpg';
 import FourthSection from './FourthSection';
 import useYScroll from '../../utilities/useYScroll';
+import ContactSection from '../../components/sections/ContactSection';
 
 const Frontpage: FC = () => {
   const scrollY = useYScroll();
@@ -28,6 +29,9 @@ const Frontpage: FC = () => {
         <Grid item xs={6}>
           <img src={SecondSectionImage} style={{ width: '100%', height: 'auto' }} />
         </Grid>
+      </Grid>
+      <Grid item xs={12} sx={{ mb: 32 }}>
+        <ContactSection />
       </Grid>
     </Grid>
   );
