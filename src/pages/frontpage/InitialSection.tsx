@@ -1,14 +1,13 @@
 import { Typography } from '@mui/material';
-import { FC, useLayoutEffect, useState } from 'react';
+import { FC, useContext, useLayoutEffect, useState } from 'react';
 import TextContainer from '../../components/TextContainer';
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 import video from '../../assets/Videos/frontpage_2.mp4';
-
-type InitialSectionProps = Pick<ContentProps, 'scrollY'>;
+import { ScrollContext } from '../../App';
 
 // Put a background image here that's in the slide and make a fade
 // for the text which is a bit delayed compared to the background image
-const InitialSection: FC<InitialSectionProps> = ({ scrollY }) => {
+const InitialSection: FC = () => {
   const [rightPosition, setRightPosition] = useState(100);
   useLayoutEffect(() => {
     setRightPosition(0);
@@ -42,14 +41,12 @@ const InitialSection: FC<InitialSectionProps> = ({ scrollY }) => {
           // zIndex: -1
         }}
       />*/}
-      <Content scrollY={scrollY} />
+      <Content />
     </div>
   );
 };
 
-type ContentProps = Pick<MoveableLineProps, 'scrollY'>;
-
-const Content: FC<ContentProps> = ({ scrollY }) => {
+const Content: FC = () => {
   const [opacity, setOpacity] = useState(0);
   useLayoutEffect(() => {
     setOpacity(1);
@@ -58,8 +55,8 @@ const Content: FC<ContentProps> = ({ scrollY }) => {
   return (
     <TextContainer
       style={{ paddingTop: '26.7vh', opacity, transition: 'opacity 630ms ease-out 920ms' }}>
-      <FirstLineWithAnimation scrollY={scrollY} />
-      <SecondLineWithAnimation scrollY={scrollY} />
+      <FirstLineWithAnimation />
+      <SecondLineWithAnimation />
       <ThirdLineWithAnimation />
     </TextContainer>
   );
@@ -67,12 +64,12 @@ const Content: FC<ContentProps> = ({ scrollY }) => {
 
 const lineEnterAnimation = { transition: 'margin-left 1010ms ease 690ms' };
 
-type MoveableLineProps = { scrollY: number };
-
 // NB! Note that the below values does NOT fit with the Figma because the
 // TextContainer adds 148px margin left
 
-const FirstLineWithAnimation: FC<MoveableLineProps> = ({ scrollY }) => {
+const FirstLineWithAnimation: FC = () => {
+  const scrollY = useContext(ScrollContext);
+
   const [marginLeft, setMarginLeft] = useState(-54.02);
   useLayoutEffect(() => {
     setMarginLeft(0);
@@ -96,7 +93,9 @@ const FirstLineWithAnimation: FC<MoveableLineProps> = ({ scrollY }) => {
   );
 };
 
-const SecondLineWithAnimation: FC<MoveableLineProps> = ({ scrollY }) => {
+const SecondLineWithAnimation: FC = () => {
+  const scrollY = useContext(ScrollContext);
+
   const [marginLeft, setMarginLeft] = useState(418.52);
   useLayoutEffect(() => {
     setMarginLeft(354);

@@ -1,7 +1,6 @@
 import { Grid, Typography } from '@mui/material';
 import { FC, useRef } from 'react';
 import { useNavigate } from 'react-router';
-import useYScroll from '../../utilities/useYScroll';
 import InteractiveLink from '../InteractiveLink';
 import HeadlineSection, { HeadlineSectionProps } from './HeadlineSection';
 
@@ -12,7 +11,6 @@ type Props = { imageUrl: string; text: string; link: string } & Pick<
 
 const NextPageSection: FC<Props> = ({ imageUrl, text, link, firstLineText, secondLineText }) => {
   const containerRef = useRef(null);
-  const scrollY = useYScroll();
   const navigate = useNavigate();
 
   return (
@@ -29,7 +27,6 @@ const NextPageSection: FC<Props> = ({ imageUrl, text, link, firstLineText, secon
       </Grid>
       <Grid item xs={6} alignSelf="flex-end" sx={{ pb: 4 }}>
         <HeadlineSection
-          globalYScroll={scrollY}
           containerRef={containerRef}
           firstLineText={firstLineText}
           secondLineText={secondLineText}

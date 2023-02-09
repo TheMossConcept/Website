@@ -1,5 +1,5 @@
-import { RefObject, useLayoutEffect, useState } from 'react';
-import useYScroll from './useYScroll';
+import { RefObject, useContext, useLayoutEffect, useState } from 'react';
+import { ScrollContext } from '../App';
 
 const useAppearingText = (
   containerRef: RefObject<HTMLElement>,
@@ -7,7 +7,7 @@ const useAppearingText = (
   opacityIncreaseFactor = 1.5
 ) => {
   // This is just to be able to trigger the layout effect every time we scroll
-  const scrollY = useYScroll();
+  const scrollY = useContext(ScrollContext);
   const [percentageOfPageVisible, setPercentageOfPageVisible] = useState<number>(0);
 
   useLayoutEffect(() => {

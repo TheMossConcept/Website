@@ -1,5 +1,6 @@
 import { Typography, TypographyProps } from '@mui/material';
-import { FC, RefObject, useLayoutEffect, useState } from 'react';
+import { FC, RefObject, useContext, useLayoutEffect, useState } from 'react';
+import { ScrollContext } from '../../App';
 import useAppearingText from '../../utilities/useAppearingText';
 
 type TextWithMetadata = {
@@ -7,7 +8,6 @@ type TextWithMetadata = {
 } & Pick<TypographyProps, 'color' | 'variant'>;
 
 export type HeadlineSectionProps = {
-  globalYScroll: number;
   containerRef: RefObject<HTMLElement>;
   firstLineText: TextWithMetadata[];
   secondLineText: TextWithMetadata[];
@@ -15,12 +15,12 @@ export type HeadlineSectionProps = {
 };
 
 const HeadlineSection: FC<HeadlineSectionProps> = ({
-  globalYScroll,
   containerRef,
   firstLineText,
   secondLineText,
   marginLeft = '18%'
 }) => {
+  const globalYScroll = useContext(ScrollContext);
   const [localYScroll, setLocalYScroll] = useState<number>();
 
   useLayoutEffect(() => {

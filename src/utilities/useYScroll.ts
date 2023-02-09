@@ -1,11 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 
 const useYScroll = () => {
   const [scrollY, setScollY] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => setScollY(window.scrollY);
-    window.addEventListener('scroll', handleScroll);
+  useLayoutEffect(() => {
+    const handleScroll = () => {
+      setScollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);

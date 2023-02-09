@@ -5,9 +5,7 @@ import InteractiveLink from '../../components/InteractiveLink';
 import HeadlineSection from '../../components/sections/HeadlineSection';
 import TextContainer from '../../components/TextContainer';
 
-type Props = { scrollY: number };
-
-const FourthSection: FC<Props> = ({ scrollY: globalYScroll }) => {
+const FourthSection: FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const navigate = useNavigate();
@@ -16,7 +14,6 @@ const FourthSection: FC<Props> = ({ scrollY: globalYScroll }) => {
     <Grid item xs={10} sx={{ pt: 32 }} ref={containerRef}>
       <TextContainer>
         <HeadlineSection
-          globalYScroll={globalYScroll}
           containerRef={containerRef}
           firstLineText={[{ text: 'Our deeper', color: 'secondary.main', variant: 'TobiasBig-h1' }]}
           secondLineText={[

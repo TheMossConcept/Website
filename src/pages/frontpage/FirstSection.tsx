@@ -8,9 +8,7 @@ import HeadlineSection from '../../components/sections/HeadlineSection';
 import InteractiveLink from '../../components/InteractiveLink';
 import { useNavigate } from 'react-router';
 
-type Props = { scrollY: number };
-
-const FrontpageSection: FC<Props> = ({ scrollY: globalYScroll }) => {
+const FrontpageSection: FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const firstTextSectionOpacity = useAppearingText(containerRef, 82.5, 4);
@@ -36,7 +34,6 @@ const FrontpageSection: FC<Props> = ({ scrollY: globalYScroll }) => {
       <TextContainer>
         <HeadlineSection
           containerRef={containerRef}
-          globalYScroll={globalYScroll}
           marginLeft="354px"
           firstLineText={[
             { text: 'A', color: 'text.primary', variant: 'PoppinsBig-h1' },

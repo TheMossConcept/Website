@@ -8,9 +8,7 @@ import InteractiveLink from '../../components/InteractiveLink';
 import { useNavigate } from 'react-router';
 import useAppearingText from '../../utilities/useAppearingText';
 
-type Props = { scrollY: number };
-
-const SecondSection: FC<Props> = ({ scrollY: globalYScroll }) => {
+const SecondSection: FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const navigate = useNavigate();
@@ -33,7 +31,6 @@ const SecondSection: FC<Props> = ({ scrollY: globalYScroll }) => {
       <Grid item sx={{ ml: 30, mb: 10 }} xs={12}>
         <HeadlineSection
           containerRef={containerRef}
-          globalYScroll={globalYScroll}
           firstLineText={[{ text: 'A committed', color: 'primary.main', variant: 'TobiasBig-h1' }]}
           secondLineText={[
             { text: 'partnership', color: 'primary.transparent', variant: 'PoppinsBig-h1' },
