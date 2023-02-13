@@ -25,7 +25,7 @@ const App: FC = () => {
     {
       path: '/concept',
       element: (
-        <LoadingLogo>
+        <LoadingLogo key="concept">
           <Topbar />
           <ConceptPage />
         </LoadingLogo>
@@ -34,7 +34,7 @@ const App: FC = () => {
     {
       path: '/partnership',
       element: (
-        <LoadingLogo>
+        <LoadingLogo key="partnership">
           <Topbar />
           <PartnershipPage />
         </LoadingLogo>
@@ -43,7 +43,7 @@ const App: FC = () => {
     {
       path: '/purpose',
       element: (
-        <LoadingLogo>
+        <LoadingLogo key="purpose">
           <Topbar />
           <PurposePage />
         </LoadingLogo>

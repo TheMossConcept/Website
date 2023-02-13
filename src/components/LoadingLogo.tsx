@@ -13,23 +13,10 @@ const LoadingLogo: FC = ({ children }) => {
   const [newPageOpacity, setNewPageOpacity] = useState(initialNewPageOpacity);
 
   useEffect(() => {
-    console.log('In use effect!');
-
     setBackgroundContainerRightPosition(0);
     setTextContainerOpacity(0);
     setNewPageOpacity(1);
-
-    /*
-    return () => {
-      console.log('useEffect return function!');
-      // window.scrollTo(0, 0);
-
-      setBackgroundContainerRightPosition(initialBackgroundContainerRightPosition);
-      setTextContainerOpacity(initialTextContainerOpacity);
-      setNewPageOpacity(initialNewPageOpacity);
-    };
-    */
-  }, [children]);
+  }, []);
 
   return (
     <Grid
