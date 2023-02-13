@@ -31,7 +31,7 @@ const NextPageSection: FC<Props> = ({ imageUrl, text, link, firstLineText, secon
           firstLineText={firstLineText}
           secondLineText={secondLineText}
         />
-        <Typography variant="PoppinsBig-subtitle2" color="secondary" sx={{ mb: 4, mr: 18 }}>
+        <Typography variant="PoppinsBig-subtitle2" color="secondary" sx={{ mb: 4, mt: 4, mr: 18 }}>
           {text}
         </Typography>
         <InteractiveLink
