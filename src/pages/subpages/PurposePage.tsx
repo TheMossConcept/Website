@@ -1,6 +1,9 @@
 import { Grid } from '@mui/material';
 import { FC } from 'react';
-import FirstSubSectionImage from '../../assets/Images/frontpage_first_section_image.jpg';
+import TallPurposeImage from '../../assets/Images/purpose-tall.jpg';
+import MountainPurposeImage from '../../assets/Images/mountain-purpose-image.jpg';
+import TrustAndRespectImage from '../../assets/Images/trust-and-respect.jpg';
+import HighQualityImage from '../../assets/Images/high-quality.jpg';
 import ContactSection from '../../components/sections/ContactSection';
 import FirstSubpageSection from '../../components/sections/FirstSubpageSection';
 import MainPointSection from '../../components/sections/MainPointSection';
@@ -25,7 +28,7 @@ const PurposePage: FC = () => {
             isInline: true
           }
         ]}
-        image={FirstSubSectionImage}
+        image={TallPurposeImage}
         text="Our purpose is to free up time and energy for what truly matters. In the context of your business, that means better support for your essential workflows and less time wasted on repetitive tasks that do not utilize the skills of your employees fully. In turn, this leads to employees who are more productive and fulfilled."
       />
       <MainPointSection
@@ -33,7 +36,7 @@ const PurposePage: FC = () => {
         highlightedText="meaningful "
         textAfterHighlightedText="to them"
       />
-      <MediaSection imageUrl={FirstSubSectionImage} mediaLocation="left" />
+      <MediaSection imageUrl={MountainPurposeImage} mediaLocation="left" />
       <MainPointSection
         initialText=""
         highlightedText="Quality and value generation "
@@ -45,7 +48,7 @@ const PurposePage: FC = () => {
           'Value generation is a core value because we want the software we develop to help free up time and energy. It does not matter how well-made a software system is if it does not fit with the workflows it is meant to support. If it does not fit with the people it is supposed to help, it does not generate value and thereby it becomes irrelevant.'
         ]}
       />
-      <MediaSection imageUrl={FirstSubSectionImage} mediaLocation="full-screen" />
+      <MediaSection imageUrl={HighQualityImage} mediaLocation="full-screen" />
       <MainPointSection
         initialText=""
         highlightedText="Trust and respect "
@@ -57,8 +60,10 @@ const PurposePage: FC = () => {
           'Respect is essential as that is what allows us to remain curious and humble and learn from each other. If you do not respect us, our expertise and advice is not taken seriously and therefore has little or not impact. If we do not respect you, we will never truly understand your business and its unique needs and we will not be able to create software that generates massive value for you.'
         ]}
       />
-      <MediaSection imageUrl={FirstSubSectionImage} mediaLocation="right" />
-      <ContactSection />
+      <MediaSection imageUrl={TrustAndRespectImage} mediaLocation="right" />
+      <Grid item xs={12} sx={{ mb: 32 }}>
+        <ContactSection />
+      </Grid>
     </Grid>
   );
 };

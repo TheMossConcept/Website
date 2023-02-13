@@ -55,7 +55,7 @@ const App: FC = () => {
 
   return (
     <ScrollContext.Provider value={yScroll}>
-      <Box sx={{ bgcolor: 'text.secondary' }}>
+      <Box>
         <RouterProvider router={router} />
       </Box>
     </ScrollContext.Provider>

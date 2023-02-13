@@ -2,13 +2,13 @@ import { Grid, Typography } from '@mui/material';
 import { FC, useRef } from 'react';
 import TextContainer from '../../components/TextContainer';
 import useAppearingText from '../../utilities/useAppearingText';
-import FirstSubSectionImage from '../../assets/Images/frontpage_first_section_image.jpg';
+import BuildingBlockImage from '../../assets/Images/building-blocks.jpg';
 import MediaSection from '../../components/sections/MediaSection';
 import HeadlineSection from '../../components/sections/HeadlineSection';
 import InteractiveLink from '../../components/InteractiveLink';
 import { useNavigate } from 'react-router';
 
-const FrontpageSection: FC = () => {
+const ConceptPageTeaserSection: FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const firstTextSectionOpacity = useAppearingText(containerRef, 82.5, 4);
@@ -73,9 +73,9 @@ const FrontpageSection: FC = () => {
           sx={{ marginTop: 10, opacity: linkOpacity }}
         />
       </TextContainer>
-      <MediaSection imageUrl={FirstSubSectionImage} mediaLocation="left" />
+      <MediaSection imageUrl={BuildingBlockImage} mediaLocation="left" />
     </Grid>
   );
 };
 
-export default FrontpageSection;
+export default ConceptPageTeaserSection;

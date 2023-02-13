@@ -1,8 +1,11 @@
 import { FC } from 'react';
 import FirstSubpageSection from '../../components/sections/FirstSubpageSection';
-import FirstSubSectionImage from '../../assets/Images/frontpage_first_section_image.jpg';
+import CollaborationImage from '../../assets/Images/frontpage_first_section_image.jpg';
 import MediaSection from '../../components/sections/MediaSection';
-import TallImage from '../../assets/Images/tall-image.jpg';
+import TallPartnershipImage from '../../assets/Images/partnership-tall.jpg';
+import TrustAndRespectImage from '../../assets/Images/trust-and-respect.jpg';
+import TallPurposeImage from '../../assets/Images/purpose-tall.jpg';
+import DemystifyImage from '../../assets/Images/demystify.jpg';
 import { Grid } from '@mui/material';
 import MainPointSection from '../../components/sections/MainPointSection';
 import TextSection from '../../components/sections/TextSection';
@@ -13,7 +16,7 @@ const PartnershipPage: FC = () => {
   return (
     <Grid container>
       <FirstSubpageSection
-        image={FirstSubSectionImage}
+        image={TallPartnershipImage}
         text="We do not just provide you with isolated software systems, we take as much responsibility for your software development needs as you want us to. We continuously work to better our understanding of your business and collaborate with you to build software that most effectively supports it."
         headlineText={[
           {
@@ -35,7 +38,7 @@ const PartnershipPage: FC = () => {
         highlightedText="concrete value "
         textAfterHighlightedText="for your business."
       />
-      <MediaSection imageUrl={FirstSubSectionImage} mediaLocation="full-screen" />
+      <MediaSection imageUrl={CollaborationImage} mediaLocation="full-screen" />
       <TextSection
         textSections={[
           'Based on the deep understanding of your business and your needs we work to build, we will challenge your perceptions whenever we deem it appropriate to help you achieve maximum business value.',
@@ -43,7 +46,7 @@ const PartnershipPage: FC = () => {
           'This is only truly effective in a collaborative environment of mutual trust and respect which is one of the reasons why creating such an environment is a high priority for us.'
         ]}
       />
-      <MediaSection imageUrl={FirstSubSectionImage} mediaLocation="left" />
+      <MediaSection imageUrl={TrustAndRespectImage} mediaLocation="left" />
       <MainPointSection
         initialText="We work to make IT "
         highlightedText="understandable and accessible "
@@ -55,7 +58,7 @@ const PartnershipPage: FC = () => {
           'We will always provide our recommendations and challenge your perceptions when we deem it appropriate, however, in the end, you are the one making the decisions. That is why it is important to us to be transparent and clear and work to make IT understandable and accessible to you.'
         ]}
       />
-      <MediaSection imageUrl={FirstSubSectionImage} mediaLocation="full-screen" />
+      <MediaSection imageUrl={DemystifyImage} mediaLocation="full-screen" />
       <MainPointSection
         initialText="We are a "
         highlightedText="purpose-driven "
@@ -65,8 +68,8 @@ const PartnershipPage: FC = () => {
       <NextPageSection
         text="Our work is rooted in a deeper purpose."
         link="/purpose"
-        imageUrl={TallImage}
-        firstLineText={[{ text: 'Our', color: 'primary', variant: 'TobiasBig-h2' }]}
+        imageUrl={TallPurposeImage}
+        firstLineText={[{ text: 'Our deeper', color: 'primary', variant: 'TobiasBig-h2' }]}
         secondLineText={[
           { text: 'purpose', color: 'primary.transparent', variant: 'PoppinsBig-h2' }
         ]}

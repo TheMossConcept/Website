@@ -2,13 +2,13 @@ import { Grid, Typography } from '@mui/material';
 import { FC, useRef } from 'react';
 import HeadlineSection from '../../components/sections/HeadlineSection';
 import TextContainer from '../../components/TextContainer';
-import FirstSubSectionImage from '../../assets/Images/frontpage_first_section_image.jpg';
-import SecondSubSectionImage from '../../assets/Images/frontpage_second_section_image.jpg';
+import CollaborationImage from '../../assets/Images/collaboration.jpg';
+import FindingNeedsImage from '../../assets/Images/finding-needs.jpg';
 import InteractiveLink from '../../components/InteractiveLink';
 import { useNavigate } from 'react-router';
 import useAppearingText from '../../utilities/useAppearingText';
 
-const SecondSection: FC = () => {
+const PartnershipPageTeaserSection: FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const navigate = useNavigate();
@@ -51,12 +51,12 @@ const SecondSection: FC = () => {
           </TextContainer>
         </Grid>
         <Grid item xs={6}>
-          <img src={FirstSubSectionImage} style={{ width: '100%', height: 'auto' }} />
+          <img src={CollaborationImage} style={{ width: '100%', height: 'auto' }} />
         </Grid>
       </Grid>
       <Grid container spacing={19}>
         <Grid item xs={6}>
-          <img src={SecondSubSectionImage} style={{ width: '100%', height: 'auto' }} />
+          <img src={FindingNeedsImage} style={{ width: '100%', height: 'auto' }} />
         </Grid>
         <Grid item xs={6} alignSelf="center">
           <TextContainer textPosition="right">
@@ -82,4 +82,4 @@ const SecondSection: FC = () => {
   );
 };
 
-export default SecondSection;
+export default PartnershipPageTeaserSection;

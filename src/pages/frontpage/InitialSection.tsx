@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { FC, useContext, useLayoutEffect, useState } from 'react';
 import TextContainer from '../../components/TextContainer';
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
@@ -14,7 +14,7 @@ const InitialSection: FC = () => {
   }, []);
 
   return (
-    <div style={{ height: '100vh' }}>
+    <Box sx={{ height: '100vh', width: '100vw', backgroundColor: 'secondary.main' }}>
       <video
         autoPlay
         loop
@@ -42,7 +42,7 @@ const InitialSection: FC = () => {
         }}
       />*/}
       <Content />
-    </div>
+    </Box>
   );
 };
 

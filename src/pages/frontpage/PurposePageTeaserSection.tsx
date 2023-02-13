@@ -5,7 +5,7 @@ import InteractiveLink from '../../components/InteractiveLink';
 import HeadlineSection from '../../components/sections/HeadlineSection';
 import TextContainer from '../../components/TextContainer';
 
-const FourthSection: FC = () => {
+const PurposePageTeaserSection: FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const navigate = useNavigate();
@@ -40,4 +40,4 @@ const FourthSection: FC = () => {
   );
 };
 
-export default FourthSection;
+export default PurposePageTeaserSection;
