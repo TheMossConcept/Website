@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import InitialSection from './InitialSection';
-import FirstSection from './ConceptPageTeaserSection';
+import ConceptPageTeaserSection from './ConceptPageTeaserSection';
 import PartnershipPageTeaserSection from './PartnershipPageTeaserSection';
 import { Grid } from '@mui/material';
 import MediaSection from '../../components/sections/MediaSection';
@@ -15,7 +15,7 @@ const Frontpage: FC = () => {
   return (
     <Grid container>
       <InitialSection />
-      <FirstSection />
+      <ConceptPageTeaserSection />
       <PartnershipPageTeaserSection />
       <MediaSection imageUrl={PurposeImage} mediaLocation="full-screen" />
       <PurposePageTeaserSection />

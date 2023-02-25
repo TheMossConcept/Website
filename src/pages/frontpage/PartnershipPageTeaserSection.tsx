@@ -13,9 +13,9 @@ const PartnershipPageTeaserSection: FC = () => {
 
   const navigate = useNavigate();
 
-  const firstTextOpacity = useAppearingText(containerRef, 90, 4);
-  const secondTextOpacity = useAppearingText(containerRef, 130, 4);
-  const linkOpacity = useAppearingText(containerRef, 160, 4);
+  const firstTextOpacity = useAppearingText(containerRef, 100, 4);
+  const secondTextOpacity = useAppearingText(containerRef, 140, 4);
+  const linkOpacity = useAppearingText(containerRef, 180, 4);
 
   return (
     <Grid

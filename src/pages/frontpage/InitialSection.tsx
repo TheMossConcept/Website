@@ -1,6 +1,5 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, Grid } from '@mui/material';
 import { FC, useContext, useLayoutEffect, useState } from 'react';
-import TextContainer from '../../components/TextContainer';
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 import video from '../../assets/Videos/frontpage_2.mp4';
 import { ScrollContext } from '../../App';
@@ -53,12 +52,18 @@ const Content: FC = () => {
   }, []);
 
   return (
-    <TextContainer
-      style={{ paddingTop: '26.7vh', opacity, transition: 'opacity 630ms ease-out 920ms' }}>
-      <FirstLineWithAnimation />
-      <SecondLineWithAnimation />
-      <ThirdLineWithAnimation />
-    </TextContainer>
+    <Grid
+      item
+      container
+      justifyContent="center"
+      style={{ paddingTop: '26.7vh', opacity, transition: 'opacity 630ms ease-out 920ms' }}
+      xs={12}>
+      <Grid item>
+        <FirstLineWithAnimation />
+        <SecondLineWithAnimation />
+        <ThirdLineWithAnimation />
+      </Grid>
+    </Grid>
   );
 };
 
