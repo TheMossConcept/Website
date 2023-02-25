@@ -52,6 +52,7 @@ const HeadlineSection: FC<HeadlineSectionProps> = ({
           </Typography>
         ))}
       </span>
+      <br />
       <span style={{ marginLeft }}>
         {secondLineText.map((textBit) => (
           <Typography
