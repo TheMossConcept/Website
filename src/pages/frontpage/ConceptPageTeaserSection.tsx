@@ -2,7 +2,7 @@ import { Grid, Typography } from '@mui/material';
 import { FC, useRef } from 'react';
 import TextContainer from '../../components/TextContainer';
 import useAppearingText from '../../utilities/useAppearingText';
-import BuildingBlockImage from '../../assets/Images/building-blocks.jpg';
+import BuildingBlockVideo from '../../assets/Videos/building-blocks.mp4';
 import MediaSection from '../../components/sections/MediaSection';
 import HeadlineSection from '../../components/sections/HeadlineSection';
 import InteractiveLink from '../../components/InteractiveLink';
@@ -73,7 +73,7 @@ const ConceptPageTeaserSection: FC = () => {
           sx={{ marginTop: 10, opacity: linkOpacity }}
         />
       </TextContainer>
-      <MediaSection imageUrl={BuildingBlockImage} mediaLocation="left" />
+      <MediaSection mediaUrl={BuildingBlockVideo} isVideo mediaLocation="left" />
     </Grid>
   );
 };

@@ -1,16 +1,17 @@
 import { FC } from 'react';
 import FirstSubpageSection from '../../components/sections/FirstSubpageSection';
-import CollaborationImage from '../../assets/Images/frontpage_first_section_image.jpg';
 import MediaSection from '../../components/sections/MediaSection';
-import TallPartnershipImage from '../../assets/Images/partnership-tall.jpg';
-import TrustAndRespectImage from '../../assets/Images/trust-and-respect.jpg';
-import TallPurposeImage from '../../assets/Images/purpose-tall.jpg';
-import DemystifyImage from '../../assets/Images/demystify.jpg';
+import PurposeImage from '../../assets/Images/purpose.jpg';
+import TallPartnershipImage from '../../assets/Images/partnership_tall.jpg';
+import CollaborationImage from '../../assets/Images/collaboration.jpg';
+import PeopleTalkingImage from '../../assets/Images/people_talking.jpg';
+import TallPurposeImage from '../../assets/Images/purpose_tall.jpg';
 import { Grid } from '@mui/material';
 import MainPointSection from '../../components/sections/MainPointSection';
 import TextSection from '../../components/sections/TextSection';
 import ContactSection from '../../components/sections/ContactSection';
 import NextPageSection from '../../components/sections/NextPageSection';
+import BusinessValueImage from '../../assets/Images/business_value.jpg';
 
 const PartnershipPage: FC = () => {
   return (
@@ -38,7 +39,7 @@ const PartnershipPage: FC = () => {
         highlightedText="concrete value "
         textAfterHighlightedText="for your business."
       />
-      <MediaSection imageUrl={CollaborationImage} mediaLocation="full-screen" />
+      <MediaSection mediaUrl={BusinessValueImage} mediaLocation="full-screen" />
       <TextSection
         textSections={[
           'Based on the deep understanding of your business and your needs we work to build, we will challenge your perceptions whenever we deem it appropriate to help you achieve maximum business value.',
@@ -46,19 +47,20 @@ const PartnershipPage: FC = () => {
           'This is only truly effective in a collaborative environment of mutual trust and respect which is one of the reasons why creating such an environment is a high priority for us.'
         ]}
       />
-      <MediaSection imageUrl={TrustAndRespectImage} mediaLocation="left" />
+      <MediaSection mediaUrl={CollaborationImage} mediaLocation="left" />
       <MainPointSection
         initialText="We work to make IT "
         highlightedText="understandable and accessible "
         textAfterHighlightedText="to your business"
       />
+      <MediaSection mediaUrl={PeopleTalkingImage} mediaLocation="right" />
       <TextSection
         textSections={[
           'We want to demystify the complex and vast world of IT. We want to be your trusted collaborator and help you navigate the complexities and possibilities of IT.',
           'We will always provide our recommendations and challenge your perceptions when we deem it appropriate, however, in the end, you are the one making the decisions. That is why it is important to us to be transparent and clear and work to make IT understandable and accessible to you.'
         ]}
       />
-      <MediaSection imageUrl={DemystifyImage} mediaLocation="full-screen" />
+      <MediaSection mediaUrl={PurposeImage} mediaLocation="full-screen" />
       <MainPointSection
         initialText="We are a "
         highlightedText="purpose-driven "

@@ -23,7 +23,8 @@ const InitialSection: FC = () => {
           transition: 'right 1380ms ease-out',
           position: 'absolute',
           objectFit: 'fill',
-          maxHeight: '100vh'
+          maxHeight: '100vh',
+          width: '100vw'
           // We want this to be below everything else!
         }}>
         <source src={video} type="video/mp4" />

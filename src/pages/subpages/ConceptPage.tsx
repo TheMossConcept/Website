@@ -2,11 +2,11 @@ import { FC } from 'react';
 import { Grid } from '@mui/material';
 import FirstSubpageSection from '../../components/sections/FirstSubpageSection';
 import TextSection from '../../components/sections/TextSection';
-import BuildingBlockImage from '../../assets/Images/building-blocks.jpg';
-import UniqueShapeImage from '../../assets/Images/abstract.jpg';
-import TallPartnershipImage from '../../assets/Images/partnership-tall.jpg';
-import TreeImage from '../../assets/Images/tree.jpg';
-import FirstSubSectionImage from '../../assets/Images/stock-photo-coffee-cup-with-leaves-flat-lay-nature-concept-417791386.jpg';
+import BuildingBlockImage from '../../assets/Images/building_blocks.jpg';
+import TallPartnershipImage from '../../assets/Images/partnership_tall.jpg';
+import TreesSwayingVideo from '../../assets/Videos/trees-swaying.mp4';
+import BuildingBlockVideo from '../../assets/Videos/building-blocks.mp4';
+import ShapesImage from '../../assets/Images/3D_shapes.jpg';
 import MediaSection from '../../components/sections/MediaSection';
 import MainPointSection from '../../components/sections/MainPointSection';
 import ContactSection from '../../components/sections/ContactSection';
@@ -39,7 +39,7 @@ const ConceptPage: FC = () => {
             }
           }
         ]}
-        image={FirstSubSectionImage}
+        image={ShapesImage}
         text="
             In essence, we work smarter, not harder. We reuse what makes sense which gives us more
             time to ensure quality, to deeply understand your workflows and thereby to build exactly
@@ -51,7 +51,7 @@ const ConceptPage: FC = () => {
         highlightedText="high quality"
         textAfterHighlightedText="building blocks across systems"
       />
-      <MediaSection imageUrl={BuildingBlockImage} mediaLocation="full-screen" />
+      <MediaSection mediaUrl={BuildingBlockVideo} isVideo mediaLocation="full-screen" />
       <TextSection
         textSections={[
           'Our building blocks constantly improve and evolve so you will have easy access to more advanced features in the future.',
@@ -59,12 +59,12 @@ const ConceptPage: FC = () => {
           'We will build as many custom building blocks as is necessary to build your system exactly as it needs to be. Since we are experts in building small blocks that can easily be composed and reconfigured, your system will be highly flexible.'
         ]}
       />
-      <MediaSection imageUrl={UniqueShapeImage} mediaLocation="right" />
+      <MediaSection mediaUrl={BuildingBlockImage} mediaLocation="right" />
       <MainPointSection
         initialText="Small, well-shaped building blocks lead to unprecedented"
         highlightedText="flexibility and stability."
       />
-      <MediaSection imageUrl={TreeImage} mediaLocation="full-screen" />
+      <MediaSection mediaUrl={TreesSwayingVideo} isVideo mediaLocation="full-screen" />
       <TextSection
         textSections={[
           'Less time redoing the same functionality over and over with slight variations leads to more time collaborating with you.',

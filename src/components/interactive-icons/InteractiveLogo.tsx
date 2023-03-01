@@ -13,6 +13,7 @@ const InteractiveLogo: FC<Props> = ({ width, height, onClick }) => {
       height={height}
       onClick={onClick}
       viewBox="0 0 753 354"
+      style={{ cursor: 'pointer' }}
       fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <svg x="-50">

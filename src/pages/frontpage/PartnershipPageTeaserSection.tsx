@@ -3,7 +3,7 @@ import { FC, useRef } from 'react';
 import HeadlineSection from '../../components/sections/HeadlineSection';
 import TextContainer from '../../components/TextContainer';
 import CollaborationImage from '../../assets/Images/collaboration.jpg';
-import FindingNeedsImage from '../../assets/Images/finding-needs.jpg';
+import PeopleTalkingImage from '../../assets/Images/people_talking.jpg';
 import InteractiveLink from '../../components/InteractiveLink';
 import { useNavigate } from 'react-router';
 import useAppearingText from '../../utilities/useAppearingText';
@@ -51,12 +51,12 @@ const PartnershipPageTeaserSection: FC = () => {
           </TextContainer>
         </Grid>
         <Grid item xs={6}>
-          <img src={CollaborationImage} style={{ width: '100%', height: 'auto' }} />
+          <img src={PeopleTalkingImage} style={{ width: '100%', height: 'auto' }} />
         </Grid>
       </Grid>
       <Grid container spacing={19}>
         <Grid item xs={6}>
-          <img src={FindingNeedsImage} style={{ width: '100%', height: 'auto' }} />
+          <img src={CollaborationImage} style={{ width: '100%', height: 'auto' }} />
         </Grid>
         <Grid item xs={6} alignSelf="center">
           <TextContainer textPosition="right">

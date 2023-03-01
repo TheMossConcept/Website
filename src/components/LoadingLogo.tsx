@@ -27,7 +27,6 @@ const LoadingLogo: FC = ({ children }) => {
       sx={{ height: '100vh' }}>
       <Grid
         item
-        xs={5}
         sx={{
           textAlign: 'left',
           opacity: textContainerOpacity,

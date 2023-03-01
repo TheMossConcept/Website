@@ -8,8 +8,8 @@ import MediaSection from '../../components/sections/MediaSection';
 import PurposePageTeaserSection from './PurposePageTeaserSection';
 import ContactSection from '../../components/sections/ContactSection';
 import PurposeImage from '../../assets/Images/purpose.jpg';
-import SecondPurposeImage from '../../assets/Images/purpose-2.jpg';
-import ValuesImage from '../../assets/Images/values.jpg';
+import Purpose2Image from '../../assets/Images/purpose-2.jpg';
+import TallPurposeImage from '../../assets/Images/purpose_tall.jpg';
 
 const Frontpage: FC = () => {
   return (
@@ -17,14 +17,14 @@ const Frontpage: FC = () => {
       <InitialSection />
       <ConceptPageTeaserSection />
       <PartnershipPageTeaserSection />
-      <MediaSection imageUrl={PurposeImage} mediaLocation="full-screen" />
+      <MediaSection mediaUrl={PurposeImage} mediaLocation="full-screen" />
       <PurposePageTeaserSection />
       <Grid container spacing={4} sx={{ mt: 32 }}>
         <Grid item xs={6} sx={{ mt: 29 }}>
-          <img src={ValuesImage} style={{ width: '100%', height: 'auto' }} />
+          <img src={TallPurposeImage} style={{ width: '100%', height: 'auto' }} />
         </Grid>
         <Grid item xs={6}>
-          <img src={SecondPurposeImage} style={{ width: '100%', height: 'auto' }} />
+          <img src={Purpose2Image} style={{ width: '100%', height: 'auto' }} />
         </Grid>
       </Grid>
       <Grid item xs={12} sx={{ mb: 32 }}>

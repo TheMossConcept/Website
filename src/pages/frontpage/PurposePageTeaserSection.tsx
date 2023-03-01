@@ -4,9 +4,13 @@ import { useNavigate } from 'react-router';
 import InteractiveLink from '../../components/InteractiveLink';
 import HeadlineSection from '../../components/sections/HeadlineSection';
 import TextContainer from '../../components/TextContainer';
+import useAppearingText from '../../utilities/useAppearingText';
 
 const PurposePageTeaserSection: FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const textSectionOpacity = useAppearingText(containerRef, 80, 4);
+  const linkOpacity = useAppearingText(containerRef, 95, 4);
 
   const navigate = useNavigate();
 
@@ -21,7 +25,7 @@ const PurposePageTeaserSection: FC = () => {
           ]}
         />
         <Typography
-          sx={{ mt: 10, width: '38%' }}
+          sx={{ mt: 10, width: '38%', opacity: textSectionOpacity }}
           variant="PoppinsBig-subtitle2"
           color="secondary.main">
           We strongly believe that doing anything that is not rooted in meaning and a purpose from
@@ -33,7 +37,7 @@ const PurposePageTeaserSection: FC = () => {
           navigate={() => navigate('/purpose')}
           variant="PoppinsSmall-button"
           color="secondary.transparent"
-          sx={{ marginTop: 10 }}
+          sx={{ marginTop: 10, opacity: linkOpacity }}
         />
       </TextContainer>
     </Grid>
