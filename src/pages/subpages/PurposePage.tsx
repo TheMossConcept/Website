@@ -2,8 +2,10 @@ import { Grid } from '@mui/material';
 import { FC } from 'react';
 import TallPurposeImage from '../../assets/Images/purpose_tall.jpg';
 import PurposeImage from '../../assets/Images/purpose.jpg';
+import TeamImage from '../../assets/Images/team.jpg';
 import TrustAndRespectImage from '../../assets/Images/trust_and_respect.jpg';
 import HighQualityImage from '../../assets/Images/high_quality.jpg';
+import QualityVideo from '../../assets/Videos/quality.mp4';
 import ContactSection from '../../components/sections/ContactSection';
 import FirstSubpageSection from '../../components/sections/FirstSubpageSection';
 import MainPointSection from '../../components/sections/MainPointSection';
@@ -36,24 +38,26 @@ const PurposePage: FC = () => {
         highlightedText="meaningful "
         textAfterHighlightedText="to them"
       />
-      <MediaSection mediaUrl={PurposeImage} mediaLocation="full-screen" />
+      <MediaSection mediaUrl={PurposeImage} mediaLocation="left" />
       <MainPointSection
         initialText=""
         highlightedText="Quality and value generation "
         textAfterHighlightedText="are the two core values we employ when we code"
       />
+      <MediaSection mediaUrl={QualityVideo} isVideo mediaLocation="right" />
       <TextSection
         textSections={[
           'Quality is a core value because it ensures that the software we produce is stable and reliable enough to be relied upon even for business critical tasks while simultaniously being flexible enough to stay relevant over time.',
           'Value generation is a core value because we want the software we develop to help free up time and energy. It does not matter how well-made a software system is if it does not fit with the workflows it is meant to support. If it does not fit with the people it is supposed to help, it does not generate value and thereby it becomes irrelevant.'
         ]}
       />
-      <MediaSection mediaUrl={HighQualityImage} mediaLocation="left" />
+      <MediaSection mediaUrl={HighQualityImage} mediaLocation="right" />
       <MainPointSection
         initialText=""
         highlightedText="Trust and respect "
         textAfterHighlightedText="are the two core values we employ when dealing with people"
       />
+      <MediaSection mediaUrl={TeamImage} mediaLocation="left" />
       <TextSection
         textSections={[
           'Trust is essential as it is the core of a healthy, mutually beneficial relationship. If you do not trust us, you will not allow us to fully help and serve you with our expertise. If we do not trust you, we will not be able to dedicate ourselves fully to your company and your needs.',

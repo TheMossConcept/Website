@@ -11,7 +11,7 @@ type Props = { text: string; headlineText: TextWithMetadata[]; image: string };
 
 const FirstSubpageSection: FC<Props> = ({ text, headlineText, image }) => {
   return (
-    <Grid container item xs={12}>
+    <Grid item container xs={12} spacing={5}>
       <Grid item xs={6}>
         <Box sx={{ marginTop: '53.55%', ml: '30px' }}>
           {headlineText.map((textBit) => (
@@ -23,23 +23,6 @@ const FirstSubpageSection: FC<Props> = ({ text, headlineText, image }) => {
               {textBit.text}
             </Typography>
           ))}
-          {/*
-          <Typography component="span" variant="PoppinsBig-h2" color="#383838">
-            Our{' '}
-          </Typography>
-          <Typography component="span" variant="TobiasBig-h2" color="#383838">
-            disruptive
-          </Typography>
-          <Typography
-            variant="PoppinsBig-h2"
-            sx={{
-              mt: '18px',
-              mr: '54px'
-            }}
-            color="#383838">
-            concept
-          </Typography>
-            */}
         </Box>
         <Box sx={{ mt: '54px', ml: '30px' }}>
           <Typography variant="PoppinsBig-subtitle2" color="#383838">

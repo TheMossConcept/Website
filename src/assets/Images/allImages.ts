@@ -7,7 +7,10 @@ import PeopleTalking from './people_talking.jpg';
 import Purpose from './purpose.jpg';
 import PurposeTall from './purpose_tall.jpg';
 import PurposeTwo from './purpose-2.jpg';
+import Team from './team.jpg';
 import TrustAndRespect from './trust_and_respect.jpg';
+import UnderstandabilityIllustration from './understandability_illustration.jpg';
+import QualityCoding from './quality_coding.jpg';
 
 const allImages = [
   AbstractShape,
@@ -19,7 +22,10 @@ const allImages = [
   Purpose,
   PurposeTall,
   PurposeTwo,
-  TrustAndRespect
+  Team,
+  TrustAndRespect,
+  UnderstandabilityIllustration,
+  QualityCoding
 ];
 
 export default allImages;

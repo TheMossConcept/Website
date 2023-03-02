@@ -63,7 +63,7 @@ const ConceptPageTeaserSection: FC = () => {
             opacity: secondTextSectionOpacity
           }}>
           We create fully custom, stable, and flexible software that can be changed and extended
-          seamlessly as the world, and the needs of your business, change and evolve.
+          seamlessly as the world, and the needs of your business, evolve.
         </Typography>
         <InteractiveLink
           text="Read more about what makes our concept unique"

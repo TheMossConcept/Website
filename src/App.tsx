@@ -63,7 +63,7 @@ const App: FC = () => {
 
   return (
     <ScrollContext.Provider value={yScroll}>
-      <Box>
+      <Box sx={{ maxWidth: '100vw', overflowX: 'hidden' }}>
         <RouterProvider router={router} />
       </Box>
     </ScrollContext.Provider>

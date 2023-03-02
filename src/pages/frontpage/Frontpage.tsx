@@ -7,7 +7,7 @@ import { Grid } from '@mui/material';
 import MediaSection from '../../components/sections/MediaSection';
 import PurposePageTeaserSection from './PurposePageTeaserSection';
 import ContactSection from '../../components/sections/ContactSection';
-import PurposeImage from '../../assets/Images/purpose.jpg';
+import WorkingVideo from '../../assets/Videos/working.mp4';
 import Purpose2Image from '../../assets/Images/purpose-2.jpg';
 import TallPurposeImage from '../../assets/Images/purpose_tall.jpg';
 
@@ -17,7 +17,7 @@ const Frontpage: FC = () => {
       <InitialSection />
       <ConceptPageTeaserSection />
       <PartnershipPageTeaserSection />
-      <MediaSection mediaUrl={PurposeImage} mediaLocation="full-screen" />
+      <MediaSection mediaUrl={WorkingVideo} isVideo mediaLocation="full-screen" />
       <PurposePageTeaserSection />
       <Grid container spacing={4} sx={{ mt: 32 }}>
         <Grid item xs={6} sx={{ mt: 29 }}>
