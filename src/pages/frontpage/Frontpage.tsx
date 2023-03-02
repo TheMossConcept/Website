@@ -8,7 +8,7 @@ import MediaSection from '../../components/sections/MediaSection';
 import PurposePageTeaserSection from './PurposePageTeaserSection';
 import ContactSection from '../../components/sections/ContactSection';
 import WorkingVideo from '../../assets/Videos/working.mp4';
-import Purpose2Image from '../../assets/Images/purpose-2.jpg';
+import TrustAndRespectImage from '../../assets/Images/trust_and_respect.jpg';
 import TallPurposeImage from '../../assets/Images/purpose_tall.jpg';
 
 const Frontpage: FC = () => {
@@ -24,7 +24,7 @@ const Frontpage: FC = () => {
           <img src={TallPurposeImage} style={{ width: '100%', height: 'auto' }} />
         </Grid>
         <Grid item xs={6}>
-          <img src={Purpose2Image} style={{ width: '100%', height: 'auto' }} />
+          <img src={TrustAndRespectImage} style={{ width: '100%', height: 'auto' }} />
         </Grid>
       </Grid>
       <Grid item xs={12} sx={{ mb: 32 }}>

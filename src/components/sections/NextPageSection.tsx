@@ -14,14 +14,7 @@ const NextPageSection: FC<Props> = ({ imageUrl, text, link, firstLineText, secon
   const navigate = useNavigate();
 
   return (
-    <Grid
-      item
-      container
-      xs={12}
-      spacing={5}
-      alignContent="flex-end"
-      sx={{ mt: 32 }}
-      ref={containerRef}>
+    <Grid item container xs={12} spacing={5} sx={{ mt: 32 }} ref={containerRef}>
       <Grid item xs={6}>
         <img src={imageUrl} style={{ width: '100%', height: 'auto' }} />
       </Grid>
