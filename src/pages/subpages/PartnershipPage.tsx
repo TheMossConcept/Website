@@ -53,12 +53,18 @@ const PartnershipPage: FC = () => {
         highlightedText="understandable and accessible "
         textAfterHighlightedText="to your business"
       />
-      <MediaSection mediaUrl={UnderstandabilityIllustration} mediaLocation="full-screen" />
+      <MediaSection
+        mediaUrl={UnderstandabilityIllustration}
+        mediaLocation="full-screen"
+        imageDimensions={{ width: '80%', height: 'auto' }}
+        mt={16}
+      />
       <TextSection
         textSections={[
           'We want to demystify the complex and vast world of IT. We want to be your trusted partner and help you navigate the complexities and possibilities of IT.',
           'We will always provide our recommendations and challenge your perceptions when we deem it appropriate, however, in the end, you are the one making the decisions. That is why it is important to us to be transparent and clear and work to make IT understandable and accessible to you.'
         ]}
+        mt={16}
       />
       <MediaSection mediaUrl={TeamworkVideo} isVideo mediaLocation="full-screen" />
       <MainPointSection

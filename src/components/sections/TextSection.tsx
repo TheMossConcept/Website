@@ -6,11 +6,12 @@ type TextSectionProps = {
   textSections: string[];
   headline?: string;
   pointList?: boolean;
+  mt?: number;
 };
 
-const TextSection: FC<TextSectionProps> = ({ textSections, headline, pointList }) => {
+const TextSection: FC<TextSectionProps> = ({ textSections, headline, pointList, mt = 32 }) => {
   return (
-    <Grid item container xs={12} justifyContent="center" sx={{ mt: 32 }}>
+    <Grid item container xs={12} justifyContent="center" sx={{ mt }}>
       {headline && (
         <Grid item xs={12} sx={{ mb: 10 }}>
           <Grid container justifyContent="center">

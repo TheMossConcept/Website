@@ -47,6 +47,7 @@ const PurposePage: FC = () => {
           'Quality is a core value because it ensures that the software we produce is stable and reliable enough to be relied upon even for business critical tasks while simultaniously being flexible enough to stay relevant over time.',
           'Value generation is a core value because we want the software we develop to help free up time and energy. It does not matter how well-made a software system is if it does not fit with the workflows it is meant to support. If it does not fit with the people it is supposed to help, it does not generate value and thereby it becomes irrelevant.'
         ]}
+        mt={16}
       />
       <MediaSection mediaUrl={HighQualityImage} mediaLocation="full-screen" />
       <MainPointSection
@@ -59,6 +60,7 @@ const PurposePage: FC = () => {
           'Trust is essential as it is the core of a healthy, mutually beneficial relationship. If you do not trust us, you will not allow us to fully help and serve you with our expertise. If we do not trust you, we will not be able to dedicate ourselves fully to your company and your needs.',
           'Respect is essential as that is what allows us to remain curious and humble and learn from each other. If you do not respect us, our expertise and advice is not taken seriously and therefore has little or not impact. If we do not respect you, we will never truly understand your business and its unique needs and we will not be able to create software that generates massive value for you.'
         ]}
+        mt={16}
       />
       <MediaSection mediaUrl={TrustAndRespectTeam} mediaLocation="full-screen" />
       <Grid item xs={12} sx={{ mb: 32 }}>

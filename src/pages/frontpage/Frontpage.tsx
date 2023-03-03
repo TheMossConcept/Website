@@ -7,7 +7,7 @@ import { Grid } from '@mui/material';
 import MediaSection from '../../components/sections/MediaSection';
 import PurposePageTeaserSection from './PurposePageTeaserSection';
 import ContactSection from '../../components/sections/ContactSection';
-import WorkingVideo from '../../assets/Videos/working.mp4';
+import WorkingVideo from '../../assets/Videos/working.mov';
 import TrustAndRespectImage from '../../assets/Images/trust_and_respect.jpg';
 import TallPurposeImage from '../../assets/Images/purpose_tall.jpg';
 

@@ -5,15 +5,17 @@ type Props = {
   initialText: string;
   highlightedText?: string;
   textAfterHighlightedText?: string;
+  mt?: number;
 };
 
 const MainPointSection: FC<Props> = ({
   initialText,
   highlightedText,
-  textAfterHighlightedText
+  textAfterHighlightedText,
+  mt = 32
 }) => {
   return (
-    <Grid container justifyContent="center" sx={{ mt: 32 }}>
+    <Grid container justifyContent="center" sx={{ mt }}>
       <Grid item xs={6}>
         <Typography
           color="primary.transparent"
