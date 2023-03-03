@@ -45,7 +45,7 @@ const MediaSection: FC<Props> = ({
               src={mediaUrl}
               width={imageDimensions.width}
               height={imageDimensions.height}
-              style={{ margin: 'auto' }}
+              wrapperStyle={{ margin: 'auto' }}
             />
           )}
         </Grid>

@@ -13,7 +13,7 @@ import TallPurposeImage from '../../assets/Images/purpose_tall.jpg';
 
 const Frontpage: FC = () => {
   return (
-    <Grid container>
+    <Grid container sx={{ bgcolor: 'text.secondary', maxWidth: '100vw', overflowX: 'hidden' }}>
       <InitialSection />
       <ConceptPageTeaserSection />
       <PartnershipPageTeaserSection />
