@@ -18,7 +18,7 @@ const router = createBrowserRouter([
     element: (
       <>
         <Topbar />
-        <Frontpage />
+        <Frontpage key="frontpage" />
       </>
     )
   },

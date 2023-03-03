@@ -4,8 +4,8 @@ import FirstSubpageSection from '../../components/sections/FirstSubpageSection';
 import TextSection from '../../components/sections/TextSection';
 import BuildingBlockImage from '../../assets/Images/building_blocks.jpg';
 import TallPartnershipImage from '../../assets/Images/partnership_tall.jpg';
-import TreesSwayingVideo from '../../assets/Videos/trees-swaying.mp4';
-import BuildingBlockVideo from '../../assets/Videos/building-blocks.mp4';
+import TreesSwayingVideo from '../../assets/Videos/trees-swaying.mov';
+import BuildingBlockVideo from '../../assets/Videos/building_blocks.mov';
 import ShapesImage from '../../assets/Images/3D_shapes.jpg';
 import MediaSection from '../../components/sections/MediaSection';
 import MainPointSection from '../../components/sections/MainPointSection';
@@ -14,7 +14,7 @@ import NextPageSection from '../../components/sections/NextPageSection';
 
 const ConceptPage: FC = () => {
   return (
-    <Grid container sx={{ bgcolor: 'text.secondary' }}>
+    <Grid container sx={{ bgcolor: 'text.secondary', maxWidth: '100vw', overflowX: 'hidden' }}>
       <FirstSubpageSection
         headlineText={[
           {

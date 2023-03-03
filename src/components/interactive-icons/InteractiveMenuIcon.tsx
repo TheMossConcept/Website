@@ -17,12 +17,17 @@ const InteractiveMenuIcon: FC<Props> = ({ width, height, onClick }) => {
     setMiddlePathDValue('M.986,7.986h20');
   };
 
+  const handleIconClick: MouseEventHandler<SVGSVGElement> = (event) => {
+    window.scrollTo(0, 0);
+    onClick(event);
+  };
+
   return (
     <svg
       style={{ cursor: 'pointer' }}
       onMouseEnter={alignLines}
       onMouseLeave={dealignLines}
-      onClick={onClick}
+      onClick={handleIconClick}
       width={width}
       height={height}>
       <path
