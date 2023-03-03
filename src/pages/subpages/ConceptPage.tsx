@@ -11,10 +11,11 @@ import MediaSection from '../../components/sections/MediaSection';
 import MainPointSection from '../../components/sections/MainPointSection';
 import ContactSection from '../../components/sections/ContactSection';
 import NextPageSection from '../../components/sections/NextPageSection';
+import PageContainer from '../../components/PageContainer';
 
 const ConceptPage: FC = () => {
   return (
-    <Grid container sx={{ bgcolor: 'text.secondary', maxWidth: '100vw', overflowX: 'hidden' }}>
+    <PageContainer>
       <FirstSubpageSection
         headlineText={[
           {
@@ -81,7 +82,7 @@ const ConceptPage: FC = () => {
           { text: 'to customers', color: 'primary.transparent', variant: 'PoppinsBig-h2' }
         ]}
       />
-    </Grid>
+    </PageContainer>
   );
 };
 

@@ -10,10 +10,11 @@ import ContactSection from '../../components/sections/ContactSection';
 import WorkingVideo from '../../assets/Videos/working.mov';
 import TrustAndRespectImage from '../../assets/Images/trust_and_respect.jpg';
 import TallPurposeImage from '../../assets/Images/purpose_tall.jpg';
+import PageContainer from '../../components/PageContainer';
 
 const Frontpage: FC = () => {
   return (
-    <Grid container sx={{ bgcolor: 'text.secondary', maxWidth: '100vw', overflowX: 'hidden' }}>
+    <PageContainer>
       <InitialSection />
       <ConceptPageTeaserSection />
       <PartnershipPageTeaserSection />
@@ -30,7 +31,7 @@ const Frontpage: FC = () => {
       <Grid item xs={12} sx={{ mb: 32 }}>
         <ContactSection />
       </Grid>
-    </Grid>
+    </PageContainer>
   );
 };
 

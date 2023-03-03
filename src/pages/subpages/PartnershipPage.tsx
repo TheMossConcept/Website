@@ -12,10 +12,11 @@ import ContactSection from '../../components/sections/ContactSection';
 import NextPageSection from '../../components/sections/NextPageSection';
 import BusinessValueImage from '../../assets/Images/business_value.jpg';
 import UnderstandabilityIllustration from '../../assets/Images/understandability_illustration.png';
+import PageContainer from '../../components/PageContainer';
 
 const PartnershipPage: FC = () => {
   return (
-    <Grid container sx={{ bgcolor: 'text.secondary', maxWidth: '100vw', overflowX: 'hidden' }}>
+    <PageContainer>
       <FirstSubpageSection
         image={TallPartnershipImage}
         text="We do not just provide you with isolated software systems, we take as much responsibility for your software development needs as you want us to. We continuously work to better our understanding of your business and collaborate with you to build software that most effectively supports it."
@@ -82,7 +83,7 @@ const PartnershipPage: FC = () => {
           { text: 'purpose', color: 'primary.transparent', variant: 'PoppinsBig-h2' }
         ]}
       />
-    </Grid>
+    </PageContainer>
   );
 };
 

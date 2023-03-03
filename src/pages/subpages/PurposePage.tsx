@@ -9,10 +9,11 @@ import FirstSubpageSection from '../../components/sections/FirstSubpageSection';
 import MainPointSection from '../../components/sections/MainPointSection';
 import MediaSection from '../../components/sections/MediaSection';
 import TextSection from '../../components/sections/TextSection';
+import PageContainer from '../../components/PageContainer';
 
 const PurposePage: FC = () => {
   return (
-    <Grid container sx={{ bgcolor: 'text.secondary', maxWidth: '100vw', overflowX: 'hidden' }}>
+    <PageContainer>
       <FirstSubpageSection
         headlineText={[
           {
@@ -66,7 +67,7 @@ const PurposePage: FC = () => {
       <Grid item xs={12} sx={{ mb: 32 }}>
         <ContactSection />
       </Grid>
-    </Grid>
+    </PageContainer>
   );
 };
 
