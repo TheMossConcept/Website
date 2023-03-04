@@ -5,7 +5,6 @@ import TallPartnershipImage from '../../assets/Images/partnership_tall.jpg';
 import CollaborationImage from '../../assets/Images/collaboration.jpg';
 import TeamworkVideo from '../../assets/Videos/teamwork.mp4';
 import TallPurposeImage from '../../assets/Images/purpose_tall.jpg';
-import { Grid } from '@mui/material';
 import MainPointSection from '../../components/sections/MainPointSection';
 import TextSection from '../../components/sections/TextSection';
 import ContactSection from '../../components/sections/ContactSection';
