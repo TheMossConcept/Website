@@ -3,7 +3,6 @@ import { FC } from 'react';
 import TallPurposeImage from '../../assets/Images/purpose_tall.jpg';
 import HighQualityImage from '../../assets/Images/working_in_office.jpg';
 import TrustAndRespectTeam from '../../assets/Images/trust_and_respect_in_team.jpg';
-import ForrestVideo from '../../assets/Videos/forrest.mov';
 import ContactSection from '../../components/sections/ContactSection';
 import FirstSubpageSection from '../../components/sections/FirstSubpageSection';
 import MainPointSection from '../../components/sections/MainPointSection';

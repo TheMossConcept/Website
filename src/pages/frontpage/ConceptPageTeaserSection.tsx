@@ -2,7 +2,6 @@ import { Grid, Typography } from '@mui/material';
 import { FC, useRef } from 'react';
 import TextContainer from '../../components/TextContainer';
 import useAppearingText from '../../utilities/useAppearingText';
-import BuildingBlockVideo from '../../assets/Videos/building_blocks.mov';
 import MediaSection from '../../components/sections/MediaSection';
 import HeadlineSection from '../../components/sections/HeadlineSection';
 import InteractiveLink from '../../components/InteractiveLink';
