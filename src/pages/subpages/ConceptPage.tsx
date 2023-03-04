@@ -3,8 +3,6 @@ import FirstSubpageSection from '../../components/sections/FirstSubpageSection';
 import TextSection from '../../components/sections/TextSection';
 import BuildingBlockImage from '../../assets/Images/building_blocks.jpg';
 import TallPartnershipImage from '../../assets/Images/partnership_tall.jpg';
-import TreesSwayingVideo from '../../assets/Videos/trees-swaying.mov';
-import BuildingBlockVideo from '../../assets/Videos/building_blocks.mov';
 import ShapesImage from '../../assets/Images/3D_shapes.jpg';
 import MediaSection from '../../components/sections/MediaSection';
 import MainPointSection from '../../components/sections/MainPointSection';
@@ -51,7 +49,11 @@ const ConceptPage: FC = () => {
         highlightedText="high quality"
         textAfterHighlightedText="building blocks across systems"
       />
-      <MediaSection mediaUrl={BuildingBlockVideo} isVideo mediaLocation="full-screen" />
+      <MediaSection
+        mediaUrl="https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/building_blocks.mov"
+        isVideo
+        mediaLocation="full-screen"
+      />
       <TextSection
         textSections={[
           'Our building blocks constantly improve and evolve so you will have easy access to more advanced features in the future.',
@@ -64,7 +66,11 @@ const ConceptPage: FC = () => {
         initialText="Small, well-shaped building blocks lead to unprecedented"
         highlightedText="flexibility and stability."
       />
-      <MediaSection mediaUrl={TreesSwayingVideo} isVideo mediaLocation="full-screen" />
+      <MediaSection
+        mediaUrl="https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/trees-swaying.mov"
+        isVideo
+        mediaLocation="full-screen"
+      />
       <TextSection
         textSections={[
           'Less time redoing the same functionality over and over with slight variations leads to more time collaborating with you.',

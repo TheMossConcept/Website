@@ -1,6 +1,5 @@
 import { Box, Typography, Grid } from '@mui/material';
 import { FC, useContext, useLayoutEffect, useState } from 'react';
-import FrontpageVideo from '../../assets/Videos/frontpage.mp4';
 import { ScrollContext } from '../../App';
 
 // Put a background image here that's in the slide and make a fade
@@ -26,20 +25,11 @@ const InitialSection: FC = () => {
           width: '100vw'
           // We want this to be below everything else!
         }}>
-        <source src={FrontpageVideo} type="video/mp4" />
+        <source
+          src="https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/frontpage.mp4"
+          type="video/mp4"
+        />
       </video>
-      {/*<img
-        src="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-        style={{
-          height: '100vh',
-          width: `100vw`,
-          right: `${rightPosition}vw`,
-          transition: 'right 1380ms ease-out',
-          position: 'absolute'
-          // We want this to be below everything else!
-          // zIndex: -1
-        }}
-      />*/}
       <Content />
     </Box>
   );

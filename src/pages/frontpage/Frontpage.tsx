@@ -7,7 +7,6 @@ import { Grid } from '@mui/material';
 import MediaSection from '../../components/sections/MediaSection';
 import PurposePageTeaserSection from './PurposePageTeaserSection';
 import ContactSection from '../../components/sections/ContactSection';
-import WorkingVideo from '../../assets/Videos/working.mov';
 import PageContainer from '../../components/PageContainer';
 import BottomImageSection from './BottomImageSection';
 
@@ -17,7 +16,11 @@ const Frontpage: FC = () => {
       <InitialSection />
       <ConceptPageTeaserSection />
       <PartnershipPageTeaserSection />
-      <MediaSection mediaUrl={WorkingVideo} isVideo mediaLocation="full-screen" />
+      <MediaSection
+        mediaUrl="https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/working.mov"
+        isVideo
+        mediaLocation="full-screen"
+      />
       <PurposePageTeaserSection />
       <BottomImageSection />
       <Grid item xs={12} sx={{ mb: 32 }}>

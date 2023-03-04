@@ -66,7 +66,11 @@ const PartnershipPage: FC = () => {
         ]}
         mt={16}
       />
-      <MediaSection mediaUrl={TeamworkVideo} isVideo mediaLocation="full-screen" />
+      <MediaSection
+        mediaUrl="https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/teamwork.mp4"
+        isVideo
+        mediaLocation="full-screen"
+      />
       <MainPointSection
         initialText="We are a "
         highlightedText="purpose-driven "

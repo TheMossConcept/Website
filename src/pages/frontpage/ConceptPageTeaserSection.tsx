@@ -73,7 +73,11 @@ const ConceptPageTeaserSection: FC = () => {
           sx={{ marginTop: 10, opacity: linkOpacity }}
         />
       </TextContainer>
-      <MediaSection mediaUrl={BuildingBlockVideo} isVideo mediaLocation="left" />
+      <MediaSection
+        mediaUrl="https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/building_blocks.mov"
+        isVideo
+        mediaLocation="left"
+      />
     </Grid>
   );
 };

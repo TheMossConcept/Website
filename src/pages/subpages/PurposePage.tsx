@@ -37,7 +37,11 @@ const PurposePage: FC = () => {
         highlightedText="meaningful "
         textAfterHighlightedText="to them"
       />
-      <MediaSection mediaUrl={ForrestVideo} isVideo mediaLocation="full-screen" />
+      <MediaSection
+        mediaUrl="https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/forrest.mov"
+        isVideo
+        mediaLocation="full-screen"
+      />
       <MainPointSection
         initialText=""
         highlightedText="Quality and value generation "
