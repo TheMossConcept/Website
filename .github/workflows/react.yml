@@ -22,9 +22,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: Build
+    - name: Build and run
       run: |
         cd src
         npm install
         npm run build
+        npm install -g serve
         serve -s build
