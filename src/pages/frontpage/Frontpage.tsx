@@ -8,9 +8,8 @@ import MediaSection from '../../components/sections/MediaSection';
 import PurposePageTeaserSection from './PurposePageTeaserSection';
 import ContactSection from '../../components/sections/ContactSection';
 import WorkingVideo from '../../assets/Videos/working.mov';
-import TrustAndRespectImage from '../../assets/Images/trust_and_respect.jpg';
-import TallPurposeImage from '../../assets/Images/purpose_tall.jpg';
 import PageContainer from '../../components/PageContainer';
+import BottomImageSection from './BottomImageSection';
 
 const Frontpage: FC = () => {
   return (
@@ -20,14 +19,7 @@ const Frontpage: FC = () => {
       <PartnershipPageTeaserSection />
       <MediaSection mediaUrl={WorkingVideo} isVideo mediaLocation="full-screen" />
       <PurposePageTeaserSection />
-      <Grid container spacing={4} sx={{ mt: 32 }}>
-        <Grid item xs={6} sx={{ mt: 29 }}>
-          <img src={TallPurposeImage} style={{ width: '100%', height: 'auto' }} />
-        </Grid>
-        <Grid item xs={6}>
-          <img src={TrustAndRespectImage} style={{ width: '100%', height: 'auto' }} />
-        </Grid>
-      </Grid>
+      <BottomImageSection />
       <Grid item xs={12} sx={{ mb: 32 }}>
         <ContactSection />
       </Grid>

@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { Grid } from '@mui/material';
 import FirstSubpageSection from '../../components/sections/FirstSubpageSection';
 import TextSection from '../../components/sections/TextSection';
 import BuildingBlockImage from '../../assets/Images/building_blocks.jpg';
