@@ -1,7 +1,7 @@
 import { Grid } from '@mui/material';
 import Image from 'mui-image';
-import TrustAndRespectImage from '../../assets/Images/trust_and_respect.jpg';
-import TallPurposeImage from '../../assets/Images/purpose_tall.jpg';
+import TrustAndRespectImage from '/images/trust_and_respect.jpg';
+import TallPurposeImage from '/images/purpose_tall.jpg';
 import { FC } from 'react';
 
 const BottomImageSection: FC = () => {

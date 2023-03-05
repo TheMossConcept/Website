@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import FirstSubpageSection from '../../components/sections/FirstSubpageSection';
 import TextSection from '../../components/sections/TextSection';
-import BuildingBlockImage from '../../assets/Images/building_blocks.jpg';
-import TallPartnershipImage from '../../assets/Images/partnership_tall.jpg';
-import ShapesImage from '../../assets/Images/3D_shapes.jpg';
+import BuildingBlockImage from '/images/building_blocks.jpg';
+import TallPartnershipImage from '/images/partnership_tall.jpg';
+import ShapesImage from '/images/3D_shapes.jpg';
 import MediaSection from '../../components/sections/MediaSection';
 import MainPointSection from '../../components/sections/MainPointSection';
 import ContactSection from '../../components/sections/ContactSection';

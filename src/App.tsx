@@ -8,7 +8,7 @@ import { Box } from '@mui/material';
 import PartnershipPage from './pages/subpages/PartnershipPage';
 import PurposePage from './pages/subpages/PurposePage';
 import useYScroll from './utilities/useYScroll';
-import allImages from './assets/Images/allImages';
+import allImages from '../public/images/allImages';
 
 export const ScrollContext = createContext(0);
 
