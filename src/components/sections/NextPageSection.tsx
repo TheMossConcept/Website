@@ -1,6 +1,6 @@
 import { Grid, Typography } from '@mui/material';
+import { useRouter } from 'next/router';
 import { FC, useRef } from 'react';
-import { useNavigate } from 'react-router';
 import InteractiveLink from '../InteractiveLink';
 import HeadlineSection, { HeadlineSectionProps } from './HeadlineSection';
 
@@ -11,7 +11,7 @@ type Props = { imageUrl: string; text: string; link: string } & Pick<
 
 const NextPageSection: FC<Props> = ({ imageUrl, text, link, firstLineText, secondLineText }) => {
   const containerRef = useRef(null);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   return (
     <Grid item container xs={12} spacing={5} sx={{ mt: 32 }} ref={containerRef}>
@@ -29,7 +29,7 @@ const NextPageSection: FC<Props> = ({ imageUrl, text, link, firstLineText, secon
         </Typography>
         <InteractiveLink
           text="Continue to read"
-          navigate={() => navigate(link)}
+          navigate={() => router.push(link)}
           variant="PoppinsBig-button"
           color="secondary.transparent"
         />

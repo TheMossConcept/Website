@@ -1,6 +1,6 @@
 import { Grid, Typography } from '@mui/material';
+import { useRouter } from 'next/router';
 import { FC, useRef } from 'react';
-import { useNavigate } from 'react-router';
 import InteractiveLink from '../../components/InteractiveLink';
 import HeadlineSection from '../../components/sections/HeadlineSection';
 import TextContainer from '../../components/TextContainer';
@@ -12,7 +12,7 @@ const PurposePageTeaserSection: FC = () => {
   const textSectionOpacity = useAppearingText(containerRef, 80, 4);
   const linkOpacity = useAppearingText(containerRef, 95, 4);
 
-  const navigate = useNavigate();
+  const router = useRouter();
 
   return (
     <Grid item xs={10} sx={{ pt: 32 }} ref={containerRef}>
@@ -34,7 +34,7 @@ const PurposePageTeaserSection: FC = () => {
         </Typography>
         <InteractiveLink
           text="Learn more about our underlying purpose"
-          navigate={() => navigate('/purpose')}
+          navigate={() => router.push('/purpose')}
           variant="PoppinsSmall-button"
           color="secondary.transparent"
           sx={{ marginTop: 10, opacity: linkOpacity }}

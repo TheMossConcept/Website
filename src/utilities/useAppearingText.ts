@@ -1,5 +1,5 @@
 import { RefObject, useContext, useLayoutEffect, useState } from 'react';
-import { ScrollContext } from '../App';
+import { ScrollContext } from '../utilities/useYScroll';
 
 const useAppearingText = (
   containerRef: RefObject<HTMLElement>,

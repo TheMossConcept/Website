@@ -5,7 +5,7 @@ import useAppearingText from '../../utilities/useAppearingText';
 import MediaSection from '../../components/sections/MediaSection';
 import HeadlineSection from '../../components/sections/HeadlineSection';
 import InteractiveLink from '../../components/InteractiveLink';
-import { useNavigate } from 'react-router';
+import { useRouter } from 'next/router';
 
 const ConceptPageTeaserSection: FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -14,7 +14,7 @@ const ConceptPageTeaserSection: FC = () => {
   const secondTextSectionOpacity = useAppearingText(containerRef, 87.5, 4);
   const linkOpacity = useAppearingText(containerRef, 92.5, 4);
 
-  const navigate = useNavigate();
+  const router = useRouter();
 
   return (
     <Grid
@@ -66,7 +66,7 @@ const ConceptPageTeaserSection: FC = () => {
         </Typography>
         <InteractiveLink
           text="Read more about what makes our concept unique"
-          navigate={() => navigate('/concept')}
+          navigate={() => router.push('/concept')}
           variant="PoppinsSmall-button"
           color="text.primary"
           sx={{ marginTop: 10, opacity: linkOpacity }}

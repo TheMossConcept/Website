@@ -1,8 +1,8 @@
 import { Box, Grid, IconButton, Typography } from '@mui/material';
 import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
-import { useNavigate } from 'react-router-dom';
 import InteractiveLink from './InteractiveLink';
+import { useRouter } from 'next/router';
 
 type Props = { isOpenState: [boolean, Dispatch<SetStateAction<boolean>>] };
 
@@ -10,12 +10,12 @@ type Props = { isOpenState: [boolean, Dispatch<SetStateAction<boolean>>] };
 type NavigationItemProps = { text: string; link: string };
 
 const NavigationItem: FC<NavigationItemProps> = ({ text, link }) => {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   return (
     <InteractiveLink
       text={text}
-      navigate={() => navigate(link)}
+      navigate={() => router.push(link)}
       variant="PoppinsSmall-h1"
       color="text.primary"
     />

@@ -1,5 +1,5 @@
 import { Grid } from '@mui/material';
-import Image from 'mui-image';
+import Image from 'next/image';
 import { FC } from 'react';
 
 type Placement = 'left' | 'right' | 'full-screen';
@@ -43,9 +43,12 @@ const MediaSection: FC<Props> = ({
           ) : (
             <Image
               src={mediaUrl}
-              width={imageDimensions.width}
-              height={imageDimensions.height}
-              wrapperStyle={{ margin: 'auto' }}
+              alt="An image that cannot be loaded at the moment"
+              style={{
+                margin: 'auto',
+                width: imageDimensions.width,
+                height: imageDimensions.height
+              }}
             />
           )}
         </Grid>

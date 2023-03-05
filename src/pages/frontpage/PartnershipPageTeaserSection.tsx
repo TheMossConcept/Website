@@ -2,16 +2,14 @@ import { Grid, Typography } from '@mui/material';
 import { FC, useRef } from 'react';
 import HeadlineSection from '../../components/sections/HeadlineSection';
 import TextContainer from '../../components/TextContainer';
-import CollaborationImage from '/images/collaboration.jpg';
-import PeopleTalkingImage from '/images/people_talking.jpg';
 import InteractiveLink from '../../components/InteractiveLink';
-import { useNavigate } from 'react-router';
 import useAppearingText from '../../utilities/useAppearingText';
+import { useRouter } from 'next/router';
 
 const PartnershipPageTeaserSection: FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const firstTextOpacity = useAppearingText(containerRef, 100, 4);
   const secondTextOpacity = useAppearingText(containerRef, 140, 4);
@@ -51,12 +49,12 @@ const PartnershipPageTeaserSection: FC = () => {
           </TextContainer>
         </Grid>
         <Grid item xs={6}>
-          <img src={PeopleTalkingImage} style={{ width: '100%', height: 'auto' }} />
+          <img src="/images/people_talking.jpg" style={{ width: '100%', height: 'auto' }} />
         </Grid>
       </Grid>
       <Grid container spacing={19}>
         <Grid item xs={6}>
-          <img src={CollaborationImage} style={{ width: '100%', height: 'auto' }} />
+          <img src="/images/collaboration.jpg" style={{ width: '100%', height: 'auto' }} />
         </Grid>
         <Grid item xs={6} alignSelf="center">
           <TextContainer textPosition="right">
@@ -73,7 +71,7 @@ const PartnershipPageTeaserSection: FC = () => {
             text="Read more about what it is like to work with us"
             color="primary.transparent"
             variant="PoppinsSmall-button"
-            navigate={() => navigate('/partnership')}
+            navigate={() => router.push('/partnership')}
             sx={{ marginTop: 10, opacity: linkOpacity }}
           />
         </Grid>

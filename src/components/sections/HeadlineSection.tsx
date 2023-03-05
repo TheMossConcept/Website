@@ -1,6 +1,6 @@
 import { Typography, TypographyProps } from '@mui/material';
 import { FC, RefObject, useContext, useLayoutEffect, useState } from 'react';
-import { ScrollContext } from '../../App';
+import { ScrollContext } from '../../utilities/useYScroll';
 import useAppearingText from '../../utilities/useAppearingText';
 
 type TextWithMetadata = {
