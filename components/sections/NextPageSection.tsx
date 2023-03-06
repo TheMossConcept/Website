@@ -1,4 +1,5 @@
 import { Grid, Typography } from '@mui/material';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { FC, useRef } from 'react';
 import InteractiveLink from '../InteractiveLink';
@@ -16,7 +17,11 @@ const NextPageSection: FC<Props> = ({ imageUrl, text, link, firstLineText, secon
   return (
     <Grid item container xs={12} spacing={5} sx={{ mt: 32 }} ref={containerRef}>
       <Grid item xs={6}>
-        <img src={imageUrl} style={{ width: '100%', height: 'auto' }} />
+        <Image
+          src={imageUrl}
+          style={{ width: '100%', height: 'auto' }}
+          alt="The tall image depicting the next subsection"
+        />
       </Grid>
       <Grid item xs={6} alignSelf="flex-end" sx={{ pb: 4 }}>
         <HeadlineSection

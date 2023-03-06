@@ -4,7 +4,10 @@ import HeadlineSection from '../components/sections/HeadlineSection';
 import TextContainer from '../components/TextContainer';
 import InteractiveLink from '../components/InteractiveLink';
 import useAppearingText from '../utilities/useAppearingText';
+import PeopleTalkingImage from '../public/images/people_talking.jpg';
+import CollaborationImage from '../public/images/collaboration.jpg';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 const PartnershipPageTeaserSection: FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -49,12 +52,20 @@ const PartnershipPageTeaserSection: FC = () => {
           </TextContainer>
         </Grid>
         <Grid item xs={6}>
-          <img src="/images/people_talking.jpg" style={{ width: '100%', height: 'auto' }} />
+          <Image
+            src={PeopleTalkingImage}
+            style={{ width: '100%', height: 'auto' }}
+            alt="People talking"
+          />
         </Grid>
       </Grid>
       <Grid container spacing={19}>
         <Grid item xs={6}>
-          <img src="/images/collaboration.jpg" style={{ width: '100%', height: 'auto' }} />
+          <Image
+            src={CollaborationImage}
+            style={{ width: '100%', height: 'auto' }}
+            alt="People collaborating around a screen"
+          />
         </Grid>
         <Grid item xs={6} alignSelf="center">
           <TextContainer textPosition="right">

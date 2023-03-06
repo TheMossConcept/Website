@@ -1,5 +1,6 @@
 import { Box, Grid, Typography, TypographyProps } from '@mui/material';
 import { FC } from 'react';
+import Image from 'next/image';
 
 type TextWithMetadata = {
   text: string;
@@ -31,7 +32,11 @@ const FirstSubpageSection: FC<Props> = ({ text, headlineText, image }) => {
         </Box>
       </Grid>
       <Grid item xs={6}>
-        <img src={image} width="100%" height="100%" />
+        <Image
+          src={image}
+          alt="The tall image depicting this subsection"
+          style={{ width: '100%', height: 'auto' }}
+        />
       </Grid>
     </Grid>
   );
