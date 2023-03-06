@@ -1,7 +1,7 @@
 import { Box, Grid, keyframes, Typography } from '@mui/material';
-import { FC, useEffect, useState } from 'react';
+import { FC, PropsWithChildren, useEffect, useState } from 'react';
 
-const LoadingLogo: FC = ({ children }) => {
+const LoadingLogo: FC<PropsWithChildren> = ({ children }) => {
   const initialBackgroundContainerRightPosition = 100;
   const initialTextContainerOpacity = 1;
   const initialNewPageOpacity = 0;
