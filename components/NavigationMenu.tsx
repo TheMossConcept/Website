@@ -53,6 +53,7 @@ const NavigationMenu: FC<Props> = ({ isOpenState }) => {
     <>
       {isOpen && (
         <Box
+          onClick={() => setIsOpen(false)}
           sx={{
             opacity,
             bgcolor: 'secondary.main',
