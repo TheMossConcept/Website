@@ -35,7 +35,7 @@ const MediaSection: FC<Props> = ({
             ? 'flex-end'
             : 'center'
         }>
-        <Grid item xs={mediaLocation === 'full-screen' ? 12 : 9}>
+        <Grid item xs={mediaLocation === 'full-screen' ? 12 : 9} style={{ textAlign: 'center' }}>
           {isVideo ? (
             <video autoPlay muted loop style={{ width: '100%', height: 'auto' }}>
               <source src={mediaUrl} type="video/mp4" />
@@ -45,7 +45,6 @@ const MediaSection: FC<Props> = ({
               src={mediaUrl}
               alt="An image that cannot be loaded at the moment"
               style={{
-                margin: 'auto',
                 width: imageDimensions.width,
                 height: imageDimensions.height
               }}
