@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
 
-import theme from '../src/utilities/theme';
+import theme from '../utilities/theme';
 
-import Topbar from '../src/components/Topbar';
-import Frontpage from '../src/pages/frontpage/Frontpage';
+import Topbar from '../components/Topbar';
+import Frontpage from '../frontpage/Frontpage';
 
 import { ThemeProvider } from '@mui/material/styles';
-import useYScroll, { ScrollContext } from '../src/utilities/useYScroll';
+import useYScroll, { ScrollContext } from '../utilities/useYScroll';
 
 const IndexPage: FC = () => {
   const yScroll = useYScroll();

@@ -3,12 +3,12 @@ import { FC } from 'react';
 import TallPurposeImage from '/images/purpose_tall.jpg';
 import HighQualityImage from '/images/working_in_office.jpg';
 import TrustAndRespectTeam from '/images/trust_and_respect_in_team.jpg';
-import ContactSection from '../../components/sections/ContactSection';
-import FirstSubpageSection from '../../components/sections/FirstSubpageSection';
-import MainPointSection from '../../components/sections/MainPointSection';
-import MediaSection from '../../components/sections/MediaSection';
-import TextSection from '../../components/sections/TextSection';
-import PageContainer from '../../components/PageContainer';
+import ContactSection from '../components/sections/ContactSection';
+import FirstSubpageSection from '../components/sections/FirstSubpageSection';
+import MainPointSection from '../components/sections/MainPointSection';
+import MediaSection from '../components/sections/MediaSection';
+import TextSection from '../components/sections/TextSection';
+import PageContainer from '../components/PageContainer';
 
 const PurposePage: FC = () => {
   return (

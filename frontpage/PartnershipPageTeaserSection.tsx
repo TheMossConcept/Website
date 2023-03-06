@@ -1,9 +1,9 @@
 import { Grid, Typography } from '@mui/material';
 import { FC, useRef } from 'react';
-import HeadlineSection from '../../components/sections/HeadlineSection';
-import TextContainer from '../../components/TextContainer';
-import InteractiveLink from '../../components/InteractiveLink';
-import useAppearingText from '../../utilities/useAppearingText';
+import HeadlineSection from '../components/sections/HeadlineSection';
+import TextContainer from '../components/TextContainer';
+import InteractiveLink from '../components/InteractiveLink';
+import useAppearingText from '../utilities/useAppearingText';
 import { useRouter } from 'next/router';
 
 const PartnershipPageTeaserSection: FC = () => {

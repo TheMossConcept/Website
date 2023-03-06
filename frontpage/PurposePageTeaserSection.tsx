@@ -1,10 +1,10 @@
 import { Grid, Typography } from '@mui/material';
 import { useRouter } from 'next/router';
 import { FC, useRef } from 'react';
-import InteractiveLink from '../../components/InteractiveLink';
-import HeadlineSection from '../../components/sections/HeadlineSection';
-import TextContainer from '../../components/TextContainer';
-import useAppearingText from '../../utilities/useAppearingText';
+import InteractiveLink from '../components/InteractiveLink';
+import HeadlineSection from '../components/sections/HeadlineSection';
+import TextContainer from '../components/TextContainer';
+import useAppearingText from '../utilities/useAppearingText';
 
 const PurposePageTeaserSection: FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);

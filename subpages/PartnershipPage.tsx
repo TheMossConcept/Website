@@ -1,16 +1,16 @@
 import { FC } from 'react';
-import FirstSubpageSection from '../../components/sections/FirstSubpageSection';
-import MediaSection from '../../components/sections/MediaSection';
+import FirstSubpageSection from '../components/sections/FirstSubpageSection';
+import MediaSection from '../components/sections/MediaSection';
 import TallPartnershipImage from '/images/partnership_tall.jpg';
 import CollaborationImage from '/images/collaboration.jpg';
 import TallPurposeImage from '/images/purpose_tall.jpg';
-import MainPointSection from '../../components/sections/MainPointSection';
-import TextSection from '../../components/sections/TextSection';
-import ContactSection from '../../components/sections/ContactSection';
-import NextPageSection from '../../components/sections/NextPageSection';
+import MainPointSection from '../components/sections/MainPointSection';
+import TextSection from '../components/sections/TextSection';
+import ContactSection from '../components/sections/ContactSection';
+import NextPageSection from '../components/sections/NextPageSection';
 import BusinessValueImage from '/images/business_value.jpg';
 import UnderstandabilityIllustration from '/images/understandability_illustration.png';
-import PageContainer from '../../components/PageContainer';
+import PageContainer from '../components/PageContainer';
 
 const PartnershipPage: FC = () => {
   return (

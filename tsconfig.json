@@ -23,7 +23,7 @@
   },
   "include": [
     "src"
-, "public/images/allImages.ts"  ],
+, "public/images/allImages.ts", "components/interactive-icons/InteractiveMenuIcon.tsx", "components/interactive-icons/InteractiveLogo.tsx", "components/sections/FirstSubpageSection.tsx", "components/sections/HeadlineSection.tsx", "components/sections/MainPointSection.tsx", "components/sections/TextSection.tsx", "components/sections/MediaSection.tsx", "components/sections/NextPageSection.tsx", "components/sections/ContactSection.tsx", "components/NavigationMenu.tsx", "components/Topbar.tsx", "components/TextContainer.tsx", "components/LoadingLogo.tsx", "components/InteractiveLink.tsx", "components/PageContainer.tsx", "frontpage/InitialSection.tsx", "frontpage/Frontpage.tsx", "frontpage/ConceptPageTeaserSection.tsx", "frontpage/PurposePageTeaserSection.tsx", "frontpage/PartnershipPageTeaserSection.tsx", "frontpage/BottomImageSection.tsx", "subpages/PurposePage.tsx", "subpages/PartnershipPage.tsx", "subpages/ConceptPage.tsx", "types/createTypography.d.ts", "types/createPalette.d.ts", "types/next-env.d.ts", "utilities/useAppearingText.ts", "utilities/useYScroll.ts", "utilities/allImages.ts", "utilities/theme.ts"  ],
   "exclude": [
     "node_modules"
   ]

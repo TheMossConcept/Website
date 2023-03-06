@@ -1,10 +1,10 @@
 import { Grid, Typography } from '@mui/material';
 import { FC, useRef } from 'react';
-import TextContainer from '../../components/TextContainer';
-import useAppearingText from '../../utilities/useAppearingText';
-import MediaSection from '../../components/sections/MediaSection';
-import HeadlineSection from '../../components/sections/HeadlineSection';
-import InteractiveLink from '../../components/InteractiveLink';
+import TextContainer from '../components/TextContainer';
+import useAppearingText from '../utilities/useAppearingText';
+import MediaSection from '../components/sections/MediaSection';
+import HeadlineSection from '../components/sections/HeadlineSection';
+import InteractiveLink from '../components/InteractiveLink';
 import { useRouter } from 'next/router';
 
 const ConceptPageTeaserSection: FC = () => {

@@ -1,6 +1,6 @@
 import { Box, Typography, Grid } from '@mui/material';
 import { FC, useContext, useLayoutEffect, useState } from 'react';
-import { ScrollContext } from '../../utilities/useYScroll';
+import { ScrollContext } from '../utilities/useYScroll';
 
 // Put a background image here that's in the slide and make a fade
 // for the text which is a bit delayed compared to the background image
