@@ -3,7 +3,7 @@ import FirstSubpageSection from '../components/sections/FirstSubpageSection';
 import TextSection from '../components/sections/TextSection';
 import BuildingBlockImage from '../public/images/building_blocks.jpg';
 import TallPartnershipImage from '../public/images/partnership_tall.jpg';
-import ShapesImage from '../public/images/3D_shapes.jpg';
+import ShapesImage from '../public/images/shapes.png';
 import MediaSection from '../components/sections/MediaSection';
 import MainPointSection from '../components/sections/MainPointSection';
 import ContactSection from '../components/sections/ContactSection';
@@ -37,6 +37,7 @@ const ConceptPage: FC = () => {
             }
           }
         ]}
+        textMarginTop={16}
         image={ShapesImage}
         text="
             In essence, we work smarter, not harder. We reuse what makes sense which gives us more
@@ -45,7 +46,7 @@ const ConceptPage: FC = () => {
           "
       />
       <MainPointSection
-        initialText="We reuse"
+        initialText="We build and reuse"
         highlightedText="high quality"
         textAfterHighlightedText="building blocks across systems"
       />
@@ -56,7 +57,7 @@ const ConceptPage: FC = () => {
       />
       <TextSection
         textSections={[
-          'Our building blocks constantly improve and evolve so you will have easy access to more advanced features in the future.',
+          'We constantly improve and evolve our building blocks so you will have easy access to more advanced features in the future.',
           'The more we reuse a building block, the more time and care is freed up to put into it to ensure it is of the highest possible quality. This leads to highly stable software.',
           'We will build as many custom building blocks as is necessary to build your system exactly as it needs to be. Since we are experts in building small blocks that can easily be composed and reconfigured, your system will be highly flexible.'
         ]}

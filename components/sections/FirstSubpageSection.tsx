@@ -8,13 +8,25 @@ type TextWithMetadata = {
 } & Pick<TypographyProps, 'variant' | 'color' | 'sx'>;
 
 /* eslint-disable-next-line @typescript-eslint/ban-types */
-type Props = { text: string; headlineText: TextWithMetadata[]; image: string };
+type Props = {
+  text: string;
+  headlineText: TextWithMetadata[];
+  image?: string;
+  video?: string;
+  textMarginTop?: number;
+};
 
-const FirstSubpageSection: FC<Props> = ({ text, headlineText, image }) => {
+const FirstSubpageSection: FC<Props> = ({
+  text,
+  headlineText,
+  image,
+  video,
+  textMarginTop = 0
+}) => {
   return (
-    <Grid item container xs={12} spacing={5}>
+    <Grid item container xs={12} spacing={5} alignItems="center">
       <Grid item xs={6}>
-        <Box sx={{ marginTop: '53.55%', ml: '30px' }}>
+        <Box sx={{ ml: '30px', mt: textMarginTop }}>
           {headlineText.map((textBit) => (
             <Typography
               component={textBit.isInline ? 'span' : 'div'}
@@ -32,11 +44,17 @@ const FirstSubpageSection: FC<Props> = ({ text, headlineText, image }) => {
         </Box>
       </Grid>
       <Grid item xs={6}>
-        <Image
-          src={image}
-          alt="The tall image depicting this subsection"
-          style={{ width: '100%', height: 'auto' }}
-        />
+        {image ? (
+          <Image
+            src={image}
+            alt="The tall image depicting this subsection"
+            style={{ width: '100%', height: 'auto' }}
+          />
+        ) : video ? (
+          <video autoPlay loop muted>
+            <source src={video} style={{ width: '100%', height: 'auto' }} />
+          </video>
+        ) : null}
       </Grid>
     </Grid>
   );

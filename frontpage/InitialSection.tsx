@@ -25,10 +25,7 @@ const InitialSection: FC = () => {
           width: '100vw'
           // We want this to be below everything else!
         }}>
-        <source
-          src="https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/frontpage.mp4"
-          type="video/mp4"
-        />
+        <source src="https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/frontpage.mp4" />
       </video>
       <Content />
     </Box>
