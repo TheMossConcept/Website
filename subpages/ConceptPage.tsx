@@ -42,7 +42,7 @@ const ConceptPage: FC = () => {
         text="
             In essence, we work smarter, not harder. We reuse what makes sense which gives us more
             time to ensure quality, to deeply understand your workflows and thereby to build exactly
-            the software you need, even when you do not know exactly what that is initially.
+            the software you need - even when you do not know exactly what that is initially.
           "
       />
       <MainPointSection
