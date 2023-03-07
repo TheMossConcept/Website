@@ -23,7 +23,7 @@ const Frontpage: FC = () => {
       />
       <PurposePageTeaserSection />
       <BottomImageSection />
-      <Grid item xs={12} sx={{ pb: 32, bgcolor: 'primary.main' }}>
+      <Grid item xs={12} sx={{ pb: 32 }}>
         <ContactSection />
       </Grid>
     </PageContainer>

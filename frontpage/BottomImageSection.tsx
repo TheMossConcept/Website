@@ -1,6 +1,6 @@
 import { Grid } from '@mui/material';
 import Image from 'next/image';
-import TrustAndRespectImage from '../public/images/trust_and_respect.jpg';
+import CalmImage from '../public/images/calm.jpg';
 import PurposeTall from '../public/images/purpose_tall.jpg';
 import React, { FC } from 'react';
 
@@ -16,8 +16,8 @@ const BottomImageSection: FC = () => {
       </Grid>
       <Grid item xs={6}>
         <Image
-          src={TrustAndRespectImage}
-          alt="A father with his small child looking at birds in the sunset"
+          src={CalmImage}
+          alt="Somebody working with a laptop in a scenic environment"
           style={{ width: '100%', height: 'auto' }}
         />
       </Grid>
