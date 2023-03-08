@@ -8,7 +8,7 @@ import MediaSection from '../components/sections/MediaSection';
 import PurposePageTeaserSection from './PurposePageTeaserSection';
 import ContactSection from '../components/sections/ContactSection';
 import PageContainer from '../components/PageContainer';
-import BottomImageSection from './BottomImageSection';
+import BottomSection from './BottomSection';
 
 const Frontpage: FC = () => {
   return (
@@ -22,10 +22,7 @@ const Frontpage: FC = () => {
         mediaLocation="full-screen"
       />
       <PurposePageTeaserSection />
-      <BottomImageSection />
-      <Grid item xs={12} sx={{ pb: 32 }}>
-        <ContactSection />
-      </Grid>
+      <BottomSection />
     </PageContainer>
   );
 };

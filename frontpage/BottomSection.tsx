@@ -34,7 +34,7 @@ const BottomSection: FC = () => {
           zIndex: 0
         }}>
         <Grid item xs={12} sx={{ pb: 32 }}>
-          <ContactSection useContrastColors={true} />
+          <ContactSection useContrastColors />
         </Grid>
       </Box>
     </Grid>

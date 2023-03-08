@@ -123,7 +123,7 @@ const ThirdLineWithAnimation: FC = () => {
       variant="TobiasBig-h1"
       component="h1"
       style={{ marginLeft: `${marginLeft}px`, position: 'relative', ...lineEnterAnimation }}>
-      your workflow.
+      your workflow
     </Typography>
   );
 };

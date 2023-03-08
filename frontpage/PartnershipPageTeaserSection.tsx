@@ -47,7 +47,7 @@ const PartnershipPageTeaserSection: FC = () => {
               variant="PoppinsBig-subtitle2"
               sx={{ opacity: firstTextOpacity }}>
               We build close and long lasting partnerships characterized by trust and respect. Our
-              work is iterative and we change and adapt based on your needs and feedback.
+              work is iterative, and we change and adapt based on your needs and feedback.
             </Typography>
           </TextContainer>
         </Grid>
@@ -77,7 +77,7 @@ const PartnershipPageTeaserSection: FC = () => {
               sx={{ opacity: secondTextOpacity }}>
               We always strive to provide more than just highly stable and flexible software. We are
               experts in translating business processes and workflows into software that supports
-              your work in the best possible way.
+              your work in the best way possible.
             </Typography>
           </TextContainer>
           <InteractiveLink

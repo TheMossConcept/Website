@@ -33,7 +33,7 @@ const PurposePageTeaserSection: FC = () => {
           deep purpose.
         </Typography>
         <InteractiveLink
-          text="Learn more about our underlying purpose"
+          text="Read more about our underlying purpose"
           navigate={() => router.push('/purpose')}
           variant="PoppinsSmall-button"
           color="secondary.transparent"

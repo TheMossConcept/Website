@@ -40,9 +40,9 @@ const ConceptPage: FC = () => {
         textMarginTop={16}
         image={ShapesImage}
         text="
-            In essence, we work smarter, not harder. We reuse what makes sense which gives us more
-            time to ensure quality, to deeply understand your workflows and thereby to build exactly
-            the software you need - even when you do not know exactly what that is initially.
+            In essence, we work smarter, not harder. We reuse what makes sense, which gives us more
+            time to ensure quality, to deeply understand your workflows, and thereby to build exactly
+            the software you need - even when you do not know exactly what that is initially
           "
       />
       <MainPointSection
@@ -59,13 +59,13 @@ const ConceptPage: FC = () => {
         textSections={[
           'We constantly improve and evolve our building blocks so you will have easy access to more advanced features in the future.',
           'The more we reuse a building block, the more time and care is freed up to put into it to ensure it is of the highest possible quality. This leads to highly stable software.',
-          'We will build as many custom building blocks as is necessary to build your system exactly as it needs to be. Since we are experts in building small blocks that can easily be composed and reconfigured, your system will be highly flexible.'
+          'We will build as many custom building blocks as necessary to build your system exactly as it needs to be. Since we are experts in building small blocks that can easily be composed and reconfigured, your system will be highly flexible.'
         ]}
       />
       <MediaSection mediaUrl={BuildingBlockImage} mediaLocation="right" />
       <MainPointSection
         initialText="Small, well-shaped building blocks lead to unprecedented"
-        highlightedText="flexibility and stability."
+        highlightedText="flexibility and stability"
       />
       <MediaSection
         mediaUrl="https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/trees-swaying.mov"
@@ -80,7 +80,7 @@ const ConceptPage: FC = () => {
       />
       <ContactSection />
       <NextPageSection
-        text="We work to create partnerships based on trust and respect."
+        text="We work to create partnerships based on trust and respect"
         link="/partnership"
         imageUrl={TallPartnershipImage}
         firstLineText={[{ text: 'Approach', color: 'primary', variant: 'TobiasBig-h2' }]}
