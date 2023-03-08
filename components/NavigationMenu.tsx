@@ -6,16 +6,24 @@ import { useRouter } from 'next/router';
 
 type Props = { isOpenState: [boolean, Dispatch<SetStateAction<boolean>>] };
 
-// TODO: Introduce strong typing on link so it's always connected to the link in App
-type NavigationItemProps = { text: string; link: string };
+type ActivityProp = { link: string } | { onClick: () => void };
 
-const NavigationItem: FC<NavigationItemProps> = ({ text, link }) => {
+// TODO: Introduce strong typing on link so it's always connected to the link in App
+type NavigationItemProps = { text: string } & ActivityProp;
+
+const NavigationItem: FC<NavigationItemProps> = ({ text, ...props }) => {
   const router = useRouter();
 
   return (
     <InteractiveLink
       text={text}
-      navigate={() => router.push(link)}
+      navigate={() => {
+        if ('link' in props) {
+          router.push(props.link);
+        } else {
+          props.onClick();
+        }
+      }}
       variant="PoppinsSmall-h1"
       color="text.primary"
     />
@@ -38,6 +46,14 @@ const NavigationMenu: FC<Props> = ({ isOpenState }) => {
   // Always start in the closed state, as we need to change the value to trigger the transition
   const [rightPosition, setRightPosition] = useState('-50%');
   const [opacity, setOpacity] = useState(0);
+
+  const router = useRouter();
+  const handleContactClick = async () => {
+    await router.push('/');
+    window.scrollTo({ top: window.document.body.scrollHeight, behavior: 'auto' });
+
+    setIsOpen(false);
+  };
 
   useEffect(() => {
     if (isOpen) {
@@ -97,7 +113,7 @@ const NavigationMenu: FC<Props> = ({ isOpenState }) => {
                 <NavigationItem text="Purpose" link="/purpose" />
               </Grid>
               <Grid item xs={12}>
-                <NavigationItem text="Contact" link="/contact" />
+                <NavigationItem text="Contact" onClick={handleContactClick} />
               </Grid>
             </Grid>
           </Grid>
@@ -106,7 +122,7 @@ const NavigationMenu: FC<Props> = ({ isOpenState }) => {
               <Grid item xs={6}>
                 <Grid container spacing={2}>
                   <Grid item xs={12}>
-                    <BottomItem text="Twitter" />
+                    <BottomItem text="LinkedIn" />
                   </Grid>
                   <Grid item xs={12}>
                     <BottomItem text="Instagram" />
