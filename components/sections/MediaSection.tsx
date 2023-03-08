@@ -48,6 +48,7 @@ const MediaSection: FC<Props> = ({
                 width: imageDimensions.width,
                 height: imageDimensions.height
               }}
+              priority
             />
           )}
         </Grid>

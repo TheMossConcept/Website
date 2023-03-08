@@ -12,6 +12,7 @@ const BottomImageSection: FC = () => {
           alt="A sunset over a calm beach"
           src={PurposeTall}
           style={{ width: '100%', height: 'auto' }}
+          priority
         />
       </Grid>
       <Grid item xs={6}>
@@ -19,6 +20,7 @@ const BottomImageSection: FC = () => {
           src={CalmImage}
           alt="Somebody working with a laptop in a scenic environment"
           style={{ width: '100%', height: 'auto' }}
+          priority
         />
       </Grid>
     </Grid>

@@ -56,6 +56,7 @@ const PartnershipPageTeaserSection: FC = () => {
             src={PeopleTalkingImage}
             style={{ width: '100%', height: 'auto' }}
             alt="People talking"
+            priority
           />
         </Grid>
       </Grid>
@@ -65,6 +66,7 @@ const PartnershipPageTeaserSection: FC = () => {
             src={CollaborationImage}
             style={{ width: '100%', height: 'auto' }}
             alt="People collaborating around a screen"
+            priority
           />
         </Grid>
         <Grid item xs={6} alignSelf="center">

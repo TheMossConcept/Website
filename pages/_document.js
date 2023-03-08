@@ -5,6 +5,7 @@ export default function Document() {
     <Html>
       <Head>
         <meta charset="utf-8" />
+        <link rel="icon" href="/images/logo_default.svg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <link

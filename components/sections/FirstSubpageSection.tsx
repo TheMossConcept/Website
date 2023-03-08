@@ -49,6 +49,7 @@ const FirstSubpageSection: FC<Props> = ({
             src={image}
             alt="The tall image depicting this subsection"
             style={{ width: '100%', height: 'auto' }}
+            priority
           />
         ) : video ? (
           <video autoPlay loop muted>

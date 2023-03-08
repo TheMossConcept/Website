@@ -21,6 +21,7 @@ const NextPageSection: FC<Props> = ({ imageUrl, text, link, firstLineText, secon
           src={imageUrl}
           style={{ width: '100%', height: 'auto' }}
           alt="The tall image depicting the next subsection"
+          priority
         />
       </Grid>
       <Grid item xs={6} alignSelf="flex-end" sx={{ pb: 4 }}>
