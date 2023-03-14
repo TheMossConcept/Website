@@ -35,7 +35,11 @@ const MediaSection: FC<Props> = ({
             ? 'flex-end'
             : 'center'
         }>
-        <Grid item xs={mediaLocation === 'full-screen' ? 12 : 9} style={{ textAlign: 'center' }}>
+        <Grid
+          item
+          sm={12}
+          md={mediaLocation === 'full-screen' ? 12 : 9}
+          style={{ textAlign: 'center' }}>
           {isVideo ? (
             <video autoPlay muted loop style={{ width: '100%', height: 'auto' }}>
               <source src={mediaUrl} type="video/mp4" />

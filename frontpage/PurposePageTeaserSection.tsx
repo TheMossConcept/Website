@@ -15,7 +15,7 @@ const PurposePageTeaserSection: FC = () => {
   const router = useRouter();
 
   return (
-    <Grid item xs={10} sx={{ pt: 32 }} ref={containerRef}>
+    <Grid item xs={12} sx={{ pt: 32 }} justifyContent="flex-start" ref={containerRef}>
       <TextContainer>
         <HeadlineSection
           containerRef={containerRef}

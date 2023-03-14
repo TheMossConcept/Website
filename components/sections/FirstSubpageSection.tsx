@@ -24,8 +24,22 @@ const FirstSubpageSection: FC<Props> = ({
   textMarginTop = 0
 }) => {
   return (
-    <Grid item container xs={12} spacing={5} alignItems="center">
-      <Grid item xs={6}>
+    <Grid item container xs={12} spacing={5} alignItems="center" direction="row-reverse">
+      <Grid item md={6} sm={12}>
+        {image ? (
+          <Image
+            src={image}
+            alt="The tall image depicting this subsection"
+            style={{ width: '100%', height: 'auto' }}
+            priority
+          />
+        ) : video ? (
+          <video autoPlay loop muted>
+            <source src={video} style={{ width: '100%', height: 'auto' }} />
+          </video>
+        ) : null}
+      </Grid>
+      <Grid item md={6} sm={12}>
         <Box sx={{ ml: '30px', mt: textMarginTop }}>
           {headlineText.map((textBit) => (
             <Typography
@@ -42,20 +56,6 @@ const FirstSubpageSection: FC<Props> = ({
             {text}
           </Typography>
         </Box>
-      </Grid>
-      <Grid item xs={6}>
-        {image ? (
-          <Image
-            src={image}
-            alt="The tall image depicting this subsection"
-            style={{ width: '100%', height: 'auto' }}
-            priority
-          />
-        ) : video ? (
-          <video autoPlay loop muted>
-            <source src={video} style={{ width: '100%', height: 'auto' }} />
-          </video>
-        ) : null}
       </Grid>
     </Grid>
   );

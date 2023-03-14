@@ -15,7 +15,7 @@ const TextSection: FC<TextSectionProps> = ({ textSections, headline, pointList, 
       {headline && (
         <Grid item xs={12} sx={{ mb: 10 }}>
           <Grid container justifyContent="center">
-            <Grid item xs={6}>
+            <Grid item md={6} sm={true} sx={{ px: { sm: 2 } }}>
               <Typography variant="TobiasSmall-h1" color="secondary.main">
                 {headline}
               </Typography>
@@ -23,7 +23,7 @@ const TextSection: FC<TextSectionProps> = ({ textSections, headline, pointList, 
           </Grid>
         </Grid>
       )}
-      <Grid item container xs={6}>
+      <Grid item container md={6} sm={true} sx={{ px: { sm: 2 } }}>
         {textSections.map((text) => (
           <Grid item xs={12} key={text} sx={{ mb: 3 }}>
             {pointList && <CircleIcon color="primary" sx={{ fontSize: '5px' }} />}
