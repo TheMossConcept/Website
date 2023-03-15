@@ -9,13 +9,23 @@ type TextSectionProps = {
   mt?: number;
 };
 
-const TextSection: FC<TextSectionProps> = ({ textSections, headline, pointList, mt = 32 }) => {
+const TextSection: FC<TextSectionProps> = ({
+  textSections,
+  headline,
+  pointList,
+  mt: marginTop = 32
+}) => {
   return (
-    <Grid item container xs={12} justifyContent="center" sx={{ mt }}>
+    <Grid
+      item
+      container
+      xs={12}
+      justifyContent="center"
+      sx={{ mt: { xs: marginTop / 2, md: marginTop } }}>
       {headline && (
         <Grid item xs={12} sx={{ mb: 10 }}>
           <Grid container justifyContent="center">
-            <Grid item md={6} sm={true} sx={{ px: { sm: 2 } }}>
+            <Grid item md={6} xs={true} sx={{ px: { xs: 4, md: 0 } }}>
               <Typography variant="TobiasSmall-h1" color="secondary.main">
                 {headline}
               </Typography>
@@ -23,7 +33,7 @@ const TextSection: FC<TextSectionProps> = ({ textSections, headline, pointList, 
           </Grid>
         </Grid>
       )}
-      <Grid item container md={6} sm={true} sx={{ px: { sm: 2 } }}>
+      <Grid item container md={6} xs={true} sx={{ px: { xs: 4, md: 0 } }}>
         {textSections.map((text) => (
           <Grid item xs={12} key={text} sx={{ mb: 3 }}>
             {pointList && <CircleIcon color="primary" sx={{ fontSize: '5px' }} />}

@@ -12,10 +12,13 @@ const MainPointSection: FC<Props> = ({
   initialText,
   highlightedText,
   textAfterHighlightedText,
-  mt = 32
+  mt: marginTop = 32
 }) => {
   return (
-    <Grid container justifyContent="center" sx={{ mt, textAlign: 'center', px: { sm: 2 } }}>
+    <Grid
+      container
+      justifyContent="center"
+      sx={{ mt: { xs: marginTop / 2, md: marginTop }, textAlign: 'center', px: { xs: 4, md: 0 } }}>
       <Grid item md={6} sm={true}>
         <Typography
           color="primary.transparent"

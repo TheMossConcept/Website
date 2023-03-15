@@ -22,10 +22,10 @@ const MediaSection: FC<Props> = ({
   mediaUrl,
   imageDimensions = { width: '100%', height: 'auto' },
   isVideo = false,
-  mt = 32
+  mt: marginTop = 32
 }) => {
   return (
-    <Grid item xs={12} sx={{ mt }}>
+    <Grid item xs={12} sx={{ mt: { xs: marginTop / 2, md: marginTop } }}>
       <Grid
         container
         justifyContent={
