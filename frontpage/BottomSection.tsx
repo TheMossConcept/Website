@@ -8,7 +8,7 @@ import ContactSection from '../components/sections/ContactSection';
 
 const BottomSection: FC = () => {
   return (
-    <Grid container spacing={4} sx={{ mt: 32 }}>
+    <Grid container spacing={4} sx={{ mt: { xs: 16, md: 32 } }}>
       <Grid item xs={6} sx={{ mt: 29 }}>
         <Image
           alt="A sunset over a calm beach"

@@ -25,7 +25,7 @@ const FirstSubpageSection: FC<Props> = ({
 }) => {
   return (
     <Grid item container xs={12} spacing={5} alignItems="center" direction="row-reverse">
-      <Grid item md={6} sm={12}>
+      <Grid item md={6} xs={12}>
         {image ? (
           <Image
             src={image}
@@ -40,7 +40,7 @@ const FirstSubpageSection: FC<Props> = ({
         ) : null}
       </Grid>
       <Grid item md={6} sm={12}>
-        <Box sx={{ ml: '30px', mt: textMarginTop }}>
+        <Box sx={{ mx: 3, mt: { xs: textMarginTop / 2, md: textMarginTop } }}>
           {headlineText.map((textBit) => (
             <Typography
               component={textBit.isInline ? 'span' : 'div'}
@@ -51,7 +51,7 @@ const FirstSubpageSection: FC<Props> = ({
             </Typography>
           ))}
         </Box>
-        <Box sx={{ mt: '54px', ml: '30px' }}>
+        <Box sx={{ mt: 7, mx: 3 }}>
           <Typography variant="PoppinsBig-subtitle2" color="#383838">
             {text}
           </Typography>
