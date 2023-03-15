@@ -78,12 +78,12 @@ const LoadingLogo: FC<PropsWithChildren> = ({ children }) => {
           position: 'absolute',
           right: `${backgroundContainerRightPosition}vw`,
           backgroundColor: 'white',
-          transition: 'right 1100ms ease 2400ms'
+          transition: 'right 1100ms ease 2475ms'
         }}>
         <Box
           sx={{
             opacity: newPageOpacity,
-            transition: 'opacity 620ms ease 3070ms'
+            transition: 'opacity 620ms ease 3170ms'
           }}>
           {children}
         </Box>
