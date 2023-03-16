@@ -1,4 +1,4 @@
-import { Box, Grid, IconButton, Typography } from '@mui/material';
+import { Box, Grid, IconButton, Typography, useTheme } from '@mui/material';
 import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import InteractiveLink from './InteractiveLink';
@@ -42,9 +42,12 @@ const BottomItem: FC<BottomItemProps> = ({ text }) => {
 };
 
 const NavigationMenu: FC<Props> = ({ isOpenState }) => {
+  const theme = useTheme();
+  const isMobile = theme.breakpoints.down('md');
+
   const [isOpen, setIsOpen] = isOpenState;
   // Always start in the closed state, as we need to change the value to trigger the transition
-  const [rightPosition, setRightPosition] = useState('-50%');
+  const [rightPosition, setRightPosition] = useState(isMobile ? '-100%' : '-50%');
   const [opacity, setOpacity] = useState(0);
 
   const router = useRouter();
@@ -60,7 +63,7 @@ const NavigationMenu: FC<Props> = ({ isOpenState }) => {
       setRightPosition('0%');
       setOpacity(0.75);
     } else {
-      setRightPosition('-50%');
+      setRightPosition(isMobile ? '-100%' : '-50%');
       setOpacity(0);
     }
   }, [isOpen]);
@@ -90,19 +93,25 @@ const NavigationMenu: FC<Props> = ({ isOpenState }) => {
           top: 0,
           zIndex: 'modal',
           right: rightPosition,
-          width: '50%',
+          width: { xs: '100%', md: '50%' },
           height: '100%',
           bgcolor: 'secondary.main',
           transition: 'right 500ms cubic-bezier(0,0,0.58,1)'
         }}>
-        <Grid container sx={{ mt: '27.7px', mr: '32px', ml: '126px', width: 'auto' }}>
+        <Grid container sx={{ mt: 3, mr: 4, ml: { xs: 4, md: 16 }, width: 'auto' }}>
           <Grid item xs style={{ textAlign: 'right' }}>
             <IconButton onClick={() => setIsOpen(false)}>
               <CloseIcon sx={{ color: 'text.primary' }} />
             </IconButton>
           </Grid>
-          <Grid item xs={12}>
-            <Grid container spacing={4} sx={{ mt: '8.26%' }}>
+          <Grid
+            container
+            item
+            xs={12}
+            direction="column"
+            justifyContent="space-between"
+            sx={{ height: '80vh', mt: isMobile ? 8 : 16 }}>
+            <Grid container item spacing={4}>
               <Grid item xs={12}>
                 <NavigationItem text="Concept" link="/concept" />
               </Grid>
@@ -116,9 +125,7 @@ const NavigationMenu: FC<Props> = ({ isOpenState }) => {
                 <NavigationItem text="Contact" onClick={handleContactClick} />
               </Grid>
             </Grid>
-          </Grid>
-          <Grid item xs={12} sx={{ mt: '13.65%' }}>
-            <Grid container>
+            <Grid item container>
               <Grid item xs={6}>
                 <Grid container spacing={2}>
                   <Grid item xs={12}>

@@ -39,7 +39,7 @@ const FirstSubpageSection: FC<Props> = ({
           </video>
         ) : null}
       </Grid>
-      <Grid item md={6} sm={12}>
+      <Grid item md={6} sm={12} style={{ width: '100%' }}>
         <Box sx={{ mx: 3, mt: { xs: textMarginTop / 2, md: textMarginTop } }}>
           {headlineText.map((textBit) => (
             <Typography

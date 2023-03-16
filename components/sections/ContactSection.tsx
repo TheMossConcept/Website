@@ -21,8 +21,8 @@ const ContactSection: FC<ContactSectionProps> = ({ useContrastColors = false }) 
           color={useContrastColors ? 'text.primary' : 'secondary.main'}>
           Contact us
         </Typography>
-        <Grid item container xs={12} sx={{ mt: 10 }}>
-          <Grid item xs={6}>
+        <Grid item container xs={12} spacing={4} sx={{ mt: 10 }}>
+          <Grid item xs={12} md={6}>
             <Typography
               color={useContrastColors ? 'text.primary' : '#000'}
               sx={{
@@ -31,20 +31,6 @@ const ContactSection: FC<ContactSectionProps> = ({ useContrastColors = false }) 
               }}>
               Name*
             </Typography>
-          </Grid>
-          <Grid item xs={6}>
-            <Typography
-              color={useContrastColors ? 'text.primary' : '#000'}
-              sx={{
-                fontFamily: 'Poppins',
-                fontSize: '18px'
-              }}>
-              Email*
-            </Typography>
-          </Grid>
-        </Grid>
-        <Grid item container xs={12} sx={{ mt: 4 }} spacing={4}>
-          <Grid item xs={6}>
             <TextField
               placeholder="Write your name"
               label=""
@@ -54,7 +40,15 @@ const ContactSection: FC<ContactSectionProps> = ({ useContrastColors = false }) 
               onChange={(event) => setName(event.target.value || undefined)}
             />
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
+            <Typography
+              color={useContrastColors ? 'text.primary' : '#000'}
+              sx={{
+                fontFamily: 'Poppins',
+                fontSize: '18px'
+              }}>
+              Email*
+            </Typography>
             <TextField
               placeholder="Write your email"
               label=""
@@ -65,7 +59,7 @@ const ContactSection: FC<ContactSectionProps> = ({ useContrastColors = false }) 
             />
           </Grid>
         </Grid>
-        <Grid item xs={12} sx={{ mt: 10 }}>
+        <Grid item xs={12} sx={{ mt: { xs: 4, md: 10 } }}>
           <Typography
             color={useContrastColors ? 'text.primary' : '#000'}
             sx={{
@@ -74,8 +68,6 @@ const ContactSection: FC<ContactSectionProps> = ({ useContrastColors = false }) 
             }}>
             Message*
           </Typography>
-        </Grid>
-        <Grid item xs={12} sx={{ mt: 4 }}>
           <TextField
             placeholder="Write your message"
             fullWidth
@@ -85,7 +77,7 @@ const ContactSection: FC<ContactSectionProps> = ({ useContrastColors = false }) 
             onChange={(event) => setMessage(event.target.value || undefined)}
           />
         </Grid>
-        <Grid item xs={12} sx={{ mt: 10 }}>
+        <Grid item xs={12} sx={{ mt: { xs: 4, md: 10 } }}>
           <Button
             variant="outlined"
             color="secondary"

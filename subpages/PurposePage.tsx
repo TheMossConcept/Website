@@ -67,7 +67,7 @@ const PurposePage: FC = () => {
         mt={16}
       />
       <MediaSection mediaUrl={TrustAndRespectTeam} mediaLocation="full-screen" />
-      <Grid item xs={12} sx={{ mb: 32 }}>
+      <Grid item xs={12} sx={{ mb: { xs: 16, md: 32 } }}>
         <ContactSection />
       </Grid>
     </PageContainer>
