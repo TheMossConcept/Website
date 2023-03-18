@@ -37,6 +37,7 @@ const LoadingLogo: FC<PropsWithChildren> = ({ children }) => {
           variant="PoppinsBig-h1"
           color="text.secondary"
           sx={{
+            fontSize: { xs: 50, sm: 105 },
             animation: `${topTextAnimation} 3000ms cubic-bezier(0.42, 0, 0.58, 1)`,
             display: 'block'
           }}>
@@ -46,6 +47,7 @@ const LoadingLogo: FC<PropsWithChildren> = ({ children }) => {
           variant="TobiasBig-h1"
           color="text.secondary"
           sx={{
+            fontSize: { xs: 50, sm: 105 },
             animation: `${middleTextAnimation} 3000ms cubic-bezier(0.42, 0, 0.58, 1)`,
             display: 'block'
           }}>
@@ -55,6 +57,7 @@ const LoadingLogo: FC<PropsWithChildren> = ({ children }) => {
           variant="PoppinsBig-h1"
           color="text.secondary"
           sx={{
+            fontSize: { xs: 50, sm: 105 },
             animation: `${bottomTextAnimation} 3000ms cubic-bezier(0.42, 0, 0.58, 1)`,
             display: 'block'
           }}>
