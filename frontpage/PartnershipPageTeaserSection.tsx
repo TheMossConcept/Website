@@ -8,6 +8,7 @@ import PeopleTalkingImage from '../public/images/people_talking.jpg';
 import CollaborationImage from '../public/images/collaboration.jpg';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
+import useIsMobile from '../utilities/useIsMobile';
 
 const PartnershipPageTeaserSection: FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -18,6 +19,8 @@ const PartnershipPageTeaserSection: FC = () => {
   const secondTextOpacity = useAppearingText(containerRef, 140, 4);
   const linkOpacity = useAppearingText(containerRef, 180, 4);
 
+  const isMobile = useIsMobile();
+
   return (
     <Grid
       container
@@ -27,9 +30,9 @@ const PartnershipPageTeaserSection: FC = () => {
       alignItems="flex-start"
       justifyContent="flex-start"
       sx={{
-        pt: 32
+        paddingTop: { xs: 16, md: 32 }
       }}>
-      <Grid item sx={{ ml: 30, mb: 10 }} xs={12}>
+      <Grid item sx={{ marginLeft: { xs: 4, md: 30 }, marginBottom: { xs: 5, md: 10 } }} xs={12}>
         <HeadlineSection
           containerRef={containerRef}
           firstLineText={[{ text: 'A committed', color: 'primary.main', variant: 'TobiasBig-h1' }]}
@@ -39,8 +42,12 @@ const PartnershipPageTeaserSection: FC = () => {
           ]}
         />
       </Grid>
-      <Grid container spacing={19} sx={{ mb: 10 }}>
-        <Grid item xs={6} alignSelf="center">
+      <Grid
+        container
+        spacing={isMobile ? 8 : 19}
+        sx={{ marginBottom: { xs: 5, md: 10 } }}
+        direction={isMobile ? 'column-reverse' : 'row'}>
+        <Grid item xs={12} md={6} alignSelf="center">
           <TextContainer>
             <Typography
               color="primary.main"
@@ -51,7 +58,7 @@ const PartnershipPageTeaserSection: FC = () => {
             </Typography>
           </TextContainer>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <Image
             src={PeopleTalkingImage}
             style={{ width: '100%', height: 'auto' }}
@@ -60,8 +67,8 @@ const PartnershipPageTeaserSection: FC = () => {
           />
         </Grid>
       </Grid>
-      <Grid container spacing={19}>
-        <Grid item xs={6}>
+      <Grid container spacing={isMobile ? 8 : 19}>
+        <Grid item xs={12} md={6}>
           <Image
             src={CollaborationImage}
             style={{ width: '100%', height: 'auto' }}
@@ -69,7 +76,7 @@ const PartnershipPageTeaserSection: FC = () => {
             priority
           />
         </Grid>
-        <Grid item xs={6} alignSelf="center">
+        <Grid item xs={12} md={6} alignSelf="center">
           <TextContainer textPosition="right">
             <Typography
               color="primary.main"
@@ -85,7 +92,11 @@ const PartnershipPageTeaserSection: FC = () => {
             color="primary.transparent"
             variant="PoppinsSmall-button"
             navigate={() => router.push('/partnership')}
-            sx={{ marginTop: 10, opacity: linkOpacity }}
+            sx={{
+              marginTop: { xs: 5, md: 10 },
+              marginLeft: { xs: 4, md: 0 },
+              opacity: linkOpacity
+            }}
           />
         </Grid>
       </Grid>

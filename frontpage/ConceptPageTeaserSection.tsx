@@ -29,8 +29,8 @@ const ConceptPageTeaserSection: FC = () => {
       justifyContent="flex-start"
       sx={{
         height: isMobile ? '1200px' : '1455px',
-        pt: { xs: 16, md: 32 },
-        mb: { xs: 23, md: 46 },
+        paddingTop: { xs: 16, md: 32 },
+        marginBottom: { xs: 0, md: 46 },
         backgroundColor: 'secondary.main'
       }}>
       <TextContainer>
