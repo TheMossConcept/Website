@@ -22,6 +22,7 @@ const InitialSection: FC = () => {
           position: 'absolute',
           objectFit: 'fill',
           maxHeight: '100vh',
+          height: '100vh',
           width: '100vw'
           // We want this to be below everything else!
         }}>
@@ -69,14 +70,19 @@ const FirstLineWithAnimation: FC = () => {
 
   const normalizedScrollY = scrollY / 20;
 
+  const unprotectedOpacity = 1 - normalizedScrollY / 100;
+  const opacityUnderOne = Math.min(unprotectedOpacity, 0.9);
+  const opacity = Math.max(opacityUnderOne, 0.1);
+
   return (
     <Typography
       color="primary.transparent"
       variant="PoppinsBig-h1"
-      style={{
-        transform: `translate(${normalizedScrollY}px)`,
-        marginLeft: `${marginLeft}px`,
-        opacity: 1 - normalizedScrollY / 100,
+      sx={{
+        opacity,
+        marginLeft: { xs: 2, sm: `${marginLeft}px` },
+        transform: { sm: `translate(${normalizedScrollY}px)` },
+        fontSize: { xs: 50, sm: 75, lg: 104 },
         ...lineEnterAnimation
       }}
       component="h1">
@@ -95,14 +101,19 @@ const SecondLineWithAnimation: FC = () => {
 
   const normalizedScrollY = scrollY / 10;
 
+  const unprotectedOpacity = 1 - normalizedScrollY / 100;
+  const opacityUnderOne = Math.min(unprotectedOpacity, 0.9);
+  const opacity = Math.max(opacityUnderOne, 0.1);
+
   return (
     <Typography
       color="primary.transparent"
       variant="PoppinsBig-h1"
-      style={{
-        marginLeft: `${marginLeft}px`,
-        transform: `translate(-${normalizedScrollY}px)`,
-        opacity: 1 - normalizedScrollY / 100,
+      sx={{
+        opacity,
+        marginLeft: { xs: 8, sm: `${marginLeft}px` },
+        transform: { sm: `translate(-${normalizedScrollY}px)` },
+        fontSize: { xs: 50, sm: 75, lg: 104 },
         ...lineEnterAnimation
       }}
       component="h1">
@@ -122,7 +133,12 @@ const ThirdLineWithAnimation: FC = () => {
       color="primary"
       variant="TobiasBig-h1"
       component="h1"
-      style={{ marginLeft: `${marginLeft}px`, position: 'relative', ...lineEnterAnimation }}>
+      sx={{
+        marginLeft: { xs: 2, sm: `${marginLeft}px` },
+        position: 'relative',
+        fontSize: { xs: 50, sm: 75, lg: 104 },
+        ...lineEnterAnimation
+      }}>
       your workflow
     </Typography>
   );
