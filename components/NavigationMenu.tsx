@@ -45,6 +45,8 @@ const NavigationMenu: FC<Props> = ({ isOpenState }) => {
   const theme = useTheme();
   const isMobile = theme.breakpoints.down('md');
 
+  console.log(`isMobile in NavigationMenu: ${isMobile}`);
+
   const [isOpen, setIsOpen] = isOpenState;
   // Always start in the closed state, as we need to change the value to trigger the transition
   const [rightPosition, setRightPosition] = useState(isMobile ? '-100%' : '-50%');

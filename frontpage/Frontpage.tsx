@@ -3,10 +3,8 @@ import { FC } from 'react';
 import InitialSection from './InitialSection';
 import ConceptPageTeaserSection from './ConceptPageTeaserSection';
 import PartnershipPageTeaserSection from './PartnershipPageTeaserSection';
-import { Grid } from '@mui/material';
 import MediaSection from '../components/sections/MediaSection';
 import PurposePageTeaserSection from './PurposePageTeaserSection';
-import ContactSection from '../components/sections/ContactSection';
 import PageContainer from '../components/PageContainer';
 import BottomSection from './BottomSection';
 

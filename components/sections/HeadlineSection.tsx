@@ -2,6 +2,7 @@ import { Typography, TypographyProps } from '@mui/material';
 import { FC, RefObject, useContext, useLayoutEffect, useState } from 'react';
 import { ScrollContext } from '../../utilities/useYScroll';
 import useAppearingText from '../../utilities/useAppearingText';
+import useIsMobile from '../../utilities/useIsMobile';
 
 type TextWithMetadata = {
   text: string;
@@ -20,6 +21,8 @@ const HeadlineSection: FC<HeadlineSectionProps> = ({
   secondLineText,
   marginLeft = '18%'
 }) => {
+  const isMobile = useIsMobile();
+
   const globalYScroll = useContext(ScrollContext);
   const [localYScroll, setLocalYScroll] = useState<number>();
 
@@ -34,6 +37,8 @@ const HeadlineSection: FC<HeadlineSectionProps> = ({
   const textTransformValue = localYScroll ? localYScroll / 25 : 0;
   const textTransformValueNegated = textTransformValue * -1;
 
+  const fontSize = isMobile ? { fontSize: '50px' } : {};
+
   return (
     <>
       <span>
@@ -46,7 +51,8 @@ const HeadlineSection: FC<HeadlineSectionProps> = ({
             sx={{
               opacity: headlineOpacity,
               display: 'inline-block',
-              transform: `translate(${textTransformValue}px)`
+              transform: `translate(${textTransformValue}px)`,
+              ...fontSize
             }}>
             {textBit.text}&nbsp;
           </Typography>
@@ -63,7 +69,8 @@ const HeadlineSection: FC<HeadlineSectionProps> = ({
             sx={{
               opacity: headlineOpacity,
               display: 'inline-block',
-              transform: `translate(${textTransformValueNegated}px)`
+              transform: `translate(${textTransformValueNegated}px)`,
+              ...fontSize
             }}>
             {textBit.text}&nbsp;
           </Typography>

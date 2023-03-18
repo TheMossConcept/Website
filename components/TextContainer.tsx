@@ -7,18 +7,20 @@ type TextContainerProps = {
 
 const TextContainer: FC<TextContainerProps> = ({
   children,
-  style,
+  sx,
   textPosition = 'left',
   ...gridProps
 }) => {
+  const marginLeft = textPosition === 'left' ? '148px' : '0px';
+  const marginRight = textPosition === 'right' ? '148px' : '0px';
   return (
     <Grid
       item
       xs={12}
-      style={{
-        marginLeft: textPosition === 'left' ? '148px' : '0px',
-        marginRight: textPosition === 'right' ? '148px' : '0px',
-        ...style
+      sx={{
+        ml: { xs: 4, md: marginLeft },
+        mr: { xs: 4, md: marginRight },
+        ...sx
       }}
       {...gridProps}>
       <Grid container justifyItems="center">

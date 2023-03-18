@@ -6,6 +6,7 @@ import MediaSection from '../components/sections/MediaSection';
 import HeadlineSection from '../components/sections/HeadlineSection';
 import InteractiveLink from '../components/InteractiveLink';
 import { useRouter } from 'next/router';
+import useIsMobile from '../utilities/useIsMobile';
 
 const ConceptPageTeaserSection: FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -16,6 +17,8 @@ const ConceptPageTeaserSection: FC = () => {
 
   const router = useRouter();
 
+  const isMobile = useIsMobile();
+
   return (
     <Grid
       item
@@ -25,15 +28,15 @@ const ConceptPageTeaserSection: FC = () => {
       alignItems="flex-start"
       justifyContent="flex-start"
       sx={{
-        height: '1455px',
-        pt: 32,
-        mb: 46,
+        height: isMobile ? '1200px' : '1455px',
+        pt: { xs: 16, md: 32 },
+        mb: { xs: 23, md: 46 },
         backgroundColor: 'secondary.main'
       }}>
       <TextContainer>
         <HeadlineSection
           containerRef={containerRef}
-          marginLeft="354px"
+          marginLeft={isMobile ? undefined : '354px'}
           firstLineText={[
             { text: 'A', color: 'text.primary', variant: 'PoppinsBig-h1' },
             { text: 'disruptive', color: 'text.secondary', variant: 'TobiasBig-h1' }
@@ -44,9 +47,9 @@ const ConceptPageTeaserSection: FC = () => {
           variant="PoppinsBig-subtitle2"
           color="text.primary"
           sx={{
-            marginTop: '80px',
+            mt: { xs: 5, md: 10 },
             display: 'block',
-            width: '569px',
+            maxWidth: '569px',
             opacity: firstTextSectionOpacity
           }}>
           We are on a mission to disrupt the software development industry by cutting to the chase
@@ -58,7 +61,7 @@ const ConceptPageTeaserSection: FC = () => {
           sx={{
             marginTop: '34px',
             display: 'block',
-            width: '569px',
+            maxWidth: '569px',
             opacity: secondTextSectionOpacity
           }}>
           We create fully custom, stable, and flexible software that can be changed and extended
@@ -69,7 +72,7 @@ const ConceptPageTeaserSection: FC = () => {
           navigate={() => router.push('/concept')}
           variant="PoppinsSmall-button"
           color="text.primary"
-          sx={{ marginTop: 10, opacity: linkOpacity }}
+          sx={{ mt: { xs: 5, md: 10 }, opacity: linkOpacity }}
         />
       </TextContainer>
       <MediaSection
