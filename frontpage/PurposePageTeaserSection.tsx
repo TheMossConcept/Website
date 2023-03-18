@@ -15,7 +15,12 @@ const PurposePageTeaserSection: FC = () => {
   const router = useRouter();
 
   return (
-    <Grid item xs={12} sx={{ pt: 32 }} justifyContent="flex-start" ref={containerRef}>
+    <Grid
+      item
+      xs={12}
+      sx={{ paddingTop: { xs: 16, md: 32 } }}
+      justifyContent="flex-start"
+      ref={containerRef}>
       <TextContainer>
         <HeadlineSection
           containerRef={containerRef}
@@ -25,7 +30,7 @@ const PurposePageTeaserSection: FC = () => {
           ]}
         />
         <Typography
-          sx={{ mt: 10, width: '38%', opacity: textSectionOpacity }}
+          sx={{ marginTop: { xs: 5, md: 10 }, maxWidth: '500px', opacity: textSectionOpacity }}
           variant="PoppinsBig-subtitle2"
           color="secondary.main">
           We strongly believe that doing anything that is not rooted in meaning and a purpose from
@@ -37,7 +42,7 @@ const PurposePageTeaserSection: FC = () => {
           navigate={() => router.push('/purpose')}
           variant="PoppinsSmall-button"
           color="secondary.transparent"
-          sx={{ marginTop: 10, opacity: linkOpacity }}
+          sx={{ marginTop: { xs: 5, md: 10 }, opacity: linkOpacity }}
         />
       </TextContainer>
     </Grid>

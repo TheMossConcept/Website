@@ -8,8 +8,8 @@ import ContactSection from '../components/sections/ContactSection';
 
 const BottomSection: FC = () => {
   return (
-    <Grid container spacing={4} sx={{ mt: { xs: 16, md: 32 } }}>
-      <Grid item xs={6} sx={{ mt: 29 }}>
+    <Grid item container xs={12} spacing={4} sx={{ marginTop: { xs: 16, md: 32 } }}>
+      <Grid item xs={12} md={6} sx={{ marginTop: { xs: 0, md: 29 } }}>
         <Image
           alt="A sunset over a calm beach"
           src={PurposeTall}
@@ -17,7 +17,7 @@ const BottomSection: FC = () => {
           priority
         />
       </Grid>
-      <Grid item xs={6}>
+      <Grid item xs={12} md={6}>
         <Image
           src={CalmImage}
           alt="Somebody working with a laptop in a scenic environment"
@@ -27,13 +27,13 @@ const BottomSection: FC = () => {
       </Grid>
       <Box
         sx={{
-          mt: '-350px',
-          pt: '350px',
+          marginTop: { md: '-350px' },
+          paddingTop: { md: '350px' },
           width: '100%',
           bgcolor: 'primary.main',
           zIndex: 0
         }}>
-        <Grid item xs={12} sx={{ pb: 32 }}>
+        <Grid item xs={12} sx={{ paddingBottom: { xs: 16, md: 32 } }}>
           <ContactSection useContrastColors />
         </Grid>
       </Box>

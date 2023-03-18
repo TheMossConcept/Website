@@ -14,14 +14,14 @@ const ContactSection: FC<ContactSectionProps> = ({ useContrastColors = false }) 
   const disableSubmitButton = !name || !email || !message;
 
   return (
-    <Grid container justifyContent="center" item xs={12} sx={{ mt: { xs: 16, md: 32 } }}>
+    <Grid container justifyContent="center" item xs={12} sx={{ marginTop: { xs: 16, md: 32 } }}>
       <Grid item xs={12} md={6} sx={{ px: { xs: 4, md: 0 } }}>
         <Typography
           variant="TobiasSmall-h1"
           color={useContrastColors ? 'text.primary' : 'secondary.main'}>
           Contact us
         </Typography>
-        <Grid item container xs={12} spacing={4} sx={{ mt: 10 }}>
+        <Grid item container xs={12} spacing={4} sx={{ marginTop: 10 }}>
           <Grid item xs={12} md={6}>
             <Typography
               color={useContrastColors ? 'text.primary' : '#000'}
@@ -77,7 +77,7 @@ const ContactSection: FC<ContactSectionProps> = ({ useContrastColors = false }) 
             onChange={(event) => setMessage(event.target.value || undefined)}
           />
         </Grid>
-        <Grid item xs={12} sx={{ mt: { xs: 4, md: 10 } }}>
+        <Grid item xs={12} sx={{ marginTop: { xs: 4, md: 10 } }}>
           <Button
             variant="outlined"
             color="secondary"
