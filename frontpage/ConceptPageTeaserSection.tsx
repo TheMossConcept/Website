@@ -79,6 +79,7 @@ const ConceptPageTeaserSection: FC = () => {
         mediaUrl="https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/building_blocks.mov"
         isVideo
         mediaLocation="left"
+        mt={isMobile ? 0 : undefined}
       />
     </Grid>
   );

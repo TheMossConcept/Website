@@ -1,5 +1,6 @@
 import { Grid } from '@mui/material';
 import Image from 'next/image';
+import useIsMobile from '../../utilities/useIsMobile.ts';
 import { FC } from 'react';
 
 type Placement = 'left' | 'right' | 'full-screen';
@@ -22,10 +23,14 @@ const MediaSection: FC<Props> = ({
   mediaUrl,
   imageDimensions = { width: '100%', height: 'auto' },
   isVideo = false,
-  mt: marginTop = 32
+  mt: marginTop
 }) => {
+  const isMobile = useIsMobile();
+  // Different default values for mobile and  desktop
+  const mt = marginTop ? marginTop : isMobile ? 16 : 32;
+
   return (
-    <Grid item xs={12} sx={{ mt: { xs: marginTop / 2, md: marginTop } }}>
+    <Grid item xs={12} sx={{ mt }}>
       <Grid
         container
         justifyContent={

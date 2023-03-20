@@ -7,8 +7,11 @@ import MediaSection from '../components/sections/MediaSection';
 import PurposePageTeaserSection from './PurposePageTeaserSection';
 import PageContainer from '../components/PageContainer';
 import BottomSection from './BottomSection';
+import useIsMobile from 'utilities/useIsMobile.ts';
 
 const Frontpage: FC = () => {
+  const isMobile = useIsMobile();
+
   return (
     <PageContainer>
       <InitialSection />
@@ -17,6 +20,7 @@ const Frontpage: FC = () => {
       <MediaSection
         mediaUrl="https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/working.mov"
         isVideo
+        mt={isMobile ? 5 : undefined}
         mediaLocation="full-screen"
       />
       <PurposePageTeaserSection />

@@ -30,7 +30,7 @@ const PartnershipPageTeaserSection: FC = () => {
       alignItems="flex-start"
       justifyContent="flex-start"
       sx={{
-        paddingTop: { xs: 16, md: 32 }
+        paddingTop: { xs: 5, md: 32 }
       }}>
       <Grid item sx={{ marginLeft: { xs: 4, md: 30 }, marginBottom: { xs: 5, md: 10 } }} xs={12}>
         <HeadlineSection
@@ -44,7 +44,7 @@ const PartnershipPageTeaserSection: FC = () => {
       </Grid>
       <Grid
         container
-        spacing={isMobile ? 8 : 19}
+        spacing={isMobile ? 5 : 19}
         sx={{ marginBottom: { xs: 5, md: 10 } }}
         direction={isMobile ? 'column-reverse' : 'row'}>
         <Grid item xs={12} md={6} alignSelf="center">
@@ -67,7 +67,7 @@ const PartnershipPageTeaserSection: FC = () => {
           />
         </Grid>
       </Grid>
-      <Grid container spacing={isMobile ? 8 : 19}>
+      <Grid container spacing={isMobile ? 5 : 19}>
         <Grid item xs={12} md={6}>
           <Image
             src={CollaborationImage}

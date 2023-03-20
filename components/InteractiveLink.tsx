@@ -15,7 +15,7 @@ const InteractiveLink: FC<Props> = ({ text, color, variant, navigate, sx }) => {
     <Box sx={{ width: 'fit-content', ...sx }}>
       <Typography
         variant={variant}
-        sx={{ color, width: 'fit-content', cursor: 'pointer' }}
+        sx={{ color, width: 'fit-content', cursor: 'pointer', px: { sx: 4, md: 0 } }}
         onMouseOver={() => {
           setWidth(100);
         }}
