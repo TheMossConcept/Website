@@ -1,17 +1,53 @@
-import { Button, Grid, TextField, Typography } from '@mui/material';
+import { Alert, Button, Grid, Snackbar, TextField, Typography } from '@mui/material';
+import axios from 'axios';
 import { FC, useState } from 'react';
 
 type ContactSectionProps = {
   useContrastColors?: boolean;
 };
 
+enum FeedbackState {
+  SUCCESS,
+  FAILURE,
+  CLOSED
+}
+
 const ContactSection: FC<ContactSectionProps> = ({ useContrastColors = false }) => {
+  const [feedbackSnackbarState, setFeedbackSnackbarState] = useState<FeedbackState>(
+    FeedbackState.CLOSED
+  );
+
   const [name, setName] = useState<string>();
   const [email, setEmail] = useState<string>();
   const [message, setMessage] = useState<string>();
 
+  const reset = () => {
+    setName(undefined);
+    setEmail(undefined);
+    setMessage(undefined);
+  };
+
   // Once this changes to a shared component, we'll start using yup instead
   const disableSubmitButton = !name || !email || !message;
+
+  const onSubmitClick = () => {
+    axios
+      .post(
+        'https://prod2-224.westeurope.logic.azure.com:443/workflows/0331da2d2c0c4e6384640441dda0cb20/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=i1RNKiEQrnxL452D0xXcKfhlYkk4yGfo7QHPvQJuFhE',
+        {
+          name,
+          email,
+          message
+        }
+      )
+      .then(() => {
+        setFeedbackSnackbarState(FeedbackState.SUCCESS);
+        reset();
+      })
+      .catch(() => {
+        setFeedbackSnackbarState(FeedbackState.FAILURE);
+      });
+  };
 
   return (
     <Grid container justifyContent="center" item xs={12} sx={{ marginTop: { xs: 16, md: 32 } }}>
@@ -81,6 +117,7 @@ const ContactSection: FC<ContactSectionProps> = ({ useContrastColors = false }) 
           <Button
             variant="outlined"
             color="secondary"
+            onClick={onSubmitClick}
             disabled={disableSubmitButton}
             sx={{
               borderColor: 'secondary',
@@ -93,6 +130,24 @@ const ContactSection: FC<ContactSectionProps> = ({ useContrastColors = false }) 
           </Button>
         </Grid>
       </Grid>
+      <Snackbar
+        open={feedbackSnackbarState !== FeedbackState.CLOSED}
+        autoHideDuration={5000}
+        onClose={() => setFeedbackSnackbarState(FeedbackState.CLOSED)}>
+        <div>
+          {feedbackSnackbarState === FeedbackState.SUCCESS && (
+            <Alert severity="success">
+              Your message was sent successfully. We will be in touch shortly
+            </Alert>
+          )}
+          {feedbackSnackbarState === FeedbackState.FAILURE && (
+            <Alert severity="error">
+              Something went wrong. Try again and if the issue persists, send your email directly to
+              niklas@themossconcept.com
+            </Alert>
+          )}
+        </div>
+      </Snackbar>
     </Grid>
   );
 };
