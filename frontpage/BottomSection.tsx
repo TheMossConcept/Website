@@ -8,8 +8,16 @@ import ContactSection from '../components/sections/ContactSection';
 
 const BottomSection: FC = () => {
   return (
-    <Grid item container xs={12} spacing={4} sx={{ marginTop: { xs: 16, md: 32 } }}>
-      <Grid item xs={12} md={6} sx={{ marginTop: { xs: 0, md: 29 } }}>
+    <Grid item container xs={12} sx={{ marginTop: { xs: 16, md: 32 } }}>
+      <Grid
+        item
+        xs={12}
+        md={6}
+        sx={{
+          marginTop: { xs: 0, md: 29 },
+          marginBottom: { xs: 4, md: 0 },
+          marginRight: { xs: 0, md: 4 }
+        }}>
         <Image
           alt="A sunset over a calm beach"
           src={PurposeTall}
@@ -17,7 +25,7 @@ const BottomSection: FC = () => {
           priority
         />
       </Grid>
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} md={true} sx={{ marginBottom: { xs: '-4px', md: '0px' } }}>
         <Image
           src={CalmImage}
           alt="Somebody working with a laptop in a scenic environment"
