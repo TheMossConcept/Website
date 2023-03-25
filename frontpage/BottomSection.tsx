@@ -41,7 +41,7 @@ const BottomSection: FC = () => {
           bgcolor: 'primary.main',
           zIndex: 0
         }}>
-        <Grid item xs={12} sx={{ paddingBottom: { xs: 16, md: 32 } }}>
+        <Grid item xs={12} sx={{ paddingBottom: { xs: 5, md: 32 } }}>
           <ContactSection useContrastColors />
         </Grid>
       </Box>

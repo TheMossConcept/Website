@@ -32,12 +32,12 @@ const HeadlineSection: FC<HeadlineSectionProps> = ({
     }
   }, [globalYScroll, containerRef]);
 
-  const headlineOpacity = useAppearingText(containerRef, 20, 1.2);
+  const headlineOpacity = useAppearingText(containerRef, 20, isMobile ? 2.5 : 1.2);
 
-  const textTransformValue = localYScroll ? localYScroll / 25 : 0;
+  const textTransformValue = localYScroll ? localYScroll / (isMobile ? 50 : 25) : 0;
   const textTransformValueNegated = textTransformValue * -1;
 
-  const fontSize = isMobile ? { fontSize: '45px' } : {};
+  const fontSize = isMobile ? { fontSize: '40px' } : {};
 
   return (
     <>

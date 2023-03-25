@@ -14,12 +14,11 @@ const PartnershipPageTeaserSection: FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const router = useRouter();
-
-  const firstTextOpacity = useAppearingText(containerRef, 100, 4);
-  const secondTextOpacity = useAppearingText(containerRef, 140, 4);
-  const linkOpacity = useAppearingText(containerRef, 180, 4);
-
   const isMobile = useIsMobile();
+
+  const firstTextOpacity = useAppearingText(containerRef, isMobile ? 70 : 100, 4);
+  const secondTextOpacity = useAppearingText(containerRef, isMobile ? 110 : 140, 4);
+  const linkOpacity = useAppearingText(containerRef, isMobile ? 150 : 180, 4);
 
   return (
     <Grid
@@ -94,7 +93,7 @@ const PartnershipPageTeaserSection: FC = () => {
             navigate={() => router.push('/partnership')}
             sx={{
               marginTop: { xs: 5, md: 10 },
-              marginLeft: { xs: 4, md: 0 },
+              mx: { xs: 4, md: 0 },
               opacity: linkOpacity
             }}
           />

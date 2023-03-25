@@ -5,12 +5,15 @@ import InteractiveLink from '../components/InteractiveLink';
 import HeadlineSection from '../components/sections/HeadlineSection';
 import TextContainer from '../components/TextContainer';
 import useAppearingText from '../utilities/useAppearingText';
+import useIsMobile from '../utilities/useIsMobile';
 
 const PurposePageTeaserSection: FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const textSectionOpacity = useAppearingText(containerRef, 80, 4);
-  const linkOpacity = useAppearingText(containerRef, 95, 4);
+  const isMobile = useIsMobile();
+
+  const textSectionOpacity = useAppearingText(containerRef, isMobile ? 30 : 80, 4);
+  const linkOpacity = useAppearingText(containerRef, isMobile ? 42.5 : 95, 4);
 
   const router = useRouter();
 
@@ -18,7 +21,7 @@ const PurposePageTeaserSection: FC = () => {
     <Grid
       item
       xs={12}
-      sx={{ paddingTop: { xs: 16, md: 32 } }}
+      sx={{ paddingTop: { xs: 5, md: 32 } }}
       justifyContent="flex-start"
       ref={containerRef}>
       <TextContainer>

@@ -15,7 +15,12 @@ const InteractiveLink: FC<Props> = ({ text, color, variant, navigate, sx }) => {
     <Box sx={{ width: 'fit-content', ...sx }}>
       <Typography
         variant={variant}
-        sx={{ color, width: 'fit-content', cursor: 'pointer', px: { sx: 4, md: 0 } }}
+        sx={{
+          color,
+          width: 'fit-content',
+          cursor: 'pointer',
+          textDecoration: { xs: 'underline', md: 'none' }
+        }}
         onMouseOver={() => {
           setWidth(100);
         }}
@@ -24,7 +29,13 @@ const InteractiveLink: FC<Props> = ({ text, color, variant, navigate, sx }) => {
           setWidth(0);
         }}>
         {text}
-        <Divider sx={{ borderColor: color, width: `${width}%`, transition: 'width 500ms ease' }} />
+        <Divider
+          sx={{
+            borderColor: color,
+            width: { xs: '0%', md: `${width}%` },
+            transition: { xs: 'none', md: 'width 500ms ease' }
+          }}
+        />
       </Typography>
     </Box>
   );

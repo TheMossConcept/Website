@@ -11,13 +11,13 @@ import useIsMobile from '../utilities/useIsMobile';
 const ConceptPageTeaserSection: FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const firstTextSectionOpacity = useAppearingText(containerRef, 82.5, 4);
-  const secondTextSectionOpacity = useAppearingText(containerRef, 87.5, 4);
-  const linkOpacity = useAppearingText(containerRef, 92.5, 4);
+  const isMobile = useIsMobile();
+
+  const firstTextSectionOpacity = useAppearingText(containerRef, isMobile ? 50 : 82.5, 4);
+  const secondTextSectionOpacity = useAppearingText(containerRef, isMobile ? 60 : 87.5, 4);
+  const linkOpacity = useAppearingText(containerRef, isMobile ? 70 : 92.5, 4);
 
   const router = useRouter();
-
-  const isMobile = useIsMobile();
 
   return (
     <Grid
@@ -29,7 +29,7 @@ const ConceptPageTeaserSection: FC = () => {
       justifyContent="flex-start"
       sx={{
         height: isMobile ? '1200px' : '1455px',
-        paddingTop: { xs: 16, md: 32 },
+        paddingTop: { xs: 5, md: 32 },
         marginBottom: { xs: 0, md: 46 },
         backgroundColor: 'secondary.main'
       }}>
