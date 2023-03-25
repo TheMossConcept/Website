@@ -56,7 +56,7 @@ const PartnershipPage: FC = () => {
         mediaUrl={UnderstandabilityIllustration}
         mediaLocation="full-screen"
         imageDimensions={{ width: '80%', height: 'auto' }}
-        mt={16}
+        marginTop={16}
       />
       <TextSection
         textSections={[

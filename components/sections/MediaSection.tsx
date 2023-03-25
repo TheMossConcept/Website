@@ -14,7 +14,7 @@ type Props = {
   mediaLocation: Placement;
   mediaUrl: string;
   isVideo?: boolean;
-  mt?: number;
+  marginTop?: number;
   imageDimensions?: MediaDimensions;
 };
 
@@ -23,7 +23,7 @@ const MediaSection: FC<Props> = ({
   mediaUrl,
   imageDimensions = { width: '100%', height: 'auto' },
   isVideo = false,
-  mt: marginTop
+  marginTop
 }) => {
   const isMobile = useIsMobile();
   // Different default values for mobile and  desktop

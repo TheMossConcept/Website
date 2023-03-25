@@ -37,7 +37,7 @@ const HeadlineSection: FC<HeadlineSectionProps> = ({
   const textTransformValue = localYScroll ? localYScroll / 25 : 0;
   const textTransformValueNegated = textTransformValue * -1;
 
-  const fontSize = isMobile ? { fontSize: '50px' } : {};
+  const fontSize = isMobile ? { fontSize: '45px' } : {};
 
   return (
     <>
