@@ -1,6 +1,6 @@
 import { Grid } from '@mui/material';
 import Image from 'next/image';
-import useIsMobile from '../../utilities/useIsMobile.ts';
+import useIsMobile from '../../utilities/useIsMobile';
 import { FC } from 'react';
 
 type Placement = 'left' | 'right' | 'full-screen';
