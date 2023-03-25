@@ -1,6 +1,7 @@
 import { Box, Grid, Typography, TypographyProps } from '@mui/material';
 import { FC } from 'react';
 import Image from 'next/image';
+import useIsMobile from '../../utilities/useIsMobile';
 
 type TextWithMetadata = {
   text: string;
@@ -23,6 +24,9 @@ const FirstSubpageSection: FC<Props> = ({
   video,
   textMarginTop = 0
 }) => {
+  const isMobile = useIsMobile();
+  const sx = isMobile ? { fontSize: '40px' } : {};
+
   return (
     <Grid item container xs={12} spacing={5} alignItems="center" direction="row-reverse">
       <Grid item md={6} xs={12}>
@@ -46,7 +50,8 @@ const FirstSubpageSection: FC<Props> = ({
               component={textBit.isInline ? 'span' : 'div'}
               variant={textBit.variant}
               color={textBit.color}
-              key={textBit.text}>
+              key={textBit.text}
+              sx={sx}>
               {textBit.text}
             </Typography>
           ))}
