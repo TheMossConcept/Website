@@ -7,7 +7,7 @@ import MediaSection from '../components/sections/MediaSection';
 import PurposePageTeaserSection from './PurposePageTeaserSection';
 import PageContainer from '../components/PageContainer';
 import BottomSection from './BottomSection';
-import useIsMobile from 'utilities/useIsMobile.ts';
+import useIsMobile from '../utilities/useIsMobile';
 
 const Frontpage: FC = () => {
   const isMobile = useIsMobile();
