@@ -1,9 +1,9 @@
 import { Grid, Typography } from '@mui/material';
-import { FC, useRef } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import HeadlineSection from '../components/sections/HeadlineSection';
 import TextContainer from '../components/TextContainer';
 import InteractiveLink from '../components/InteractiveLink';
-import useAppearingText from '../utilities/useAppearingText';
+import calculateOpacity from '../utilities/calculateOpacity';
 import PeopleTalkingImage from '../public/images/people_talking.jpg';
 import CollaborationImage from '../public/images/collaboration.jpg';
 import { useRouter } from 'next/router';
@@ -16,9 +16,34 @@ const PartnershipPageTeaserSection: FC = () => {
   const router = useRouter();
   const isMobile = useIsMobile();
 
-  const firstTextOpacity = useAppearingText(containerRef, isMobile ? 70 : 100, 4);
-  const secondTextOpacity = useAppearingText(containerRef, isMobile ? 110 : 140, 4);
-  const linkOpacity = useAppearingText(containerRef, isMobile ? 150 : 180, 4);
+  const [firstTextOpacity, setFirstTextOpacity] = useState(0);
+  const [secondTextOpacity, setSecondTextOpacity] = useState(0);
+  const [linkOpacity, setLinkTextOpacity] = useState(0);
+
+  useEffect(() => {
+    const updateOpacity = () => {
+      const newFirstTextOpacity = calculateOpacity(
+        containerRef,
+        isMobile ? 70 : 100,
+        isMobile ? 2 : 3
+      );
+      const newSecondTextOpacity = calculateOpacity(
+        containerRef,
+        isMobile ? 110 : 140,
+        isMobile ? 2 : 3
+      );
+      const linkOpacity = calculateOpacity(containerRef, isMobile ? 150 : 180, isMobile ? 2 : 4);
+
+      setFirstTextOpacity(newFirstTextOpacity);
+      setSecondTextOpacity(newSecondTextOpacity);
+      setLinkTextOpacity(linkOpacity);
+    };
+
+    window.addEventListener('scroll', updateOpacity);
+    return () => {
+      window.removeEventListener('scroll', updateOpacity);
+    };
+  }, []);
 
   return (
     <Grid

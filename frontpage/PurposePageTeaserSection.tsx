@@ -1,10 +1,10 @@
 import { Grid, Typography } from '@mui/material';
 import { useRouter } from 'next/router';
-import { FC, useRef } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import InteractiveLink from '../components/InteractiveLink';
 import HeadlineSection from '../components/sections/HeadlineSection';
 import TextContainer from '../components/TextContainer';
-import useAppearingText from '../utilities/useAppearingText';
+import calculateOpacity from '../utilities/calculateOpacity';
 import useIsMobile from '../utilities/useIsMobile';
 
 const PurposePageTeaserSection: FC = () => {
@@ -12,8 +12,25 @@ const PurposePageTeaserSection: FC = () => {
 
   const isMobile = useIsMobile();
 
-  const textSectionOpacity = useAppearingText(containerRef, isMobile ? 30 : 80, 4);
-  const linkOpacity = useAppearingText(containerRef, isMobile ? 42.5 : 95, 4);
+  const [textSectionOpacity, setTextSectionOpacity] = useState(0);
+  const [linkOpacity, setLinkOpacity] = useState(0);
+
+  useEffect(() => {
+    const updateOpacity = () => {
+      const newTextSectionOpacity = calculateOpacity(
+        containerRef,
+        isMobile ? 30 : 80,
+        isMobile ? 2 : 3
+      );
+      const newLinkOpacity = calculateOpacity(containerRef, isMobile ? 42.5 : 95, isMobile ? 2 : 3);
+
+      setTextSectionOpacity(newTextSectionOpacity);
+      setLinkOpacity(newLinkOpacity);
+    };
+
+    window.addEventListener('scroll', updateOpacity);
+    return () => window.removeEventListener('scroll', updateOpacity);
+  }, []);
 
   const router = useRouter();
 

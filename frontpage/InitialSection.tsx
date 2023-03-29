@@ -47,9 +47,11 @@ const Content: FC = () => {
       style={{ paddingTop: '26.7vh', opacity, transition: 'opacity 630ms ease-out 920ms' }}
       xs={12}>
       <Grid item>
+        {/*
         <FirstLineWithAnimation />
         <SecondLineWithAnimation />
         <ThirdLineWithAnimation />
+          */}
       </Grid>
     </Grid>
   );

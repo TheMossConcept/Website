@@ -21,6 +21,8 @@ const HeadlineSection: FC<HeadlineSectionProps> = ({
   secondLineText,
   marginLeft = '18%'
 }) => {
+  return null;
+  /*
   const isMobile = useIsMobile();
 
   const globalYScroll = useContext(ScrollContext);
@@ -78,6 +80,7 @@ const HeadlineSection: FC<HeadlineSectionProps> = ({
       </span>
     </>
   );
+   */
 };
 
 export default HeadlineSection;

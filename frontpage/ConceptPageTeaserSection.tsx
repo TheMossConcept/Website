@@ -1,7 +1,7 @@
 import { Grid, Typography } from '@mui/material';
-import { FC, RefObject, useRef } from 'react';
+import { FC, RefObject, useEffect, useRef, useState } from 'react';
 import TextContainer from '../components/TextContainer';
-import useAppearingText from '../utilities/useAppearingText';
+import calculateOpacity from '../utilities/calculateOpacity';
 import MediaSection from '../components/sections/MediaSection';
 import HeadlineSection from '../components/sections/HeadlineSection';
 import InteractiveLink from '../components/InteractiveLink';
@@ -46,9 +46,36 @@ type ContentAreaProps = {
 const ContentArea: FC<ContentAreaProps> = ({ containerRef }) => {
   const isMobile = useIsMobile();
 
-  const firstTextSectionOpacity = useAppearingText(containerRef, isMobile ? 50 : 82.5, 3);
-  const secondTextSectionOpacity = useAppearingText(containerRef, isMobile ? 60 : 87.5, 3);
-  const linkOpacity = useAppearingText(containerRef, isMobile ? 70 : 92.5, 3);
+  const [firstTextSectionOpacity, setFirstTextOpacity] = useState(0);
+  const [secondTextSectionOpacity, setSecondTextOpacity] = useState(0);
+  const [linkOpacity, setLinkOpacity] = useState(0);
+
+  useEffect(() => {
+    const updateOpacity = () => {
+      const newFirstTextSectionOpacity = calculateOpacity(
+        containerRef,
+        isMobile ? 50 : 82.5,
+        isMobile ? 1.5 : 3
+      );
+      const newSecondTextSectionOpacity = calculateOpacity(
+        containerRef,
+        isMobile ? 60 : 87.5,
+        isMobile ? 1.5 : 3
+      );
+      const newLinkOpacity = calculateOpacity(
+        containerRef,
+        isMobile ? 70 : 92.5,
+        isMobile ? 1.5 : 3
+      );
+
+      setFirstTextOpacity(newFirstTextSectionOpacity);
+      setSecondTextOpacity(newSecondTextSectionOpacity);
+      setLinkOpacity(newLinkOpacity);
+    };
+
+    window.addEventListener('scroll', updateOpacity, { passive: true });
+    return () => window.removeEventListener('scroll', updateOpacity);
+  }, []);
 
   const router = useRouter();
 

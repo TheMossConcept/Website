@@ -1,11 +1,11 @@
-import { useLayoutEffect, useState, createContext } from 'react';
+import { useState, createContext, useEffect } from 'react';
 
 export const ScrollContext = createContext(0);
 
 const useYScroll = () => {
   const [scrollY, setScollY] = useState(0);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const handleScroll = () => {
       setScollY(window.scrollY);
     };
