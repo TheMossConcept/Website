@@ -1,8 +1,7 @@
 import { Typography, TypographyProps } from '@mui/material';
-import { FC, RefObject, useContext, useLayoutEffect, useState } from 'react';
-import { ScrollContext } from '../../utilities/useYScroll';
-import useAppearingText from '../../utilities/useAppearingText';
+import { FC, RefObject, useEffect, useState } from 'react';
 import useIsMobile from '../../utilities/useIsMobile';
+import calculateOpacity from '../../utilities/calculateOpacity';
 
 type TextWithMetadata = {
   text: string;
@@ -21,20 +20,23 @@ const HeadlineSection: FC<HeadlineSectionProps> = ({
   secondLineText,
   marginLeft = '18%'
 }) => {
-  return null;
-  /*
   const isMobile = useIsMobile();
 
-  const globalYScroll = useContext(ScrollContext);
   const [localYScroll, setLocalYScroll] = useState<number>();
 
-  useLayoutEffect(() => {
-    if (containerRef?.current) {
-      setLocalYScroll(globalYScroll - containerRef.current.offsetTop);
-    }
-  }, [globalYScroll, containerRef]);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (containerRef?.current) {
+        const globalYScroll = window.scrollY;
+        setLocalYScroll(globalYScroll - containerRef.current.offsetTop);
+      }
+    };
 
-  const headlineOpacity = useAppearingText(containerRef, 20, isMobile ? 2.5 : 1.2);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const headlineOpacity = calculateOpacity(containerRef, 20, isMobile ? 2.5 : 1.2);
 
   const textTransformValue = localYScroll ? localYScroll / (isMobile ? 50 : 25) : 0;
   const textTransformValueNegated = textTransformValue * -1;
@@ -53,7 +55,7 @@ const HeadlineSection: FC<HeadlineSectionProps> = ({
             sx={{
               opacity: headlineOpacity,
               display: 'inline-block',
-              transform: `translate(${textTransformValue}px)`,
+              marginLeft: `${textTransformValue}px`,
               ...fontSize
             }}>
             {textBit.text}&nbsp;
@@ -71,7 +73,7 @@ const HeadlineSection: FC<HeadlineSectionProps> = ({
             sx={{
               opacity: headlineOpacity,
               display: 'inline-block',
-              transform: `translate(${textTransformValueNegated}px)`,
+              marginLeft: `${textTransformValueNegated}px`,
               ...fontSize
             }}>
             {textBit.text}&nbsp;
@@ -80,7 +82,6 @@ const HeadlineSection: FC<HeadlineSectionProps> = ({
       </span>
     </>
   );
-   */
 };
 
 export default HeadlineSection;

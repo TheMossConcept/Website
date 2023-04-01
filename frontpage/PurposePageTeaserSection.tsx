@@ -48,6 +48,7 @@ const PurposePageTeaserSection: FC = () => {
           secondLineText={[
             { text: 'purpose', color: 'secondary.transparent', variant: 'PoppinsBig-h1' }
           ]}
+          debugText="PurposePage"
         />
         <Typography
           sx={{ marginTop: { xs: 5, md: 10 }, maxWidth: '500px', opacity: textSectionOpacity }}

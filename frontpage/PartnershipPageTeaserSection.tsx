@@ -64,6 +64,7 @@ const PartnershipPageTeaserSection: FC = () => {
             { text: 'partnership', color: 'primary.transparent', variant: 'PoppinsBig-h1' },
             { text: 'with you', color: 'primary.main', variant: 'TobiasBig-h1' }
           ]}
+          debugText="PartnershipPage"
         />
       </Grid>
       <Grid
