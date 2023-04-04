@@ -108,7 +108,7 @@ const theme = createTheme({
     'TobiasBig-h2': {
       fontFamily: 'Tobias',
       fontWeight: 600,
-      fontSize: 72,
+      fontSize: 76,
       lineHeight: '100%'
     },
     'TobiasBig-subtitle1': {

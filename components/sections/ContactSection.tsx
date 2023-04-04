@@ -135,7 +135,7 @@ const ContactSection: FC<ContactSectionProps> = ({ useContrastColors = false }) 
                   }
                 : {}
             }}>
-            Submit
+            Get in touch
           </Button>
         </Grid>
       </Grid>

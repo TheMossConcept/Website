@@ -53,7 +53,8 @@ const NavigationMenu: FC<Props> = ({ isOpenState }) => {
   const router = useRouter();
   const handleContactClick = async () => {
     await router.push('/');
-    window.scrollTo({ top: window.document.body.scrollHeight, behavior: 'auto' });
+    console.log(window.document.body.scrollHeight);
+    window.scrollTo({ top: window.document.body.scrollHeight - 900, behavior: 'auto' });
 
     setIsOpen(false);
   };
