@@ -62,7 +62,7 @@ const PurposePage: FC = () => {
       <TextSection
         textSections={[
           'Trust is essential as it is the core of a healthy, mutually beneficial relationship. If you do not trust us, you will not allow us to fully help and serve you with our expertise. If we do not trust you, we will not be able to dedicate ourselves fully to your company and your needs.',
-          'Respect is essential as that is what allows us to remain curious and humble and learn from each other. If you do not respect us, our expertise and advice is not taken seriously, and as a consequence it will have little or not impact. If we do not respect you, we will never truly understand your business and its unique needs, and we will not be able to create software that generates massive value for you.'
+          'Respect is essential as that is what allows us to remain curious and humble and learn from each other. If you do not respect us, our expertise and advice is not taken seriously, and as a consequence it will have little or no impact. If we do not respect you, we will never truly understand your business and its unique needs, and we will not be able to create software that generates massive value for you.'
         ]}
         mt={16}
       />

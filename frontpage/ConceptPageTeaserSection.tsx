@@ -86,7 +86,7 @@ const ContentArea: FC<ContentAreaProps> = ({ containerRef }) => {
         marginLeft={isMobile ? undefined : '354px'}
         firstLineText={[
           { text: 'A', color: 'text.primary', variant: 'PoppinsBig-h1' },
-          { text: 'disruptive', color: 'text.secondary', variant: 'TobiasBig-h1' }
+          { text: 'simpler', color: 'text.secondary', variant: 'TobiasBig-h1' }
         ]}
         secondLineText={[{ text: 'concept', color: 'text.primary', variant: 'PoppinsBig-h1' }]}
       />
@@ -99,7 +99,7 @@ const ContentArea: FC<ContentAreaProps> = ({ containerRef }) => {
           maxWidth: '569px',
           opacity: firstTextSectionOpacity
         }}>
-        We are on a mission to disrupt the software development industry by cutting to the chase of
+        We are on a mission to simplify the software development industry by cutting to the chase of
         what is important.
       </Typography>
       <Typography
