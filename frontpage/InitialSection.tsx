@@ -1,6 +1,5 @@
 import { Box, Typography, Grid } from '@mui/material';
-import { FC, useContext, useLayoutEffect, useState } from 'react';
-import { ScrollContext } from '../utilities/useYScroll';
+import { FC, useEffect, useLayoutEffect, useState } from 'react';
 
 // Put a background image here that's in the slide and make a fade
 // for the text which is a bit delayed compared to the background image
@@ -24,7 +23,6 @@ const InitialSection: FC = () => {
           maxHeight: '100vh',
           height: '100vh',
           width: '100vw'
-          // We want this to be below everything else!
         }}>
         <source src="https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/frontpage.mp4" />
       </video>
@@ -47,11 +45,9 @@ const Content: FC = () => {
       style={{ paddingTop: '26.7vh', opacity, transition: 'opacity 630ms ease-out 920ms' }}
       xs={12}>
       <Grid item>
-        {/*
         <FirstLineWithAnimation />
         <SecondLineWithAnimation />
         <ThirdLineWithAnimation />
-          */}
       </Grid>
     </Grid>
   );
@@ -63,7 +59,16 @@ const lineEnterAnimation = { transition: 'margin-left 1010ms ease 690ms' };
 // TextContainer adds 148px margin left
 
 const FirstLineWithAnimation: FC = () => {
-  const scrollY = useContext(ScrollContext);
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const [marginLeft, setMarginLeft] = useState(-54.02);
   useLayoutEffect(() => {
@@ -94,7 +99,17 @@ const FirstLineWithAnimation: FC = () => {
 };
 
 const SecondLineWithAnimation: FC = () => {
-  const scrollY = useContext(ScrollContext);
+  // TODO: Move this out into a shared utility hook once we are completely on top of the performance issues
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const [marginLeft, setMarginLeft] = useState(418.52);
   useLayoutEffect(() => {

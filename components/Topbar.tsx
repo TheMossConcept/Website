@@ -10,18 +10,26 @@ const Topbar: FC = () => {
 
   const router = useRouter();
 
+  const handleLogoPress = () => {
+    if (router.pathname === '/') {
+      router.reload();
+    } else {
+      router.push('/');
+    }
+  };
+
   return (
     <>
       <Box sx={{ position: 'fixed', width: '100%', zIndex: 'appBar' }}>
         <Grid item xs={12} sx={{ mt: 4, mx: 4 }}>
           <Grid container justifyContent="space-between">
             <Grid item>
-              <InteractiveLogo height={50} width={106.5} onClick={() => router.push('/')} />
+              <InteractiveLogo height={75} width={133} onClick={handleLogoPress} />
             </Grid>
             <Grid item>
               <InteractiveMenuIcon
-                width={29}
-                height={16}
+                width={44}
+                height={24}
                 onClick={() => setNavigationMenuIsOpen((previousValue) => !previousValue)}
               />
             </Grid>

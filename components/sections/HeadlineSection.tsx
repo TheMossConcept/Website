@@ -1,5 +1,5 @@
 import { Typography, TypographyProps } from '@mui/material';
-import { FC, RefObject, useEffect, useState } from 'react';
+import { FC, RefObject, useEffect, useState, memo } from 'react';
 import useIsMobile from '../../utilities/useIsMobile';
 import calculateOpacity from '../../utilities/calculateOpacity';
 
@@ -46,7 +46,7 @@ const HeadlineSection: FC<HeadlineSectionProps> = ({
   return (
     <>
       <span>
-        {firstLineText.map((textBit) => (
+        {firstLineText.map((textBit, index) => (
           <Typography
             key={textBit.text}
             color={textBit.color}
@@ -55,7 +55,7 @@ const HeadlineSection: FC<HeadlineSectionProps> = ({
             sx={{
               opacity: headlineOpacity,
               display: 'inline-block',
-              marginLeft: `${textTransformValue}px`,
+              marginLeft: index === 0 ? `${textTransformValue}px` : undefined,
               ...fontSize
             }}>
             {textBit.text}&nbsp;
@@ -64,7 +64,7 @@ const HeadlineSection: FC<HeadlineSectionProps> = ({
       </span>
       <br />
       <span style={{ marginLeft }}>
-        {secondLineText.map((textBit) => (
+        {secondLineText.map((textBit, index) => (
           <Typography
             key={textBit.text}
             color={textBit.color}
@@ -73,7 +73,7 @@ const HeadlineSection: FC<HeadlineSectionProps> = ({
             sx={{
               opacity: headlineOpacity,
               display: 'inline-block',
-              marginLeft: `${textTransformValueNegated}px`,
+              marginLeft: index === 0 ? `${textTransformValueNegated}px` : undefined,
               ...fontSize
             }}>
             {textBit.text}&nbsp;
@@ -84,4 +84,4 @@ const HeadlineSection: FC<HeadlineSectionProps> = ({
   );
 };
 
-export default HeadlineSection;
+export default memo(HeadlineSection);

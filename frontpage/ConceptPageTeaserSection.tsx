@@ -89,7 +89,6 @@ const ContentArea: FC<ContentAreaProps> = ({ containerRef }) => {
           { text: 'disruptive', color: 'text.secondary', variant: 'TobiasBig-h1' }
         ]}
         secondLineText={[{ text: 'concept', color: 'text.primary', variant: 'PoppinsBig-h1' }]}
-        debugText="ConceptPage"
       />
       <Typography
         variant="PoppinsBig-subtitle2"

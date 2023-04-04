@@ -8,7 +8,6 @@ type Props = {
 
 const InteractiveLogo: FC<Props> = ({ width, height, onClick }) => {
   const onClickWrapper: MouseEventHandler<SVGSVGElement> = (event) => {
-    window.scrollTo(0, 0);
     onClick(event);
   };
 

@@ -29,6 +29,8 @@ const MediaSection: FC<Props> = ({
   // Different default values for mobile and  desktop
   const mt = marginTop ? marginTop : isMobile ? 16 : 32;
 
+  const isFullScreen = mediaLocation === 'full-screen';
+
   return (
     <Grid item xs={12} sx={{ mt }}>
       <Grid
@@ -40,13 +42,17 @@ const MediaSection: FC<Props> = ({
             ? 'flex-end'
             : 'center'
         }>
-        <Grid
-          item
-          sm={12}
-          md={mediaLocation === 'full-screen' ? 12 : 9}
-          style={{ textAlign: 'center' }}>
+        <Grid item sm={12} md={isFullScreen ? 12 : 9} style={{ textAlign: 'center' }}>
           {isVideo ? (
-            <video autoPlay muted loop style={{ width: '100%', height: 'auto' }}>
+            <video
+              autoPlay
+              muted
+              loop
+              style={{
+                width: isFullScreen ? undefined : '100%',
+                height: isFullScreen ? '110vh' : 'auto',
+                objectFit: isFullScreen ? 'fill' : undefined
+              }}>
               <source src={mediaUrl} type="video/mp4" />
             </video>
           ) : (

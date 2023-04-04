@@ -74,6 +74,7 @@ const ContactSection: FC<ContactSectionProps> = ({ useContrastColors = false }) 
               variant="standard"
               value={name}
               onChange={(event) => setName(event.target.value || undefined)}
+              sx={useContrastColors ? {} : { input: { color: 'black' } }}
             />
           </Grid>
           <Grid item xs={12} md={6}>
@@ -92,6 +93,7 @@ const ContactSection: FC<ContactSectionProps> = ({ useContrastColors = false }) 
               variant="standard"
               value={email}
               onChange={(event) => setEmail(event.target.value || undefined)}
+              sx={useContrastColors ? {} : { input: { color: 'black' } }}
             />
           </Grid>
         </Grid>
@@ -111,6 +113,7 @@ const ContactSection: FC<ContactSectionProps> = ({ useContrastColors = false }) 
             variant="standard"
             value={message}
             onChange={(event) => setMessage(event.target.value || undefined)}
+            sx={useContrastColors ? {} : { textarea: { color: 'black' } }}
           />
         </Grid>
         <Grid item xs={12} sx={{ marginTop: { xs: 4, md: 10 } }}>
@@ -124,7 +127,13 @@ const ContactSection: FC<ContactSectionProps> = ({ useContrastColors = false }) 
               borderRadius: '50px',
               py: '6px',
               px: '30px',
-              color: useContrastColors ? 'text.primary' : 'secondary'
+              color: useContrastColors ? 'text.primary' : 'secondary',
+              '&.Mui-disabled': useContrastColors
+                ? {
+                    color: 'rgba(255, 255, 255, 0.25)',
+                    borderColor: 'rgba(0, 0, 0, 0.25)'
+                  }
+                : {}
             }}>
             Submit
           </Button>
