@@ -153,10 +153,10 @@ const ThirdLineWithAnimation: FC = () => {
       sx={{
         marginLeft: { xs: 2, sm: `${marginLeft}px` },
         position: 'relative',
-        fontSize: { xs: 50, sm: 75, lg: 104 },
+        fontSize: { xs: 50, sm: 75, lg: 120 },
         ...lineEnterAnimation
       }}>
-      your workflow
+      your workflow.
     </Typography>
   );
 };

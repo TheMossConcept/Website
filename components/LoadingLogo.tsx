@@ -47,7 +47,7 @@ const LoadingLogo: FC<PropsWithChildren> = ({ children }) => {
           variant="TobiasBig-h1"
           color="text.secondary"
           sx={{
-            fontSize: { xs: 50, sm: 105 },
+            fontSize: { xs: 50, sm: 120 },
             animation: `${middleTextAnimation} 3000ms cubic-bezier(0.42, 0, 0.58, 1)`,
             display: 'block'
           }}>
@@ -80,7 +80,7 @@ const LoadingLogo: FC<PropsWithChildren> = ({ children }) => {
           width: '100vw',
           position: 'absolute',
           right: `${backgroundContainerRightPosition}vw`,
-          bgcolor: '#F9F7F4',
+          bgcolor: 'text.secondary',
           transition: 'right 1100ms ease 2475ms'
         }}>
         <Box

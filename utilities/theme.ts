@@ -3,7 +3,7 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
   palette: {
     background: {
-      default: '#F9F7F4'
+      default: '#F8F7F4'
     },
     primary: {
       main: '#4D72C9',
@@ -14,8 +14,8 @@ const theme = createTheme({
       transparent: 'rgba(64, 64, 64, 0.75)'
     },
     text: {
-      primary: 'rgba(248, 246, 243, 0.75)',
-      secondary: '#F8F6F3'
+      primary: 'rgba(248, 247, 244, 0.75)',
+      secondary: '#F8F7F4'
     }
   },
   spacing: 8,
@@ -46,7 +46,7 @@ const theme = createTheme({
       fontFamily: 'Poppins',
       fontWeight: 500,
       fontSize: 105,
-      lineHeight: '110%',
+      lineHeight: '100%',
       letterSpacing: 0
     },
     'PoppinsBig-h2': {
@@ -101,9 +101,9 @@ const theme = createTheme({
     },
     'TobiasBig-h1': {
       fontFamily: 'Tobias',
-      fontWeight: 500,
-      fontSize: 105,
-      lineHeight: '100%'
+      fontWeight: 100,
+      fontSize: 130,
+      lineHeight: '70%'
     },
     'TobiasBig-h2': {
       fontFamily: 'Tobias',
