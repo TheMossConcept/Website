@@ -85,7 +85,7 @@ const ConceptPage: FC = () => {
         imageUrl={TallPartnershipImage}
         firstLineText={[{ text: 'Approach', color: 'primary', variant: 'TobiasBig-h2' }]}
         secondLineText={[
-          { text: 'to customers', color: 'primary.transparent', variant: 'PoppinsBig-h2' }
+          { text: 'to our clients', color: 'primary.transparent', variant: 'PoppinsBig-h2' }
         ]}
       />
     </PageContainer>

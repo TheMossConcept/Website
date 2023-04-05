@@ -80,7 +80,7 @@ const LoadingLogo: FC<PropsWithChildren> = ({ children }) => {
           width: '100vw',
           position: 'absolute',
           right: `${backgroundContainerRightPosition}vw`,
-          backgroundColor: 'white',
+          bgcolor: '#F9F7F4',
           transition: 'right 1100ms ease 2475ms'
         }}>
         <Box
