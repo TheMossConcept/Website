@@ -10,7 +10,7 @@ const InitialSection: FC = () => {
   }, []);
 
   return (
-    <Box sx={{ height: '100vh', width: '100vw', backgroundColor: 'secondary.main' }}>
+    <Box sx={{ height: '100vh', width: '100vw', bgcolor: 'text.secondary' }}>
       <video
         autoPlay
         loop
@@ -42,7 +42,7 @@ const Content: FC = () => {
       item
       container
       justifyContent="center"
-      style={{ paddingTop: '26.7vh', opacity, transition: 'opacity 630ms ease-out 920ms' }}
+      style={{ paddingTop: '30vh', opacity, transition: 'opacity 630ms ease-out 920ms' }}
       xs={12}>
       <Grid item>
         <FirstLineWithAnimation />
@@ -153,10 +153,10 @@ const ThirdLineWithAnimation: FC = () => {
       sx={{
         marginLeft: { xs: 2, sm: `${marginLeft}px` },
         position: 'relative',
-        fontSize: { xs: 50, sm: 75, lg: 120 },
+        fontSize: { xs: 50, sm: 75, lg: 130 },
         ...lineEnterAnimation
       }}>
-      your workflow.
+      your workflow
     </Typography>
   );
 };

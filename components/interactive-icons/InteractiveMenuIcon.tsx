@@ -34,7 +34,7 @@ const InteractiveMenuIcon: FC<Props> = ({ width, height, onClick }) => {
       />
       <path
         d={middlePathDValue}
-        style={{ transition: 'd 250ms ease' }}
+        style={{ transition: 'd 350ms linear' }}
         fill="none"
         stroke="#383838"
         strokeLinecap="round"
