@@ -9,6 +9,7 @@ import CollaborationImage from '../public/images/collaboration.jpg';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import useIsMobile from '../utilities/useIsMobile';
+import MediaSection from '../components/sections/MediaSection';
 
 const PartnershipPageTeaserSection: FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -83,21 +84,22 @@ const PartnershipPageTeaserSection: FC = () => {
           </TextContainer>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Image
-            src={PeopleTalkingImage}
-            style={{ width: '100%', height: 'auto' }}
-            alt="People talking"
-            priority
+          <MediaSection
+            mediaUrl={PeopleTalkingImage}
+            mediaLocation="full-screen"
+            marginTop={0}
+            imageDimensions={{ width: '100%', height: 'auto' }}
           />
         </Grid>
       </Grid>
       <Grid container spacing={isMobile ? 5 : 19}>
         <Grid item xs={12} md={6}>
-          <Image
-            src={CollaborationImage}
-            style={{ width: '100%', height: 'auto' }}
-            alt="People collaborating around a screen"
-            priority
+          <MediaSection
+            mediaUrl={CollaborationImage}
+            mediaLocation="full-screen"
+            imageDimensions={{ width: '100%', height: 'auto' }}
+            debug
+            marginTop={0}
           />
         </Grid>
         <Grid item xs={12} md={6} alignSelf="center">
