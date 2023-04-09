@@ -68,7 +68,7 @@ const ConceptPage: FC = () => {
         highlightedText="flexibility and stability"
       />
       <MediaSection
-        mediaUrl="https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/trees-swaying.mov"
+        mediaUrl="https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/trees-swaying.mp4"
         isVideo
         mediaLocation="full-screen"
       />

@@ -1,7 +1,7 @@
 import { Box, Grid, Typography, TypographyProps } from '@mui/material';
 import { FC } from 'react';
-import Image from 'next/image';
 import useIsMobile from '../../utilities/useIsMobile';
+import MediaSection from './MediaSection';
 
 type TextWithMetadata = {
   text: string;
@@ -31,11 +31,11 @@ const FirstSubpageSection: FC<Props> = ({
     <Grid item container xs={12} spacing={5} alignItems="center" direction="row-reverse">
       <Grid item md={6} xs={12}>
         {image ? (
-          <Image
-            src={image}
-            alt="The tall image depicting this subsection"
-            style={{ width: '100%', height: 'auto' }}
-            priority
+          <MediaSection
+            mediaLocation="full-screen"
+            mediaUrl={image}
+            imageDimensions={{ width: '100%', height: 'auto' }}
+            marginTop={0}
           />
         ) : video ? (
           <video autoPlay loop muted>

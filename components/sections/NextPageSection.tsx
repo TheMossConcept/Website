@@ -1,9 +1,9 @@
 import { Grid, Typography } from '@mui/material';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { FC, useRef } from 'react';
 import InteractiveLink from '../InteractiveLink';
 import HeadlineSection, { HeadlineSectionProps } from './HeadlineSection';
+import MediaSection from './MediaSection';
 
 type Props = { imageUrl: string; text: string; link: string } & Pick<
   HeadlineSectionProps,
@@ -17,11 +17,10 @@ const NextPageSection: FC<Props> = ({ imageUrl, text, link, firstLineText, secon
   return (
     <Grid item container xs={12} spacing={5} sx={{ mt: { xs: 16, md: 32 } }} ref={containerRef}>
       <Grid item xs={12} md={6}>
-        <Image
-          src={imageUrl}
-          style={{ width: '100%', height: 'auto' }}
-          alt="The tall image depicting the next subsection"
-          priority
+        <MediaSection
+          mediaLocation="full-screen"
+          mediaUrl={imageUrl}
+          imageDimensions={{ width: '100%', height: 'auto' }}
         />
       </Grid>
       <Grid item xs={12} md={6} alignSelf="flex-end" sx={{ pb: 4 }}>

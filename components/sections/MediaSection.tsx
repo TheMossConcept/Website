@@ -17,7 +17,7 @@ type Props = {
   marginTop?: number;
   imageDimensions?: MediaDimensions;
   style?: CSSProperties;
-  debug?: boolean;
+  disableImageMovement?: boolean;
 };
 
 const MediaSection: FC<Props> = ({
@@ -26,6 +26,7 @@ const MediaSection: FC<Props> = ({
   imageDimensions = { width: '100%', height: 'auto' },
   isVideo = false,
   style,
+  disableImageMovement,
   marginTop
 }) => {
   const isMobile = useIsMobile();
@@ -83,10 +84,12 @@ const MediaSection: FC<Props> = ({
           sm={12}
           md={isFullScreen ? 12 : 9}
           style={{
-            textAlign: 'center',
-            clipPath: `inset(${
-              imageMoveRangeInPixels - imageOffsetAmount
-            }px 0px ${imageOffsetAmount}px)`
+            textAlign: 'center'
+            /*
+            clipPath: disableImageMovement
+              ? undefined
+              : `inset(${imageMoveRangeInPixels - imageOffsetAmount}px 0px ${imageOffsetAmount}px)`
+               */
           }}
           ref={mediaContainerRef}>
           {isVideo ? (
@@ -95,7 +98,7 @@ const MediaSection: FC<Props> = ({
               muted
               loop
               style={{
-                width: isFullScreen ? undefined : '100%',
+                width: isFullScreen ? '100vw' : '100%',
                 height: isFullScreen ? '110vh' : 'auto',
                 objectFit: isFullScreen ? 'fill' : undefined,
                 ...style
