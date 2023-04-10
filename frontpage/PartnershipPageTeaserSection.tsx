@@ -7,7 +7,6 @@ import calculateOpacity from '../utilities/calculateOpacity';
 import PeopleTalkingImage from '../public/images/people_talking.jpg';
 import CollaborationImage from '../public/images/collaboration.jpg';
 import { useRouter } from 'next/router';
-import Image from 'next/image';
 import useIsMobile from '../utilities/useIsMobile';
 import MediaSection from '../components/sections/MediaSection';
 
@@ -98,7 +97,6 @@ const PartnershipPageTeaserSection: FC = () => {
             mediaUrl={CollaborationImage}
             mediaLocation="full-screen"
             imageDimensions={{ width: '100%', height: 'auto' }}
-            debug
             marginTop={0}
           />
         </Grid>
