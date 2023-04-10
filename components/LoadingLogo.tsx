@@ -1,5 +1,5 @@
 import { Box, Grid, keyframes, Typography } from '@mui/material';
-import { FC, PropsWithChildren, useEffect, useState } from 'react';
+import { FC, PropsWithChildren, useEffect, useLayoutEffect, useState } from 'react';
 
 const LoadingLogo: FC<PropsWithChildren> = ({ children }) => {
   const initialBackgroundContainerRightPosition = 100;
@@ -12,7 +12,7 @@ const LoadingLogo: FC<PropsWithChildren> = ({ children }) => {
   const [textContainerOpacity, setTextContainerOpacity] = useState(initialTextContainerOpacity);
   const [newPageOpacity, setNewPageOpacity] = useState(initialNewPageOpacity);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setBackgroundContainerRightPosition(0);
     setTextContainerOpacity(0);
     setNewPageOpacity(1);
@@ -37,7 +37,7 @@ const LoadingLogo: FC<PropsWithChildren> = ({ children }) => {
           variant="PoppinsBig-h1"
           color="text.secondary"
           sx={{
-            fontSize: { xs: 50, sm: 105 },
+            fontSize: { xs: 50, sm: 75 },
             animation: `${topTextAnimation} 3000ms cubic-bezier(0.42, 0, 0.58, 1)`,
             display: 'block'
           }}>
@@ -47,7 +47,7 @@ const LoadingLogo: FC<PropsWithChildren> = ({ children }) => {
           variant="TobiasBig-h1"
           color="text.secondary"
           sx={{
-            fontSize: { xs: 50, sm: 120 },
+            fontSize: { xs: 50, sm: 85 },
             animation: `${middleTextAnimation} 3000ms cubic-bezier(0.42, 0, 0.58, 1)`,
             display: 'block'
           }}>
@@ -57,7 +57,7 @@ const LoadingLogo: FC<PropsWithChildren> = ({ children }) => {
           variant="PoppinsBig-h1"
           color="text.secondary"
           sx={{
-            fontSize: { xs: 50, sm: 105 },
+            fontSize: { xs: 50, sm: 75 },
             animation: `${bottomTextAnimation} 3000ms cubic-bezier(0.42, 0, 0.58, 1)`,
             display: 'block'
           }}>
@@ -81,7 +81,7 @@ const LoadingLogo: FC<PropsWithChildren> = ({ children }) => {
           position: 'absolute',
           right: `${backgroundContainerRightPosition}vw`,
           bgcolor: 'text.secondary',
-          transition: 'right 1100ms ease 2475ms'
+          transition: 'right 1100ms ease 2275ms'
         }}>
         <Box
           sx={{

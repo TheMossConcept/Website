@@ -2,7 +2,7 @@ import { Grid, GridProps } from '@mui/material';
 import { FC } from 'react';
 
 type TextContainerProps = {
-  textPosition?: 'left' | 'right';
+  textPosition?: 'left' | 'right' | 'center';
 } & GridProps;
 
 const TextContainer: FC<TextContainerProps> = ({
@@ -23,7 +23,7 @@ const TextContainer: FC<TextContainerProps> = ({
         ...sx
       }}
       {...gridProps}>
-      <Grid container justifyItems="center">
+      <Grid container justifyContent={textPosition === 'center' ? 'center' : undefined}>
         <Grid item>{children}</Grid>
       </Grid>
     </Grid>

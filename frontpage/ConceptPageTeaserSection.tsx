@@ -80,48 +80,52 @@ const ContentArea: FC<ContentAreaProps> = ({ containerRef }) => {
   const router = useRouter();
 
   return (
-    <TextContainer>
-      <HeadlineSection
-        containerRef={containerRef}
-        marginLeft={isMobile ? undefined : '354px'}
-        firstLineText={[
-          { text: 'A', color: 'text.primary', variant: 'PoppinsBig-h1' },
-          { text: 'simpler', color: 'text.secondary', variant: 'TobiasBig-h1' }
-        ]}
-        secondLineText={[{ text: 'concept', color: 'text.primary', variant: 'PoppinsBig-h1' }]}
-      />
-      <Typography
-        variant="PoppinsBig-subtitle2"
-        color="text.primary"
-        sx={{
-          mt: { xs: 5, md: 10 },
-          display: 'block',
-          maxWidth: '569px',
-          opacity: firstTextSectionOpacity
-        }}>
-        We are on a mission to simplify the software development industry by cutting to the chase of
-        what is important.
-      </Typography>
-      <Typography
-        variant="PoppinsBig-subtitle2"
-        color="text.primary"
-        sx={{
-          marginTop: '34px',
-          display: 'block',
-          maxWidth: '569px',
-          opacity: secondTextSectionOpacity
-        }}>
-        We create fully custom, stable, and flexible software that can be changed and extended
-        seamlessly as the world, and the needs of your business, evolve.
-      </Typography>
-      <InteractiveLink
-        text="Read more about what makes our concept unique"
-        navigate={() => router.push('/concept')}
-        variant="PoppinsSmall-button"
-        color="text.primary"
-        sx={{ mt: { xs: 5, md: 10 }, opacity: linkOpacity }}
-      />
-    </TextContainer>
+    <>
+      <TextContainer>
+        <HeadlineSection
+          containerRef={containerRef}
+          marginLeft={isMobile ? undefined : '354px'}
+          firstLineText={[
+            { text: 'A', color: 'text.primary', variant: 'PoppinsBig-h1' },
+            { text: 'simpler', color: 'text.secondary', variant: 'TobiasBig-h1' }
+          ]}
+          secondLineText={[{ text: 'concept', color: 'text.primary', variant: 'PoppinsBig-h1' }]}
+        />
+      </TextContainer>
+      <TextContainer textPosition="center">
+        <Typography
+          variant="PoppinsBig-subtitle2"
+          color="text.primary"
+          sx={{
+            mt: { xs: 5, md: 10 },
+            display: 'block',
+            maxWidth: '569px',
+            opacity: firstTextSectionOpacity
+          }}>
+          We are on a mission to simplify the software development industry by cutting to the chase
+          of what is important.
+        </Typography>
+        <Typography
+          variant="PoppinsBig-subtitle2"
+          color="text.primary"
+          sx={{
+            marginTop: '34px',
+            display: 'block',
+            maxWidth: '569px',
+            opacity: secondTextSectionOpacity
+          }}>
+          We create fully custom, stable, and flexible software that can be changed and extended
+          seamlessly as the world, and the needs of your business, evolve.
+        </Typography>
+        <InteractiveLink
+          text="Read more about what makes our concept unique"
+          navigate={() => router.push('/concept')}
+          variant="PoppinsSmall-button"
+          color="text.primary"
+          sx={{ mt: { xs: 5, md: 10 }, opacity: linkOpacity }}
+        />
+      </TextContainer>
+    </>
   );
 };
 
