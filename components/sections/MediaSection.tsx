@@ -37,7 +37,7 @@ const MediaSection: FC<Props> = ({
 
   const mediaContainerRef = useRef<HTMLDivElement>(null);
   const [imageOffsetAmount, setImageOffsetAmount] = useState(0);
-  const imageMoveRangeInPixels = 75;
+  const imageMoveRangeInPixels = 100;
 
   useEffect(() => {
     let initialScrollValue: number;
@@ -72,6 +72,7 @@ const MediaSection: FC<Props> = ({
       <Grid
         container
         alignContent="center"
+        style={{ overflow: 'hidden' }}
         justifyContent={
           mediaLocation === 'left'
             ? 'flex-start'
@@ -84,11 +85,12 @@ const MediaSection: FC<Props> = ({
           sm={12}
           md={isFullScreen ? 12 : 9}
           style={{
-            textAlign: 'center'
+            textAlign: 'center',
+            zIndex: 1
             /*
-            clipPath: disableImageMovement
+            transform: disableImageMovement
               ? undefined
-              : `inset(${imageMoveRangeInPixels - imageOffsetAmount}px 0px ${imageOffsetAmount}px)`
+              : `translateY(${imageMoveRangeInPixels / 2 - imageOffsetAmount}px`
                */
           }}
           ref={mediaContainerRef}>

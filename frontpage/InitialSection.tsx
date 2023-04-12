@@ -4,7 +4,7 @@ import { FC, useEffect, useLayoutEffect, useState } from 'react';
 // Put a background image here that's in the slide and make a fade
 // for the text which is a bit delayed compared to the background image
 const InitialSection: FC = () => {
-  const [rightPosition, setRightPosition] = useState(100);
+  const [rightPosition, setRightPosition] = useState(-100);
   useLayoutEffect(() => {
     setRightPosition(0);
   }, []);
@@ -16,8 +16,8 @@ const InitialSection: FC = () => {
         loop
         muted
         style={{
-          right: `${rightPosition}vw`,
-          transition: 'right 1380ms ease-out',
+          transform: `translateX(${rightPosition}vw)`,
+          transition: 'transform 1380ms ease-out',
           position: 'absolute',
           objectFit: 'fill',
           maxHeight: '100vh',

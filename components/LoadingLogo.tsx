@@ -1,8 +1,8 @@
 import { Box, Grid, keyframes, Typography } from '@mui/material';
-import { FC, PropsWithChildren, useEffect, useLayoutEffect, useState } from 'react';
+import { FC, PropsWithChildren, useEffect, useState } from 'react';
 
 const LoadingLogo: FC<PropsWithChildren> = ({ children }) => {
-  const initialBackgroundContainerRightPosition = 100;
+  const initialBackgroundContainerRightPosition = -100;
   const initialTextContainerOpacity = 1;
   const initialNewPageOpacity = 0;
 
@@ -12,7 +12,7 @@ const LoadingLogo: FC<PropsWithChildren> = ({ children }) => {
   const [textContainerOpacity, setTextContainerOpacity] = useState(initialTextContainerOpacity);
   const [newPageOpacity, setNewPageOpacity] = useState(initialNewPageOpacity);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     setBackgroundContainerRightPosition(0);
     setTextContainerOpacity(0);
     setNewPageOpacity(1);
@@ -69,9 +69,9 @@ const LoadingLogo: FC<PropsWithChildren> = ({ children }) => {
           height: '100vh',
           width: '100vw',
           position: 'absolute',
-          right: `${backgroundContainerRightPosition}vw`,
           backgroundColor: 'primary.main',
-          transition: 'right 1050ms ease'
+          transform: `translateX(${backgroundContainerRightPosition}vw)`,
+          transition: 'transform 1050ms ease'
         }}
       />
       <Box
@@ -79,9 +79,9 @@ const LoadingLogo: FC<PropsWithChildren> = ({ children }) => {
           height: '100vh',
           width: '100vw',
           position: 'absolute',
-          right: `${backgroundContainerRightPosition}vw`,
           bgcolor: 'text.secondary',
-          transition: 'right 1100ms ease 2275ms'
+          transform: `translateX(${backgroundContainerRightPosition}vw)`,
+          transition: 'transform 1100ms ease 2275ms'
         }}>
         <Box
           sx={{
@@ -97,46 +97,46 @@ const LoadingLogo: FC<PropsWithChildren> = ({ children }) => {
 
 const topTextAnimation = keyframes`
   0% {
-    margin-left: 173px
+    transform: translateX(173px)
   }
   33% {
-    margin-left: 0px
+    transform: translateX(0px)
   }
   66% {
-    margin-left: 223px
+    transform: translateX(223px)
   }
   100% {
-    margin-left: 173px 
+    transform: translateX(173px)
   }
 `;
 
 const middleTextAnimation = keyframes`
   0% {
-    margin-left: 0px
+    transform: translateX(0px)
   }
   33% {
-    margin-left: 0px
+    transform: translateX(0px)
   }
   66% {
-    margin-left: 173px
+    transform: translateX(173px)
   }
   100% {
-    margin-left: 0px 
+    transform: translateX(0px)
   }
 `;
 
 const bottomTextAnimation = keyframes`
   0% {
-    margin-left: 174px
+    transform: translateX(174px)
   }
   33% {
-    margin-left: 0px
+    transform: translateX(0px)
   }
   66% {
-    margin-left: 87px
+    transform: translateX(87px)
   }
   100% {
-    margin-left: 174px 
+    transform: translateX(174px)
   }
 `;
 

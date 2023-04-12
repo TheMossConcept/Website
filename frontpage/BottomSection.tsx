@@ -8,7 +8,7 @@ import MediaSection from '../components/sections/MediaSection';
 
 const BottomSection: FC = () => {
   return (
-    <Grid item container xs={12} sx={{ marginTop: { xs: 5, md: 32 } }}>
+    <Grid item container xs={12} sx={{ marginTop: { xs: 5, md: 16 } }}>
       <Grid
         item
         xs={12}

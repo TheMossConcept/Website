@@ -46,7 +46,7 @@ const HeadlineSection: FC<HeadlineSectionProps> = ({
   return (
     <>
       <span>
-        {firstLineText.map((textBit, index) => (
+        {firstLineText.map((textBit) => (
           <Typography
             key={textBit.text}
             color={textBit.color}
@@ -55,7 +55,7 @@ const HeadlineSection: FC<HeadlineSectionProps> = ({
             sx={{
               opacity: headlineOpacity,
               display: 'inline-block',
-              marginLeft: index === 0 ? `${textTransformValue}px` : undefined,
+              transform: `translateX(${textTransformValue}px)`,
               ...fontSize
             }}>
             {textBit.text}&nbsp;
@@ -64,7 +64,7 @@ const HeadlineSection: FC<HeadlineSectionProps> = ({
       </span>
       <br />
       <span style={{ marginLeft }}>
-        {secondLineText.map((textBit, index) => (
+        {secondLineText.map((textBit) => (
           <Typography
             key={textBit.text}
             color={textBit.color}
@@ -73,7 +73,7 @@ const HeadlineSection: FC<HeadlineSectionProps> = ({
             sx={{
               opacity: headlineOpacity,
               display: 'inline-block',
-              marginLeft: index === 0 ? `${textTransformValueNegated}px` : undefined,
+              transform: `translateX(${textTransformValueNegated}px)`,
               ...fontSize
             }}>
             {textBit.text}&nbsp;
