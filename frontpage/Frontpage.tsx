@@ -18,7 +18,7 @@ const Frontpage: FC = () => {
       <ConceptPageTeaserSection />
       <PartnershipPageTeaserSection />
       <MediaSection
-        mediaUrl="https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/working.mov"
+        mediaUrl="/videos/frontpage.mp4"
         isVideo
         marginTop={isMobile ? 5 : undefined}
         mediaLocation="full-screen"
