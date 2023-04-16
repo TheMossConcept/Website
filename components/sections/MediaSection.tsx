@@ -86,12 +86,10 @@ const MediaSection: FC<Props> = ({
           md={isFullScreen ? 12 : 9}
           style={{
             textAlign: 'center',
-            zIndex: 1
-            /*
+            zIndex: 1,
             transform: disableImageMovement
               ? undefined
-              : `translateY(${imageMoveRangeInPixels / 2 - imageOffsetAmount}px`
-               */
+              : `translateY(${imageOffsetAmount - imageMoveRangeInPixels / 2}px`
           }}
           ref={mediaContainerRef}>
           {isVideo ? (
