@@ -24,7 +24,7 @@ const InitialSection: FC = () => {
           height: '100vh',
           width: '100vw'
         }}>
-        <source src="https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/frontpage.mp4" />
+        <source src="/videos/frontpage.mp4" />
       </video>
       <Content />
     </Box>
