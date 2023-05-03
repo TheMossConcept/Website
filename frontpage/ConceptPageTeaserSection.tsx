@@ -87,7 +87,7 @@ const ContentArea: FC<ContentAreaProps> = ({ containerRef }) => {
           marginLeft={isMobile ? undefined : '354px'}
           firstLineText={[
             { text: 'A', color: 'text.primary', variant: 'PoppinsBig-h1' },
-            { text: 'simpler', color: 'text.secondary', variant: 'TobiasBig-h1' }
+            { text: 'simple', color: 'text.secondary', variant: 'TobiasBig-h1' }
           ]}
           secondLineText={[{ text: 'concept', color: 'text.primary', variant: 'PoppinsBig-h1' }]}
         />

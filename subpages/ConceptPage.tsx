@@ -22,7 +22,7 @@ const ConceptPage: FC = () => {
             isInline: true
           },
           {
-            text: 'simpler',
+            text: 'simple',
             variant: 'TobiasBig-h2',
             color: '#383838',
             isInline: true

@@ -1,13 +1,17 @@
 import { Box, Typography, Grid } from '@mui/material';
-import { FC, useEffect, useLayoutEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 // Put a background image here that's in the slide and make a fade
 // for the text which is a bit delayed compared to the background image
 const InitialSection: FC = () => {
+  const [videoIsLoaded, setVideoIsLoaded] = useState(true);
   const [rightPosition, setRightPosition] = useState(-100);
-  useLayoutEffect(() => {
-    setRightPosition(0);
-  }, []);
+
+  useEffect(() => {
+    if (videoIsLoaded) {
+      setRightPosition(0);
+    }
+  }, [videoIsLoaded]);
 
   return (
     <Box sx={{ height: '100vh', width: '100vw', bgcolor: 'text.secondary' }}>
@@ -15,6 +19,10 @@ const InitialSection: FC = () => {
         autoPlay
         loop
         muted
+        onCanPlay={() => {
+          console.log('TRIGGERED ON CAN PLAY!');
+          setVideoIsLoaded(true);
+        }}
         style={{
           transform: `translateX(${rightPosition}vw)`,
           transition: 'transform 1380ms ease-out',
@@ -26,16 +34,22 @@ const InitialSection: FC = () => {
         }}>
         <source src="/videos/frontpage.mp4" />
       </video>
-      <Content />
+      <Content videoIsLoaded={videoIsLoaded} />
     </Box>
   );
 };
 
-const Content: FC = () => {
+type ContentProps = {
+  videoIsLoaded: boolean;
+};
+
+const Content: FC<ContentProps> = ({ videoIsLoaded }) => {
   const [opacity, setOpacity] = useState(0);
-  useLayoutEffect(() => {
-    setOpacity(1);
-  }, []);
+  useEffect(() => {
+    if (videoIsLoaded) {
+      setOpacity(1);
+    }
+  }, [videoIsLoaded]);
 
   return (
     <Grid
@@ -45,9 +59,9 @@ const Content: FC = () => {
       style={{ paddingTop: '30vh', opacity, transition: 'opacity 630ms ease-out 920ms' }}
       xs={12}>
       <Grid item>
-        <FirstLineWithAnimation />
-        <SecondLineWithAnimation />
-        <ThirdLineWithAnimation />
+        <FirstLineWithAnimation videoIsLoaded={videoIsLoaded} />
+        <SecondLineWithAnimation videoIsLoaded={videoIsLoaded} />
+        <ThirdLineWithAnimation videoIsLoaded={videoIsLoaded} />
       </Grid>
     </Grid>
   );
@@ -58,7 +72,7 @@ const lineEnterAnimation = { transition: 'margin-left 1010ms ease 690ms' };
 // NB! Note that the below values does NOT fit with the Figma because the
 // TextContainer adds 148px margin left
 
-const FirstLineWithAnimation: FC = () => {
+const FirstLineWithAnimation: FC<ContentProps> = ({ videoIsLoaded }) => {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -71,9 +85,11 @@ const FirstLineWithAnimation: FC = () => {
   }, []);
 
   const [marginLeft, setMarginLeft] = useState(-54.02);
-  useLayoutEffect(() => {
-    setMarginLeft(0);
-  }, []);
+  useEffect(() => {
+    if (videoIsLoaded) {
+      setMarginLeft(0);
+    }
+  }, [videoIsLoaded]);
 
   const normalizedScrollY = scrollY / 20;
 
@@ -98,7 +114,7 @@ const FirstLineWithAnimation: FC = () => {
   );
 };
 
-const SecondLineWithAnimation: FC = () => {
+const SecondLineWithAnimation: FC<ContentProps> = ({ videoIsLoaded }) => {
   // TODO: Move this out into a shared utility hook once we are completely on top of the performance issues
   const [scrollY, setScrollY] = useState(0);
 
@@ -112,9 +128,11 @@ const SecondLineWithAnimation: FC = () => {
   }, []);
 
   const [marginLeft, setMarginLeft] = useState(418.52);
-  useLayoutEffect(() => {
-    setMarginLeft(354);
-  }, []);
+  useEffect(() => {
+    if (videoIsLoaded) {
+      setMarginLeft(354);
+    }
+  }, [videoIsLoaded]);
 
   const normalizedScrollY = scrollY / 10;
 
@@ -139,11 +157,13 @@ const SecondLineWithAnimation: FC = () => {
   );
 };
 
-const ThirdLineWithAnimation: FC = () => {
+const ThirdLineWithAnimation: FC<ContentProps> = ({ videoIsLoaded }) => {
   const [marginLeft, setMarginLeft] = useState(58.56);
-  useLayoutEffect(() => {
-    setMarginLeft(118);
-  }, []);
+  useEffect(() => {
+    if (videoIsLoaded) {
+      setMarginLeft(118);
+    }
+  }, [videoIsLoaded]);
 
   return (
     <Typography
