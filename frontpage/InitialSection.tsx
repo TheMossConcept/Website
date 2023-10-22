@@ -16,12 +16,6 @@ const InitialSection: FC = () => {
         autoPlay
         loop
         muted
-        /*
-        onCanPlay={() => {
-          console.log('TRIGGERED ON CAN PLAY!');
-          setVideoIsLoaded(true);
-        }}
-         */
         style={{
           transform: `translateX(${rightPosition}vw)`,
           transition: 'transform 1380ms ease-out',
@@ -146,7 +140,7 @@ const SecondLineWithAnimation: FC = () => {
   );
 };
 
-const ThirdLineWithAnimation: FC<> = () => {
+const ThirdLineWithAnimation: FC = () => {
   const [marginLeft, setMarginLeft] = useState(58.56);
   useEffect(() => {
     setMarginLeft(118);
