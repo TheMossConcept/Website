@@ -44,9 +44,9 @@ const PurposePageTeaserSection: FC = () => {
       <TextContainer>
         <HeadlineSection
           containerRef={containerRef}
-          firstLineText={[{ text: 'Our deeper', color: 'secondary.main', variant: 'TobiasBig-h1' }]}
+          firstLineText={[{ text: 'Selected', color: 'secondary.main', variant: 'TobiasBig-h1' }]}
           secondLineText={[
-            { text: 'purpose', color: 'secondary.transparent', variant: 'PoppinsBig-h1' }
+            { text: 'customer cases', color: 'secondary.transparent', variant: 'PoppinsBig-h1' }
           ]}
         />
         <Typography
@@ -58,7 +58,7 @@ const PurposePageTeaserSection: FC = () => {
           deep purpose.
         </Typography>
         <InteractiveLink
-          text="Read more about our underlying purpose"
+          text="Read more about previous customer cases"
           navigate={() => router.push('/purpose')}
           variant="PoppinsSmall-button"
           color="secondary.transparent"
