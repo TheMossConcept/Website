@@ -94,7 +94,7 @@ const FirstLineWithAnimation: FC = () => {
         ...lineEnterAnimation
       }}
       component="h1">
-      Software development
+      Software systems
     </Typography>
   );
 };
@@ -157,7 +157,7 @@ const ThirdLineWithAnimation: FC = () => {
         fontSize: { xs: 50, sm: 75, lg: 104 },
         ...lineEnterAnimation
       }}>
-      your workflow
+      your company
     </Typography>
   );
 };

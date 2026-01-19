@@ -2,23 +2,19 @@ import { Grid, Typography } from '@mui/material';
 import { FC, useEffect, useRef, useState } from 'react';
 import HeadlineSection from '../components/sections/HeadlineSection';
 import TextContainer from '../components/TextContainer';
-import InteractiveLink from '../components/InteractiveLink';
 import calculateOpacity from '../utilities/calculateOpacity';
 import PeopleTalkingImage from '../public/images/people_talking.jpg';
 import CollaborationImage from '../public/images/collaboration.jpg';
-import { useRouter } from 'next/router';
 import useIsMobile from '../utilities/useIsMobile';
 import MediaSection from '../components/sections/MediaSection';
 
 const PartnershipPageTeaserSection: FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const router = useRouter();
   const isMobile = useIsMobile();
 
   const [firstTextOpacity, setFirstTextOpacity] = useState(0);
   const [secondTextOpacity, setSecondTextOpacity] = useState(0);
-  const [linkOpacity, setLinkTextOpacity] = useState(0);
 
   useEffect(() => {
     const updateOpacity = () => {
@@ -32,11 +28,9 @@ const PartnershipPageTeaserSection: FC = () => {
         isMobile ? 110 : 140,
         isMobile ? 2 : 3
       );
-      const linkOpacity = calculateOpacity(containerRef, isMobile ? 150 : 180, isMobile ? 2 : 4);
 
       setFirstTextOpacity(newFirstTextOpacity);
       setSecondTextOpacity(newSecondTextOpacity);
-      setLinkTextOpacity(linkOpacity);
     };
 
     window.addEventListener('scroll', updateOpacity);
@@ -54,15 +48,14 @@ const PartnershipPageTeaserSection: FC = () => {
       alignItems="flex-start"
       justifyContent="flex-start"
       sx={{
-        paddingTop: { xs: 5, md: 32 }
+        paddingTop: { xs: 5, md: 5 }
       }}>
       <Grid item sx={{ marginLeft: { xs: 4, md: 30 }, marginBottom: { xs: 5, md: 10 } }} xs={12}>
         <HeadlineSection
           containerRef={containerRef}
-          firstLineText={[{ text: 'A committed', color: 'primary.main', variant: 'TobiasBig-h1' }]}
+          firstLineText={[{ text: 'Optimisations enable', color: 'primary.main', variant: 'TobiasBig-h1' }]}
           secondLineText={[
-            { text: 'partnership', color: 'primary.transparent', variant: 'PoppinsBig-h1' },
-            { text: 'with you', color: 'primary.main', variant: 'TobiasBig-h1' }
+            { text: 'new possibilities', color: 'primary.transparent', variant: 'PoppinsBig-h1' },
           ]}
         />
       </Grid>
@@ -77,8 +70,9 @@ const PartnershipPageTeaserSection: FC = () => {
               color="primary.main"
               variant="PoppinsBig-subtitle2"
               sx={{ opacity: firstTextOpacity }}>
-              We build close and long lasting partnerships characterized by trust and respect. Our
-              work is iterative, and we change and adapt based on your needs and feedback.
+              We reuse project setup and generic functionality, saving months of initial development time. 
+              <p>We have a clear, structured process to define the functionality of your system which
+              allows us to collaborate more effectively and better understand your business' needs.</p>
             </Typography>
           </TextContainer>
         </Grid>
@@ -106,22 +100,11 @@ const PartnershipPageTeaserSection: FC = () => {
               color="primary.main"
               variant="PoppinsBig-subtitle2"
               sx={{ opacity: secondTextOpacity }}>
-              We always strive to provide more than just highly stable and flexible software. We are
-              experts in translating business processes and workflows into software that supports
-              your work in the best way possible.
+              We have automated repetitive work and streamlined our processes.
+              <p>As a result, we are able to develop fully customised, high quality solutions 
+              at a much more accessible price than what has previously been possible.</p>
             </Typography>
           </TextContainer>
-          <InteractiveLink
-            text="Read more about what it is like to work with us"
-            color="primary.transparent"
-            variant="PoppinsSmall-button"
-            navigate={() => router.push('/partnership')}
-            sx={{
-              marginTop: { xs: 5, md: 10 },
-              mx: { xs: 4, md: 0 },
-              opacity: linkOpacity
-            }}
-          />
         </Grid>
       </Grid>
     </Grid>
