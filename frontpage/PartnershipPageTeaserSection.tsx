@@ -70,9 +70,12 @@ const PartnershipPageTeaserSection: FC = () => {
               color="primary.main"
               variant="PoppinsBig-subtitle2"
               sx={{ opacity: firstTextOpacity }}>
-              We reuse project setup and generic functionality, saving months of initial development time. 
-              <p>We have a clear, structured process to define the functionality of your system which
-              allows us to collaborate more effectively and better understand your business' needs.</p>
+              For the Danish luxury furniture manufacturer Houe, we developed a system to track plastic to be turned into chairs.
+              The system enabled customers to book plastic collection directly with Houe's collection partner, and to view their collection progress. 
+              <p>
+              It also enabled Houe's customers and Houe's three partners to work together seamlessly without manual involvement from Houe. It also included complete
+              tracking of the plastic throughout the whole process from collection to the finished chairs.
+              </p>
             </Typography>
           </TextContainer>
         </Grid>

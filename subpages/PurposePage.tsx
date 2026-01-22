@@ -16,13 +16,13 @@ const PurposePage: FC = () => {
       <FirstSubpageSection
         headlineText={[
           {
-            text: 'The deeper ',
+            text: 'How we ',
             variant: 'PoppinsBig-h2',
             color: '#383838',
             isInline: true
           },
           {
-            text: 'purpose',
+            text: 'work',
             variant: 'TobiasBig-h2',
             color: '#383838',
             isInline: true
