@@ -3,7 +3,14 @@ import { FC, useEffect, useRef, useState } from 'react';
 import HeadlineSection from '../components/sections/HeadlineSection';
 import TextContainer from '../components/TextContainer';
 import calculateOpacity from '../utilities/calculateOpacity';
-import ComingSoonImage from '../public/images/coming_soon.png';
+import TheWeeDairyImage1 from '../public/images/portfolio_images/The wee dairy/The wee dairy 1.png';
+import TheWeeDairyImage2 from '../public/images/portfolio_images/The wee dairy/The wee dairy 2.png';
+import TheWeeDairyImage3 from '../public/images/portfolio_images/The wee dairy/The wee dairy 3.png';
+import TheWeeDairyImage4 from '../public/images/portfolio_images/The wee dairy/The wee dairy 4.png';
+import TheWeeDairyImage5 from '../public/images/portfolio_images/The wee dairy/The wee dairy 5.png';
+import TheWeeDairyImage6 from '../public/images/portfolio_images/The wee dairy/The wee dairy 6.png';
+// import HoueImage1 from '../public/images/portfolio_images/Houe/Houe 1.png';
+// import HoueImage2 from '../public/images/portfolio_images/Houe/Houe 2.png';
 import useIsMobile from '../utilities/useIsMobile';
 import MediaSection from '../components/sections/MediaSection';
 
@@ -81,7 +88,7 @@ const PartnershipPageTeaserSection: FC = () => {
         </Grid>
         <Grid item xs={12} md={6}>
           <MediaSection
-            mediaUrl={ComingSoonImage}
+            mediaItems={[{ mediaUrl: TheWeeDairyImage1 }, {mediaUrl: TheWeeDairyImage2 } ]}
             mediaLocation="full-screen"
             marginTop={0}
             imageDimensions={{ width: '100%', height: 'auto' }}
@@ -91,8 +98,9 @@ const PartnershipPageTeaserSection: FC = () => {
       <Grid container spacing={isMobile ? 5 : 19}>
         <Grid item xs={12} md={6}>
           <MediaSection
-            mediaUrl={ComingSoonImage}
+            mediaItems={[{ mediaUrl: TheWeeDairyImage1 }, { mediaUrl: TheWeeDairyImage2 }, { mediaUrl: TheWeeDairyImage3 },{ mediaUrl: TheWeeDairyImage4 },{ mediaUrl: TheWeeDairyImage5 },{ mediaUrl: TheWeeDairyImage6 }]}
             mediaLocation="full-screen"
+
             imageDimensions={{ width: '100%', height: 'auto' }}
             marginTop={0}
           />
