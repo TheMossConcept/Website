@@ -49,7 +49,7 @@ const BackgroundSection: FC = () => {
       ref={containerRef}
     >
       <Grid item md={4} xs={12}>
-        <MediaSection mediaLocation="left" mediaUrl={ImageOfNiklas} imageDimensions={{ width: '400px', height: 'auto' }} marginTop={2} />
+        <MediaSection mediaLocation="left" mediaItems={[{ mediaUrl: ImageOfNiklas, imageDimensions: { width: '400px', height: 'auto' } }]} marginTop={2} />
       </Grid>
       <Grid item md={8} alignSelf="center">
       <TextContainer>

@@ -37,8 +37,7 @@ const PurposePage: FC = () => {
         textAfterHighlightedText="to them"
       />
       <MediaSection
-        mediaUrl="https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/forrest.mov"
-        isVideo
+        mediaItems={[{ mediaUrl: "https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/forrest.mov", isVideo: true }]}
         mediaLocation="full-screen"
       />
       <MainPointSection
@@ -53,7 +52,7 @@ const PurposePage: FC = () => {
         ]}
         mt={16}
       />
-      <MediaSection mediaUrl={HighQualityImage} mediaLocation="full-screen" />
+      {/* <MediaSection mediaUrl={HighQualityImage} mediaLocation="full-screen" /> */}
       <MainPointSection
         initialText=""
         highlightedText="Trust and respect "
@@ -66,7 +65,7 @@ const PurposePage: FC = () => {
         ]}
         mt={16}
       />
-      <MediaSection mediaUrl={TrustAndRespectTeam} mediaLocation="full-screen" />
+      {/* <MediaSection mediaUrl={TrustAndRespectTeam} mediaLocation="full-screen" /> */}
       <Grid item xs={12} sx={{ mb: { xs: 16, md: 32 } }}>
         <ContactSection />
       </Grid>

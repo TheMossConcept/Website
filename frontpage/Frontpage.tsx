@@ -7,7 +7,6 @@ import PartnershipPageTeaserSection from './PartnershipPageTeaserSection';
 import PurposePageTeaserSection from './PurposePageTeaserSection';
 import PageContainer from '../components/PageContainer';
 import BottomSection from './BottomSection';
-import MainPointSection from '../components/sections/MainPointSection';
 
 const Frontpage: FC = () => {
   return (

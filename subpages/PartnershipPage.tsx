@@ -38,7 +38,7 @@ const PartnershipPage: FC = () => {
         highlightedText="concrete value "
         textAfterHighlightedText="for your business"
       />
-      <MediaSection mediaUrl={BusinessValueImage} mediaLocation="full-screen" />
+      <MediaSection mediaItems={[{ mediaUrl: BusinessValueImage }]} mediaLocation="full-screen" />
       <TextSection
         textSections={[
           'Based on the deep understanding of your business and your needs, we work to build software that generates as much value for your unique business as possible.',
@@ -46,16 +46,15 @@ const PartnershipPage: FC = () => {
           'This is only truly effective in a collaborative partnership characterized by mutual trust and respect which is one of the reasons why creating such a partnership is a high priority for us.'
         ]}
       />
-      <MediaSection mediaUrl={CollaborationImage} mediaLocation="left" />
+      <MediaSection mediaItems={[{ mediaUrl: CollaborationImage }]} mediaLocation="left" />
       <MainPointSection
         initialText="We work to make IT "
         highlightedText="understandable and accessible "
         textAfterHighlightedText="to your business"
       />
       <MediaSection
-        mediaUrl={UnderstandabilityIllustration}
+        mediaItems={[{ mediaUrl: UnderstandabilityIllustration, imageDimensions: { width: '80%', height: 'auto' } }]}
         mediaLocation="full-screen"
-        imageDimensions={{ width: '80%', height: 'auto' }}
         disableImageMovement
         marginTop={16}
       />
@@ -67,8 +66,7 @@ const PartnershipPage: FC = () => {
         mt={16}
       />
       <MediaSection
-        mediaUrl="https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/teamwork.mov"
-        isVideo
+        mediaItems={[{ mediaUrl: "https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/teamwork.mov", isVideo: true }]}
         mediaLocation="full-screen"
       />
       <MainPointSection

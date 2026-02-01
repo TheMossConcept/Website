@@ -51,8 +51,7 @@ const ConceptPage: FC = () => {
         textAfterHighlightedText="building blocks across systems"
       />
       <MediaSection
-        mediaUrl="https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/building_blocks.mov"
-        isVideo
+        mediaItems={[{ mediaUrl: "https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/building_blocks.mov", isVideo: true  }]} 
         mediaLocation="full-screen"
       />
       <TextSection
@@ -62,14 +61,13 @@ const ConceptPage: FC = () => {
           'We will build as many custom building blocks as necessary to build your system exactly as it needs to be. Since we are experts in building small blocks that can easily be composed and reconfigured, your system will be highly flexible.'
         ]}
       />
-      <MediaSection mediaUrl={BuildingBlockImage} mediaLocation="right" />
+      <MediaSection mediaItems={[{ mediaUrl: BuildingBlockImage }]} mediaLocation="right" />
       <MainPointSection
         initialText="Small, well-shaped building blocks lead to unprecedented"
         highlightedText="flexibility and stability"
       />
       <MediaSection
-        mediaUrl="https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/trees-swaying.mp4"
-        isVideo
+        mediaItems={[{mediaUrl: "https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/trees-swaying.mp4", isVideo: true}]}
         mediaLocation="full-screen"
       />
       <TextSection
