@@ -1,7 +1,5 @@
 import { Grid, Typography } from '@mui/material';
-import { useRouter } from 'next/router';
 import { FC, useEffect, useRef, useState } from 'react';
-import InteractiveLink from '../components/InteractiveLink';
 import HeadlineSection from '../components/sections/HeadlineSection';
 import TextContainer from '../components/TextContainer';
 import calculateOpacity from '../utilities/calculateOpacity';
@@ -13,7 +11,6 @@ const PurposePageTeaserSection: FC = () => {
   const isMobile = useIsMobile();
 
   const [textSectionOpacity, setTextSectionOpacity] = useState(0);
-  const [linkOpacity, setLinkOpacity] = useState(0);
 
   useEffect(() => {
     const updateOpacity = () => {
@@ -22,17 +19,13 @@ const PurposePageTeaserSection: FC = () => {
         isMobile ? 30 : 80,
         isMobile ? 2 : 3
       );
-      const newLinkOpacity = calculateOpacity(containerRef, isMobile ? 42.5 : 95, isMobile ? 2 : 3);
 
       setTextSectionOpacity(newTextSectionOpacity);
-      setLinkOpacity(newLinkOpacity);
     };
 
     window.addEventListener('scroll', updateOpacity);
     return () => window.removeEventListener('scroll', updateOpacity);
   }, []);
-
-  const router = useRouter();
 
   return (
     <Grid
@@ -44,27 +37,23 @@ const PurposePageTeaserSection: FC = () => {
       <TextContainer>
         <HeadlineSection
           containerRef={containerRef}
-          firstLineText={[{ text: 'Selected', color: 'secondary.main', variant: 'TobiasBig-h1' }]}
+          firstLineText={[{ text: 'What we do', color: 'secondary.main', variant: 'TobiasBig-h1' }]}
           secondLineText={[
-            { text: 'customer cases', color: 'secondary.transparent', variant: 'PoppinsBig-h1' }
+            { text: 'different', color: 'secondary.transparent', variant: 'PoppinsBig-h1' }
           ]}
         />
         <Typography
           sx={{ marginTop: { xs: 5, md: 10 }, maxWidth: '500px', opacity: textSectionOpacity }}
           variant="PoppinsBig-subtitle2"
           color="secondary.main">
-          We have created systems to support work in settings as diverse as furniture production,
-          influencer marketing, and micro dairies.
-          <p>We have supported advanced collaboration between users, tracking of processes and products,
-            and custom optimisations that have made work for our customers much more efficient.</p>
+            We reuse project setup and generic functionality, saving months of initial development time.<br />
+            We have a clear, structured process to define the functionality of your system which allows us to collaborate more effectively and better understand your business' needs.<br />
+            We have automated repetitive work and streamlined our processes.
+            <p>
+            As a result, we are able to build fully customised, high quality solutions 
+            at a much more accessible price than what has previously been possible
+            </p>
         </Typography>
-        <InteractiveLink
-          text="Learn more about selected customer cases"
-          navigate={() => router.push('/purpose')}
-          variant="PoppinsSmall-button"
-          color="secondary.transparent"
-          sx={{ marginTop: { xs: 5, md: 10 }, opacity: linkOpacity }}
-        />
       </TextContainer>
     </Grid>
   );
