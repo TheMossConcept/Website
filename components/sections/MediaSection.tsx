@@ -20,6 +20,7 @@ type Props = {
   mediaLocation: Placement;
   marginTop?: number;
   style?: CSSProperties;
+  shouldCarouselMultipleMedias?: boolean;
   disableImageMovement?: boolean;
   mediaItems: MediaItem[];
 };
@@ -29,7 +30,8 @@ const MediaSection: FC<Props> = ({
   style,
   disableImageMovement,
   marginTop,
-  mediaItems
+  mediaItems,
+  shouldCarouselMultipleMedias = true
 }) => {
   const isMobile = useIsMobile();
   const mt = marginTop !== undefined ? marginTop : isMobile ? 16 : 32;
@@ -47,15 +49,17 @@ const MediaSection: FC<Props> = ({
   const hasMultipleMedia = mediaItems.length > 1;
 
   // Media rotation effect - only runs when there are multiple media items
+  // and the prop hasn't been set to explicitly disable this effect
   useEffect(() => {
     if (!hasMultipleMedia) return;
+    if (!shouldCarouselMultipleMedias) return;
 
     const rotationInterval = setInterval(() => {
       setCurrentMediaIndex((prevIndex) => (prevIndex + 1) % mediaItems.length);
     }, 5000); // 5 seconds per media item
 
     return () => clearInterval(rotationInterval);
-  }, [hasMultipleMedia, mediaItems.length]);
+  }, [hasMultipleMedia, mediaItems.length, shouldCarouselMultipleMedias]);
 
   // Video handling for rotation - restart video when it becomes active
   useEffect(() => {
@@ -72,6 +76,7 @@ const MediaSection: FC<Props> = ({
     }
   }, [currentMediaIndex, hasMultipleMedia, mediaItems]);
 
+  // Moves focus up/down insid the media in response to user scroll
   useEffect(() => {
     let initialScrollValue: number;
     const handleScroll = () => {
@@ -118,10 +123,13 @@ const MediaSection: FC<Props> = ({
             loop={!hasMultipleMedia}
             playsInline
             style={{
-              width: '100%',
-              height: 'auto',
+              width: media.imageDimensions?.width || '100%',
+              height: media.imageDimensions?.height || 'auto',
               display: 'block',
-              objectFit: 'contain',
+              // If we take granular control of the dimensions, we also don't expect the image to be exactly contained.
+              // If we have chosen to overwrite the aspect ratio, we essentially get exactly what we are asking for 
+              // whether or not that makes sense
+              objectFit: media.imageDimensions ? 'fill' : 'contain',
               ...style
             }}>
             <source src={media.mediaUrl} type="video/mp4" />
@@ -136,10 +144,13 @@ const MediaSection: FC<Props> = ({
           src={media.mediaUrl}
           alt="An image that cannot be loaded at the moment"
           style={{
-            width: '100%',
-            height: 'auto',
+            width: media.imageDimensions?.width || '100%',
+            height: media.imageDimensions?.height || 'auto',
             display: 'block',
-            objectFit: 'contain',
+            // If we take granular control of the dimensions, we also don't expect the image to be exactly contained.
+            // If we have chosen to overwrite the aspect ratio, we essentially get exactly what we are asking for 
+            // whether or not that makes sense
+            objectFit: media.imageDimensions ? 'fill' : 'contain',
             ...style
           }}
           placeholder="blur"
@@ -179,7 +190,7 @@ const MediaSection: FC<Props> = ({
             style={{
               display: 'flex',
               flexDirection: 'row',
-              alignItems: 'flex-start',
+              alignItems: 'center',
               transform: `translateX(-${currentMediaIndex * 100}%)`,
               transition: hasMultipleMedia ? 'transform 0.8s ease-in-out' : undefined
             }}>

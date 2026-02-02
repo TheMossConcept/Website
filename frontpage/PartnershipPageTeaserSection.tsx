@@ -11,6 +11,7 @@ import TheWeeDairyImage5 from '../public/images/portfolio_images/The wee dairy/T
 import TheWeeDairyImage6 from '../public/images/portfolio_images/The wee dairy/The wee dairy 6.png';
 import HoueImage1 from '../public/images/portfolio_images/Houe/Houe 1.png';
 import HoueImage2 from '../public/images/portfolio_images/Houe/Houe 2.png';
+import HoueImage3 from '../public/images/portfolio_images/Houe/Houe 3.png';
 import useIsMobile from '../utilities/useIsMobile';
 import MediaSection from '../components/sections/MediaSection';
 
@@ -44,6 +45,9 @@ const PartnershipPageTeaserSection: FC = () => {
       window.removeEventListener('scroll', updateOpacity);
     };
   }, []);
+
+  console.log(`Second text opacity: ${secondTextOpacity}`)
+  const shouldCarouselSecondSection = secondTextOpacity > 1
 
   return (
     <Grid
@@ -88,7 +92,8 @@ const PartnershipPageTeaserSection: FC = () => {
         </Grid>
         <Grid item xs={12} md={6}>
           <MediaSection
-            mediaItems={[{ mediaUrl: HoueImage1 }, {mediaUrl: HoueImage2 } ]}
+            mediaItems={[{ mediaUrl: HoueImage1, imageDimensions: { height: '500px', width: '100%'} }, {mediaUrl: HoueImage2, imageDimensions: { height: '500px', width: '100%' } }, { mediaUrl: HoueImage3, imageDimensions: { height: '500px', width: '100%' }  } ]}
+            shouldCarouselMultipleMedias={!shouldCarouselSecondSection}
             disableImageMovement
             mediaLocation="full-screen"
             marginTop={0}
@@ -99,6 +104,7 @@ const PartnershipPageTeaserSection: FC = () => {
         <Grid item xs={12} md={6}>
           <MediaSection
             mediaItems={[{ mediaUrl: TheWeeDairyImage1 }, { mediaUrl: TheWeeDairyImage2 }, { mediaUrl: TheWeeDairyImage3 },{ mediaUrl: TheWeeDairyImage4 },{ mediaUrl: TheWeeDairyImage5 },{ mediaUrl: TheWeeDairyImage6 }]}
+            shouldCarouselMultipleMedias={shouldCarouselSecondSection}
             mediaLocation="full-screen"
             disableImageMovement
             marginTop={0}
