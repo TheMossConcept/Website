@@ -2,12 +2,13 @@ import { Grid, Typography } from '@mui/material';
 import { useRouter } from 'next/router';
 import { FC, useEffect, useRef, useState } from 'react';
 import InteractiveLink from '../components/InteractiveLink';
-import CollaborationImage from '../public/images/collaboration.jpg';
+import ImageOfNiklas from '../public/images/niklas.jpg';
 import HeadlineSection from '../components/sections/HeadlineSection';
 import MediaSection from '../components/sections/MediaSection';
 import TextContainer from '../components/TextContainer';
 import calculateOpacity from '../utilities/calculateOpacity';
 import useIsMobile from '../utilities/useIsMobile';
+import MainPointSection from '../components/sections/MainPointSection';
 
 const BackgroundSection: FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -42,20 +43,21 @@ const BackgroundSection: FC = () => {
       container
       spacing={2}
       xs={12}
-      sx={{ paddingTop: { xs: 5 } }}
+      sx={{ py: { xs: 5, lg: 32 }, px: 10 }}
       justifyContent="flex-start"
+      alignItems='center'
       ref={containerRef}
     >
       <Grid item md={4}>
-        <MediaSection style={{ paddingLeft: '74px' }} mediaLocation="left" mediaUrl={CollaborationImage} imageDimensions={{ width: '750px', height: 'auto' }} />
+        <MediaSection mediaLocation="left" mediaUrl={ImageOfNiklas} imageDimensions={{ width: '400px', height: 'auto' }} />
       </Grid>
       <Grid item md={8} alignSelf="center">
-      <TextContainer style={{ paddingRight: '74px' }}>
+      <TextContainer>
         <HeadlineSection
           containerRef={containerRef}
           firstLineText={[{ text: 'Niklas Moss', color: 'secondary.main', variant: 'TobiasBig-h1' }]}
           secondLineText={[
-            { text: 'Tech lead', color: 'secondary.transparent', variant: 'PoppinsBig-h1' }
+            { text: 'IT Engineer', color: 'secondary.transparent', variant: 'PoppinsBig-h1' }
           ]}
         />
         <Typography
@@ -65,11 +67,16 @@ const BackgroundSection: FC = () => {
           With an M.Sc. in Computer Science, I have a total of 12 years of experience delivering high-complexity digital platforms for 
           clients across both start-ups, scale-ups, and large enterprise organisations. 
           <p>
-          I started The Moss Concept to use my knowledge and experience to create a highly optimised environment for software development.
+          Through The Moss Concept, I have used my knowledge and experience to create a software system that streamlines the creation of 
+          customised software. 
           </p>
           <p>
-          Throughout the years, I have worked with clients from retail, marketing, and manufacturing, all the way to the dairy and healthcare industries.
-          Along the way, I have built a solid library of reuseable functionality which I use along with highly optimised processes to build 
+          We build advanced systems like the ones that have long been standard in large corporations, however, 
+          we are able to make them accessible to start-ups as well as small and mid-sized companies.
+          </p>
+          <p>
+          Throughout the years, we have worked with clients from retail, marketing, and manufacturing, all the way to the dairy and healthcare industries.
+          Along the way, we have built a solid library of reuseable functionality which we use along with optimised processes to build 
           high quality, customised software systems very efficiently.
           </p>
         </Typography>
@@ -82,6 +89,10 @@ const BackgroundSection: FC = () => {
         />
       </TextContainer>
       </Grid>
+      <MainPointSection
+        initialText="We make enterprise-grade software systems accessible to start-ups, small, and mid-sized companies"
+        mt={32}
+      />
     </Grid>
   );
 };

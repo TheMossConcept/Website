@@ -7,6 +7,7 @@ import PeopleTalkingImage from '../public/images/people_talking.jpg';
 import CollaborationImage from '../public/images/collaboration.jpg';
 import useIsMobile from '../utilities/useIsMobile';
 import MediaSection from '../components/sections/MediaSection';
+import InteractiveLink from '../components/InteractiveLink';
 
 const PartnershipPageTeaserSection: FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -20,12 +21,12 @@ const PartnershipPageTeaserSection: FC = () => {
     const updateOpacity = () => {
       const newFirstTextOpacity = calculateOpacity(
         containerRef,
-        isMobile ? 70 : 100,
+        isMobile ? 55 : 85,
         isMobile ? 2 : 3
       );
       const newSecondTextOpacity = calculateOpacity(
         containerRef,
-        isMobile ? 110 : 140,
+        isMobile ? 95 : 125,
         isMobile ? 2 : 3
       );
 
@@ -48,14 +49,14 @@ const PartnershipPageTeaserSection: FC = () => {
       alignItems="flex-start"
       justifyContent="flex-start"
       sx={{
-        paddingTop: { xs: 5, md: 5 }
+        paddingTop: { xs: 5, md: 32 }
       }}>
       <Grid item sx={{ marginLeft: { xs: 4, md: 30 }, marginBottom: { xs: 5, md: 10 } }} xs={12}>
         <HeadlineSection
           containerRef={containerRef}
-          firstLineText={[{ text: 'Optimisations enable', color: 'primary.main', variant: 'TobiasBig-h1' }]}
+          firstLineText={[{ text: 'Selected', color: 'primary.main', variant: 'TobiasBig-h1' }]}
           secondLineText={[
-            { text: 'new possibilities', color: 'primary.transparent', variant: 'PoppinsBig-h1' },
+            { text: 'customer cases', color: 'primary.transparent', variant: 'PoppinsBig-h1' },
           ]}
         />
       </Grid>
@@ -70,13 +71,22 @@ const PartnershipPageTeaserSection: FC = () => {
               color="primary.main"
               variant="PoppinsBig-subtitle2"
               sx={{ opacity: firstTextOpacity }}>
-              For the Danish luxury furniture manufacturer Houe, we developed a system to track plastic to be turned into chairs.
-              The system enabled customers to book plastic collection directly with Houe's collection partner, and to view their collection progress. 
+              For Houe, a Danish designer furniture company, we built a system to track recycled plastic from collection all the way to finished furniture.
               <p>
-              It also enabled Houe's customers and Houe's three partners to work together seamlessly without manual involvement from Houe. It also included complete
-              tracking of the plastic throughout the whole process from collection to the finished chairs.
+              The system connects the full supply chain which includes clients, collection partners, recycling facilities, and manufacturers.
+              </p>
+              <p>
+              The system also enables clients to follow the process from the initial plastic collection to their own finished product.
               </p>
             </Typography>
+            {/* TODO: Fix the interactivity on this link! */ }
+          <InteractiveLink
+            text="Read more"
+            navigate={() => console.log('No navigate yet')}
+            variant="PoppinsSmall-button"
+            color="secondary.transparent"
+            sx={{ marginTop: { xs: 5, md: 10 }}}
+          />
           </TextContainer>
         </Grid>
         <Grid item xs={12} md={6}>
@@ -103,9 +113,11 @@ const PartnershipPageTeaserSection: FC = () => {
               color="primary.main"
               variant="PoppinsBig-subtitle2"
               sx={{ opacity: secondTextOpacity }}>
-              We have automated repetitive work and streamlined our processes.
-              <p>As a result, we are able to develop fully customised, high quality solutions 
-              at a much more accessible price than what has previously been possible.</p>
+              For "The wee dairy", an independant Scottish micro dairy, we built an internal system to keep track of milk production, orders, and sales. 
+              It replaced a large amount of spreadsheets with manual data entries. 
+              <p>
+              The system included features such as milk forecast predictions, order and sales overviews, and dynamic guidance to support their daily work.
+              </p>
             </Typography>
           </TextContainer>
         </Grid>

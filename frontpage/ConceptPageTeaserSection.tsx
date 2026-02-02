@@ -21,7 +21,7 @@ const ConceptPageTeaserSection: FC = () => {
       sx={{
         height: isMobile ? '800px' : '1000px',
         paddingTop: { xs: 5, md: 32 },
-        marginBottom: { xs: 0, md: 46 },
+        paddingBottom: { xs: 5, md: 32 },
         backgroundColor: 'secondary.main'
       }}>
       <ContentArea containerRef={containerRef} />

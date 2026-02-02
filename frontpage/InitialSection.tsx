@@ -25,7 +25,7 @@ const InitialSection: FC = () => {
           height: '100vh',
           width: '100vw'
         }}>
-        <source src="https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/frontpage.mp4" />
+        <source src="/videos/frontpage.mov" />
       </video>
       <Content />
     </Box>
@@ -43,7 +43,7 @@ const Content: FC = () => {
       item
       container
       justifyContent="center"
-      style={{ paddingTop: '30vh', opacity, transition: 'opacity 630ms ease-out 920ms' }}
+      style={{ paddingTop: '30vh', marginTop: '50px', opacity, transition: 'opacity 630ms ease-out 920ms' }}
       xs={12}>
       <Grid item>
         <FirstLineWithAnimation />
@@ -73,24 +73,25 @@ const FirstLineWithAnimation: FC = () => {
 
   const [marginLeft, setMarginLeft] = useState(-54.02);
   useEffect(() => {
-    setMarginLeft(0);
+    setMarginLeft(80);
   }, []);
 
   const normalizedScrollY = scrollY / 20;
 
   const unprotectedOpacity = 1 - normalizedScrollY / 100;
   const opacityUnderOne = Math.min(unprotectedOpacity, 0.9);
-  const opacity = Math.max(opacityUnderOne, 0.1);
 
   return (
     <Typography
-      color="primary.transparent"
-      variant="PoppinsBig-h1"
+      color="rgba(97, 145, 254, 0.65)"
+      variant="TobiasBig-h1"
       sx={{
-        opacity,
-        marginLeft: { xs: 2, sm: `${marginLeft}px` },
+        marginLeft: { xs: 5, sm: `${marginLeft}px` },
         transform: { sm: `translate(${normalizedScrollY}px)` },
+        lineHeight: '100%',
+        fontWeight: 1,
         fontSize: { xs: 50, sm: 75, lg: 104 },
+
         ...lineEnterAnimation
       }}
       component="h1">
@@ -121,16 +122,15 @@ const SecondLineWithAnimation: FC = () => {
 
   const unprotectedOpacity = 1 - normalizedScrollY / 100;
   const opacityUnderOne = Math.min(unprotectedOpacity, 0.9);
-  const opacity = Math.max(opacityUnderOne, 0.1);
 
   return (
     <Typography
-      color="primary.transparent"
-      variant="PoppinsBig-h1"
+      color="rgba(97, 145, 254, 0.65)"
+      variant="TobiasBig-h1"
       sx={{
-        opacity,
         marginLeft: { xs: 8, sm: `${marginLeft}px` },
         transform: { sm: `translate(-${normalizedScrollY}px)` },
+        lineHeight: '100%',
         fontSize: { xs: 50, sm: 75, lg: 104 },
         ...lineEnterAnimation
       }}
@@ -143,12 +143,12 @@ const SecondLineWithAnimation: FC = () => {
 const ThirdLineWithAnimation: FC = () => {
   const [marginLeft, setMarginLeft] = useState(58.56);
   useEffect(() => {
-    setMarginLeft(118);
+    setMarginLeft(40);
   }, []);
 
   return (
     <Typography
-      color="primary"
+      color="#3462c9"
       variant="TobiasBig-h1"
       component="h1"
       sx={{
