@@ -88,7 +88,8 @@ const PartnershipPageTeaserSection: FC = () => {
         </Grid>
         <Grid item xs={12} md={6}>
           <MediaSection
-            mediaItems={[{ mediaUrl: TheWeeDairyImage1, imageDimensions: { width: '100%', height: 'auto' } }, {mediaUrl: TheWeeDairyImage2, imageDimensions: { width: '100%', height: 'auto' }  } ]}
+            mediaItems={[{ mediaUrl: TheWeeDairyImage1 }, {mediaUrl: TheWeeDairyImage2 } ]}
+            disableImageMovement
             mediaLocation="full-screen"
             marginTop={0}
           />
@@ -99,7 +100,7 @@ const PartnershipPageTeaserSection: FC = () => {
           <MediaSection
             mediaItems={[{ mediaUrl: TheWeeDairyImage1 }, { mediaUrl: TheWeeDairyImage2 }, { mediaUrl: TheWeeDairyImage3 },{ mediaUrl: TheWeeDairyImage4 },{ mediaUrl: TheWeeDairyImage5 },{ mediaUrl: TheWeeDairyImage6 }]}
             mediaLocation="full-screen"
-            // imageDimensions={{ width: '100%', height: 'auto' }}
+            disableImageMovement
             marginTop={0}
           />
         </Grid>

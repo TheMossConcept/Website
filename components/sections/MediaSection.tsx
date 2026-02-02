@@ -102,51 +102,49 @@ const MediaSection: FC<Props> = ({
 
   // Render media element
   const renderMedia = (media: MediaItem, index: number) => {
-    const position = index - currentMediaIndex;
-    const leftPosition = position * 100;
-
-    const mediaStyle: CSSProperties = {
-      position: 'absolute',
-      top: 0,
-      left: `${leftPosition}%`,
+    const wrapperStyle: CSSProperties = {
+      minWidth: '100%',
       width: '100%',
-      height: '100%',
-      transition: hasMultipleMedia ? 'left 0.8s ease-in-out' : undefined,
-      ...style
+      flexShrink: 0
     };
 
     if (media.isVideo) {
       return (
-        <video
-          key={`video-${index}`}
-          ref={(el) => (videoRefs.current[index] = el)}
-          autoPlay
-          muted
-          loop={!hasMultipleMedia}
-          playsInline
-          style={{
-            width: isFullScreen ? '100vw' : '100%',
-            height: isFullScreen ? '110vh' : 'auto',
-            objectFit: isFullScreen ? 'fill' : undefined,
-            ...mediaStyle
-          }}>
-          <source src={media.mediaUrl} type="video/mp4" />
-        </video>
+        <div key={`video-${index}`} style={wrapperStyle}>
+          <video
+            ref={(el) => (videoRefs.current[index] = el)}
+            autoPlay
+            muted
+            loop={!hasMultipleMedia}
+            playsInline
+            style={{
+              width: '100%',
+              height: 'auto',
+              display: 'block',
+              objectFit: 'contain',
+              ...style
+            }}>
+            <source src={media.mediaUrl} type="video/mp4" />
+          </video>
+        </div>
       );
     }
 
     return (
-      <Image
-        key={`image-${index}`}
-        src={media.mediaUrl}
-        alt="An image that cannot be loaded at the moment"
-        style={{
-          width: media.imageDimensions?.width || '100%',
-          height: media.imageDimensions?.height || 'auto',
-          ...mediaStyle
-        }}
-        placeholder="blur"
-      />
+      <div key={`image-${index}`} style={wrapperStyle}>
+        <Image
+          src={media.mediaUrl}
+          alt="An image that cannot be loaded at the moment"
+          style={{
+            width: '100%',
+            height: 'auto',
+            display: 'block',
+            objectFit: 'contain',
+            ...style
+          }}
+          placeholder="blur"
+        />
+      </div>
     );
   };
 
@@ -179,10 +177,11 @@ const MediaSection: FC<Props> = ({
           ref={mediaContainerRef}>
           <div
             style={{
-              position: 'relative',
-              width: '100%',
-              height: isFullScreen ? '110vh' : 'auto',
-              minHeight: isFullScreen ? undefined : '400px'
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'flex-start',
+              transform: `translateX(-${currentMediaIndex * 100}%)`,
+              transition: hasMultipleMedia ? 'transform 0.8s ease-in-out' : undefined
             }}>
             {mediaItems.map((media, index) => renderMedia(media, index))}
           </div>
