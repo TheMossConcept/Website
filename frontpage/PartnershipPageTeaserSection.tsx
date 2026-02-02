@@ -3,11 +3,9 @@ import { FC, useEffect, useRef, useState } from 'react';
 import HeadlineSection from '../components/sections/HeadlineSection';
 import TextContainer from '../components/TextContainer';
 import calculateOpacity from '../utilities/calculateOpacity';
-import PeopleTalkingImage from '../public/images/people_talking.jpg';
-import CollaborationImage from '../public/images/collaboration.jpg';
+import ComingSoonImage from '../public/images/coming_soon.png';
 import useIsMobile from '../utilities/useIsMobile';
 import MediaSection from '../components/sections/MediaSection';
-import InteractiveLink from '../components/InteractiveLink';
 
 const PartnershipPageTeaserSection: FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -26,7 +24,7 @@ const PartnershipPageTeaserSection: FC = () => {
       );
       const newSecondTextOpacity = calculateOpacity(
         containerRef,
-        isMobile ? 95 : 125,
+        isMobile ? 95 : 115,
         isMobile ? 2 : 3
       );
 
@@ -56,7 +54,7 @@ const PartnershipPageTeaserSection: FC = () => {
           containerRef={containerRef}
           firstLineText={[{ text: 'Selected', color: 'primary.main', variant: 'TobiasBig-h1' }]}
           secondLineText={[
-            { text: 'customer cases', color: 'primary.transparent', variant: 'PoppinsBig-h1' },
+            { text: isMobile ? 'cases' : 'customer cases', color: 'primary.transparent', variant: 'PoppinsBig-h1' },
           ]}
         />
       </Grid>
@@ -79,19 +77,11 @@ const PartnershipPageTeaserSection: FC = () => {
               The system also enables clients to follow the process from the initial plastic collection to their own finished product.
               </p>
             </Typography>
-            {/* TODO: Fix the interactivity on this link! */ }
-          <InteractiveLink
-            text="Read more"
-            navigate={() => console.log('No navigate yet')}
-            variant="PoppinsSmall-button"
-            color="secondary.transparent"
-            sx={{ marginTop: { xs: 5, md: 10 }}}
-          />
           </TextContainer>
         </Grid>
         <Grid item xs={12} md={6}>
           <MediaSection
-            mediaUrl={PeopleTalkingImage}
+            mediaUrl={ComingSoonImage}
             mediaLocation="full-screen"
             marginTop={0}
             imageDimensions={{ width: '100%', height: 'auto' }}
@@ -101,7 +91,7 @@ const PartnershipPageTeaserSection: FC = () => {
       <Grid container spacing={isMobile ? 5 : 19}>
         <Grid item xs={12} md={6}>
           <MediaSection
-            mediaUrl={CollaborationImage}
+            mediaUrl={ComingSoonImage}
             mediaLocation="full-screen"
             imageDimensions={{ width: '100%', height: 'auto' }}
             marginTop={0}

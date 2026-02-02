@@ -5,10 +5,11 @@ type Props = {
   text: string;
   navigate: () => void;
   marginTop?: number;
+  disableInteractivity?: boolean;
 } & Pick<TypographyProps, 'color' | 'variant'> &
   Pick<BoxProps, 'sx'>;
 
-const InteractiveLink: FC<Props> = ({ text, color, variant, navigate, sx }) => {
+const InteractiveLink: FC<Props> = ({ text, color, variant, navigate, disableInteractivity, sx }) => {
   const [width, setWidth] = useState(0);
 
   return (
@@ -22,11 +23,15 @@ const InteractiveLink: FC<Props> = ({ text, color, variant, navigate, sx }) => {
           textDecoration: { xs: 'underline', md: 'none' }
         }}
         onMouseOver={() => {
-          setWidth(100);
+          if (!disableInteractivity) {
+            setWidth(100);
+          }
         }}
         onClick={navigate}
         onMouseOut={() => {
-          setWidth(0);
+          if (!disableInteractivity) {
+            setWidth(0);
+          }
         }}>
         {text}
         <Divider

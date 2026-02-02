@@ -25,7 +25,7 @@ const InitialSection: FC = () => {
           height: '100vh',
           width: '100vw'
         }}>
-        <source src="/videos/frontpage.mov" />
+        <source src="https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/frontpage.mov" />
       </video>
       <Content />
     </Box>
@@ -86,11 +86,12 @@ const FirstLineWithAnimation: FC = () => {
       color="rgba(97, 145, 254, 0.65)"
       variant="TobiasBig-h1"
       sx={{
-        marginLeft: { xs: 5, sm: `${marginLeft}px` },
+        marginLeft: { xs: 3, sm: `${marginLeft}px` },
         transform: { sm: `translate(${normalizedScrollY}px)` },
         lineHeight: '100%',
         fontWeight: 1,
-        fontSize: { xs: 50, sm: 75, lg: 104 },
+        position: 'relative',
+        fontSize: { xs: 40, sm: 75, lg: 104 },
 
         ...lineEnterAnimation
       }}
@@ -131,7 +132,8 @@ const SecondLineWithAnimation: FC = () => {
         marginLeft: { xs: 8, sm: `${marginLeft}px` },
         transform: { sm: `translate(-${normalizedScrollY}px)` },
         lineHeight: '100%',
-        fontSize: { xs: 50, sm: 75, lg: 104 },
+        position: 'relative',
+        fontSize: { xs: 40, sm: 75, lg: 104 },
         ...lineEnterAnimation
       }}
       component="h1">
@@ -154,7 +156,7 @@ const ThirdLineWithAnimation: FC = () => {
       sx={{
         marginLeft: { xs: 2, sm: `${marginLeft}px` },
         position: 'relative',
-        fontSize: { xs: 50, sm: 75, lg: 104 },
+        fontSize: { xs: 40, sm: 75, lg: 104 },
         ...lineEnterAnimation
       }}>
       your company

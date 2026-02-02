@@ -22,8 +22,8 @@ const BackgroundSection: FC = () => {
     const updateOpacity = () => {
       const newTextSectionOpacity = calculateOpacity(
         containerRef,
-        isMobile ? 30 : 80,
-        isMobile ? 2 : 3
+        isMobile ? 200 : 80,
+        isMobile ? 1.5 : 3
       );
       const newLinkOpacity = calculateOpacity(containerRef, isMobile ? 42.5 : 95, isMobile ? 2 : 3);
 
@@ -43,13 +43,13 @@ const BackgroundSection: FC = () => {
       container
       spacing={2}
       xs={12}
-      sx={{ py: { xs: 5, lg: 32 }, px: 10 }}
+      sx={{ py: { xs: 5, lg: 32 }, px: { xs: 2.5, sm: 10 } }}
       justifyContent="flex-start"
       alignItems='center'
       ref={containerRef}
     >
-      <Grid item md={4}>
-        <MediaSection mediaLocation="left" mediaUrl={ImageOfNiklas} imageDimensions={{ width: '400px', height: 'auto' }} />
+      <Grid item md={4} xs={12}>
+        <MediaSection mediaLocation="left" mediaUrl={ImageOfNiklas} imageDimensions={{ width: '400px', height: 'auto' }} marginTop={2} />
       </Grid>
       <Grid item md={8} alignSelf="center">
       <TextContainer>
@@ -64,7 +64,7 @@ const BackgroundSection: FC = () => {
           sx={{ marginTop: { xs: 5, md: 10 }, opacity: textSectionOpacity }}
           variant="PoppinsBig-subtitle2"
           color="secondary.main">
-          With an M.Sc. in Computer Science, I have a total of 12 years of experience delivering high-complexity digital platforms for 
+          With an M.Sc. in Computer Science, I have a total of 12 years of experience delivering complex digital platforms for 
           clients across both start-ups, scale-ups, and large enterprise organisations. 
           <p>
           Through The Moss Concept, I have used my knowledge and experience to create a software system that streamlines the creation of 
@@ -77,12 +77,12 @@ const BackgroundSection: FC = () => {
           <p>
           Throughout the years, we have worked with clients from retail, marketing, and manufacturing, all the way to the dairy and healthcare industries.
           Along the way, we have built a solid library of reuseable functionality which we use along with optimised processes to build 
-          high quality, customised software systems very efficiently.
+          quality, customised software systems efficiently.
           </p>
         </Typography>
         <InteractiveLink
           text="View my LinkedIn profile for more details"
-          navigate={() => router.push('/purpose')}
+          navigate={() => window.open('https://www.linkedin.com/in/niklas-moss/', '_blank')}
           variant="PoppinsSmall-button"
           color="secondary.transparent"
           sx={{ marginTop: { xs: 5, md: 10 }, opacity: linkOpacity }}
@@ -91,7 +91,7 @@ const BackgroundSection: FC = () => {
       </Grid>
       <MainPointSection
         initialText="We make enterprise-grade software systems accessible to start-ups, small, and mid-sized companies"
-        mt={32}
+        mt={{ xs: 5, md: 32}}
       />
     </Grid>
   );

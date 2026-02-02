@@ -8,8 +8,6 @@ import useIsMobile from '../utilities/useIsMobile';
 const ConceptPageTeaserSection: FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const isMobile = useIsMobile();
-
   return (
     <Grid
       item
@@ -19,9 +17,7 @@ const ConceptPageTeaserSection: FC = () => {
       alignItems="flex-start"
       justifyContent="flex-start"
       sx={{
-        height: isMobile ? '800px' : '1000px',
-        paddingTop: { xs: 5, md: 32 },
-        paddingBottom: { xs: 5, md: 32 },
+        py: { xs: 5, md: 32 },
         backgroundColor: 'secondary.main'
       }}>
       <ContentArea containerRef={containerRef} />
@@ -44,12 +40,12 @@ const ContentArea: FC<ContentAreaProps> = ({ containerRef }) => {
     const updateOpacity = () => {
       const newFirstTextSectionOpacity = calculateOpacity(
         containerRef,
-        isMobile ? 50 : 82.5,
+        isMobile ? -50 : 60.5,
         isMobile ? 1.5 : 3
       );
       const newSecondTextSectionOpacity = calculateOpacity(
         containerRef,
-        isMobile ? 60 : 87.5,
+        isMobile ? -70 : 67.5,
         isMobile ? 1.5 : 3
       );
 

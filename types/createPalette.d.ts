@@ -3,4 +3,7 @@ declare module '@mui/material/styles/createPalette' {
   interface SimplePaletteColorOptions {
     transparent?: string;
   }
+  interface TypeText {
+    transparent?: string;
+  }
 }

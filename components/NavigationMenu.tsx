@@ -1,4 +1,4 @@
-import { Box, Grid, IconButton, Typography, useTheme } from '@mui/material';
+import { Box, Grid, IconButton, useTheme } from '@mui/material';
 import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import InteractiveLink from './InteractiveLink';
@@ -10,9 +10,9 @@ type Props = { isOpenState: [boolean, Dispatch<SetStateAction<boolean>>] };
 type ActivityProp = { link: string } | { onClick: () => void };
 
 // TODO: Introduce strong typing on link so it's always connected to the link in App
-type NavigationItemProps = { text: string } & ActivityProp;
+type NavigationItemProps = { text: string, itemIsNotYetAvailable?: boolean } & ActivityProp;
 
-const NavigationItem: FC<NavigationItemProps> = ({ text, ...props }) => {
+const NavigationItem: FC<NavigationItemProps> = ({ text, itemIsNotYetAvailable = false, ...props }) => {
   useEffect(() => {
     // TODO: Stop hardcoding it here and get it from a central key vault instead
     ReactGA.initialize('G-HK91WGVFW0');
@@ -34,20 +34,10 @@ const NavigationItem: FC<NavigationItemProps> = ({ text, ...props }) => {
           props.onClick();
         }
       }}
+      disableInteractivity={itemIsNotYetAvailable}
       variant="PoppinsSmall-h1"
-      color="text.primary"
+      color={itemIsNotYetAvailable ? "text.transparent" : "text.primary"}
     />
-  );
-};
-
-type BottomItemProps = { text: string };
-
-const BottomItem: FC<BottomItemProps> = ({ text }) => {
-  return (
-    <Typography
-      sx={{ color: 'text.primary', fontFamily: 'Poppins', fontWeight: 'normal', fontSize: 14 }}>
-      {text}
-    </Typography>
   );
 };
 
@@ -124,44 +114,16 @@ const NavigationMenu: FC<Props> = ({ isOpenState }) => {
             sx={{ height: '80vh', mt: isMobile ? 8 : 16 }}>
             <Grid container item spacing={4}>
               <Grid item xs={12}>
-                <NavigationItem text="Concept" link="/concept" />
+                <NavigationItem text="About us (coming soon)" itemIsNotYetAvailable onClick={() => console.log("Not yet implemented") } />
               </Grid>
               <Grid item xs={12}>
-                <NavigationItem text="Partnership" link="/partnership" />
+                <NavigationItem text="Concept (coming soon)" itemIsNotYetAvailable onClick={() => console.log("Not yet implemented") } />
               </Grid>
               <Grid item xs={12}>
-                <NavigationItem text="Purpose" link="/purpose" />
+                <NavigationItem text="Portfolio (coming soon)" itemIsNotYetAvailable onClick={() => console.log("Not yet implemented") } />
               </Grid>
               <Grid item xs={12}>
                 <NavigationItem text="Contact" onClick={handleContactClick} />
-              </Grid>
-            </Grid>
-            <Grid item container>
-              <Grid item xs={6}>
-                <Grid container spacing={2}>
-                  <Grid item xs={12}>
-                    <BottomItem text="LinkedIn" />
-                  </Grid>
-                  <Grid item xs={12}>
-                    <BottomItem text="Instagram" />
-                  </Grid>
-                  <Grid item xs={12}>
-                    <BottomItem text="Facebook" />
-                  </Grid>
-                </Grid>
-              </Grid>
-              <Grid item xs={6}>
-                <Grid container spacing={2}>
-                  <Grid item xs={12}>
-                    <BottomItem text="Cookies" />
-                  </Grid>
-                  <Grid item xs={12}>
-                    <BottomItem text="Privacy policy" />
-                  </Grid>
-                  <Grid item xs={12}>
-                    <BottomItem text="Terms" />
-                  </Grid>
-                </Grid>
               </Grid>
             </Grid>
           </Grid>

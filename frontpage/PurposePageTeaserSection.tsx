@@ -31,7 +31,7 @@ const PurposePageTeaserSection: FC = () => {
     <Grid
       item
       xs={12}
-      sx={{ paddingTop: { xs: 5, md: 32 } }}
+      sx={{ py: { xs: 5, md: 32 } }}
       justifyContent="flex-start"
       ref={containerRef}>
       <TextContainer>
@@ -46,11 +46,15 @@ const PurposePageTeaserSection: FC = () => {
           sx={{ marginTop: { xs: 5, md: 10 }, maxWidth: '500px', opacity: textSectionOpacity }}
           variant="PoppinsBig-subtitle2"
           color="secondary.main">
-            We reuse project setup and generic functionality, saving months of initial development time.<br />
-            We have a clear, structured process to define the functionality of your system which allows us to collaborate more effectively and better understand your business' needs.<br />
-            We have automated repetitive work and streamlined our processes.
+            We reuse project setup and generic functionality, saving months of initial development time.
             <p>
-            As a result, we are able to build fully customised, high quality solutions 
+            We have a clear, structured process to define the functionality of your system which allows us to collaborate more effectively and better understand your business' needs.<br />
+            </p>
+            <p>
+            We have automated repetitive work and streamlined our processes.
+            </p>
+            <p>
+            As a result, we are able to build fully customised, quality solutions 
             at a much more accessible price than what has previously been possible
             </p>
         </Typography>

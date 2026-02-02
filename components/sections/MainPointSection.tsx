@@ -1,11 +1,12 @@
 import { Grid, Typography } from '@mui/material';
+import { ResponsiveStyleValue, SxProps } from '@mui/system';
 import { FC } from 'react';
 
 type Props = {
   initialText: string;
   highlightedText?: string;
   textAfterHighlightedText?: string;
-  mt?: number;
+  mt?: { xs: number, md: number }; 
   mb?: number;
 };
 
@@ -13,14 +14,14 @@ const MainPointSection: FC<Props> = ({
   initialText,
   highlightedText,
   textAfterHighlightedText,
-  mt: marginTop = 32,
+  mt = { xs: 16, md: 32 },
   mb: marginBottom 
 }) => {
   return (
     <Grid
       container
       justifyContent="center"
-      sx={{ mt: { xs: marginTop / 2, md: marginTop, mb: marginBottom }, textAlign: 'center', px: { xs: 4, md: 0 } }}>
+      sx={{ mt, marginBottom, textAlign: 'center', px: { xs: 4, md: 0 } }}>
       <Grid item md={6} sm={true}>
         <Typography
           color="primary.transparent"
