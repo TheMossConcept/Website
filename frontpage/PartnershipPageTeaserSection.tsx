@@ -9,8 +9,8 @@ import TheWeeDairyImage3 from '../public/images/portfolio_images/The wee dairy/T
 import TheWeeDairyImage4 from '../public/images/portfolio_images/The wee dairy/The wee dairy 4.png';
 import TheWeeDairyImage5 from '../public/images/portfolio_images/The wee dairy/The wee dairy 5.png';
 import TheWeeDairyImage6 from '../public/images/portfolio_images/The wee dairy/The wee dairy 6.png';
-// import HoueImage1 from '../public/images/portfolio_images/Houe/Houe 1.png';
-// import HoueImage2 from '../public/images/portfolio_images/Houe/Houe 2.png';
+import HoueImage1 from '../public/images/portfolio_images/Houe/Houe 1.png';
+import HoueImage2 from '../public/images/portfolio_images/Houe/Houe 2.png';
 import useIsMobile from '../utilities/useIsMobile';
 import MediaSection from '../components/sections/MediaSection';
 
@@ -88,7 +88,7 @@ const PartnershipPageTeaserSection: FC = () => {
         </Grid>
         <Grid item xs={12} md={6}>
           <MediaSection
-            mediaItems={[{ mediaUrl: TheWeeDairyImage1 }, {mediaUrl: TheWeeDairyImage2 } ]}
+            mediaItems={[{ mediaUrl: HoueImage1 }, {mediaUrl: HoueImage2 } ]}
             disableImageMovement
             mediaLocation="full-screen"
             marginTop={0}
