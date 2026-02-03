@@ -1,10 +1,27 @@
 import { Box, Typography, Grid } from '@mui/material';
-import { FC, useEffect, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
+import Hls from 'hls.js';
+
+const VIDEO_SOURCE = 'https://stream.mux.com/7SBNtnJf3KgttWIT2YKHINhAf2ydA8vEt6GoghZXJLo.m3u8';
 
 // Put a background image here that's in the slide and make a fade
 // for the text which is a bit delayed compared to the background image
 const InitialSection: FC = () => {
+  const videoPlayerRef = useRef<HTMLVideoElement>(null)
   const [rightPosition, setRightPosition] = useState(-100);
+
+  useEffect(() => {
+    const videoPlayer = videoPlayerRef.current
+    if (!videoPlayer) return;
+
+    let hls;
+
+    if (Hls.isSupported()) {
+      hls = new Hls();
+      hls.loadSource(VIDEO_SOURCE);
+      hls.attachMedia(videoPlayer);
+    }
+  }, [videoPlayerRef]);
 
   useEffect(() => {
     setRightPosition(0);
@@ -32,6 +49,7 @@ const InitialSection: FC = () => {
     ></iframe>
     */}
       <video
+        ref={videoPlayerRef}
         autoPlay
         loop
         muted
@@ -45,7 +63,7 @@ const InitialSection: FC = () => {
           height: '100vh',
           width: '100vw'
         }}>
-        <source src="https://stream.mux.com/7SBNtnJf3KgttWIT2YKHINhAf2ydA8vEt6GoghZXJLo.m3u8" />
+        <source src={VIDEO_SOURCE} type="video/mp4" />
       </video>
       <Content />
     </Box>
