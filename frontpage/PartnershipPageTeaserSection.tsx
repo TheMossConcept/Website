@@ -46,8 +46,8 @@ const PartnershipPageTeaserSection: FC = () => {
     };
   }, []);
 
-  console.log(`Second text opacity: ${secondTextOpacity}`)
-  const shouldCarouselSecondSection = secondTextOpacity > 1
+  console.log(`Second text opacity: ${secondTextOpacity}`);
+  const shouldCarouselSecondSection = secondTextOpacity > 1;
 
   return (
     <Grid
@@ -65,7 +65,11 @@ const PartnershipPageTeaserSection: FC = () => {
           containerRef={containerRef}
           firstLineText={[{ text: 'Selected', color: 'primary.main', variant: 'TobiasBig-h1' }]}
           secondLineText={[
-            { text: isMobile ? 'cases' : 'customer cases', color: 'primary.transparent', variant: 'PoppinsBig-h1' },
+            {
+              text: isMobile ? 'cases' : 'customer cases',
+              color: 'primary.transparent',
+              variant: 'PoppinsBig-h1'
+            }
           ]}
         />
       </Grid>
@@ -80,19 +84,26 @@ const PartnershipPageTeaserSection: FC = () => {
               color="primary.main"
               variant="PoppinsBig-subtitle2"
               sx={{ opacity: firstTextOpacity }}>
-              For Houe, a Danish designer furniture company, we built a system to track recycled plastic from collection all the way to finished furniture.
+              For Houe, a Danish designer furniture company, we built a system to track recycled
+              plastic from collection all the way to finished furniture.
               <p>
-              The system connects the full supply chain which includes clients, collection partners, recycling facilities, and manufacturers.
+                The system connects the full supply chain which includes clients, collection
+                partners, recycling facilities, and manufacturers.
               </p>
               <p>
-              It also enables clients to follow the process from the initial plastic collection to their own finished product.
+                It also enables clients to follow the process from the initial plastic collection to
+                their own finished product.
               </p>
             </Typography>
           </TextContainer>
         </Grid>
         <Grid item xs={12} md={6}>
           <MediaSection
-            mediaItems={[{ mediaUrl: HoueImage1, imageDimensions: { height: '500px', width: '100%'} }, {mediaUrl: HoueImage2, imageDimensions: { height: '500px', width: '100%' } }, { mediaUrl: HoueImage3, imageDimensions: { height: '500px', width: '100%' }  } ]}
+            mediaItems={[
+              { mediaUrl: HoueImage1, imageDimensions: { height: '500px', width: '100%' } },
+              { mediaUrl: HoueImage2, imageDimensions: { height: '500px', width: '100%' } },
+              { mediaUrl: HoueImage3, imageDimensions: { height: '500px', width: '100%' } }
+            ]}
             shouldCarouselMultipleMedias={!shouldCarouselSecondSection}
             disableImageMovement
             mediaLocation="full-screen"
@@ -103,7 +114,14 @@ const PartnershipPageTeaserSection: FC = () => {
       <Grid container spacing={isMobile ? 5 : 19}>
         <Grid item xs={12} md={6}>
           <MediaSection
-            mediaItems={[{ mediaUrl: TheWeeDairyImage1 }, { mediaUrl: TheWeeDairyImage2 }, { mediaUrl: TheWeeDairyImage3 },{ mediaUrl: TheWeeDairyImage4 },{ mediaUrl: TheWeeDairyImage5 },{ mediaUrl: TheWeeDairyImage6 }]}
+            mediaItems={[
+              { mediaUrl: TheWeeDairyImage1 },
+              { mediaUrl: TheWeeDairyImage2 },
+              { mediaUrl: TheWeeDairyImage3 },
+              { mediaUrl: TheWeeDairyImage4 },
+              { mediaUrl: TheWeeDairyImage5 },
+              { mediaUrl: TheWeeDairyImage6 }
+            ]}
             shouldCarouselMultipleMedias={shouldCarouselSecondSection}
             mediaLocation="full-screen"
             disableImageMovement
@@ -116,10 +134,12 @@ const PartnershipPageTeaserSection: FC = () => {
               color="primary.main"
               variant="PoppinsBig-subtitle2"
               sx={{ opacity: secondTextOpacity }}>
-              For "The wee dairy", an independant Scottish micro dairy, we built an internal system to keep track of milk production, orders, and sales. 
-              It replaced a large amount of spreadsheets with manual data entries. 
+              For "The wee dairy", an independant Scottish micro dairy, we built an internal system
+              to keep track of milk production, orders, and sales. It replaced a large amount of
+              spreadsheets with manual data entries.
               <p>
-              The system included features such as milk forecast predictions, order and sales overviews, and dynamic guidance to support their daily work.
+                The system included features such as milk forecast predictions, order and sales
+                overviews, and dynamic guidance to support their daily work.
               </p>
             </Typography>
           </TextContainer>

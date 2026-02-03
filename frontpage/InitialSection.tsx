@@ -43,7 +43,12 @@ const Content: FC = () => {
       item
       container
       justifyContent="center"
-      style={{ paddingTop: '30vh', marginTop: '50px', opacity, transition: 'opacity 630ms ease-out 920ms' }}
+      style={{
+        paddingTop: '30vh',
+        marginTop: '50px',
+        opacity,
+        transition: 'opacity 630ms ease-out 920ms'
+      }}
       xs={12}>
       <Grid item>
         <FirstLineWithAnimation />

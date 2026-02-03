@@ -6,7 +6,7 @@ type Props = {
   initialText: string;
   highlightedText?: string;
   textAfterHighlightedText?: string;
-  mt?: { xs: number, md: number }; 
+  mt?: { xs: number; md: number };
   mb?: number;
 };
 
@@ -15,7 +15,7 @@ const MainPointSection: FC<Props> = ({
   highlightedText,
   textAfterHighlightedText,
   mt = { xs: 16, md: 32 },
-  mb: marginBottom 
+  mb: marginBottom
 }) => {
   return (
     <Grid

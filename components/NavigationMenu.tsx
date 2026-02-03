@@ -10,9 +10,13 @@ type Props = { isOpenState: [boolean, Dispatch<SetStateAction<boolean>>] };
 type ActivityProp = { link: string } | { onClick: () => void };
 
 // TODO: Introduce strong typing on link so it's always connected to the link in App
-type NavigationItemProps = { text: string, itemIsNotYetAvailable?: boolean } & ActivityProp;
+type NavigationItemProps = { text: string; itemIsNotYetAvailable?: boolean } & ActivityProp;
 
-const NavigationItem: FC<NavigationItemProps> = ({ text, itemIsNotYetAvailable = false, ...props }) => {
+const NavigationItem: FC<NavigationItemProps> = ({
+  text,
+  itemIsNotYetAvailable = false,
+  ...props
+}) => {
   useEffect(() => {
     // TODO: Stop hardcoding it here and get it from a central key vault instead
     ReactGA.initialize('G-HK91WGVFW0');
@@ -36,7 +40,7 @@ const NavigationItem: FC<NavigationItemProps> = ({ text, itemIsNotYetAvailable =
       }}
       disableInteractivity={itemIsNotYetAvailable}
       variant="PoppinsSmall-h1"
-      color={itemIsNotYetAvailable ? "text.transparent" : "text.primary"}
+      color={itemIsNotYetAvailable ? 'text.transparent' : 'text.primary'}
     />
   );
 };
@@ -114,13 +118,25 @@ const NavigationMenu: FC<Props> = ({ isOpenState }) => {
             sx={{ height: '80vh', mt: isMobile ? 8 : 16 }}>
             <Grid container item spacing={4}>
               <Grid item xs={12}>
-                <NavigationItem text="About us (coming soon)" itemIsNotYetAvailable onClick={() => console.log("Not yet implemented") } />
+                <NavigationItem
+                  text="About us (coming soon)"
+                  itemIsNotYetAvailable
+                  onClick={() => console.log('Not yet implemented')}
+                />
               </Grid>
               <Grid item xs={12}>
-                <NavigationItem text="Concept (coming soon)" itemIsNotYetAvailable onClick={() => console.log("Not yet implemented") } />
+                <NavigationItem
+                  text="Concept (coming soon)"
+                  itemIsNotYetAvailable
+                  onClick={() => console.log('Not yet implemented')}
+                />
               </Grid>
               <Grid item xs={12}>
-                <NavigationItem text="Portfolio (coming soon)" itemIsNotYetAvailable onClick={() => console.log("Not yet implemented") } />
+                <NavigationItem
+                  text="Portfolio (coming soon)"
+                  itemIsNotYetAvailable
+                  onClick={() => console.log('Not yet implemented')}
+                />
               </Grid>
               <Grid item xs={12}>
                 <NavigationItem text="Contact" onClick={handleContactClick} />

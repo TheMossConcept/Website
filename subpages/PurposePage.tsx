@@ -37,7 +37,13 @@ const PurposePage: FC = () => {
         textAfterHighlightedText="to them"
       />
       <MediaSection
-        mediaItems={[{ mediaUrl: "https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/forrest.mov", isVideo: true }]}
+        mediaItems={[
+          {
+            mediaUrl:
+              'https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/forrest.mov',
+            isVideo: true
+          }
+        ]}
         mediaLocation="full-screen"
       />
       <MainPointSection

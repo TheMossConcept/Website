@@ -127,7 +127,7 @@ const MediaSection: FC<Props> = ({
               height: media.imageDimensions?.height || 'auto',
               display: 'block',
               // If we take granular control of the dimensions, we also don't expect the image to be exactly contained.
-              // If we have chosen to overwrite the aspect ratio, we essentially get exactly what we are asking for 
+              // If we have chosen to overwrite the aspect ratio, we essentially get exactly what we are asking for
               // whether or not that makes sense
               objectFit: media.imageDimensions ? 'fill' : 'contain',
               ...style
@@ -148,7 +148,7 @@ const MediaSection: FC<Props> = ({
             height: media.imageDimensions?.height || 'auto',
             display: 'block',
             // If we take granular control of the dimensions, we also don't expect the image to be exactly contained.
-            // If we have chosen to overwrite the aspect ratio, we essentially get exactly what we are asking for 
+            // If we have chosen to overwrite the aspect ratio, we essentially get exactly what we are asking for
             // whether or not that makes sense
             objectFit: media.imageDimensions ? 'fill' : 'contain',
             ...style

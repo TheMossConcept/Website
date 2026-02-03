@@ -46,13 +46,16 @@ const PurposePageTeaserSection: FC = () => {
           sx={{ marginTop: { xs: 5, md: 10 }, maxWidth: '500px', opacity: textSectionOpacity }}
           variant="PoppinsBig-subtitle2"
           color="secondary.main">
-            We reuse backend and frontend functionality that is common throughout all projects and turn it into generic building blocks for us to use in future work.
-            <p>
-            When we combine our building blocks with our own internal system, we can very efficiently implement all functionality that is unique to the individual client. 
-            </p>
-            <p>
-            This allows us to build fully customised solutions at a much more accessible price than what has previously been possible
-            </p>
+          We reuse backend and frontend functionality that is common throughout all projects and
+          turn it into generic building blocks for us to use in future work.
+          <p>
+            When we combine our building blocks with our own internal system, we can very
+            efficiently implement all functionality that is unique to the individual client.
+          </p>
+          <p>
+            This allows us to build fully customised solutions at a much more accessible price than
+            what has previously been possible
+          </p>
         </Typography>
       </TextContainer>
     </Grid>

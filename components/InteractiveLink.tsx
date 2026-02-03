@@ -9,7 +9,14 @@ type Props = {
 } & Pick<TypographyProps, 'color' | 'variant'> &
   Pick<BoxProps, 'sx'>;
 
-const InteractiveLink: FC<Props> = ({ text, color, variant, navigate, disableInteractivity, sx }) => {
+const InteractiveLink: FC<Props> = ({
+  text,
+  color,
+  variant,
+  navigate,
+  disableInteractivity,
+  sx
+}) => {
   const [width, setWidth] = useState(0);
 
   return (

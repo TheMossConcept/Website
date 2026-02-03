@@ -66,7 +66,9 @@ const ContentArea: FC<ContentAreaProps> = ({ containerRef }) => {
           firstLineText={[
             { text: 'Customised solutions', color: 'text.secondary', variant: 'TobiasBig-h1' }
           ]}
-          secondLineText={[{ text: 'made accessible', color: 'text.primary', variant: 'PoppinsBig-h1' }]}
+          secondLineText={[
+            { text: 'made accessible', color: 'text.primary', variant: 'PoppinsBig-h1' }
+          ]}
         />
       </TextContainer>
       <TextContainer textPosition="center">
@@ -79,8 +81,8 @@ const ContentArea: FC<ContentAreaProps> = ({ containerRef }) => {
             maxWidth: '569px',
             opacity: firstTextSectionOpacity
           }}>
-          One-size-fits-all tools force you to adapt your workflows to their limitations. 
-          You end up with workarounds, manual data entry, and paying for features you'll never touch.
+          One-size-fits-all tools force you to adapt your workflows to their limitations. You end up
+          with workarounds, manual data entry, and paying for features you'll never touch.
         </Typography>
         <Typography
           variant="PoppinsBig-subtitle2"
@@ -91,7 +93,8 @@ const ContentArea: FC<ContentAreaProps> = ({ containerRef }) => {
             maxWidth: '569px',
             opacity: secondTextSectionOpacity
           }}>
-          Our systems fit your exact needs, grow with your company over time, and put you in full control.
+          Our systems fit your exact needs, grow with your company over time, and put you in full
+          control.
         </Typography>
       </TextContainer>
     </>

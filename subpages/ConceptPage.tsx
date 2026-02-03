@@ -51,7 +51,13 @@ const ConceptPage: FC = () => {
         textAfterHighlightedText="building blocks across systems"
       />
       <MediaSection
-        mediaItems={[{ mediaUrl: "https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/building_blocks.mov", isVideo: true  }]} 
+        mediaItems={[
+          {
+            mediaUrl:
+              'https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/building_blocks.mov',
+            isVideo: true
+          }
+        ]}
         mediaLocation="full-screen"
       />
       <TextSection
@@ -67,7 +73,13 @@ const ConceptPage: FC = () => {
         highlightedText="flexibility and stability"
       />
       <MediaSection
-        mediaItems={[{mediaUrl: "https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/trees-swaying.mp4", isVideo: true}]}
+        mediaItems={[
+          {
+            mediaUrl:
+              'https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/trees-swaying.mp4',
+            isVideo: true
+          }
+        ]}
         mediaLocation="full-screen"
       />
       <TextSection

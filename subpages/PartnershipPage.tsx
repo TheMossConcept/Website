@@ -53,7 +53,12 @@ const PartnershipPage: FC = () => {
         textAfterHighlightedText="to your business"
       />
       <MediaSection
-        mediaItems={[{ mediaUrl: UnderstandabilityIllustration, imageDimensions: { width: '80%', height: 'auto' } }]}
+        mediaItems={[
+          {
+            mediaUrl: UnderstandabilityIllustration,
+            imageDimensions: { width: '80%', height: 'auto' }
+          }
+        ]}
         mediaLocation="full-screen"
         disableImageMovement
         marginTop={16}
@@ -66,7 +71,13 @@ const PartnershipPage: FC = () => {
         mt={16}
       />
       <MediaSection
-        mediaItems={[{ mediaUrl: "https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/teamwork.mov", isVideo: true }]}
+        mediaItems={[
+          {
+            mediaUrl:
+              'https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/teamwork.mov',
+            isVideo: true
+          }
+        ]}
         mediaLocation="full-screen"
       />
       <MainPointSection
