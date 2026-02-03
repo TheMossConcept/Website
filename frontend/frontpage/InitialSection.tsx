@@ -29,25 +29,6 @@ const InitialSection: FC = () => {
 
   return (
     <Box sx={{ height: '100vh', width: '100vw', bgcolor: 'text.secondary' }}>
-      {/*
-    <iframe
-      src="https://player.mux.com/hQlLzL02NzB3urxeHLxJs4lA02IzdxZSCGcDicyY99uHY?metadata-video-title=frontpage&video-title=frontpage&autoplay=1&mute=1"
-      ref={playerRef}
-      style={{
-        transform: `translateX(${rightPosition}vw)`,
-        transition: 'transform 1380ms ease-out',
-        position: 'absolute',
-        objectFit: 'fill',
-        maxHeight: '100vh',
-        height: '100vh',
-        width: '100vw',
-        border: 'none',
-        pointerEvents: 'none'
-      }}
-      allow="autoplay"
-      allowFullScreen
-    ></iframe>
-    */}
       <video
         ref={videoPlayerRef}
         autoPlay
