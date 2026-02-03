@@ -1,10 +1,23 @@
 import { Box, Typography, Grid } from '@mui/material';
-import { FC, useEffect, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 
 // Put a background image here that's in the slide and make a fade
 // for the text which is a bit delayed compared to the background image
 const InitialSection: FC = () => {
+  const playerRef = useRef<HTMLVideoElement>(null)
   const [rightPosition, setRightPosition] = useState(-100);
+
+  useEffect(() => {
+    const playerRefElement = playerRef.current
+    if (playerRefElement) {
+      const intervalId = setInterval(() => {
+        playerRefElement.currentTime = 0
+        // playerRefElement.play()
+      }, 12000)
+
+      return () => clearInterval(intervalId)
+    }
+  }, [playerRef])
 
   useEffect(() => {
     setRightPosition(0);
@@ -12,10 +25,31 @@ const InitialSection: FC = () => {
 
   return (
     <Box sx={{ height: '100vh', width: '100vw', bgcolor: 'text.secondary' }}>
+      {/*
+    <iframe
+      src="https://player.mux.com/hQlLzL02NzB3urxeHLxJs4lA02IzdxZSCGcDicyY99uHY?metadata-video-title=frontpage&video-title=frontpage&autoplay=1&mute=1"
+      ref={playerRef}
+      style={{
+        transform: `translateX(${rightPosition}vw)`,
+        transition: 'transform 1380ms ease-out',
+        position: 'absolute',
+        objectFit: 'fill',
+        maxHeight: '100vh',
+        height: '100vh',
+        width: '100vw',
+        border: 'none',
+        pointerEvents: 'none'
+      }}
+      allow="autoplay"
+      allowFullScreen
+    ></iframe>
+    */}
       <video
+        ref={playerRef}
         autoPlay
         loop
         muted
+        preload='auto'
         style={{
           transform: `translateX(${rightPosition}vw)`,
           transition: 'transform 1380ms ease-out',
@@ -25,7 +59,7 @@ const InitialSection: FC = () => {
           height: '100vh',
           width: '100vw'
         }}>
-        <source src="https://themossconcept-website-assets.fra1.cdn.digitaloceanspaces.com/frontpage.mov" />
+        <source src="https://stream.mux.com/hQlLzL02NzB3urxeHLxJs4lA02IzdxZSCGcDicyY99uHY.m3u8" />
       </video>
       <Content />
     </Box>
