@@ -1,6 +1,8 @@
 import { FC } from 'react';
 
-const PurposePage: FC = () => { return null; }
+const PurposePage: FC = () => {
+  return null;
+};
 
 export default PurposePage;
 /*
