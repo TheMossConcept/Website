@@ -17,11 +17,8 @@ export function createApp(): Application {
     contentSecurityPolicy: config.isProduction ? undefined : false,
   }));
 
-  // CORS configuration
-  app.use(cors({
-    origin: config.isProduction ? true : config.corsOrigins,
-    credentials: true,
-  }));
+  // CORS configuration - allow all origins
+  app.use(cors());
 
   // Compression
   app.use(compression() as unknown as RequestHandler);

@@ -29,6 +29,7 @@ services:
       - NODE_ENV=development
       - PORT=3001
       - CORS_ORIGINS=http://localhost:3000
+      - GOOGLE_APP_PASSWORD=${GOOGLE_APP_PASSWORD}
     depends_on:
       - frontend
     command: yarn dev

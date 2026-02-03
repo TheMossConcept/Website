@@ -32,8 +32,7 @@ const ContactSection: FC<ContactSectionProps> = ({ useContrastColors = false }) 
 
   const onSubmitClick = () => {
     axios
-      .post(
-        'https://prod2-224.westeurope.logic.azure.com:443/workflows/0331da2d2c0c4e6384640441dda0cb20/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=i1RNKiEQrnxL452D0xXcKfhlYkk4yGfo7QHPvQJuFhE',
+      .post('http://localhost:3001/api/contact',
         {
           name,
           email,
