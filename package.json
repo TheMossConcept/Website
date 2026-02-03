@@ -6,9 +6,6 @@
     "frontend",
     "backend"
   ],
-  "engines": {
-    "node": ">=24.0.0"
-  },
   "scripts": {
     "dev": "concurrently -n \"frontend,backend\" -c \"cyan,green\" \"yarn dev:frontend\" \"yarn dev:backend\"",
     "dev:frontend": "yarn workspace @themossconcept/frontend dev",
@@ -23,8 +20,9 @@
     "typecheck": "yarn workspace @themossconcept/frontend tsc --noEmit && yarn workspace @themossconcept/backend typecheck",
     "docker:dev": "docker-compose up",
     "docker:dev:build": "docker-compose up --build",
-    "docker:prod:build": "docker build -f docker/Dockerfile.prod -t themossconcept-website .",
-    "docker:prod:run": "docker run -p 3001:3001 themossconcept-website"
+    "docker:prod:build": "docker build -f docker/Dockerfile.prod -t niklasmoss/themossconcept-website:latest .",
+    "docker:prod:push": "docker push niklasmoss/themossconcept-website",
+    "docker:prod:run": "docker run -p 3001:3001 niklasmoss/themossconcept-website:latest"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
