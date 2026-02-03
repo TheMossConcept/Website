@@ -83,9 +83,6 @@ const FirstLineWithAnimation: FC = () => {
 
   const normalizedScrollY = scrollY / 20;
 
-  const unprotectedOpacity = 1 - normalizedScrollY / 100;
-  const opacityUnderOne = Math.min(unprotectedOpacity, 0.9);
-
   return (
     <Typography
       color="rgba(97, 145, 254, 0.65)"
@@ -125,9 +122,6 @@ const SecondLineWithAnimation: FC = () => {
   }, []);
 
   const normalizedScrollY = scrollY / 10;
-
-  const unprotectedOpacity = 1 - normalizedScrollY / 100;
-  const opacityUnderOne = Math.min(unprotectedOpacity, 0.9);
 
   return (
     <Typography

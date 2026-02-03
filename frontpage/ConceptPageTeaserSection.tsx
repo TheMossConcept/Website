@@ -82,7 +82,7 @@ const ContentArea: FC<ContentAreaProps> = ({ containerRef }) => {
             opacity: firstTextSectionOpacity
           }}>
           One-size-fits-all tools force you to adapt your workflows to their limitations. You end up
-          with workarounds, manual data entry, and paying for features you'll never touch.
+          with workarounds, manual data entry, and paying for features you will never touch.
         </Typography>
         <Typography
           variant="PoppinsBig-subtitle2"

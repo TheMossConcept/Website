@@ -1,5 +1,4 @@
 import { Grid, Typography } from '@mui/material';
-import { ResponsiveStyleValue, SxProps } from '@mui/system';
 import { FC } from 'react';
 
 type Props = {

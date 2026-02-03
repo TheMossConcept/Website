@@ -134,8 +134,8 @@ const PartnershipPageTeaserSection: FC = () => {
               color="primary.main"
               variant="PoppinsBig-subtitle2"
               sx={{ opacity: secondTextOpacity }}>
-              For "The wee dairy", an independant Scottish micro dairy, we built an internal system
-              to keep track of milk production, orders, and sales. It replaced a large amount of
+              For The wee dairy, an independant Scottish micro dairy, we built an internal system to
+              keep track of milk production, orders, and sales. It replaced a large amount of
               spreadsheets with manual data entries.
               <p>
                 The system included features such as milk forecast predictions, order and sales

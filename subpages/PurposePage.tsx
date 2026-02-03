@@ -1,8 +1,6 @@
 import { Grid } from '@mui/material';
 import { FC } from 'react';
 import TallPurposeImage from '../public/images/purpose_tall.jpg';
-import HighQualityImage from '../public/images/working_in_office.jpg';
-import TrustAndRespectTeam from '../public/images/trust_and_respect_in_team.jpg';
 import ContactSection from '../components/sections/ContactSection';
 import FirstSubpageSection from '../components/sections/FirstSubpageSection';
 import MainPointSection from '../components/sections/MainPointSection';

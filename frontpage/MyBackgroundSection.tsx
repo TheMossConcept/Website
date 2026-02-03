@@ -1,5 +1,4 @@
 import { Grid, Typography } from '@mui/material';
-import { useRouter } from 'next/router';
 import { FC, useEffect, useRef, useState } from 'react';
 import InteractiveLink from '../components/InteractiveLink';
 import ImageOfNiklas from '../public/images/niklas.jpg';
@@ -34,8 +33,6 @@ const BackgroundSection: FC = () => {
     window.addEventListener('scroll', updateOpacity);
     return () => window.removeEventListener('scroll', updateOpacity);
   }, []);
-
-  const router = useRouter();
 
   return (
     <Grid
