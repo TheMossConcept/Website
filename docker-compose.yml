@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.dev.frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app/frontend
+      - /app/frontend/node_modules
+      - /app/frontend/.next
+    environment:
+      - NODE_ENV=development
+      - WATCHPACK_POLLING=true
+    command: yarn dev
+
+  backend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.dev.backend
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./backend/src:/app/backend/src
+      - /app/backend/node_modules
+    environment:
+      - NODE_ENV=development
+      - PORT=3001
+      - CORS_ORIGINS=http://localhost:3000
+    depends_on:
+      - frontend
+    command: yarn dev
+
+networks:
+  default:
+    name: themossconcept-network

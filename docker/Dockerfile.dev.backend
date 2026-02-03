@@ -1,0 +1,18 @@
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Install dependencies
+COPY package.json yarn.lock ./
+COPY backend/package.json ./backend/
+
+RUN yarn install --frozen-lockfile
+
+# Copy backend source
+COPY backend ./backend
+
+WORKDIR /app/backend
+
+EXPOSE 3001
+
+CMD ["yarn", "dev"]

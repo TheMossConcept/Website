@@ -1,5 +1,5 @@
 import { Grid } from '@mui/material';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import useIsMobile from '../../utilities/useIsMobile';
 import { CSSProperties, FC, useEffect, useRef, useState } from 'react';
 
@@ -11,7 +11,7 @@ type MediaDimensions = {
 };
 
 type MediaItem = {
-  mediaUrl: string;
+  mediaUrl: string | StaticImageData;
   isVideo?: boolean;
   imageDimensions?: MediaDimensions;
 };
@@ -114,6 +114,8 @@ const MediaSection: FC<Props> = ({
     };
 
     if (media.isVideo) {
+      // Videos only support string URLs, not StaticImageData
+      const videoUrl = typeof media.mediaUrl === 'string' ? media.mediaUrl : media.mediaUrl.src;
       return (
         <div key={`video-${index}`} style={wrapperStyle}>
           <video
@@ -132,7 +134,7 @@ const MediaSection: FC<Props> = ({
               objectFit: media.imageDimensions ? 'fill' : 'contain',
               ...style
             }}>
-            <source src={media.mediaUrl} type="video/mp4" />
+            <source src={videoUrl} type="video/mp4" />
           </video>
         </div>
       );
