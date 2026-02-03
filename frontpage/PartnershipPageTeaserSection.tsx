@@ -85,7 +85,7 @@ const PartnershipPageTeaserSection: FC = () => {
               The system connects the full supply chain which includes clients, collection partners, recycling facilities, and manufacturers.
               </p>
               <p>
-              The system also enables clients to follow the process from the initial plastic collection to their own finished product.
+              It also enables clients to follow the process from the initial plastic collection to their own finished product.
               </p>
             </Typography>
           </TextContainer>

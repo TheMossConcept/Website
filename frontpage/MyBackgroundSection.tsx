@@ -64,20 +64,12 @@ const BackgroundSection: FC = () => {
           sx={{ marginTop: { xs: 5, md: 10 }, opacity: textSectionOpacity }}
           variant="PoppinsBig-subtitle2"
           color="secondary.main">
-          With an M.Sc. in Computer Science, I have a total of 12 years of experience delivering complex digital platforms for 
-          clients across both start-ups, scale-ups, and large enterprise organisations. 
+          With an M.Sc. in Computer Science and since then, 12 years of experience in the software industry, I have delivered complex digital platforms for clients across both start-ups, scale-ups, and large enterprise organisations.
           <p>
-          Through The Moss Concept, I have used my knowledge and experience to create a software system that streamlines the creation of 
-          customised software. 
+          My partner and I founded The Moss Concept because we wanted to make these systems available outside large corporations and well-funded startups.
           </p>
           <p>
-          We build advanced systems like the ones that have long been standard in large corporations, however, 
-          we are able to make them accessible to start-ups as well as small and mid-sized companies.
-          </p>
-          <p>
-          Throughout the years, we have worked with clients from retail, marketing, and manufacturing, all the way to the dairy and healthcare industries.
-          Along the way, we have built a solid library of reuseable functionality which we use along with optimised processes to build 
-          quality, customised software systems efficiently.
+          Throughout the years, we have worked with clients from various industries, including retail, marketing, manufacturing, as well as dairy and healthcare. Along the way, we have built a library of reusable functionality which we use together with our own optimised processes to build quality, customised software systems.
           </p>
         </Typography>
         <InteractiveLink

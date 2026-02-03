@@ -46,16 +46,12 @@ const PurposePageTeaserSection: FC = () => {
           sx={{ marginTop: { xs: 5, md: 10 }, maxWidth: '500px', opacity: textSectionOpacity }}
           variant="PoppinsBig-subtitle2"
           color="secondary.main">
-            We reuse project setup and generic functionality, saving months of initial development time.
+            We reuse backend and frontend functionality that is common throughout all projects and turn it into generic building blocks for us to use in future work.
             <p>
-            We have a clear, structured process to define the functionality of your system which allows us to collaborate more effectively and better understand your business' needs.<br />
+            When we combine our building blocks with our own internal system, we can very efficiently implement all functionality that is unique to the individual client. 
             </p>
             <p>
-            We have automated repetitive work and streamlined our processes.
-            </p>
-            <p>
-            As a result, we are able to build fully customised, quality solutions 
-            at a much more accessible price than what has previously been possible
+            This allows us to build fully customised solutions at a much more accessible price than what has previously been possible
             </p>
         </Typography>
       </TextContainer>
