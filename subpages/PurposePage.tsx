@@ -1,5 +1,10 @@
-import { Grid } from '@mui/material';
 import { FC } from 'react';
+
+const PurposePage: FC = () => { return null; }
+
+export default PurposePage;
+/*
+import { Grid } from '@mui/material';
 import TallPurposeImage from '../public/images/purpose_tall.jpg';
 import ContactSection from '../components/sections/ContactSection';
 import FirstSubpageSection from '../components/sections/FirstSubpageSection';
@@ -56,7 +61,7 @@ const PurposePage: FC = () => {
         ]}
         mt={16}
       />
-      {/* <MediaSection mediaUrl={HighQualityImage} mediaLocation="full-screen" /> */}
+       <MediaSection mediaItems={[{ mediaUrl: HighQualityImage }]} mediaLocation="full-screen" /> 
       <MainPointSection
         initialText=""
         highlightedText="Trust and respect "
@@ -69,7 +74,7 @@ const PurposePage: FC = () => {
         ]}
         mt={16}
       />
-      {/* <MediaSection mediaUrl={TrustAndRespectTeam} mediaLocation="full-screen" /> */}
+      <MediaSection mediaItems={[{ mediaUrl: TrustAndRespectTeam }]} mediaLocation="full-screen" />
       <Grid item xs={12} sx={{ mb: { xs: 16, md: 32 } }}>
         <ContactSection />
       </Grid>
@@ -78,3 +83,4 @@ const PurposePage: FC = () => {
 };
 
 export default PurposePage;
+*/

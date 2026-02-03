@@ -1,4 +1,9 @@
 import { FC } from 'react';
+
+const PartnershipPage: FC = () => { return null; }
+
+export default PartnershipPage;
+/*
 import FirstSubpageSection from '../components/sections/FirstSubpageSection';
 import MediaSection from '../components/sections/MediaSection';
 import TallPartnershipImage from '../public/images/partnership_tall.jpg';
@@ -100,3 +105,4 @@ const PartnershipPage: FC = () => {
 };
 
 export default PartnershipPage;
+*/

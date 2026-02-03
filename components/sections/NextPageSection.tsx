@@ -17,11 +17,7 @@ const NextPageSection: FC<Props> = ({ imageUrl, text, link, firstLineText, secon
   return (
     <Grid item container xs={12} spacing={5} sx={{ mt: { xs: 16, md: 32 } }} ref={containerRef}>
       <Grid item xs={12} md={6}>
-        <MediaSection
-          mediaLocation="full-screen"
-          mediaUrl={imageUrl}
-          imageDimensions={{ width: '100%', height: 'auto' }}
-        />
+        <MediaSection mediaLocation="full-screen" mediaItems={[{ mediaUrl: imageUrl }]} />
       </Grid>
       <Grid item xs={12} md={6} alignSelf="flex-end" sx={{ pb: 4 }}>
         <HeadlineSection

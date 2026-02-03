@@ -33,9 +33,8 @@ const FirstSubpageSection: FC<Props> = ({
         {image ? (
           <MediaSection
             mediaLocation="full-screen"
-            mediaUrl={image}
+            mediaItems={[{ mediaUrl: image }]}
             disableImageMovement
-            imageDimensions={{ width: '100%', height: 'auto' }}
             marginTop={0}
           />
         ) : video ? (

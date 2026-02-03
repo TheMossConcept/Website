@@ -1,4 +1,9 @@
 import { FC } from 'react';
+
+const ConceptPage: FC = () => { return null; }
+
+export default ConceptPage;
+/*
 import FirstSubpageSection from '../components/sections/FirstSubpageSection';
 import TextSection from '../components/sections/TextSection';
 import BuildingBlockImage from '../public/images/building_blocks.jpg';
@@ -103,3 +108,4 @@ const ConceptPage: FC = () => {
 };
 
 export default ConceptPage;
+*/
