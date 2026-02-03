@@ -1,6 +1,8 @@
 import { FC } from 'react';
 
-const PartnershipPage: FC = () => { return null; }
+const PartnershipPage: FC = () => {
+  return null;
+};
 
 export default PartnershipPage;
 /*

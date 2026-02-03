@@ -1,6 +1,8 @@
 import { FC } from 'react';
 
-const ConceptPage: FC = () => { return null; }
+const ConceptPage: FC = () => {
+  return null;
+};
 
 export default ConceptPage;
 /*
