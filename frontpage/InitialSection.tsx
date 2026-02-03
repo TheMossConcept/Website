@@ -1,23 +1,15 @@
 import { Box, Typography, Grid } from '@mui/material';
-import { FC, useEffect, useRef, useState } from 'react';
+import { FC, useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 // Put a background image here that's in the slide and make a fade
 // for the text which is a bit delayed compared to the background image
 const InitialSection: FC = () => {
-  const playerRef = useRef<HTMLVideoElement>(null)
   const [rightPosition, setRightPosition] = useState(-100);
 
-  useEffect(() => {
-    const playerRefElement = playerRef.current
-    if (playerRefElement) {
-      const intervalId = setInterval(() => {
-        playerRefElement.currentTime = 0
-        // playerRefElement.play()
-      }, 12000)
+  // Start caching immediately and ,
+  useLayoutEffect(() => {
 
-      return () => clearInterval(intervalId)
-    }
-  }, [playerRef])
+  }, [])
 
   useEffect(() => {
     setRightPosition(0);
@@ -45,7 +37,6 @@ const InitialSection: FC = () => {
     ></iframe>
     */}
       <video
-        ref={playerRef}
         autoPlay
         loop
         muted
@@ -59,7 +50,7 @@ const InitialSection: FC = () => {
           height: '100vh',
           width: '100vw'
         }}>
-        <source src="https://stream.mux.com/hQlLzL02NzB3urxeHLxJs4lA02IzdxZSCGcDicyY99uHY.m3u8" />
+        <source src="https://stream.mux.com/xsb6Ucrn01rNgNCwpFy4YKxTe7Gi600LnukB5g3ZS0100l4.m3u8" />
       </video>
       <Content />
     </Box>
