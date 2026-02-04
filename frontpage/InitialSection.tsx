@@ -27,7 +27,7 @@ const InitialSection: FC = () => {
 
   return (
     <Box sx={{ height: '100vh', width: '100vw', bgcolor: 'text.secondary' }}>
-      <FrontpageVideo src={VIDEO_SOURCE} posterImage={FrontpageThumbnail} />
+      <FrontpageVideo src={VIDEO_SOURCE} posterImage={(FrontpageThumbnail as any).src} />
       <Content />
     </Box>
   );
