@@ -26,7 +26,7 @@ interface HeroVideoProps {
   
   const [isReady, setIsReady] = useState(false);
   const [showPoster, setShowPoster] = useState(true);
-  const [isRecordingComplete, setIsRecordingComplete] = useState(false);
+  // const [isRecordingComplete, setIsRecordingComplete] = useState(false);
 
   // Lock to highest quality level
   const lockToHighestQuality = useCallback((hls: Hls) => {
@@ -46,6 +46,7 @@ interface HeroVideoProps {
   }, []);
 
   // Start recording the video for caching
+  /*
   const startRecording = useCallback(() => {
     const video = videoRef.current;
     if (!video || mediaRecorderRef.current) return;
@@ -101,13 +102,16 @@ interface HeroVideoProps {
       console.warn('MediaRecorder setup failed:', error);
     }
   }, []);
+  */
 
+  /*
   // Stop recording when video completes first loop
   const stopRecording = useCallback(() => {
     if (mediaRecorderRef.current && mediaRecorderRef.current.state === 'recording') {
       mediaRecorderRef.current.stop();
     }
   }, []);
+  */
 
   // Initialize HLS and preload
   useEffect(() => {
@@ -169,6 +173,7 @@ interface HeroVideoProps {
       hls.loadSource(src);
       hls.attachMedia(video);
 
+      /*
       // Handle video timeupdate to detect first loop completion
       const handleTimeUpdate = () => {
         // Start recording shortly after video starts
@@ -177,16 +182,19 @@ interface HeroVideoProps {
           startRecording();
         }
       };
+      */
 
       // Detect when video is about to loop
+      /*
       const handleEnded = () => {
         if (!isRecordingComplete) {
           stopRecording();
         }
       };
+      */
 
-      video.addEventListener('timeupdate', handleTimeUpdate);
-      video.addEventListener('ended', handleEnded);
+      // video.addEventListener('timeupdate', handleTimeUpdate);
+      // video.addEventListener('ended', handleEnded);
 
       // Start the animation timer
       animationTimeout = setTimeout(() => {
@@ -201,13 +209,15 @@ interface HeroVideoProps {
 
       return () => {
         clearTimeout(animationTimeout);
-        video.removeEventListener('timeupdate', handleTimeUpdate);
-        video.removeEventListener('ended', handleEnded);
+        // video.removeEventListener('timeupdate', handleTimeUpdate);
+        // video.removeEventListener('ended', handleEnded);
         hls.destroy();
         
+        /*
         if (mediaRecorderRef.current?.state === 'recording') {
           mediaRecorderRef.current.stop();
         }
+        */
       };
     } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
       // Safari native HLS support
@@ -220,7 +230,7 @@ interface HeroVideoProps {
 
       return () => clearTimeout(animationTimeout);
     }
-  }, [src, animationDuration, isReady, lockToHighestQuality, startRecording, stopRecording, isRecordingComplete]);
+  }, [src, animationDuration, isReady, lockToHighestQuality]);
 
   return (
     <div className="relative w-full h-full overflow-hidden">
@@ -256,7 +266,7 @@ interface HeroVideoProps {
         className="absolute inset-0 w-full h-full object-cover"
         muted
         playsInline
-        loop={!mediaRecorderRef.current || isRecordingComplete} // Don't loop during recording
+        loop={true} // Don't loop during recording
         preload="auto"
       />
       
