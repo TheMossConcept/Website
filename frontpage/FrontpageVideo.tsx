@@ -226,7 +226,7 @@ interface HeroVideoProps {
       {/* First frame poster - shown during entry animation */}
       {showPoster && (
         <img
-          src="https://image.mux.com/7SBNtnJf3KgttWIT2YKHINhAf2ydA8vEt6GoghZXJLo/thumbnail.png"
+          src={posterImage}
           style={{ 
             transform: `translateX(${rightPosition}vw)`,
             transition: 'transform 1380ms ease-out',
