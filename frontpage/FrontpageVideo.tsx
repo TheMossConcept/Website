@@ -21,12 +21,18 @@ interface HeroVideoProps {
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const hlsRef = useRef<Hls | null>(null);
-  const mediaRecorderRef = useRef<MediaRecorder | null>(null);
-  const recordedChunksRef = useRef<Blob[]>([]);
   
-  const [isReady, setIsReady] = useState(false);
   const [showPoster, setShowPoster] = useState(true);
-  // const [isRecordingComplete, setIsRecordingComplete] = useState(false);
+
+  useEffect(() => {
+    const videoRefElement = videoRef.current
+    if (videoRefElement) {
+      videoRefElement.oncanplay = () => {
+        videoRef.current?.play()
+        setShowPoster(false)
+      }
+    }
+  }, [videoRef])
 
   // Lock to highest quality level
   const lockToHighestQuality = useCallback((hls: Hls) => {
@@ -45,81 +51,11 @@ interface HeroVideoProps {
     }
   }, []);
 
-  // Start recording the video for caching
-  /*
-  const startRecording = useCallback(() => {
-    const video = videoRef.current;
-    if (!video || mediaRecorderRef.current) return;
-
-    try {
-      // Capture the video stream
-      const stream = (video as any).captureStream?.() || (video as any).mozCaptureStream?.();
-      if (!stream) {
-        console.warn('captureStream not supported - falling back to HLS-only mode');
-        return;
-      }
-
-      const mediaRecorder = new MediaRecorder(stream, {
-        mimeType: 'video/webm;codecs=vp9',
-        videoBitsPerSecond: 50_000_000 // High bitrate for 4K
-      });
-
-      recordedChunksRef.current = [];
-
-      mediaRecorder.ondataavailable = (event) => {
-        if (event.data.size > 0) {
-          recordedChunksRef.current.push(event.data);
-        }
-      };
-
-      mediaRecorder.onstop = () => {
-        const blob = new Blob(recordedChunksRef.current, { type: 'video/webm' });
-        const blobUrl = URL.createObjectURL(blob);
-        
-        // Switch to cached blob for seamless looping
-        if (videoRef.current) {
-          const currentTime = videoRef.current.currentTime;
-          videoRef.current.src = blobUrl;
-          videoRef.current.load();
-          videoRef.current.currentTime = currentTime;
-          videoRef.current.play();
-          
-          // Clean up HLS instance
-          if (hlsRef.current) {
-            hlsRef.current.destroy();
-            hlsRef.current = null;
-          }
-        }
-        
-        setIsRecordingComplete(true);
-        console.log('Switched to cached blob for seamless looping');
-      };
-
-      mediaRecorderRef.current = mediaRecorder;
-      mediaRecorder.start();
-      console.log('Started recording for cache');
-    } catch (error) {
-      console.warn('MediaRecorder setup failed:', error);
-    }
-  }, []);
-  */
-
-  /*
-  // Stop recording when video completes first loop
-  const stopRecording = useCallback(() => {
-    if (mediaRecorderRef.current && mediaRecorderRef.current.state === 'recording') {
-      mediaRecorderRef.current.stop();
-    }
-  }, []);
-  */
 
   // Initialize HLS and preload
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-
-    let animationTimeout: NodeJS.Timeout;
-    let playStarted = false;
 
     if (Hls.isSupported()) {
       const hls = new Hls({
@@ -145,18 +81,6 @@ interface HeroVideoProps {
         video.preload = 'auto';
       });
 
-      hls.on(Hls.Events.FRAG_BUFFERED, () => {
-        // Check if we have enough buffer to start
-        if (!isReady && video.buffered.length > 0) {
-          const bufferedSeconds = video.buffered.end(0);
-          // Wait until we have at least 3 seconds buffered at 4K
-          if (bufferedSeconds >= 3) {
-            setIsReady(true);
-            console.log(`Buffered ${bufferedSeconds.toFixed(1)}s at 4K - ready to play`);
-          }
-        }
-      });
-
       // Re-lock quality if HLS tries to change it
       hls.on(Hls.Events.LEVEL_SWITCHING, (_, data) => {
         const levels = hls.levels;
@@ -172,65 +96,11 @@ interface HeroVideoProps {
 
       hls.loadSource(src);
       hls.attachMedia(video);
-
-      /*
-      // Handle video timeupdate to detect first loop completion
-      const handleTimeUpdate = () => {
-        // Start recording shortly after video starts
-        if (!playStarted && video.currentTime > 0.1) {
-          playStarted = true;
-          startRecording();
-        }
-      };
-      */
-
-      // Detect when video is about to loop
-      /*
-      const handleEnded = () => {
-        if (!isRecordingComplete) {
-          stopRecording();
-        }
-      };
-      */
-
-      // video.addEventListener('timeupdate', handleTimeUpdate);
-      // video.addEventListener('ended', handleEnded);
-
-      // Start the animation timer
-      animationTimeout = setTimeout(() => {
-        setShowPoster(false);
-        if (isReady || video.readyState >= 3) {
-          video.play().catch(console.error);
-        } else {
-          // If not ready yet, play anyway but it should be close
-          video.play().catch(console.error);
-        }
-      }, animationDuration);
-
-      return () => {
-        clearTimeout(animationTimeout);
-        // video.removeEventListener('timeupdate', handleTimeUpdate);
-        // video.removeEventListener('ended', handleEnded);
-        hls.destroy();
-        
-        /*
-        if (mediaRecorderRef.current?.state === 'recording') {
-          mediaRecorderRef.current.stop();
-        }
-        */
-      };
     } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
       // Safari native HLS support
       video.src = src;
-      
-      animationTimeout = setTimeout(() => {
-        setShowPoster(false);
-        video.play().catch(console.error);
-      }, animationDuration);
-
-      return () => clearTimeout(animationTimeout);
     }
-  }, [src, animationDuration, isReady, lockToHighestQuality]);
+  }, [src, animationDuration, lockToHighestQuality]);
 
   return (
     <div className="relative w-full h-full overflow-hidden">
@@ -256,7 +126,6 @@ interface HeroVideoProps {
       <video
         ref={videoRef}
         style={{ 
-          display: showPoster ? 'none' : undefined, 
           position: 'absolute',
           objectFit: 'fill',
           maxHeight: '100vh',
@@ -266,7 +135,7 @@ interface HeroVideoProps {
         className="absolute inset-0 w-full h-full object-cover"
         muted
         playsInline
-        loop={true} // Don't loop during recording
+        loop={true}
         preload="auto"
       />
       
