@@ -1,6 +1,6 @@
 import { Box, Typography, Grid } from '@mui/material';
 import FrontpageVideo from './FrontpageVideo';
-import FrontpageThumbnail from '../public/images/frontpage_thumbnail.png'
+import FrontpageThumbnail from '../public/images/frontpage_thumbnail.png';
 import { FC, useEffect, useRef, useState } from 'react';
 import Hls from 'hls.js';
 
@@ -27,24 +27,7 @@ const InitialSection: FC = () => {
 
   return (
     <Box sx={{ height: '100vh', width: '100vw', bgcolor: 'text.secondary' }}>
-      <FrontpageVideo src={VIDEO_SOURCE} posterImage='https://image.mux.com/7SBNtnJf3KgttWIT2YKHINhAf2ydA8vEt6GoghZXJLo/thumbnail.png?time=0' />
-      {/*<video
-        ref={videoPlayerRef}
-        autoPlay
-        loop
-        muted
-        preload="auto"
-        style={{
-          transform: `translateX(${rightPosition}vw)`,
-          transition: 'transform 1380ms ease-out',
-          position: 'absolute',
-          objectFit: 'fill',
-          maxHeight: '100vh',
-          height: '100vh',
-          width: '100vw'
-        }}>
-        <source src={VIDEO_SOURCE} type="video/mp4" />
-      </video>*/}
+      <FrontpageVideo src={VIDEO_SOURCE} posterImage={FrontpageThumbnail} />
       <Content />
     </Box>
   );
@@ -114,7 +97,7 @@ const FirstLineWithAnimation: FC = () => {
         lineHeight: '100%',
         fontWeight: 1,
         position: 'relative',
-        fontSize: { xs: 20, sm: 55, lg: 84 },
+        fontSize: { xs: 30, sm: 65, lg: 84 },
 
         ...lineEnterAnimation
       }}
@@ -153,7 +136,7 @@ const SecondLineWithAnimation: FC = () => {
         transform: { sm: `translate(-${normalizedScrollY}px)` },
         lineHeight: '100%',
         position: 'relative',
-        fontSize: { xs: 20, sm: 55, lg: 84 },
+        fontSize: { xs: 30, sm: 55, lg: 84 },
         ...lineEnterAnimation
       }}
       component="h1">
@@ -176,7 +159,7 @@ const ThirdLineWithAnimation: FC = () => {
       sx={{
         marginLeft: { xs: 2, sm: `${marginLeft}px` },
         position: 'relative',
-        fontSize: { xs: 20, sm: 55, lg: 84 },
+        fontSize: { xs: 30, sm: 55, lg: 84 },
         ...lineEnterAnimation
       }}>
       your company
@@ -227,13 +210,13 @@ const TrustedBySection: FC<{ opacity: number }> = ({ opacity }) => {
             maxWidth: { xs: '100%', sm: '800px', md: '1200px' },
             margin: '0'
           }}>
-          <Grid item xs={3}>
+          <Grid item xs={4} md={3}>
             <Box
               component="img"
               src="/images/icons/Bestseller.svg"
               alt="Bestseller"
               sx={{
-                height: '21px',
+                height: { xs: '10px', sm: '15px', md: '21px' },
                 width: 'auto',
                 maxWidth: { xs: '100px', sm: '120px', md: '140px' },
                 filter: 'brightness(0) invert(1)',
@@ -246,13 +229,13 @@ const TrustedBySection: FC<{ opacity: number }> = ({ opacity }) => {
               }}
             />
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={4} md={3}>
             <Box
               component="img"
               src="/images/icons/Brandheroes.avif"
               alt="Brandheroes"
               sx={{
-                height: '21px',
+                height: { xs: '10px', sm: '15px', md: '21px' },
                 width: 'auto',
                 maxWidth: { xs: '100px', sm: '120px', md: '140px' },
                 filter: 'brightness(0) invert(1)',
@@ -265,13 +248,13 @@ const TrustedBySection: FC<{ opacity: number }> = ({ opacity }) => {
               }}
             />
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={4} md={3}>
             <Box
               component="img"
               src="/images/icons/Houe.png"
               alt="Houe"
               sx={{
-                height: '21px',
+                height: { xs: '10px', sm: '15px', md: '21px' },
                 width: 'auto',
                 maxWidth: { xs: '100px', sm: '120px', md: '140px' },
                 filter: 'brightness(0) invert(1)',

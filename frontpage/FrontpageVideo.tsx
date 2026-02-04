@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
+import { StaticImageData } from 'next/image';
 import Hls from 'hls.js';
 
 interface HeroVideoProps {
   src: string; // Your Mux HLS URL
-  posterImage: string; // First frame image
+  posterImage: StaticImageData; // First frame image
   animationDuration?: number; // Default 1500ms
 }
 
@@ -226,7 +227,7 @@ interface HeroVideoProps {
       {/* First frame poster - shown during entry animation */}
       {showPoster && (
         <img
-          src={posterImage}
+          src={posterImage.src}
           style={{ 
             transform: `translateX(${rightPosition}vw)`,
             transition: 'transform 1380ms ease-out',
