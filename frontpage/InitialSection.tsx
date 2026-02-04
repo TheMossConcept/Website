@@ -1,4 +1,6 @@
 import { Box, Typography, Grid } from '@mui/material';
+import FrontpageVideo from './FrontpageVideo';
+import FrontpageThumbnail from '../public/images/frontpage_thumbnail.png'
 import { FC, useEffect, useRef, useState } from 'react';
 import Hls from 'hls.js';
 
@@ -8,7 +10,6 @@ const VIDEO_SOURCE = 'https://stream.mux.com/7SBNtnJf3KgttWIT2YKHINhAf2ydA8vEt6G
 // for the text which is a bit delayed compared to the background image
 const InitialSection: FC = () => {
   const videoPlayerRef = useRef<HTMLVideoElement>(null)
-  const [rightPosition, setRightPosition] = useState(-100);
 
   useEffect(() => {
     const videoPlayer = videoPlayerRef.current
@@ -23,13 +24,11 @@ const InitialSection: FC = () => {
     }
   }, [videoPlayerRef]);
 
-  useEffect(() => {
-    setRightPosition(0);
-  }, []);
 
   return (
     <Box sx={{ height: '100vh', width: '100vw', bgcolor: 'text.secondary' }}>
-      <video
+      <FrontpageVideo src={VIDEO_SOURCE} posterImage={FrontpageThumbnail} />
+      {/*<video
         ref={videoPlayerRef}
         autoPlay
         loop
@@ -45,7 +44,7 @@ const InitialSection: FC = () => {
           width: '100vw'
         }}>
         <source src={VIDEO_SOURCE} type="video/mp4" />
-      </video>
+      </video>*/}
       <Content />
     </Box>
   );
@@ -223,8 +222,6 @@ const TrustedBySection: FC<{ opacity: number }> = ({ opacity }) => {
         <Grid
           container
           spacing={{ xs: 8 }}
-          alignItems="center"
-          justifyItems="center"
           justifyContent="center"
           sx={{
             maxWidth: { xs: '100%', sm: '800px', md: '1200px' },
