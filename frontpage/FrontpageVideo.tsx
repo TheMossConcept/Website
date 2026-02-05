@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
-import { StaticImageData } from 'next/image';
 import Hls from 'hls.js';
 
 interface HeroVideoProps {
@@ -13,6 +12,10 @@ interface HeroVideoProps {
   posterImage, 
   animationDuration = 1500 
 }: HeroVideoProps) {
+  const [timeoutIsSet, setTimeoutIsSet] = useState(false); 
+  const [animationIsDone, setAnimationIsDone] = useState(false);
+  const [videoCanPlay, setVideoCanPlay] = useState(false);
+
   const [rightPosition, setRightPosition] = useState(-100);
 
   useEffect(() => {
@@ -20,10 +23,19 @@ interface HeroVideoProps {
   }, []);
 
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const videoRefElement = videoRef.current
+    if (videoRefElement) {
+      videoRefElement.oncanplay = () => setVideoCanPlay(true)
+    }
+  }, [videoRef])
+
   const hlsRef = useRef<Hls | null>(null);
   
-  const [showPoster, setShowPoster] = useState(true);
+  const hidePoster = animationIsDone && videoCanPlay
 
+  /*
   useEffect(() => {
     const videoRefElement = videoRef.current
     if (videoRefElement) {
@@ -33,6 +45,16 @@ interface HeroVideoProps {
       }
     }
   }, [videoRef])
+  */
+
+  if (!timeoutIsSet) {
+    setTimeout(() => {
+      setAnimationIsDone(true)
+      // videoRef.current?.play()
+    }, 1500)
+
+    setTimeoutIsSet(true)
+  }
 
   // Lock to highest quality level
   const lockToHighestQuality = useCallback((hls: Hls) => {
@@ -105,7 +127,7 @@ interface HeroVideoProps {
   return (
     <div className="relative w-full h-full overflow-hidden">
       {/* First frame poster - shown during entry animation */}
-      {showPoster && (
+      {!hidePoster && (
         <img
           src={posterImage}
           style={{ 
@@ -130,11 +152,13 @@ interface HeroVideoProps {
           objectFit: 'fill',
           maxHeight: '100vh',
           height: '100vh',
-          width: '100vw'
+          width: '100vw',
+          display: hidePoster ? undefined : 'none'
         }}
         className="absolute inset-0 w-full h-full object-cover"
         muted
         playsInline
+        autoPlay
         loop={true}
         preload="auto"
       />
