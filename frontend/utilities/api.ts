@@ -6,8 +6,8 @@ export const apiClient: AxiosInstance = axios.create({
   baseURL: API_BASE_URL,
   timeout: 10000,
   headers: {
-    'Content-Type': 'application/json',
-  },
+    'Content-Type': 'application/json'
+  }
 });
 
 // Request interceptor for logging
@@ -31,16 +31,16 @@ apiClient.interceptors.response.use(
 // Typed API methods
 export const api = {
   get: <T>(url: string, config?: AxiosRequestConfig) =>
-    apiClient.get<T>(url, config).then(res => res.data),
+    apiClient.get<T>(url, config).then((res) => res.data),
 
   post: <T>(url: string, data?: unknown, config?: AxiosRequestConfig) =>
-    apiClient.post<T>(url, data, config).then(res => res.data),
+    apiClient.post<T>(url, data, config).then((res) => res.data),
 
   put: <T>(url: string, data?: unknown, config?: AxiosRequestConfig) =>
-    apiClient.put<T>(url, data, config).then(res => res.data),
+    apiClient.put<T>(url, data, config).then((res) => res.data),
 
   delete: <T>(url: string, config?: AxiosRequestConfig) =>
-    apiClient.delete<T>(url, config).then(res => res.data),
+    apiClient.delete<T>(url, config).then((res) => res.data)
 };
 
 export default api;

@@ -32,13 +32,11 @@ const ContactSection: FC<ContactSectionProps> = ({ useContrastColors = false }) 
 
   const onSubmitClick = () => {
     axios
-      .post('http://localhost:3001/api/contact',
-        {
-          name,
-          email,
-          message
-        }
-      )
+      .post('http://localhost:3001/api/contact', {
+        name,
+        email,
+        message
+      })
       .then(() => {
         setFeedbackSnackbarState(FeedbackState.SUCCESS);
         reset();

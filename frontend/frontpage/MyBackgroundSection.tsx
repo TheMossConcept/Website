@@ -1,7 +1,6 @@
 import { Grid, Typography } from '@mui/material';
 import { FC, useEffect, useRef, useState } from 'react';
 import InteractiveLink from '../components/InteractiveLink';
-import ImageOfNiklas from '../public/images/niklas.jpg';
 import HeadlineSection from '../components/sections/HeadlineSection';
 import MediaSection from '../components/sections/MediaSection';
 import TextContainer from '../components/TextContainer';
@@ -48,7 +47,7 @@ const BackgroundSection: FC = () => {
         <MediaSection
           mediaLocation="left"
           mediaItems={[
-            { mediaUrl: ImageOfNiklas, imageDimensions: { width: '400px', height: 'auto' } }
+            { mediaUrl: '/images/niklas.jpg', imageDimensions: { width: '400px', height: 'auto' } }
           ]}
           marginTop={2}
         />
