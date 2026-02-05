@@ -4,7 +4,7 @@ import FrontpageThumbnail from '../public/images/frontpage_thumbnail.png';
 import { FC, useEffect, useRef, useState } from 'react';
 import Hls from 'hls.js';
 
-const VIDEO_SOURCE = 'https://stream.mux.com/7SBNtnJf3KgttWIT2YKHINhAf2ydA8vEt6GoghZXJLo.m3u8';
+const VIDEO_SOURCE = 'https://stream.mux.com/p6j4b02FbweQzyO3H02Es1024GT400e4RwF2BTqlhGxRzdg.m3u8';
 
 // Put a background image here that's in the slide and make a fade
 // for the text which is a bit delayed compared to the background image
