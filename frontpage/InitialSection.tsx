@@ -1,6 +1,5 @@
 import { Box, Typography, Grid } from '@mui/material';
 import FrontpageVideo from './FrontpageVideo';
-import FrontpageThumbnail from '../public/images/frontpage_thumbnail.png';
 import { FC, useEffect, useRef, useState } from 'react';
 import Hls from 'hls.js';
 
@@ -27,7 +26,8 @@ const InitialSection: FC = () => {
 
   return (
     <Box sx={{ height: '100vh', width: '100vw', bgcolor: 'text.secondary' }}>
-      <FrontpageVideo src={VIDEO_SOURCE} posterImage={(FrontpageThumbnail as any).src} />
+      {/* */}
+      <FrontpageVideo src={VIDEO_SOURCE} posterImage='/images/newest_frontend_thumbnail.webp' />
       <Content />
     </Box>
   );
