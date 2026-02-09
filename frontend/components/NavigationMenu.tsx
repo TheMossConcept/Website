@@ -3,7 +3,7 @@ import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import InteractiveLink from './InteractiveLink';
 import { useRouter } from 'next/router';
-import ReactGA from 'react-ga4';
+// import ReactGA from 'react-ga4';
 
 type Props = { isOpenState: [boolean, Dispatch<SetStateAction<boolean>>] };
 
@@ -17,10 +17,12 @@ const NavigationItem: FC<NavigationItemProps> = ({
   itemIsNotYetAvailable = false,
   ...props
 }) => {
+  /*
   useEffect(() => {
     // TODO: Stop hardcoding it here and get it from a central key vault instead
     ReactGA.initialize('G-HK91WGVFW0');
   }, []);
+  */
   const router = useRouter();
 
   return (
@@ -28,11 +30,13 @@ const NavigationItem: FC<NavigationItemProps> = ({
       text={text}
       navigate={() => {
         if ('link' in props) {
+          /*
           ReactGA.send({
             hitType: 'pageView',
             page: props.link,
             title: 'Visited page using navigation menu'
           });
+          */
           router.push(props.link);
         } else {
           props.onClick();
