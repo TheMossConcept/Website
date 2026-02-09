@@ -73,12 +73,12 @@ RUN yarn install --production --frozen-lockfile
 
 # Set environment
 ENV NODE_ENV=production
-ENV PORT=3001
+ENV PORT=80
 ENV STATIC_PATH=/app/frontend/out
 
 USER expressjs
 
-EXPOSE 3001
+EXPOSE 80
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \

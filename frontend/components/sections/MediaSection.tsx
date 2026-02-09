@@ -114,8 +114,6 @@ const MediaSection: FC<Props> = ({
     };
 
     if (media.isVideo) {
-      // Videos only support string URLs, not StaticImageData
-      const videoUrl = typeof media.mediaUrl === 'string' ? media.mediaUrl : media.mediaUrl.src;
       return (
         <div key={`video-${index}`} style={wrapperStyle}>
           <video
@@ -134,7 +132,7 @@ const MediaSection: FC<Props> = ({
               objectFit: media.imageDimensions ? 'fill' : 'contain',
               ...style
             }}>
-            <source src={videoUrl} type="video/mp4" />
+            <source src={media.mediaUrl} type="video/mp4" />
           </video>
         </div>
       );

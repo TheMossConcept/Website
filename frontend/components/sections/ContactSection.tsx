@@ -32,7 +32,7 @@ const ContactSection: FC<ContactSectionProps> = ({ useContrastColors = false }) 
 
   const onSubmitClick = () => {
     axios
-      .post('http://localhost:3001/api/contact', {
+      .post('/api/contact', {
         name,
         email,
         message

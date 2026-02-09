@@ -19,6 +19,7 @@
     "lint:fix": "yarn workspace @themossconcept/frontend lint:fix && yarn workspace @themossconcept/backend lint:fix",
     "typecheck": "yarn workspace @themossconcept/frontend tsc --noEmit && yarn workspace @themossconcept/backend typecheck",
     "docker:dev": "export GOOGLE_APP_PASSWORD=$(pass show the_moss_concept_website/GOOGLE_APP_PASSWORD) && docker-compose up",
+    "deploy": "./deploy.sh", 
     "docker:dev:build": "docker-compose up --build",
     "docker:prod:build": "docker build -f docker/Dockerfile.prod -t niklasmoss/themossconcept-website:latest .",
     "docker:prod:push": "docker push niklasmoss/themossconcept-website",

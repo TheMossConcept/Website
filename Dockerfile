@@ -1,83 +1,84 @@
 # ============================================
-# Stage 1: Build Frontend
+# Stage 1: Install all workspace dependencies
 # ============================================
-FROM node:22-alpine AS frontend-builder
-
-WORKDIR /app/frontend
-
-# Copy frontend package files
-COPY frontend/package*.json ./
-
-# Install frontend dependencies
-RUN npm ci --only=production=false
-
-# Copy frontend source code
-COPY frontend/ ./
-
-# TODO: Parmeterise so it also works for production!
-# "https://optimistic-recreation-production-8b44.up.railway.app"
-ENV VITE_API_URL="https://data-inputter-tq5tz.ondigitalocean.app"
-ARG GOOGLE_OAUTH_CLIENT_SECRET
-ENV VITE_GOOGLE_OAUTH_CLIENT_SECRET=${GOOGLE_OAUTH_CLIENT_SECRET}
-
-# Build the frontend application
-RUN npm run build
-
-# ============================================
-# Stage 2: Build Backend
-# ============================================
-FROM node:22-alpine AS backend-builder
+FROM node:22-alpine AS deps
 
 WORKDIR /app
 
-# Copy backend package files
-COPY backend/package*.json backend/
+# Copy workspace root config and lock file
+COPY package.json package-lock.json ./
 
-# Copy shared types and backend source
-COPY backend/ backend/
-COPY shared/ shared/
+# Copy workspace package.json files (needed for npm ci to resolve workspaces)
+COPY frontend/package.json frontend/
+COPY backend/package.json backend/
 
-# Install all dependencies (including dev dependencies for build)
-RUN cd backend && npm ci
-
-# Build the backend application
-RUN cd backend && npm run build
-
-# Install only production dependencies in a separate directory
-WORKDIR /app/backend-prod
-COPY backend/package*.json ./
-RUN npm ci --only=production
+# Install all dependencies (including dev deps needed for building)
+RUN npm ci
 
 # ============================================
-# Stage 3: Production Image
+# Stage 2: Build Frontend
+# ============================================
+FROM deps AS frontend-builder
+
+# Copy frontend source
+COPY frontend/ frontend/
+
+# Build as static export (produces out/ directory)
+ENV NEXT_OUTPUT_MODE=export
+RUN npm -w @themossconcept/frontend run build
+
+# ============================================
+# Stage 3: Build Backend
+# ============================================
+FROM deps AS backend-builder
+
+# Copy backend source
+COPY backend/ backend/
+
+# Build the backend (tsc compiles src/ -> dist/)
+RUN npm -w @themossconcept/backend run build
+
+# ============================================
+# Stage 4: Production dependencies only
+# ============================================
+FROM node:22-alpine AS prod-deps
+
+WORKDIR /app
+
+COPY package.json package-lock.json ./
+COPY frontend/package.json frontend/
+COPY backend/package.json backend/
+
+# Install only production dependencies (hoisted at root by npm workspaces)
+RUN npm ci --omit=dev
+
+# ============================================
+# Stage 5: Production Image
 # ============================================
 FROM node:22-alpine
 
-# Install supervisor and dotenvx
-RUN apk add --no-cache \
-    curl
-
+# Install dotenvx for runtime secret injection
+RUN apk add --no-cache curl
 RUN curl -sfS https://dotenvx.sh/install.sh | sh
 
-# Copy built frontend from builder stage
-COPY --from=frontend-builder /app/frontend/dist /app/frontend/dist
-
-# Create directory for backend application
 WORKDIR /app
 
-# Copy built backend, environment files, and production dependencies
-# Note: TypeScript compiles shared/ into backend/dist/shared/ due to relative imports
-# We need to copy the COMPILED shared directory, not the source files
-COPY --from=backend-builder /app/backend/dist/backend/src ./backend/dist/backend/src
-COPY --from=backend-builder /app/backend/dist/shared ./backend/dist/shared
-COPY --from=backend-builder /app/backend/.env.test ./backend/.env.test
-COPY --from=backend-builder /app/backend/.env.production ./backend/.env.production
-COPY --from=backend-builder /app/backend-prod/node_modules ./backend/node_modules
+# Copy production node_modules (hoisted at root by npm workspaces)
+COPY --from=prod-deps /app/node_modules ./node_modules
+
+# Copy frontend static export
+COPY --from=frontend-builder /app/frontend/out ./frontend/dist
+
+# Copy backend compiled code (tsconfig: rootDir=src, outDir=dist)
+COPY --from=backend-builder /app/backend/dist ./backend/dist
 COPY backend/package.json ./backend/
 
-# Define run command that injects secrets using dotenvx. The key and secrets file depends on the environment we are runnig in 
+# Define run command that injects secrets using dotenvx
 ARG ENV
-ENV ENVIRONMENT_FILE=./backend/.env.$ENV 
+ENV ENVIRONMENT_FILE=./backend/.env.$ENV
+ENV STATIC_PATH=/app/frontend/dist
+ENV NODE_ENV=production
+ENV PORT=80
 
 # Expose ports
 # Port 80 for backend and frontend (backend serves frontend statically)
@@ -86,6 +87,6 @@ EXPOSE 80
 # Health check
 HEALTHCHECK --interval=30s --timeout=3s --start-period=10s --retries=3 \
   CMD wget --quiet --tries=1 --spider http://localhost:80/ || exit 1
-CMD dotenvx run -f $ENVIRONMENT_FILE -- node backend/dist/backend/src/app.js
+CMD node backend/dist/index.js
 
 # The frontend is statically served through the backend

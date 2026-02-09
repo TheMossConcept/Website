@@ -39,3 +39,6 @@ docker-compose.override.yml
 # Misc
 *.log
 assets/
+
+# Next
+.next/
