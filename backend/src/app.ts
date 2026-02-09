@@ -1,5 +1,6 @@
 import express, { Application, RequestHandler } from 'express';
 import cors from 'cors';
+import helmet from 'helmet';
 import compression from 'compression';
 import path from 'path';
 
@@ -10,6 +11,18 @@ import { requestLogger } from './middleware/requestLogger';
 
 export function createApp(): Application {
   const app = express();
+
+  // Security middleware
+  app.use(helmet({
+    contentSecurityPolicy: config.isProduction ? {
+      directives: {
+        ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+        'connect-src': ["'self'", 'https://*.mux.com'],
+        'media-src': ["'self'", 'https://*.mux.com', 'blob:'],
+        'worker-src': ["'self'", 'blob:'],
+      },
+    } : false,
+  }));
 
   // CORS configuration - allow all origins
   app.use(cors());
