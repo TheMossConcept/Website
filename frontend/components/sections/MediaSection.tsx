@@ -1,5 +1,5 @@
 import { Grid } from '@mui/material';
-import Image from 'next/image';
+import { StaticImageData } from 'next/image';
 import useIsMobile from '../../utilities/useIsMobile';
 import { CSSProperties, FC, useEffect, useRef, useState } from 'react';
 
@@ -140,7 +140,7 @@ const MediaSection: FC<Props> = ({
 
     return (
       <div key={`image-${index}`} style={wrapperStyle}>
-        <Image
+        <img
           src={media.mediaUrl}
           alt="An image that cannot be loaded at the moment"
           style={{

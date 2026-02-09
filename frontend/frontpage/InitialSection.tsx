@@ -8,10 +8,10 @@ const VIDEO_SOURCE = 'https://stream.mux.com/p6j4b02FbweQzyO3H02Es1024GT400e4RwF
 // Put a background image here that's in the slide and make a fade
 // for the text which is a bit delayed compared to the background image
 const InitialSection: FC = () => {
-  const videoPlayerRef = useRef<HTMLVideoElement>(null)
+  const videoPlayerRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    const videoPlayer = videoPlayerRef.current
+    const videoPlayer = videoPlayerRef.current;
     if (!videoPlayer) return;
 
     let hls;
@@ -23,11 +23,10 @@ const InitialSection: FC = () => {
     }
   }, [videoPlayerRef]);
 
-
   return (
     <Box sx={{ height: '100vh', width: '100vw', bgcolor: 'text.secondary' }}>
       {/* */}
-      <FrontpageVideo src={VIDEO_SOURCE} posterImage='/images/newest_frontend_thumbnail.webp' />
+      <FrontpageVideo src={VIDEO_SOURCE} />
       <Content />
     </Box>
   );
@@ -177,7 +176,8 @@ const TrustedBySection: FC<{ opacity: number }> = ({ opacity }) => {
         right: 0,
         textAlign: 'center',
         padding: { xs: '24px 16px', sm: '32px 24px', md: '40px 48px' },
-        background: 'linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%)',
+        background:
+          'linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%)',
         // backdropFilter: 'blur(8px)',
         opacity,
         transition: 'opacity 800ms ease-out 1200ms'
