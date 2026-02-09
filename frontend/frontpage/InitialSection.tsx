@@ -26,7 +26,7 @@ const InitialSection: FC = () => {
   return (
     <Box sx={{ height: '100vh', width: '100vw', bgcolor: 'text.secondary' }}>
       {/* */}
-      <FrontpageVideo src={VIDEO_SOURCE} posterImage="/images/newest_frontend_thumbnail.webp" />
+      <FrontpageVideo src={VIDEO_SOURCE} />
       <Content />
     </Box>
   );
