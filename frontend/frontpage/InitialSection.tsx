@@ -200,7 +200,7 @@ const TrustedBySection: FC<{ opacity: number }> = ({ opacity }) => {
             textTransform: 'uppercase',
             marginBottom: { xs: '16px', sm: '20px' }
           }}>
-          Our clients
+          Trusted by
         </Typography>
         <Grid
           container

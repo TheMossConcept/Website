@@ -135,7 +135,7 @@ function FrontpageVideo({
             position: 'absolute',
             objectFit: 'fill',
             maxHeight: '100vh',
-            height: '100vh',
+            height: '100%',
             width: '100vw'
           }}
           alt=""
@@ -150,7 +150,7 @@ function FrontpageVideo({
           position: 'absolute',
           objectFit: 'fill',
           maxHeight: '100vh',
-          height: '100vh',
+          height: '100%',
           width: '100vw',
           display: hidePoster ? undefined : 'none'
         }}
